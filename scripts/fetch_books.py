@@ -267,6 +267,10 @@ def main() -> int:
 
         target = out_dir / CATEGORY_DIRS[book["category"]] / f"{book['id']}_{book['title']}.md"
         target.write_text(markdown, encoding="utf-8")
+        try:
+            display = target.relative_to(ROOT)
+        except ValueError:
+            display = target
         record = dict(book)
         record.update(
             {
@@ -276,7 +280,7 @@ def main() -> int:
             }
         )
         results.append(record)
-        print(f"  已生成 {target.relative_to(ROOT)}（{sections} 卷，{chars} 字）", flush=True)
+        print(f"  已生成 {display}（{sections} 卷，{chars} 字）", flush=True)
 
     results.sort(key=lambda b: (b["category"], b["id"]))
     catalog_path = out_dir / "catalog.json"
