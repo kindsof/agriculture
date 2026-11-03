@@ -1,0 +1,312 @@
+# 农业与水利古籍目录
+#
+# 底本来源：Kanripo（漢籍リポジトリ）https://github.com/kanripo
+# 文本许可：CC BY-SA 4.0（见 SOURCES.md）
+#
+# 字段说明：
+#   id           Kanripo 仓库名，也是下载与引用的稳定标识
+#   title        书名
+#   author       作者；官修书标纂修机构
+#   dynasty      朝代
+#   category     农业 / 水利
+#   topic        主题分类
+#   edition      底本
+#   summary      内容提要
+
+books:
+  - id: KR3d0001
+    title: "齊民要術"
+    author: "賈思勰"
+    dynasty: "後魏"
+    category: "农业"
+    topic: "综合农书"
+    edition: "四部叢刊本"
+    summary: "现存最早、最完整的综合性农书，系统总结黄河中下游的耕作、种植、畜牧与农产品加工技术。"
+
+  - id: KR3d0002
+    title: "農書（陳旉）"
+    author: "陳旉"
+    dynasty: "宋"
+    category: "农业"
+    topic: "综合农书"
+    edition: "文淵閣四庫全書本"
+    summary: "宋代农书，分上中下三卷，提出「粪田之宜」等土地利用与水稻栽培理论。"
+
+  - id: KR3d0003
+    title: "農桑輯要"
+    author: "司農司"
+    dynasty: "元"
+    category: "农业"
+    topic: "农桑"
+    edition: "文淵閣四庫全書本"
+    summary: "元代官修农书，总结北方农桑技术，并推动棉花种植的推广。"
+
+  - id: KR3d0004
+    title: "農桑衣食撮要"
+    author: "魯明善"
+    dynasty: "元"
+    category: "农业"
+    topic: "农桑"
+    edition: "文淵閣四庫全書本"
+    summary: "按月记述农桑衣食事宜的通俗农书，便于农家按节令安排生产。"
+
+  - id: KR3d0005
+    title: "王氏農書"
+    author: "王禎"
+    dynasty: "元"
+    category: "农业"
+    topic: "综合农书"
+    edition: "文淵閣四庫全書本"
+    summary: "元代综合性农书，附《农器图谱》，系统记载农业生产工具与耕作技术。"
+
+  - id: KR3d0006
+    title: "救荒本草"
+    author: "朱橚"
+    dynasty: "明"
+    category: "农业"
+    topic: "荒政"
+    edition: "文淵閣四庫全書本"
+    summary: "明代救荒植物著作，记载可供食用的野生植物四百余种，附形态描述与食用方法。"
+
+  - id: KR3d0007
+    title: "農政全書"
+    author: "徐光啟"
+    dynasty: "明"
+    category: "农业"
+    topic: "综合农书"
+    edition: "文淵閣四庫全書本"
+    summary: "明代农业百科全书，集古代农学之大成，兼论水利、荒政与救荒作物。"
+
+  - id: KR3d0008
+    title: "泰西水法"
+    author: "熊三拔"
+    dynasty: "明"
+    category: "农业"
+    topic: "水利农具"
+    edition: "文淵閣四庫全書本"
+    summary: "明末引入西方取水、蓄水技术的水利著作，由徐光启笔述，附器械图说。"
+
+  - id: KR3d0009
+    title: "野菜博錄"
+    author: "鮑山"
+    dynasty: "明"
+    category: "农业"
+    topic: "荒政"
+    edition: "文淵閣四庫全書本"
+    summary: "明代野菜专书，收录可食野菜四百余种，记述形态、性味与食用方法。"
+
+  - id: KR3d0010
+    title: "欽定授時通考"
+    author: "乾隆官修"
+    dynasty: "清"
+    category: "农业"
+    topic: "综合农书"
+    edition: "文淵閣四庫全書本"
+    summary: "清代官修农书，汇辑农事、耕织、荒政等文献，附耕织图。"
+
+  - id: KR2k0058
+    title: "水經注"
+    author: "酈道元"
+    dynasty: "後魏"
+    category: "水利"
+    topic: "河渠总志"
+    edition: "四部叢刊本"
+    summary: "古代最重要的水系地理名著，注释《水经》并记述河流源流、沿革与流域人文。"
+
+  - id: KR2k0059
+    title: "水經注集釋訂訛"
+    author: "沈炳巽"
+    dynasty: "清"
+    category: "水利"
+    topic: "河渠总志"
+    edition: "文淵閣四庫全書本"
+    summary: "清代整理《水经注》的集释订讹之作，汇集诸家注释并校正讹误。"
+
+  - id: KR2k0060
+    title: "水經注釋"
+    author: "趙一清"
+    dynasty: "清"
+    category: "水利"
+    topic: "河渠总志"
+    edition: "文淵閣四庫全書本"
+    summary: "清代《水经注》重要注释本，对郦注进行系统校释。"
+
+  - id: KR2k0061
+    title: "吳中水利書"
+    author: "單鍔"
+    dynasty: "宋"
+    category: "水利"
+    topic: "农田水利"
+    edition: "文淵閣四庫全書本"
+    summary: "宋代太湖流域水利专著，论述苏、常、湖、秀诸州的水利治理。"
+
+  - id: KR2k0062
+    title: "四明它山水利備覽"
+    author: "魏峴"
+    dynasty: "宋"
+    category: "水利"
+    topic: "农田水利"
+    edition: "文淵閣四庫全書本"
+    summary: "记述宁波它山堰水利工程的源流、规制与修治始末。"
+
+  - id: KR2k0063
+    title: "河防通議"
+    author: "沙克什"
+    dynasty: "元"
+    category: "水利"
+    topic: "河工防洪"
+    edition: "文淵閣四庫全書本"
+    summary: "元代河防制度与修堤堵口技术的综合著作，条列河工诸法。"
+
+  - id: KR2k0064
+    title: "治河圖略"
+    author: "王喜"
+    dynasty: "元"
+    category: "水利"
+    topic: "河工防洪"
+    edition: "文淵閣四庫全書本"
+    summary: "以图说形式记述黄河治理方略与河工技术。"
+
+  - id: KR2k0065
+    title: "浙西水利書"
+    author: "姚文灝"
+    dynasty: "明"
+    category: "水利"
+    topic: "农田水利"
+    edition: "文淵閣四庫全書本"
+    summary: "明代浙西地区水利治理文献汇编，兼及田围修治。"
+
+  - id: KR2k0066
+    title: "河防一覽"
+    author: "潘季馴"
+    dynasty: "明"
+    category: "水利"
+    topic: "河工防洪"
+    edition: "文淵閣四庫全書本"
+    summary: "明代治河名著，总结「束水攻沙」等黄河治理经验，附河防险要与修守事宜。"
+
+  - id: KR2k0067
+    title: "三吳水利錄"
+    author: "歸有光"
+    dynasty: "明"
+    category: "水利"
+    topic: "农田水利"
+    edition: "文淵閣四庫全書本"
+    summary: "明代三吴地区水利论述与文献汇编。"
+
+  - id: KR2k0068
+    title: "北河紀"
+    author: "謝肇淛"
+    dynasty: "明"
+    category: "水利"
+    topic: "河工防洪"
+    edition: "文淵閣四庫全書本"
+    summary: "记述明代北运河及黄河河工制度、漕运与修防事宜。"
+
+  - id: KR2k0069
+    title: "敬止集"
+    author: "陳應芳"
+    dynasty: "明"
+    category: "水利"
+    topic: "农田水利"
+    edition: "文淵閣四庫全書本"
+    summary: "明代泰州水利文集，论述淮扬水患治理与农田水利。"
+
+  - id: KR2k0070
+    title: "三吳水考"
+    author: "張內蘊、周大韶"
+    dynasty: "明"
+    category: "水利"
+    topic: "农田水利"
+    edition: "文淵閣四庫全書本"
+    summary: "明代三吴水利调查与治理文献，详记诸府水利形势。"
+
+  - id: KR2k0071
+    title: "吳中水利全書"
+    author: "張國維"
+    dynasty: "明"
+    category: "水利"
+    topic: "农田水利"
+    edition: "文淵閣四庫全書本"
+    summary: "明代吴中水利文献总集，收录历代治水奏议、图说与工程记录。"
+
+  - id: KR2k0072
+    title: "欽定河源紀略"
+    author: "乾隆官修"
+    dynasty: "清"
+    category: "水利"
+    topic: "河源水道"
+    edition: "文淵閣四庫全書本"
+    summary: "清代官修黄河河源考察著作，附舆图与考订。"
+
+  - id: KR2k0073
+    title: "崑崙河源考"
+    author: "萬斯同"
+    dynasty: "清"
+    category: "水利"
+    topic: "河源水道"
+    edition: "文淵閣四庫全書本"
+    summary: "考证黄河河源与昆仑地理的专门著作。"
+
+  - id: KR2k0074
+    title: "兩河清彙"
+    author: "薛鳳祚"
+    dynasty: "清"
+    category: "水利"
+    topic: "河工防洪"
+    edition: "文淵閣四庫全書本"
+    summary: "清代治理黄河、运河的水利文献汇编，兼及运道修守。"
+
+  - id: KR2k0075
+    title: "居濟一得"
+    author: "張伯行"
+    dynasty: "清"
+    category: "水利"
+    topic: "河工防洪"
+    edition: "文淵閣四庫全書本"
+    summary: "清代河道总督张伯行治理运河、堤闸的经验总结。"
+
+  - id: KR2k0076
+    title: "治河奏績書"
+    author: "靳輔"
+    dynasty: "清"
+    category: "水利"
+    topic: "河工防洪"
+    edition: "文淵閣四庫全書本"
+    summary: "清代靳辅治河奏疏与工程记录，详载堤河修防制度。"
+
+  - id: KR2k0077
+    title: "直隸河渠志"
+    author: "陳儀"
+    dynasty: "清"
+    category: "水利"
+    topic: "河渠总志"
+    edition: "文淵閣四庫全書本"
+    summary: "清代直隶地区河渠水系志，记述河道源流与治理。"
+
+  - id: KR2k0078
+    title: "行水金鑑"
+    author: "傅澤洪"
+    dynasty: "清"
+    category: "水利"
+    topic: "河渠总志"
+    edition: "文淵閣四庫全書本"
+    summary: "清代大型水利文献汇编，按年代辑录历代河渠史料与治河议论。"
+
+  - id: KR2k0079
+    title: "水道提綱"
+    author: "齊召南"
+    dynasty: "清"
+    category: "水利"
+    topic: "河渠总志"
+    edition: "文淵閣四庫全書本"
+    summary: "清代全国水道总志，记述各大河流源流、支派与沿海水系。"
+
+  - id: KR2k0080
+    title: "海塘錄"
+    author: "翟均廉"
+    dynasty: "清"
+    category: "水利"
+    topic: "海塘"
+    edition: "文淵閣四庫全書本"
+    summary: "清代浙江海塘工程与文献汇编，记述海塘修筑沿革与技术。"
