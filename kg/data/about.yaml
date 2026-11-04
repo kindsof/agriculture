@@ -1,0 +1,55 @@
+# 书目与核心主题实体的对应。
+#
+# 每一项表示「该书以某一实体为核心论题之一」。构建脚本会到正文中
+# 查找该实体的首次出现，自动生成带卷次与引文的 about 关系；因此
+# 这里列出的实体必须能在该书中匹配到，否则构建失败。
+#
+# 选择原则：优先取该书目录、提要或正文反复讨论的对象，每书 2—4 项，
+# 兼顾农事、水利、荒政、时令、地理等不同主题。
+
+about:
+  # 农业：农书、荒政、时令
+  KR3d0001: [tech:gengzuo, crop:su, tech:processing, tech:sericulture]
+  KR3d0002: [crop:dao, tech:fentian, tech:gengzuo]
+  KR3d0003: [tech:sericulture, crop:sang, crop:mian]
+  KR3d0004: [tech:sericulture, crop:mai, crop:sang]
+  KR3d0005: [tool:louche, tool:shuiche, concept:agricultural-tool, tech:gengzuo]
+  KR3d0006: [tech:famine-relief, crop:qiaomai, crop:yu]
+  KR3d0007: [tech:gengzuo, tech:irrigation, tech:famine-relief, crop:mian]
+  KR3d0008: [tech:water-lifting, tech:water-storage, facility:reservoir, tool:longweiche]
+  KR3d0009: [tech:famine-relief, crop:yu, crop:qiaomai]
+  KR3d0010: [crop:dao, tech:sericulture, tech:farming-season, tech:famine-relief]
+  KR2m0044: [tech:famine-relief, institution:changping, institution:yicang, tech:locust-control]
+  KR2m0047: [tech:locust-control, tech:famine-relief]
+  KR2m0048: [tech:famine-relief, institution:changping, institution:yicang, institution:shecang]
+  KR2m0049: [tech:famine-relief, institution:changping, institution:shecang, institution:huangzheng]
+  KR2j0001: [tech:sericulture, crop:mai, crop:sang]
+  KR2j0002: [tech:farming-season, crop:mai, tech:sericulture, crop:dao]
+
+  # 水利：河渠、农田水利、河工、海塘、禹贡
+  KR2k0058: [water:huanghe, water:changjiang, water:weishui, water:hanshui, place:guanzhong]
+  KR2k0059: [water:huanghe, water:weishui, water:hanshui, person:li-daoyuan]
+  KR2k0060: [water:huanghe, water:changjiang, water:weishui, water:hanshui]
+  KR2k0061: [water:taihu, place:songjiang, facility:yan, water:yunhe]
+  KR2k0062: [facility:tashanyan, place:ningbo, tech:irrigation, facility:yan]
+  KR2k0063: [facility:sao, facility:dike, tech:dike-building, water:huanghe]
+  KR2k0064: [water:huanghe, concept:river-engineering, facility:dike]
+  KR2k0065: [water:taihu, place:zhexi, facility:wei, facility:zha]
+  KR2k0066: [water:huanghe, water:huaihe, tech:shushui-gongsha, person:pan-jixun]
+  KR2k0067: [water:taihu, place:sanwu, facility:wei, water:yunhe]
+  KR2k0068: [water:yunhe, water:weihe, facility:zha, water:huanghe]
+  KR2k0069: [water:huaihe, place:huaiyang, facility:dike, water:yunhe]
+  KR2k0070: [water:taihu, place:suzhou, facility:wei, water:yunhe]
+  KR2k0071: [water:taihu, place:suzhou, facility:zha, water:yunhe]
+  KR2k0072: [place:kunlun, water:huanghe, place:xingxiuhai]
+  KR2k0073: [place:kunlun, place:xingxiuhai, concept:waterway]
+  KR2k0074: [water:huanghe, water:yunhe, facility:dike, facility:sao]
+  KR2k0075: [water:yunhe, facility:zha, water:huanghe, tech:water-storage]
+  KR2k0076: [water:huanghe, water:yunhe, facility:dike, tech:dike-building]
+  KR2k0077: [water:yunhe, water:weihe, water:sanggan, facility:dike]
+  KR2k0078: [water:huanghe, water:yunhe, water:huaihe, facility:dike]
+  KR2k0079: [water:changjiang, water:huanghe, water:yunhe, concept:waterway]
+  KR2k0080: [facility:haitang, tech:haitang-engineering, water:qiantang, place:shaoxing]
+  KR1b0008: [water:jishui, water:hanshui, water:poyang, place:kunlun]
+  KR1b0053: [water:huanghe, water:changjiang, water:jishui, water:hanshui]
+  KR1b0057: [water:huanghe, water:changjiang, water:hanshui, place:kunlun]

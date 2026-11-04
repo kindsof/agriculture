@@ -310,3 +310,88 @@ books:
     topic: "海塘"
     edition: "文淵閣四庫全書本"
     summary: "清代浙江海塘工程与文献汇编，记述海塘修筑沿革与技术。"
+
+  # 以下九部为续补书目，仍取自 Kanripo 的四庫全書转录。
+  # 荒政四部出自史部政書類邦計之屬，时令二部出自史部時令類，
+  # 禹貢三部出自經部書類；均与农事、救荒或水道考证直接相关。
+
+  - id: KR2m0044
+    title: "救荒活民書"
+    author: "董煟"
+    dynasty: "宋"
+    category: "农业"
+    topic: "荒政"
+    edition: "文淵閣四庫全書本"
+    summary: "南宋救荒专书，上卷考历代荒政，中卷条陈救荒之策，下卷辑本朝名臣议论与施行事例。"
+
+  - id: KR2m0047
+    title: "捕蝗考"
+    author: "陳芳生"
+    dynasty: "清"
+    category: "农业"
+    topic: "荒政"
+    edition: "文淵閣四庫全書本"
+    summary: "清代捕蝗专书，辑历代捕蝗事迹与法规，列备蝗事宜十条，并录徐光启捕蝗奏疏。"
+
+  - id: KR2m0048
+    title: "荒政叢書"
+    author: "俞森"
+    dynasty: "清"
+    category: "农业"
+    topic: "荒政"
+    edition: "文淵閣四庫全書本"
+    summary: "清代荒政文献汇编，辑宋明以来董煟、林希元、屠隆等七家救荒之说，附常平、义仓、社仓三考及捕蝗集要。"
+
+  - id: KR2m0049
+    title: "欽定康濟錄"
+    author: "陸曾禹等"
+    dynasty: "清"
+    category: "农业"
+    topic: "荒政"
+    edition: "文淵閣四庫全書本"
+    summary: "清代官修救荒书，分前代救援之典、先事之政、临事之政、事后之政四门，系统总结历代赈济制度与措施。"
+
+  - id: KR2j0001
+    title: "歲時廣記"
+    author: "陳元靚"
+    dynasty: "宋"
+    category: "农业"
+    topic: "时令"
+    edition: "文淵閣四庫全書本"
+    summary: "南宋岁时民俗专书，按月辑录节序典故，引月令、孝经纬、三统历及杂书，保存大量岁时资料。"
+
+  - id: KR2j0002
+    title: "御定月令輯要"
+    author: "李光地等"
+    dynasty: "清"
+    category: "农业"
+    topic: "时令"
+    edition: "文淵閣四庫全書本"
+    summary: "清代官修月令书，博采经史诸子，按月编排天时、物候、政典与农事，为古代月令文献的集大成之作。"
+
+  - id: KR1b0008
+    title: "禹貢指南"
+    author: "毛晃"
+    dynasty: "宋"
+    category: "水利"
+    topic: "禹贡"
+    edition: "文淵閣四庫全書本"
+    summary: "宋代《禹贡》注释，引《尔雅》《周礼》《汉志》《水经注》等考证山水原委，简明扼要。"
+
+  - id: KR1b0053
+    title: "禹貢錐指"
+    author: "胡渭"
+    dynasty: "清"
+    category: "水利"
+    topic: "禹贡"
+    edition: "文淵閣四庫全書本"
+    summary: "清代《禹贡》研究名著，博采历代义疏方志，考订九州分域、山水脉络与河道变迁，附舆图四十七幅。"
+
+  - id: KR1b0057
+    title: "尚書地理今釋"
+    author: "蔣廷錫"
+    dynasty: "清"
+    category: "水利"
+    topic: "禹贡"
+    edition: "文淵閣四庫全書本"
+    summary: "清代《尚书》地理考证，订正诸儒旧说，涉及禹贡山川、九河、三江、河源等，考据精核。"

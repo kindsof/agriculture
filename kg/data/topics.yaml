@@ -1,0 +1,60 @@
+# 由 catalog.yaml 的 topic / dynasty 字段派生的分类实体。
+# 新增书目若使用新的 topic 或 dynasty，需要在这里补上稳定 ID。
+
+topics:
+  综合农书:
+    id: topic:zonghe-nongshu
+    description: 综合性的农学著作，内容兼及耕作、种植、畜牧与农产加工。
+  农桑:
+    id: topic:nongsang
+    description: 以农桑并重、劝课农事为主的农书。
+  荒政:
+    id: topic:huangzheng
+    description: 救荒、赈济、备荒与捕蝗等荒政文献。
+  水利农具:
+    id: topic:shuili-nongju
+    description: 以取水、蓄水、灌溉器械为主的水利农书。
+  河渠总志:
+    id: topic:hequ-zongzhi
+    description: 全国或大区域的水道、河渠总志。
+  农田水利:
+    id: topic:nongtian-shuili
+    description: 以农田灌溉、圩田、塘堰为主的地方水利文献。
+  河工防洪:
+    id: topic:hegong-fanghong
+    description: 黄河、运河等河流的修防、堵口与河工制度。
+  河源水道:
+    id: topic:heyuan-shuidao
+    description: 黄河河源、昆仑地理与水道源流的考证。
+  海塘:
+    id: topic:haitang
+    description: 浙江沿海海塘修筑、防潮与工程制度。
+  时令:
+    id: topic:shiling
+    description: 月令、岁时、物候与农事节令文献。
+  禹贡:
+    id: topic:yugong
+    description: 以《尚书·禹贡》为对象的注释、地理考证与水道研究。
+
+dynasties:
+  後魏:
+    id: dynasty:houwei
+    description: 北朝魏国（386—534），《齐民要术》《水经注》成书于此。
+  宋:
+    id: dynasty:song
+    description: 宋代（960—1279），含北宋与南宋。
+  元:
+    id: dynasty:yuan
+    description: 元代（1271—1368）。
+  明:
+    id: dynasty:ming
+    description: 明代（1368—1644）。
+  清:
+    id: dynasty:qing
+    description: 清代（1644—1912）。
+  唐:
+    id: dynasty:tang
+    description: 唐代（618—907）。
+  漢:
+    id: dynasty:han
+    description: 汉代（前202—220）。

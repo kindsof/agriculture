@@ -1,0 +1,234 @@
+# 古籍知识图谱的主题实体。
+#
+# 字段：
+#   id          稳定标识，格式为 类型前缀:拼音
+#   type        必须是 kg/schema.yaml 中定义的实体类型
+#   name        规范名称
+#   aliases     正文中可能出现的异名、简称、异体字；构建时做最长匹配
+#   description 一句话说明
+#   index       是否参与自动提及抽取，默认 true；过于宽泛的实体可设为 false
+#
+# 别名冲突会导致构建失败，新增时请先运行 python3 kg/build.py --scan。
+
+entities:
+  # ------------------------------------------------------------------
+  # 概念：用于建立分类层次的抽象类目
+  # ------------------------------------------------------------------
+  - {id: "concept:agricultural-tool", type: Concept, name: "農具", aliases: ["農具", "農器"], description: "農業生產工具總稱。"}
+  - {id: "concept:water-facility", type: Concept, name: "水利設施", aliases: ["水利設施", "水利工程"], description: "堤、閘、堰、塘等水利工程設施總稱。"}
+  - {id: "concept:crop", type: Concept, name: "作物", aliases: ["作物", "農作物"], description: "人工栽培的植物總稱。"}
+  - {id: "concept:grain", type: Concept, name: "穀物", aliases: ["穀物", "五穀", "糧食"], description: "糧食作物總稱。"}
+  - {id: "concept:fiber-crop", type: Concept, name: "纖維作物", aliases: ["纖維作物", "衣料作物"], description: "提供纖維、用於紡織的作物。"}
+  - {id: "concept:farming-technique", type: Concept, name: "耕作技術", aliases: ["耕作技術", "農作技術"], description: "耕作、栽培與田間管理技術總稱。"}
+  - {id: "concept:river-engineering", type: Concept, name: "治河方略", aliases: ["治河方略", "治河"], description: "治理黃河等河流的方略與工程傳統。"}
+  - {id: "concept:water-lifting-machine", type: Concept, name: "提水機械", aliases: ["提水機械", "提水器具"], description: "水車等提水機械總稱。"}
+  - {id: "concept:waterway", type: Concept, name: "水道", aliases: ["水道", "水系"], description: "河流、湖泊、運河等水系總稱。"}
+  - {id: "concept:relief-system", type: Concept, name: "荒政制度", aliases: ["荒政制度", "救荒制度"], description: "備荒、賑濟與災後救濟制度總稱。"}
+  - {id: "concept:water-technique", type: Concept, name: "水利技術", aliases: ["水利技術", "水利之學"], description: "灌溉、防洪、治河與海塘工程技術總稱。", index: false}
+
+  # ------------------------------------------------------------------
+  # 制度
+  # ------------------------------------------------------------------
+  - {id: "institution:huangzheng", type: Institution, name: "荒政", aliases: ["荒政"], description: "災荒救濟的政策與制度。"}
+  - {id: "institution:changping", type: Institution, name: "常平倉", aliases: ["常平倉", "常平"], description: "官倉平糴平糶、備荒救濟的制度。"}
+  - {id: "institution:yicang", type: Institution, name: "義倉", aliases: ["義倉"], description: "地方備荒糧倉制度。"}
+  - {id: "institution:shecang", type: Institution, name: "社倉", aliases: ["社倉"], description: "鄉村互助備荒糧倉制度。"}
+  - {id: "institution:hegong", type: Institution, name: "河工", aliases: ["河工", "河防制度"], description: "黃河、運河等河流的修防制度與工程管理。"}
+
+  # ------------------------------------------------------------------
+  # 技術
+  # ------------------------------------------------------------------
+  - {id: "tech:gengzuo", type: Technique, name: "耕作", aliases: ["耕作", "耕種", "耕田", "耕耨"], description: "土壤耕作與田間管理技術。"}
+  - {id: "tech:qutian", type: Technique, name: "區田", aliases: ["區田", "區種"], description: "小區集中施肥灌溉的旱作高產技術。"}
+  - {id: "tech:daitian", type: Technique, name: "代田", aliases: ["代田"], description: "漢代趙過推行的壟溝輪換耕作技術。"}
+  - {id: "tech:fentian", type: Technique, name: "糞田", aliases: ["糞田", "糞壤", "施肥"], description: "施用肥料改良土壤的技術。"}
+  - {id: "tech:lunzuo", type: Technique, name: "輪作", aliases: ["輪作", "歲易", "換茬"], description: "不同作物輪換種植以保持地力。"}
+  - {id: "tech:lvfei", type: Technique, name: "綠肥", aliases: ["綠肥", "苗糞"], description: "種植豆科等植物作肥料的技術。"}
+  - {id: "tech:yuyang", type: Technique, name: "育秧", aliases: ["育秧", "秧田", "插秧"], description: "水稻育苗與移栽技術。"}
+  - {id: "tech:jiejia", type: Technique, name: "嫁接", aliases: ["嫁接", "接樹", "接枝"], description: "果樹等無性繁殖與品種改良技術。"}
+  - {id: "tech:sericulture", type: Technique, name: "蠶桑", aliases: ["蠶桑", "養蠶", "蠶事", "蠶"], description: "栽桑養蠶與繅絲技術。"}
+  - {id: "tech:water-lifting", type: Technique, name: "提水", aliases: ["提水", "取水", "汲水"], description: "從河湖井泉提水灌溉的技術。"}
+  - {id: "tech:water-storage", type: Technique, name: "蓄水", aliases: ["蓄水", "蓄雨", "瀦水"], description: "蓄積雨水、泉水以備灌溉的技術。"}
+  - {id: "tech:irrigation", type: Technique, name: "灌溉", aliases: ["灌溉", "灌田", "溉田"], description: "引水澆灌農田的技術。"}
+  - {id: "tech:flood-control", type: Technique, name: "防洪", aliases: ["防洪", "防河"], description: "防禦洪水的水利技術。"}
+  - {id: "tech:dike-building", type: Technique, name: "築堤", aliases: ["築堤", "修堤", "堤工"], description: "修築堤防的技術。"}
+  - {id: "tech:breach-closure", type: Technique, name: "堵口", aliases: ["堵口", "塞決", "塞河"], description: "堵塞河堤決口的技術。"}
+  - {id: "tech:shushui-gongsha", type: Technique, name: "束水攻沙", aliases: ["束水攻沙", "束水刷沙"], description: "以堤防約束河水、利用水流沖刷河床的治河方略。"}
+  - {id: "tech:xuqing-shuahuang", type: Technique, name: "蓄清刷黃", aliases: ["蓄清刷黃", "蓄清刷黄", "蓄清敵黃", "蓄清敌黄", "蓄淮刷黃", "蓄淮刷黄"], description: "蓄淮河清水沖刷黃河泥沙的治河方略。"}
+  - {id: "tech:haitang-engineering", type: Technique, name: "海塘工程", aliases: ["海塘工程", "石塘", "柴塘"], description: "修築海塘防禦潮患的工程技術。"}
+  - {id: "tech:famine-relief", type: Technique, name: "救荒", aliases: ["救荒", "賑濟", "賑災"], description: "災荒救濟的具體措施。"}
+  - {id: "tech:locust-control", type: Technique, name: "捕蝗", aliases: ["捕蝗", "除蝗", "治蝗"], description: "防治蝗災的技術與制度。"}
+  - {id: "tech:grain-storage", type: Technique, name: "倉儲", aliases: ["倉儲", "積儲", "備荒倉儲"], description: "糧食儲備與備荒制度。"}
+  - {id: "tech:surveying", type: Technique, name: "測量", aliases: ["測量", "步算"], description: "水利工程中的地形與水準測量。"}
+  - {id: "tech:well-drilling", type: Technique, name: "鑿井", aliases: ["鑿井", "掘井"], description: "開鑿水井以取水。"}
+  - {id: "tech:farming-season", type: Technique, name: "農時", aliases: ["農時", "農候"], description: "按季節與物候安排農事。"}
+  - {id: "tech:processing", type: Technique, name: "農產加工", aliases: ["農產加工", "造酒", "製醬", "作酢"], description: "糧食與農產品的加工、釀造與儲藏。"}
+
+  # ------------------------------------------------------------------
+  # 農具
+  # ------------------------------------------------------------------
+  - {id: "tool:li", type: Tool, name: "犁", aliases: ["犁", "犂"], description: "翻土的主要農具。", index: false}
+  - {id: "tool:louche", type: Tool, name: "耬車", aliases: ["耬車", "耬犁", "耬"], description: "條播與施肥的農具。"}
+  - {id: "tool:chu", type: Tool, name: "鋤", aliases: ["鋤", "鋤頭"], description: "中耕、除草與鬆土的農具。"}
+  - {id: "tool:lian", type: Tool, name: "鐮", aliases: ["鐮", "鐮刀"], description: "收割穀物的農具。"}
+  - {id: "tool:lianjia", type: Tool, name: "連枷", aliases: ["連枷"], description: "拍打穀穗脫粒的農具。"}
+  - {id: "tool:fengshan", type: Tool, name: "風扇車", aliases: ["風扇車", "颺扇"], description: "以風力清選穀物的農具。"}
+  - {id: "tool:liuzhou", type: Tool, name: "碌碡", aliases: ["碌碡"], description: "壓場、脫粒與鎮壓土壤的農具。"}
+  - {id: "tool:shuiche", type: Tool, name: "水車", aliases: ["水車"], description: "提水灌溉機械的總稱。"}
+  - {id: "tool:longguche", type: Tool, name: "龍骨車", aliases: ["龍骨車", "翻車"], description: "鏈式提水機械，又稱翻車。"}
+  - {id: "tool:tongche", type: Tool, name: "筒車", aliases: ["筒車"], description: "以水流驅動的筒輪提水機械。"}
+  - {id: "tool:hudou", type: Tool, name: "戽斗", aliases: ["戽斗"], description: "人工提水灌溉的器具。"}
+  - {id: "tool:longweiche", type: Tool, name: "龍尾車", aliases: ["龍尾車"], description: "《泰西水法》所載螺旋式提水機。"}
+  - {id: "tool:yuhengche", type: Tool, name: "玉衡車", aliases: ["玉衡車"], description: "《泰西水法》所載井泉提水機。"}
+  - {id: "tool:hengshuiche", type: Tool, name: "恒水車", aliases: ["恒水車"], description: "《泰西水法》所載提水機。"}
+  - {id: "tool:leisi", type: Tool, name: "耒耜", aliases: ["耒耜"], description: "古代翻土農具。"}
+
+  # ------------------------------------------------------------------
+  # 作物
+  # ------------------------------------------------------------------
+  - {id: "crop:su", type: Crop, name: "粟", aliases: ["粟"], description: "北方主要糧食作物，今稱穀子。"}
+  - {id: "crop:shu", type: Crop, name: "黍", aliases: ["黍"], description: "北方旱作穀物。"}
+  - {id: "crop:ji", type: Crop, name: "稷", aliases: ["稷"], description: "古代重要穀物，常與黍並稱。"}
+  - {id: "crop:dao", type: Crop, name: "稻", aliases: ["稻", "水稻", "稻田", "秔", "粳", "秫"], description: "南方主要糧食作物，有秔、粳、秫等品類。"}
+  - {id: "crop:mai", type: Crop, name: "麥", aliases: ["麥", "小麥", "大麥", "麥田"], description: "北方重要糧食作物。"}
+  - {id: "crop:shu-dou", type: Crop, name: "菽", aliases: ["菽", "大豆"], description: "豆類總稱，古代重要糧食與肥田作物。"}
+  - {id: "crop:ma", type: Crop, name: "麻", aliases: ["麻", "麻田"], description: "古代重要纖維作物。", index: false}
+  - {id: "crop:sang", type: Crop, name: "桑", aliases: ["桑", "桑樹", "桑田"], description: "養蠶的主要飼料來源。"}
+  - {id: "crop:mian", type: Crop, name: "棉", aliases: ["棉", "棉花", "木棉"], description: "宋元以後推廣的重要纖維作物。"}
+  - {id: "crop:cha", type: Crop, name: "茶", aliases: ["茶", "茶樹", "茶園", "製茶"], description: "重要經濟作物與飲料原料。"}
+  - {id: "crop:ganzhe", type: Crop, name: "甘蔗", aliases: ["甘蔗", "蔗"], description: "製糖作物。"}
+  - {id: "crop:yu", type: Crop, name: "芋", aliases: ["芋", "芋頭"], description: "重要澱粉作物，亦用於救荒。"}
+  - {id: "crop:qiaomai", type: Crop, name: "蕎麥", aliases: ["蕎麥"], description: "耐旱、生長期短的救荒作物。"}
+  - {id: "crop:gaoliang", type: Crop, name: "高粱", aliases: ["高粱", "蜀黍"], description: "北方旱作作物。"}
+  - {id: "crop:zhima", type: Crop, name: "芝麻", aliases: ["芝麻", "胡麻"], description: "油料作物。"}
+
+  # ------------------------------------------------------------------
+  # 水道
+  # ------------------------------------------------------------------
+  - {id: "water:huanghe", type: Waterway, name: "黃河", aliases: ["黃河", "大河"], description: "中國第二長河，歷代河工治理的核心。"}
+  - {id: "water:changjiang", type: Waterway, name: "長江", aliases: ["長江", "大江"], description: "中國第一長河。"}
+  - {id: "water:huaihe", type: Waterway, name: "淮河", aliases: ["淮河", "淮水"], description: "黃河與長江之間的重要河流，明清黃淮治理核心。"}
+  - {id: "water:yunhe", type: Waterway, name: "大運河", aliases: ["大運河", "運河", "漕河"], description: "南北漕運幹道。"}
+  - {id: "water:taihu", type: Waterway, name: "太湖", aliases: ["太湖", "震澤", "具區"], description: "長江三角洲大型湖泊，吳中水利核心。"}
+  - {id: "water:dongting", type: Waterway, name: "洞庭湖", aliases: ["洞庭湖", "洞庭"], description: "長江中游大型湖泊。"}
+  - {id: "water:poyang", type: Waterway, name: "鄱陽湖", aliases: ["鄱陽湖", "彭蠡"], description: "長江中下游大型湖泊。"}
+  - {id: "water:qiantang", type: Waterway, name: "錢塘江", aliases: ["錢塘江"], description: "浙江主要河流，海塘防潮的對象。"}
+  - {id: "water:weishui", type: Waterway, name: "渭水", aliases: ["渭水", "渭河"], description: "黃河最大支流之一，關中水利核心。"}
+  - {id: "water:jingshui", type: Waterway, name: "涇水", aliases: ["涇水", "涇河"], description: "渭水支流，古代灌溉要道。"}
+  - {id: "water:fenshui", type: Waterway, name: "汾水", aliases: ["汾水", "汾河"], description: "黃河支流，山西重要水系。"}
+  - {id: "water:hanshui", type: Waterway, name: "漢水", aliases: ["漢水", "漢江"], description: "長江重要支流。"}
+  - {id: "water:jishui", type: Waterway, name: "濟水", aliases: ["濟水"], description: "古代四瀆之一，後為黃河所奪。"}
+  - {id: "water:bienshui", type: Waterway, name: "汴水", aliases: ["汴水", "汴河"], description: "唐宋漕運要道，連接黃河與淮河。"}
+  - {id: "water:weihe", type: Waterway, name: "衛河", aliases: ["衛河"], description: "海河水系河流，明清運河重要水源。"}
+  - {id: "water:sanggan", type: Waterway, name: "桑乾河", aliases: ["桑乾河", "桑乾"], description: "海河水系河流，永定河上游。"}
+  - {id: "water:xihu", type: Waterway, name: "西湖", aliases: ["西湖"], description: "杭州湖泊，兼具水利與景觀功能。"}
+  - {id: "water:jianhu", type: Waterway, name: "鑒湖", aliases: ["鑒湖", "鑑湖"], description: "紹興古代大型灌溉湖泊。"}
+
+  # ------------------------------------------------------------------
+  # 水利設施
+  # ------------------------------------------------------------------
+  - {id: "facility:dike", type: WaterFacility, name: "堤防", aliases: ["堤防", "堤", "隄"], description: "擋水、束水的水利工程。"}
+  - {id: "facility:sao", type: WaterFacility, name: "埽工", aliases: ["埽工", "埽"], description: "以秸稈、柳枝和土石築成的護岸、堵口構件。"}
+  - {id: "facility:zha", type: WaterFacility, name: "閘", aliases: ["閘", "牐", "閘門"], description: "控制水位、通航與灌溉的水門。"}
+  - {id: "facility:yan", type: WaterFacility, name: "堰", aliases: ["堰", "堰壩"], description: "攔水抬高水位的工程。"}
+  - {id: "facility:beitang", type: WaterFacility, name: "陂塘", aliases: ["陂塘", "陂堰", "塘堰"], description: "蓄水灌溉的小型水利設施。"}
+  - {id: "facility:wei", type: WaterFacility, name: "圩", aliases: ["圩", "圩田", "圍田"], description: "太湖流域圍湖造田、擋水的堤圍。"}
+  - {id: "facility:haitang", type: WaterFacility, name: "海塘", aliases: ["海塘", "海堤"], description: "浙江沿海防禦潮患的堤塘工程。"}
+  - {id: "facility:reservoir", type: WaterFacility, name: "水庫", aliases: ["水庫"], description: "蓄水設施，《泰西水法》專論其制。"}
+  - {id: "facility:tashanyan", type: WaterFacility, name: "它山堰", aliases: ["它山堰"], description: "寧波唐代堰壩，四明水利的核心工程。"}
+
+  # ------------------------------------------------------------------
+  # 地域
+  # ------------------------------------------------------------------
+  - {id: "place:jiangnan", type: Place, name: "江南", aliases: ["江南"], description: "長江下游以南地區，唐宋以後全國經濟重心。"}
+  - {id: "place:sanwu", type: Place, name: "三吳", aliases: ["三吳", "三吴"], description: "吳郡、吳興、會稽一帶，泛指太湖流域。"}
+  - {id: "place:zhexi", type: Place, name: "浙西", aliases: ["浙西"], description: "浙江西部，主要指太湖以南、錢塘江以北地區。"}
+  - {id: "place:huaiyang", type: Place, name: "淮揚", aliases: ["淮揚", "淮扬"], description: "淮河與揚州一帶，明清淮揚水患與運河治理要區。"}
+  - {id: "place:guanzhong", type: Place, name: "關中", aliases: ["關中"], description: "渭河流域，秦漢農業與水利重心。"}
+  - {id: "place:ningbo", type: Place, name: "寧波", aliases: ["寧波", "四明", "四眀"], description: "浙江東部港口城市，它山堰所在。"}
+  - {id: "place:shaoxing", type: Place, name: "紹興", aliases: ["紹興", "會稽", "㑹稽"], description: "浙江東部，鑒湖與海塘水利區。"}
+  - {id: "place:suzhou", type: Place, name: "蘇州", aliases: ["蘇州"], description: "太湖東岸，吳中水利核心區。"}
+  - {id: "place:songjiang", type: Place, name: "松江", aliases: ["松江"], description: "太湖東南，明清棉紡織與水利區。"}
+  - {id: "place:yangzhou", type: Place, name: "揚州", aliases: ["揚州"], description: "運河與長江交匯，漕運樞紐。"}
+  - {id: "place:kaifeng", type: Place, name: "開封", aliases: ["開封", "汴京"], description: "北宋都城，黃河與汴河交匯。"}
+  - {id: "place:kunlun", type: Place, name: "崑崙", aliases: ["崑崙", "崑崙山"], description: "西北山脈，古人視為黃河源頭。"}
+  - {id: "place:xingxiuhai", type: Place, name: "星宿海", aliases: ["星宿海"], description: "黃河源區湖沼濕地。"}
+  - {id: "place:bohai", type: Place, name: "渤海", aliases: ["渤海"], description: "黃河入海口所在海域。"}
+  - {id: "place:donghai", type: Place, name: "東海", aliases: ["東海"], description: "長江入海口所在海域。"}
+  - {id: "place:hebei", type: Place, name: "河北", aliases: ["河北"], description: "黃河以北地區。"}
+  - {id: "place:henan", type: Place, name: "河南", aliases: ["河南"], description: "黃河以南地區。"}
+  - {id: "place:shandong", type: Place, name: "山東", aliases: ["山東"], description: "黃河下游、運河沿線地區。"}
+  - {id: "place:hangzhou", type: Place, name: "杭州", aliases: ["杭州"], description: "浙江杭州，西湖與海塘水利所在。"}
+  - {id: "place:zhejiang", type: Place, name: "浙江", aliases: ["浙江"], description: "省級政區與海塘所在區域；古籍中亦常指錢塘江。", index: false}
+
+  # ------------------------------------------------------------------
+  # 人物
+  # ------------------------------------------------------------------
+  - {id: "person:jia-sixie", type: Person, name: "賈思勰", aliases: ["賈思勰"], description: "後魏農學家，《齊民要術》作者。"}
+  - {id: "person:chen-fu", type: Person, name: "陳旉", aliases: ["陳旉", "陳敷", "陳雱"], description: "宋代農學家，《農書》作者。"}
+  - {id: "person:lu-mingshan", type: Person, name: "魯明善", aliases: ["魯明善"], description: "元代官員，《農桑衣食撮要》作者。"}
+  - {id: "person:wang-zhen", type: Person, name: "王禎", aliases: ["王禎"], description: "元代農學家，《王氏農書》作者。"}
+  - {id: "person:zhu-su", type: Person, name: "朱橚", aliases: ["朱橚"], description: "明太祖第五子，封周王，《救荒本草》作者。"}
+  - {id: "person:xu-guangqi", type: Person, name: "徐光啟", aliases: ["徐光啟"], description: "明代科學家，《農政全書》作者。"}
+  - {id: "person:xiong-sanba", type: Person, name: "熊三拔", aliases: ["熊三拔"], description: "明末意大利耶穌會士，《泰西水法》口授者。"}
+  - {id: "person:bao-shan", type: Person, name: "鮑山", aliases: ["鮑山"], description: "明代學者，《野菜博錄》作者。"}
+  - {id: "person:li-daoyuan", type: Person, name: "酈道元", aliases: ["酈道元", "酈善長"], description: "後魏地理學家，《水經注》作者。"}
+  - {id: "person:shen-bingxun", type: Person, name: "沈炳巽", aliases: ["沈炳巽"], description: "清代學者，《水經注集釋訂訛》作者。"}
+  - {id: "person:zhao-yiqing", type: Person, name: "趙一清", aliases: ["趙一清"], description: "清代學者，《水經注釋》作者。"}
+  - {id: "person:shan-e", type: Person, name: "單鍔", aliases: ["單鍔"], description: "北宋水利學家，《吳中水利書》作者。"}
+  - {id: "person:wei-xian", type: Person, name: "魏峴", aliases: ["魏峴"], description: "南宋水利學家，《四明它山水利備覽》作者。"}
+  - {id: "person:sha-keshi", type: Person, name: "沙克什", aliases: ["沙克什"], description: "元代河防官員，《河防通議》作者。"}
+  - {id: "person:wang-xi", type: Person, name: "王喜", aliases: ["王喜"], description: "元代河工官員，《治河圖略》作者。"}
+  - {id: "person:yao-wenhao", type: Person, name: "姚文灝", aliases: ["姚文灝"], description: "明代官員，《浙西水利書》作者。"}
+  - {id: "person:pan-jixun", type: Person, name: "潘季馴", aliases: ["潘季馴"], description: "明代治河名臣，總督河道，主張束水攻沙。"}
+  - {id: "person:gui-youguang", type: Person, name: "歸有光", aliases: ["歸有光"], description: "明代文學家，《三吳水利錄》輯者。"}
+  - {id: "person:xie-zhaozhe", type: Person, name: "謝肇淛", aliases: ["謝肇淛"], description: "明代官員，《北河紀》作者。"}
+  - {id: "person:chen-yingfang", type: Person, name: "陳應芳", aliases: ["陳應芳"], description: "明代官員，《敬止集》作者。"}
+  - {id: "person:zhang-guowei", type: Person, name: "張國維", aliases: ["張國維"], description: "明代官員，《吳中水利全書》輯者。"}
+  - {id: "person:wan-sitong", type: Person, name: "萬斯同", aliases: ["萬斯同"], description: "清代史學家，《崑崙河源考》作者。"}
+  - {id: "person:zhang-boxing", type: Person, name: "張伯行", aliases: ["張伯行"], description: "清代河道總督，《居濟一得》作者。"}
+  - {id: "person:jin-fu", type: Person, name: "靳輔", aliases: ["靳輔"], description: "清代河道總督，主持黃河、運河治理。"}
+  - {id: "person:fu-zehong", type: Person, name: "傅澤洪", aliases: ["傅澤洪"], description: "清代河道官員，《行水金鑑》編者。"}
+  - {id: "person:qi-zhaonan", type: Person, name: "齊召南", aliases: ["齊召南"], description: "清代地理學家，《水道提綱》作者。"}
+  - {id: "person:dong-wei", type: Person, name: "董煟", aliases: ["董煟"], description: "南宋救荒學者，《救荒活民書》作者。"}
+  - {id: "person:chen-fangsheng", type: Person, name: "陳芳生", aliases: ["陳芳生"], description: "清代官員，《捕蝗考》作者。"}
+  - {id: "person:yu-sen", type: Person, name: "俞森", aliases: ["俞森"], description: "清代官員，《荒政叢書》編者。"}
+  - {id: "person:lu-zengyu", type: Person, name: "陸曾禹", aliases: ["陸曾禹", "陸曽禹"], description: "清代救荒學者，《康濟錄》原撰者。"}
+  - {id: "person:chen-yuanjing", type: Person, name: "陳元靚", aliases: ["陳元靚"], description: "南宋編集家，《歲時廣記》作者。"}
+  - {id: "person:li-guangdi", type: Person, name: "李光地", aliases: ["李光地"], description: "清代大臣，《御定月令輯要》總閱。"}
+  - {id: "person:mao-huang", type: Person, name: "毛晃", aliases: ["毛晃"], description: "宋代學者，《禹貢指南》作者。"}
+  - {id: "person:hu-wei", type: Person, name: "胡渭", aliases: ["胡渭"], description: "清代經學家、地理學家，《禹貢錐指》作者。"}
+  - {id: "person:jiang-tingxi", type: Person, name: "蔣廷錫", aliases: ["蔣廷錫"], description: "清代大臣，《尚書地理今釋》作者。"}
+
+  # ------------------------------------------------------------------
+  # 消歧实体：正文中与上述单字实体同形的人名、地名、制度名。
+  # 这些实体不参与自动提及（index: false），只用于让最长匹配
+  # 把「伊犁」「桑欽」「社稷」等排除在「犁」「桑」「稷」之外。
+  # ------------------------------------------------------------------
+  - {id: "concept:liran", type: Concept, name: "犁然", aliases: ["犁然"], description: "清楚、分明的样子，用于排除工具「犁」的误匹配。", index: false, disambiguation: true}
+  - {id: "institution:sheji", type: Institution, name: "社稷", aliases: ["社稷"], description: "土神與穀神，代指國家，用于排除穀物「稷」的誤匹配。", index: false, disambiguation: true}
+  - {id: "institution:zaisang", type: Institution, name: "宰桑", aliases: ["宰桑"], description: "蒙古官號，用于排除作物「桑」的誤匹配。", index: false, disambiguation: true}
+  - {id: "person:sang-qin", type: Person, name: "桑欽", aliases: ["桑欽"], description: "舊題《水經》作者，用于排除作物「桑」的誤匹配。", index: false, disambiguation: true}
+  - {id: "person:sang-hongyang", type: Person, name: "桑弘羊", aliases: ["桑弘羊", "桑宏羊"], description: "漢代財政大臣，用于排除作物「桑」的誤匹配。", index: false, disambiguation: true}
+  - {id: "person:houji", type: Person, name: "后稷", aliases: ["后稷"], description: "周人始祖、農神，用于排除穀物「稷」的誤匹配。", index: false, disambiguation: true}
+  - {id: "person:bozhou-li", type: Person, name: "伯州犁", aliases: ["伯州犁"], description: "春秋時楚國大夫，用于排除工具「犁」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:yili", type: Place, name: "伊犁", aliases: ["伊犁"], description: "清代新疆伊犁地區，用于排除工具「犁」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:weili", type: Place, name: "尉犁", aliases: ["尉犁"], description: "漢代西域尉犁國，用于排除工具「犁」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:quli", type: Place, name: "渠犁", aliases: ["渠犁"], description: "漢代西域渠犁國，用于排除工具「犁」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:puli", type: Place, name: "蒲犁", aliases: ["蒲犁"], description: "漢代西域蒲犁國，用于排除工具「犁」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:lixian", type: Place, name: "犁靬", aliases: ["犁靬"], description: "漢代西域地名，用于排除工具「犁」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:lousang", type: Place, name: "樓桑里", aliases: ["樓桑里"], description: "涿縣地名，用于排除作物「桑」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:shansang", type: Place, name: "山桑縣", aliases: ["山桑縣"], description: "漢代縣名，用于排除作物「桑」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:jinsang", type: Place, name: "進桑", aliases: ["進桑關", "進桑王國"], description: "漢代西南地名，用于排除作物「桑」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:sanglan", type: Place, name: "桑嵐川", aliases: ["桑嵐川"], description: "水經注所見水名，用于排除作物「桑」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:sangpu", type: Place, name: "桑浦", aliases: ["桑浦"], description: "水經注所見地名，用于排除作物「桑」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:jixia", type: Place, name: "稷下", aliases: ["稷下"], description: "戰國齊都臨淄稷下學宮所在地，用于排除穀物「稷」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:meiji", type: Place, name: "美稷", aliases: ["美稷"], description: "漢代西河郡縣名，用于排除穀物「稷」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:jishan", type: Place, name: "稷山", aliases: ["稷山"], description: "山名與縣名，用于排除穀物「稷」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:chacheng", type: Place, name: "茶城", aliases: ["茶城"], description: "運河沿線地名，用于排除作物「茶」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:chunsang", type: Place, name: "春桑", aliases: ["春桑"], description: "古代羌人部族名，用于排除作物「桑」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:misang", type: Place, name: "迷桑", aliases: ["迷桑"], description: "古代羌人部族名，用于排除作物「桑」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:lianjia-shan", type: Place, name: "連枷山", aliases: ["連枷山"], description: "水經注所見山名，用于排除農具「連枷」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:yangtian-miao", type: Place, name: "秧田廟", aliases: ["秧田廟"], description: "海塘錄所見地名，用于排除育秧「秧田」的誤匹配。", index: false, disambiguation: true}
+  - {id: "place:lishishan", type: Place, name: "犁石山", aliases: ["犁石山"], description: "河源紀略所見山名，用于排除工具「犁」的誤匹配。", index: false, disambiguation: true}
+  - {id: "water:luohan-shui", type: Waterway, name: "羅漢水", aliases: ["羅漢水"], description: "水經注所見水名，用于排除「漢水」的誤匹配。", index: false, disambiguation: true}
