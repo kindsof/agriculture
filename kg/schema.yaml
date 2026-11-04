@@ -1,0 +1,116 @@
+# 古籍知识图谱 schema
+#
+# 实体类型、关系类型及其约束。`kg/build.py` 读取本文件做校验，
+# `kg/INDEX.md` 与 `kg/README.md` 的说明也以这里为准。
+
+entity_types:
+  Book:
+    label: 書目
+    description: 仓库收录的一部古籍，对应 books/ 下的一个 Markdown 全文。
+  Person:
+    label: 人物
+    description: 作者、治河官员、农学家等历史人物。
+  Dynasty:
+    label: 朝代
+    description: 书目所属朝代，由 catalog.yaml 的 dynasty 字段生成。
+  Place:
+    label: 地域
+    description: 历史地理区域、城市、山脉与海域。
+  Waterway:
+    label: 水道
+    description: 河流、湖泊、运河等水系实体。
+  WaterFacility:
+    label: 水利設施
+    description: 堤、埽、閘、堰、陂塘、圩、海塘、水庫等工程設施。
+  Crop:
+    label: 作物
+    description: 糧食、纖維、油料、救荒植物等栽培或采集植物。
+  Tool:
+    label: 農具
+    description: 耕作、播種、收穫、脫粒、提水等農業器具與機械。
+  Technique:
+    label: 技術
+    description: 耕作、栽培、水利、救荒等技術方法。
+  Institution:
+    label: 制度
+    description: 荒政、倉儲、漕運、河工等制度與機構。
+  Topic:
+    label: 主題
+    description: 由 catalog.yaml 的 topic 字段歸納出的書目主題。
+  Concept:
+    label: 概念
+    description: 用於組織分類的抽象類目，如農具、穀物、治河方略。
+
+relation_types:
+  has_topic:
+    label: 主題分類
+    description: 書目依 catalog.yaml 的 topic 欄位歸入某一主題。
+    domain: [Book]
+    range: [Topic]
+    provenance: catalog
+  written_in:
+    label: 成書朝代
+    description: 書目依 catalog.yaml 的 dynasty 欄位歸入某一朝代。
+    domain: [Book]
+    range: [Dynasty]
+    provenance: catalog
+  authored_by:
+    label: 作者
+    description: 書目作者；僅在 catalog.yaml 的作者字串能對應到人物實體時生成。
+    domain: [Book]
+    range: [Person]
+    provenance: catalog
+  about:
+    label: 主題論述
+    description: 書目以某一實體為核心論述對象；由人工標注，引文自動取自原文。
+    domain: [Book]
+    range: [Person, Place, Waterway, WaterFacility, Crop, Tool, Technique, Institution, Concept]
+    provenance: evidence
+  mentions:
+    label: 提及
+    description: 書目正文中出現某一實體；由別名匹配自動生成，count 為匹配次數。
+    domain: [Book]
+    range: [Person, Place, Waterway, WaterFacility, Crop, Tool, Technique, Institution, Concept]
+    provenance: evidence
+  annotates:
+    label: 註釋
+    description: 一書以另一書為註釋、集釋或訂訛對象。
+    domain: [Book]
+    range: [Book]
+    provenance: evidence
+  related_to:
+    label: 相關
+    description: 兩書在題材、編纂或學術脈絡上相關，但不一定是註釋關係。
+    domain: [Book]
+    range: [Book]
+    provenance: evidence
+  is_a:
+    label: 屬於類目
+    description: 具體實體歸入某一抽象類目，用於建立分類層次。
+    domain: [Waterway, WaterFacility, Crop, Tool, Technique, Institution]
+    range: [Concept]
+    provenance: editorial
+  part_of:
+    label: 屬於水系
+    description: 水道或水利設施在空間上隸屬於另一水道或區域水系。
+    domain: [Waterway, WaterFacility, Place]
+    range: [Waterway, Place]
+    provenance: evidence
+  located_in:
+    label: 位於
+    description: 水利設施或水道位於某一地域。
+    domain: [Waterway, WaterFacility, Place]
+    range: [Place]
+    provenance: evidence
+  managed_by:
+    label: 治理者
+    description: 某一水道或水利設施由某一人物主持治理。
+    domain: [Waterway, WaterFacility]
+    range: [Person]
+    provenance: evidence
+  applied_to:
+    label: 施用於
+    description: 某一技術或方略施用於某一水道或水利設施。
+    domain: [Technique]
+    range: [Waterway, WaterFacility]
+    provenance: evidence

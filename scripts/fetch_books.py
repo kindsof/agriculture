@@ -154,6 +154,7 @@ def build_markdown(book: dict, repo_dir: Path) -> tuple[str, int, int]:
         f'author: "{book["author"]}"',
         f'dynasty: "{book["dynasty"]}"',
         f'category: "{book["category"]}"',
+        f'topic: "{book.get("topic", "")}"',
         f'edition: "{book.get("edition", "")}"',
         f'source: "{KANRIPO_URL}/{book["id"]}"',
         'license: "CC BY-SA 4.0"',
@@ -161,7 +162,8 @@ def build_markdown(book: dict, repo_dir: Path) -> tuple[str, int, int]:
         "",
         f"# {book['title']}",
         "",
-        f"> {book['dynasty']} · {book['author']} · {book.get('edition', '')}",
+        f"> {book['dynasty']} · {book['author']} · {book.get('edition', '')}"
+        + (f" · {book['topic']}" if book.get("topic") else ""),
         "",
         book.get("summary", ""),
         "",
@@ -199,14 +201,14 @@ def write_index(books: list[dict], out_dir: Path) -> None:
             [
                 f"## {category}（{len(subset)} 部）",
                 "",
-                "| 书名 | 朝代 | 作者 | 底本 | 卷/篇 | 字数 | 文本 |",
-                "|---|---|---|---|---:|---:|---|",
+                "| 书名 | 朝代 | 作者 | 主题 | 底本 | 卷/篇 | 字数 | 文本 |",
+                "|---|---|---|---|---|---:|---:|---|",
             ]
         )
         for b in subset:
             link = f"{CATEGORY_DIRS[category]}/{b['id']}_{b['title']}.md"
             lines.append(
-                f"| {b['title']} | {b['dynasty']} | {b['author']} | "
+                f"| {b['title']} | {b['dynasty']} | {b['author']} | {b.get('topic', '')} | "
                 f"{b.get('edition', '')} | {b['sections']} | {b['chars'] / 10000:.1f} 万 | "
                 f"[阅读]({link}) |"
             )

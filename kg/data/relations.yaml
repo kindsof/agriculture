@@ -1,0 +1,277 @@
+# 人工整理的语义关系。
+#
+# 分类关系（is_a）属于编者设定的类目层次，不需要引文；
+# 其余关系均带 evidence（book + quote），构建时会校验引文是否
+# 确实出现在对应古籍全文中。quote 必须与原文逐字一致。
+
+relations:
+  # ------------------------------------------------------------------
+  # 分类层次
+  # ------------------------------------------------------------------
+  - {subject: "tool:li", predicate: is_a, object: "concept:agricultural-tool"}
+  - {subject: "tool:louche", predicate: is_a, object: "concept:agricultural-tool"}
+  - {subject: "tool:chu", predicate: is_a, object: "concept:agricultural-tool"}
+  - {subject: "tool:lian", predicate: is_a, object: "concept:agricultural-tool"}
+  - {subject: "tool:lianjia", predicate: is_a, object: "concept:agricultural-tool"}
+  - {subject: "tool:fengshan", predicate: is_a, object: "concept:agricultural-tool"}
+  - {subject: "tool:liuzhou", predicate: is_a, object: "concept:agricultural-tool"}
+  - {subject: "tool:leisi", predicate: is_a, object: "concept:agricultural-tool"}
+  - {subject: "tool:shuiche", predicate: is_a, object: "concept:water-lifting-machine"}
+  - {subject: "tool:longguche", predicate: is_a, object: "concept:water-lifting-machine"}
+  - {subject: "tool:tongche", predicate: is_a, object: "concept:water-lifting-machine"}
+  - {subject: "tool:hudou", predicate: is_a, object: "concept:water-lifting-machine"}
+  - {subject: "tool:longweiche", predicate: is_a, object: "concept:water-lifting-machine"}
+  - {subject: "tool:yuhengche", predicate: is_a, object: "concept:water-lifting-machine"}
+  - {subject: "tool:hengshuiche", predicate: is_a, object: "concept:water-lifting-machine"}
+
+  - {subject: "facility:dike", predicate: is_a, object: "concept:water-facility"}
+  - {subject: "facility:sao", predicate: is_a, object: "concept:water-facility"}
+  - {subject: "facility:zha", predicate: is_a, object: "concept:water-facility"}
+  - {subject: "facility:yan", predicate: is_a, object: "concept:water-facility"}
+  - {subject: "facility:beitang", predicate: is_a, object: "concept:water-facility"}
+  - {subject: "facility:wei", predicate: is_a, object: "concept:water-facility"}
+  - {subject: "facility:haitang", predicate: is_a, object: "concept:water-facility"}
+  - {subject: "facility:reservoir", predicate: is_a, object: "concept:water-facility"}
+  - {subject: "facility:tashanyan", predicate: is_a, object: "concept:water-facility"}
+
+  - {subject: "crop:su", predicate: is_a, object: "concept:grain"}
+  - {subject: "crop:shu", predicate: is_a, object: "concept:grain"}
+  - {subject: "crop:ji", predicate: is_a, object: "concept:grain"}
+  - {subject: "crop:dao", predicate: is_a, object: "concept:grain"}
+  - {subject: "crop:mai", predicate: is_a, object: "concept:grain"}
+  - {subject: "crop:shu-dou", predicate: is_a, object: "concept:grain"}
+  - {subject: "crop:qiaomai", predicate: is_a, object: "concept:grain"}
+  - {subject: "crop:gaoliang", predicate: is_a, object: "concept:grain"}
+  - {subject: "crop:ma", predicate: is_a, object: "concept:fiber-crop"}
+  - {subject: "crop:mian", predicate: is_a, object: "concept:fiber-crop"}
+  - {subject: "crop:sang", predicate: is_a, object: "concept:crop"}
+  - {subject: "crop:cha", predicate: is_a, object: "concept:crop"}
+  - {subject: "crop:ganzhe", predicate: is_a, object: "concept:crop"}
+  - {subject: "crop:yu", predicate: is_a, object: "concept:crop"}
+  - {subject: "crop:zhima", predicate: is_a, object: "concept:crop"}
+
+  - {subject: "tech:gengzuo", predicate: is_a, object: "concept:farming-technique"}
+  - {subject: "tech:qutian", predicate: is_a, object: "concept:farming-technique"}
+  - {subject: "tech:daitian", predicate: is_a, object: "concept:farming-technique"}
+  - {subject: "tech:fentian", predicate: is_a, object: "concept:farming-technique"}
+  - {subject: "tech:lunzuo", predicate: is_a, object: "concept:farming-technique"}
+  - {subject: "tech:lvfei", predicate: is_a, object: "concept:farming-technique"}
+  - {subject: "tech:yuyang", predicate: is_a, object: "concept:farming-technique"}
+  - {subject: "tech:jiejia", predicate: is_a, object: "concept:farming-technique"}
+  - {subject: "tech:farming-season", predicate: is_a, object: "concept:farming-technique"}
+  - {subject: "tech:water-lifting", predicate: is_a, object: "concept:water-technique"}
+  - {subject: "tech:water-storage", predicate: is_a, object: "concept:water-technique"}
+  - {subject: "tech:irrigation", predicate: is_a, object: "concept:water-technique"}
+  - {subject: "tech:flood-control", predicate: is_a, object: "concept:water-technique"}
+  - {subject: "tech:dike-building", predicate: is_a, object: "concept:water-technique"}
+  - {subject: "tech:breach-closure", predicate: is_a, object: "concept:water-technique"}
+  - {subject: "tech:haitang-engineering", predicate: is_a, object: "concept:water-technique"}
+  - {subject: "tech:surveying", predicate: is_a, object: "concept:water-technique"}
+  - {subject: "tech:well-drilling", predicate: is_a, object: "concept:water-technique"}
+  - {subject: "tech:shushui-gongsha", predicate: is_a, object: "concept:river-engineering"}
+  - {subject: "tech:xuqing-shuahuang", predicate: is_a, object: "concept:river-engineering"}
+  - {subject: "institution:hegong", predicate: is_a, object: "concept:river-engineering"}
+  - {subject: "tech:famine-relief", predicate: is_a, object: "concept:relief-system"}
+  - {subject: "tech:locust-control", predicate: is_a, object: "concept:relief-system"}
+  - {subject: "tech:grain-storage", predicate: is_a, object: "concept:relief-system"}
+  - {subject: "institution:huangzheng", predicate: is_a, object: "concept:relief-system"}
+  - {subject: "institution:changping", predicate: is_a, object: "concept:relief-system"}
+  - {subject: "institution:yicang", predicate: is_a, object: "concept:relief-system"}
+  - {subject: "institution:shecang", predicate: is_a, object: "concept:relief-system"}
+
+  # ------------------------------------------------------------------
+  # 水系隶属
+  # ------------------------------------------------------------------
+  - subject: "water:weishui"
+    predicate: part_of
+    object: "water:huanghe"
+    evidence: {book: KR2k0058, quote: "渭水東至船司空入河"}
+  - subject: "water:jingshui"
+    predicate: part_of
+    object: "water:weishui"
+    evidence: {book: KR2k0058, quote: "涇水出焉東南流注于渭"}
+  - subject: "water:fenshui"
+    predicate: part_of
+    object: "water:huanghe"
+    evidence: {book: KR2k0058, quote: "汾水歴其隂西入河"}
+  - subject: "water:hanshui"
+    predicate: part_of
+    object: "water:changjiang"
+    evidence: {book: KR2k0058, quote: "漢水出焉而東南流注于江"}
+  - subject: "water:dongting"
+    predicate: part_of
+    object: "water:changjiang"
+    evidence: {book: KR1b0053, quote: "沅湘等水入洞庭與江水㑹"}
+  - subject: "water:poyang"
+    predicate: part_of
+    object: "water:changjiang"
+    evidence: {book: KR1b0053, quote: "彭蠡入江處必有"}
+  - subject: "water:bienshui"
+    predicate: part_of
+    object: "water:huaihe"
+    evidence: {book: KR1b0053, quote: "汴水猶于州城東北隅合泗入淮"}
+  - subject: "water:weihe"
+    predicate: part_of
+    object: "place:bohai"
+    evidence: {book: KR2k0068, quote: "復北決於館陶分為屯氏河(即今衛河)東北入海"}
+
+  # ------------------------------------------------------------------
+  # 地理位置
+  # ------------------------------------------------------------------
+  - subject: "water:taihu"
+    predicate: located_in
+    object: "place:jiangnan"
+    evidence: {book: KR1b0057, quote: "震澤　即太湖介於江南浙江之間"}
+  - subject: "water:xihu"
+    predicate: located_in
+    object: "place:hangzhou"
+    evidence: {book: KR2k0065, quote: "杭州之有西湖如人之有眉目"}
+  - subject: "water:jianhu"
+    predicate: located_in
+    object: "place:shaoxing"
+    evidence: {book: KR2k0079, quote: "鑑湖源在㑹稽東南境"}
+  - subject: "facility:tashanyan"
+    predicate: located_in
+    object: "place:ningbo"
+    evidence: {book: KR2k0062, quote: "它山堰堰在四眀之鄞縣"}
+  - subject: "facility:haitang"
+    predicate: located_in
+    object: "place:zhejiang"
+    evidence: {book: KR2k0080, quote: "浙江海塘在海寧縣南"}
+
+  # ------------------------------------------------------------------
+  # 治理者
+  # ------------------------------------------------------------------
+  - subject: "water:huanghe"
+    predicate: managed_by
+    object: "person:pan-jixun"
+    evidence: {book: KR2k0066, quote: "(臣/)等謹案河防一覽十四卷明潘季馴撰季"}
+  - subject: "water:huanghe"
+    predicate: managed_by
+    object: "person:jin-fu"
+    evidence: {book: KR2k0076, quote: "國朝靳輔撰輔字紫垣鑲紅旗漢軍官至兵部"}
+  - subject: "water:huaihe"
+    predicate: managed_by
+    object: "person:pan-jixun"
+    evidence: {book: KR2k0066, quote: "潘季馴邇者河淮泛濫濬治㒺功運道有梗"}
+  - subject: "water:yunhe"
+    predicate: managed_by
+    object: "person:zhang-boxing"
+    evidence: {book: KR2k0075, quote: "國朝張伯行撰是編乃伯行為河道總督時相"}
+  - subject: "water:yunhe"
+    predicate: managed_by
+    object: "person:jin-fu"
+    evidence: {book: KR2k0076, quote: "總督河道兵部尚書靳輔撰"}
+  - subject: "water:taihu"
+    predicate: managed_by
+    object: "person:shan-e"
+    evidence: {book: KR2k0061, quote: "(臣/)等謹案呉中水利書一卷宋單鍔撰鍔字"}
+  - subject: "facility:tashanyan"
+    predicate: managed_by
+    object: "person:wei-xian"
+    evidence: {book: KR2k0062, quote: "(臣/)等謹案四明它山水利備覽二卷宋魏峴"}
+
+  # ------------------------------------------------------------------
+  # 技術施用
+  # ------------------------------------------------------------------
+  - subject: "tech:shushui-gongsha"
+    predicate: applied_to
+    object: "water:huanghe"
+    evidence: {book: KR2k0066, quote: "生平規畫總以束水攻沙為第一義"}
+  - subject: "tech:xuqing-shuahuang"
+    predicate: applied_to
+    object: "water:huanghe"
+    evidence: {book: KR2k0078, quote: "是後定計蓄淮刷黄乃復築翟家"}
+  - subject: "tech:xuqing-shuahuang"
+    predicate: applied_to
+    object: "water:huaihe"
+    evidence: {book: KR2k0078, quote: "蓋蓄清敵黄全恃髙堰堤工堅固闗係最為緊要刻"}
+  - subject: "tech:haitang-engineering"
+    predicate: applied_to
+    object: "facility:haitang"
+    evidence: {book: KR2k0080, quote: "修建魚鱗大石塘乃一勞永"}
+  - subject: "tech:dike-building"
+    predicate: applied_to
+    object: "facility:dike"
+    evidence: {book: KR2k0074, quote: "除修築堤埽外"}
+  - subject: "tech:irrigation"
+    predicate: applied_to
+    object: "facility:beitang"
+    evidence: {book: KR3d0007, quote: "蓄為陂塘以資灌溉"}
+
+  # ------------------------------------------------------------------
+  # 书目之间的注释与关联
+  # ------------------------------------------------------------------
+  - subject: "book:KR2k0059"
+    predicate: annotates
+    object: "book:KR2k0058"
+    evidence: {book: KR2k0059, quote: "嘉靖間黄省曽所刋水經注本"}
+  - subject: "book:KR2k0060"
+    predicate: annotates
+    object: "book:KR2k0058"
+    evidence: {book: KR2k0060, quote: "(臣)等謹案水經注釋四十卷附錄二卷水經"}
+
+  - subject: "book:KR3d0007"
+    predicate: related_to
+    object: "book:KR3d0001"
+    evidence: {book: KR3d0007, quote: "賈思勰齊民要術叙曰"}
+  - subject: "book:KR3d0005"
+    predicate: related_to
+    object: "book:KR3d0001"
+    evidence: {book: KR3d0005, quote: "葢賈思勰齊民要術之流"}
+  - subject: "book:KR3d0007"
+    predicate: related_to
+    object: "book:KR3d0005"
+    evidence: {book: KR3d0007, quote: "閻閎序王禎農桑通訣曰"}
+  - subject: "book:KR3d0007"
+    predicate: related_to
+    object: "book:KR3d0008"
+    evidence: {book: KR3d0007, quote: "泰西水法上"}
+  - subject: "book:KR2m0048"
+    predicate: related_to
+    object: "book:KR2m0044"
+    evidence: {book: KR2m0048, quote: "董煟救荒全法"}
+  - subject: "book:KR3d0009"
+    predicate: related_to
+    object: "book:KR3d0006"
+    evidence: {book: KR3d0009, quote: "於王磐野菜譜較明周憲王救荒本草亦互"}
+  - subject: "book:KR3d0004"
+    predicate: related_to
+    object: "book:KR3d0003"
+    evidence: {book: KR3d0004, quote: "至元中頒行農桑輯要扵"}
+  - subject: "book:KR2k0071"
+    predicate: related_to
+    object: "book:KR2k0061"
+    evidence: {book: KR2k0071, quote: "蘇軾進單鍔吳中水利書状"}
+  - subject: "book:KR2k0071"
+    predicate: related_to
+    object: "book:KR2k0070"
+    evidence: {book: KR2k0071, quote: "徐栻三吳水考序"}
+  - subject: "book:KR2k0070"
+    predicate: related_to
+    object: "book:KR2k0067"
+    evidence: {book: KR2k0070, quote: "太僕寺丞歸有光水利議"}
+  - subject: "book:KR2k0074"
+    predicate: related_to
+    object: "book:KR2k0066"
+    evidence: {book: KR2k0074, quote: "本朝治河成績七卷則緝錄前明潘季馴河防"}
+  - subject: "book:KR2k0072"
+    predicate: related_to
+    object: "book:KR2k0073"
+    evidence: {book: KR2k0072, quote: "萬斯同水經河源辨云"}
+  - subject: "book:KR1b0053"
+    predicate: related_to
+    object: "book:KR1b0008"
+    evidence: {book: KR1b0053, quote: "宋以來傳寅程大昌毛晃而下註"}
+  - subject: "book:KR3d0010"
+    predicate: related_to
+    object: "book:KR3d0007"
+    evidence: {book: KR3d0010, quote: "前人農桑通訣農政全書諸編"}
+  - subject: "book:KR3d0010"
+    predicate: related_to
+    object: "book:KR3d0005"
+    evidence: {book: KR3d0010, quote: "前人農桑通訣農政全書諸編"}
+  - subject: "book:KR2m0049"
+    predicate: related_to
+    object: "book:KR2m0048"
+    evidence: {book: KR2m0049, quote: "荒政叢書　　　　　　　　　　余　森(緝/)"}

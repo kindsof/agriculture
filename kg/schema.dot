@@ -1,0 +1,37 @@
+digraph kg_schema {
+  graph [rankdir=LR, bgcolor="white", pad=0.4, nodesep=0.55, ranksep=1.0, fontname="Noto Sans CJK SC", labelloc="t", label="古籍知识图谱类型示意（完整约束见 schema.yaml）", fontsize=12];
+  node [shape=box, style="rounded,filled", fontname="Noto Sans CJK SC", fontsize=10, color="#9ca3af", penwidth=0.8];
+  edge [fontname="Noto Sans CJK SC", fontsize=8, color="#6b7280", arrowsize=0.6];
+  "Book" [label="書目\nBook", fillcolor="#e8f0fe"];
+  "Topic" [label="主題\nTopic", fillcolor="#f3e8fd"];
+  "Dynasty" [label="朝代\nDynasty", fillcolor="#f3e8fd"];
+  "Person" [label="人物\nPerson", fillcolor="#fde8e8"];
+  "Place" [label="地域\nPlace", fillcolor="#e8f5e9"];
+  "Waterway" [label="水道\nWaterway", fillcolor="#e0f2fe"];
+  "WaterFacility" [label="水利設施\nWaterFacility", fillcolor="#e0f2fe"];
+  "Crop" [label="作物\nCrop", fillcolor="#fef3c7"];
+  "Tool" [label="農具\nTool", fillcolor="#fce7f3"];
+  "Technique" [label="技術\nTechnique", fillcolor="#fce7f3"];
+  "Institution" [label="制度\nInstitution", fillcolor="#f3f4f6"];
+  "Concept" [label="概念\nConcept", fillcolor="#f3f4f6"];
+  "Theme" [label="主題實體\n人物・地域・水道・作物・農具・技術…", shape=box, style="rounded,filled", fillcolor="#f9fafb", color="#9ca3af"];
+  "Book" -> "Topic" [label="has_topic"];
+  "Book" -> "Dynasty" [label="written_in"];
+  "Book" -> "Person" [label="authored_by"];
+  "Book" -> "Book" [label="annotates / related_to"];
+  "Book" -> "Theme" [label="about / mentions"];
+  "Theme" -> "Concept" [label="is_a"];
+  "Waterway" -> "Waterway" [label="part_of"];
+  "Waterway" -> "Place" [label="located_in"];
+  "WaterFacility" -> "Place" [label="located_in"];
+  "Waterway" -> "Person" [label="managed_by"];
+  "WaterFacility" -> "Person" [label="managed_by"];
+  "Technique" -> "Waterway" [label="applied_to"];
+  "Technique" -> "WaterFacility" [label="applied_to"];
+  "Tool" -> "Concept" [label="is_a"];
+  "Crop" -> "Concept" [label="is_a"];
+  "WaterFacility" -> "Concept" [label="is_a"];
+  "Technique" -> "Concept" [label="is_a"];
+  "Institution" -> "Concept" [label="is_a"];
+  "Waterway" -> "Concept" [label="is_a"];
+}
