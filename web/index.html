@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="中华农耕文化地图：在中国地图上浏览各地传统农耕文化、农事习俗与农业文化遗产，点击地标查看详细介绍。"
+    />
+    <meta name="theme-color" content="#f6efe1" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <title>中华农耕文化地图 · 地域农耕文化 GIS</title>
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="vendor/leaflet-markercluster/MarkerCluster.css" />
+    <link
+      rel="stylesheet"
+      href="vendor/leaflet-markercluster/MarkerCluster.Default.css"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#site-list">跳到站点列表</a>
+
+    <div class="app" id="app">
+      <aside class="sidebar" id="sidebar" aria-label="筛选与站点列表">
+        <header class="brand">
+          <div class="brand-seal" aria-hidden="true">农</div>
+          <div class="brand-text">
+            <p class="eyebrow">AGRICULTURAL CULTURE ATLAS</p>
+            <h1>中华农耕文化地图</h1>
+            <p class="brand-sub">
+              从田畴到山川，在地图上寻访各地农事、农俗与农业文化遗产。
+            </p>
+          </div>
+        </header>
+
+        <div class="stats" aria-label="数据概览">
+          <div class="stat">
+            <strong id="stat-sites">—</strong>
+            <span>处文化地标</span>
+          </div>
+          <div class="stat">
+            <strong id="stat-provinces">—</strong>
+            <span>个省级行政区</span>
+          </div>
+          <div class="stat">
+            <strong id="stat-categories">—</strong>
+            <span>类农耕文化</span>
+          </div>
+        </div>
+
+        <div class="search-row">
+          <label class="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="m16 16 4.2 4.2"></path>
+            </svg>
+            <input
+              id="search"
+              type="search"
+              placeholder="搜索地名、作物、习俗…"
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="搜索站点"
+            />
+            <kbd aria-hidden="true">/</kbd>
+          </label>
+          <button class="ghost-button" id="reset-filters" type="button">
+            重置
+          </button>
+        </div>
+
+        <div class="filters">
+          <div
+            class="chips"
+            id="category-chips"
+            role="group"
+            aria-label="按类别筛选"
+          ></div>
+          <div class="select-row">
+            <label class="select-wrap">
+              <span class="sr-only">按省级行政区筛选</span>
+              <select id="province-select">
+                <option value="all">全部省份</option>
+              </select>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m7 10 5 5 5-5"></path>
+              </svg>
+            </label>
+            <span class="result-count" id="result-count" aria-live="polite"
+              >—</span
+            >
+          </div>
+        </div>
+
+        <ol class="site-list" id="site-list" tabindex="-1"></ol>
+
+        <footer class="sidebar-footer">
+          <p>
+            坐标取县域或乡镇中心，仅作示意；边界数据来自
+            <a
+              href="https://datav.aliyun.com/portal/school/atlas/area_selector"
+              target="_blank"
+              rel="noopener noreferrer"
+              >阿里云 DataV.GeoAtlas</a
+            >。
+          </p>
+          <button class="text-button" id="about-button" type="button">
+            数据与方法说明
+          </button>
+        </footer>
+      </aside>
+
+      <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+      <main class="map-wrap" id="map-wrap">
+        <div
+          id="map"
+          role="application"
+          aria-label="中国农耕文化分布地图，可缩放和点击地标"
+        ></div>
+
+        <div class="map-topbar">
+          <button
+            class="icon-button menu-button"
+            id="menu-button"
+            type="button"
+            aria-label="展开筛选与站点列表"
+            aria-expanded="false"
+            aria-controls="sidebar"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
+          <div class="map-caption">
+            <span class="map-caption__title">中国 · 农耕文化分布</span>
+            <span class="map-caption__meta" id="map-caption-meta"
+              >正在载入数据…</span
+            >
+          </div>
+          <div class="map-actions">
+            <button class="icon-button" id="reset-view" type="button" title="回到全国视图">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 9V4h5M20 15v5h-5M20 9V4h-5M4 15v5h5"></path>
+              </svg>
+              <span class="sr-only">回到全国视图</span>
+            </button>
+            <button class="icon-button" id="about-button-map" type="button" title="数据与方法说明">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="8.5"></circle>
+                <path d="M12 11v5.5M12 7.6v.1"></path>
+              </svg>
+              <span class="sr-only">数据与方法说明</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="legend" id="legend" aria-label="类别图例"></div>
+
+        <div class="inset-wrap" id="inset-wrap" aria-hidden="true">
+          <div class="inset-label">南海诸岛</div>
+          <div id="inset-map"></div>
+        </div>
+
+        <div class="map-hint" id="map-hint">
+          滚轮缩放 · 点击地标或省份查看
+        </div>
+
+        <aside
+          class="detail"
+          id="detail"
+          aria-label="站点详情"
+          aria-hidden="true"
+          hidden
+        >
+          <button
+            class="detail-close"
+            id="detail-close"
+            type="button"
+            aria-label="关闭详情"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m6 6 12 12M18 6 6 18"></path>
+            </svg>
+          </button>
+          <div class="detail-scroll" id="detail-scroll"></div>
+        </aside>
+
+        <div class="toast" id="toast" role="status" hidden></div>
+      </main>
+    </div>
+
+    <div class="modal" id="about-modal" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <div
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="about-title"
+      >
+        <button
+          class="detail-close modal-close"
+          type="button"
+          aria-label="关闭说明"
+          data-close-modal
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18"></path>
+          </svg>
+        </button>
+        <p class="eyebrow">ABOUT THE ATLAS</p>
+        <h2 id="about-title">关于这张地图</h2>
+        <div class="about-body">
+          <p>
+            “中华农耕文化地图”把散落在各地的传统农耕系统、农事习俗与农业文化遗产放到同一张可交互地图上。左侧可按类别、省份和关键词筛选，点击地图地标或列表条目查看详情。
+          </p>
+          <h3>数据来源</h3>
+          <p>
+            站点名录与认定年份参考农业农村部“中国重要农业文化遗产”名录、联合国粮农组织“全球重要农业文化遗产”名录、中国非物质文化遗产网、世界灌溉工程遗产名录等公开资料；每个站点在详情中列出对应来源。
+          </p>
+          <h3>坐标与边界</h3>
+          <p>
+            站点坐标取县域或乡镇中心，精确到小数点后两位，仅用于地图定位示意，不代表遗产地精确边界。省界数据来自阿里云 DataV.GeoAtlas，地图边界不作为主权或行政界线依据。
+          </p>
+          <h3>内容说明</h3>
+          <p>
+            介绍文字为编者根据公开资料综述，力求准确但难免疏漏；遗产名称、认定年份与习俗细节请以原始资料为准。欢迎在仓库中提交修订。
+          </p>
+          <h3>技术</h3>
+          <p>
+            纯静态前端 + Python 标准库服务，地图使用 Leaflet，无第三方追踪。运行
+            <code>python3 web/server.py</code> 即可在本地打开。
+          </p>
+          <p class="about-license">
+            古籍原文与整理文本遵循仓库的 CC BY-SA 4.0 许可；本页新增的站点介绍与代码同样遵循该许可。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="vendor/leaflet/leaflet.js"></script>
+    <script src="vendor/leaflet-markercluster/leaflet.markercluster.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
