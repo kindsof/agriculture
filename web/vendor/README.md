@@ -5,7 +5,7 @@
 | 目录 | 项目 | 版本 | 许可 |
 | --- | --- | --- | --- |
 | `leaflet/` | [Leaflet](https://leafletjs.com/) | 1.9.4 | BSD-2-Clause（见 `leaflet/LICENSE`） |
-| `leaflet-markercluster/` | [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) | 1.5.3 | MIT（见 npm 包元数据；版权归 Leaflet.markercluster contributors） |
+| `leaflet-markercluster/` | [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) | 1.5.3 | MIT（见 `leaflet-markercluster/LICENSE`） |
 
 Leaflet 的图片资源来自其 npm 发行包 `dist/images/`。MarkerCluster 的 CSS/JS 来自 `dist/`。
 
