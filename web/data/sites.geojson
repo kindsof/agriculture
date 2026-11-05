@@ -1,0 +1,2547 @@
+{
+  "type": "FeatureCollection",
+  "name": "farming-culture-sites",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.21,
+          40.1
+        ]
+      },
+      "properties": {
+        "id": "jingxi-rice",
+        "name": "京西稻作文化系统",
+        "category": "rice",
+        "province": "北京市",
+        "city": "海淀区上庄镇",
+        "summary": "北京西郊海淀上庄一带的稻作系统，依托玉泉山、万泉河等泉水灌溉，稻田与皇家苑囿、城市聚落交织，是北方城市近郊稻作文化的代表。",
+        "culture": "京西稻米历史上曾为宫廷用米，插秧、收割与泉水灌溉习俗相连；今天通过稻田观光、农事体验延续城市中的稻作记忆。",
+        "heritage": [
+          "中国重要农业文化遗产（2015）"
+        ],
+        "tags": [
+          "京西稻",
+          "城市农业",
+          "泉水灌溉",
+          "海淀"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.42,
+          38.85
+        ]
+      },
+      "properties": {
+        "id": "xiaozhan-rice",
+        "name": "小站稻种植系统",
+        "category": "rice",
+        "province": "天津市",
+        "city": "津南区小站镇",
+        "summary": "天津津南小站一带的稻作系统，清末淮军屯垦引入水稻，依托海河、马厂减河等水系，形成“小站稻”品牌，是北方粳稻的代表。",
+        "culture": "小站稻的育秧、插秧、收割习俗与屯垦历史、运河文化交织；当地以稻米节、农事体验展示津沽稻作传统。",
+        "heritage": [
+          "中国重要农业文化遗产（2019）"
+        ],
+        "tags": [
+          "小站稻",
+          "屯垦",
+          "海河",
+          "粳稻"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.05,
+          40.61
+        ]
+      },
+      "properties": {
+        "id": "xuanhua-grape",
+        "name": "宣化城市传统葡萄园",
+        "category": "specialty",
+        "province": "河北省",
+        "city": "张家口市宣化区",
+        "summary": "张家口宣化区的城市传统葡萄园，以庭院式漏斗架栽培为特色，葡萄藤沿棚架向四周伸展，形成“葡萄架下人家”的独特城市农业景观。",
+        "culture": "宣化牛奶葡萄栽培历史悠久，庭院种植与居民生活、节庆馈赠相结合；漏斗架技艺体现北方城市园艺智慧。",
+        "heritage": [
+          "全球重要农业文化遗产（2013）",
+          "中国重要农业文化遗产（2014）"
+        ],
+        "tags": [
+          "宣化葡萄",
+          "漏斗架",
+          "城市农业",
+          "庭院种植"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.67,
+          36.58
+        ]
+      },
+      "properties": {
+        "id": "shexian-terrace",
+        "name": "涉县旱作石堰梯田系统",
+        "category": "dryland",
+        "province": "河北省",
+        "city": "邯郸市涉县",
+        "summary": "邯郸涉县太行山区的旱作石堰梯田，先民就地取材垒石成堰、客土造田，形成“石堰—梯田—集雨”系统，种植谷子、花椒、核桃等耐旱作物。",
+        "culture": "梯田修造与维护依赖家族协作和村落规约，春耕、秋收习俗与梯田管护相伴，体现太行山旱作农耕的坚韧智慧。",
+        "heritage": [
+          "全球重要农业文化遗产（2022）",
+          "中国重要农业文化遗产（2014）"
+        ],
+        "tags": [
+          "石堰梯田",
+          "旱作",
+          "太行山",
+          "集雨"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.98,
+          35.6
+        ]
+      },
+      "properties": {
+        "id": "jishan-jujube",
+        "name": "稷山板枣生产系统",
+        "category": "specialty",
+        "province": "山西省",
+        "city": "运城市稷山县",
+        "summary": "运城稷山一带的板枣生产系统，枣树与小麦、玉米等作物间作，形成粮枣复合的旱作农业景观；稷山板枣皮薄肉厚，栽培历史逾千年。",
+        "culture": "枣树被视为“铁杆庄稼”，当地有枣花节、打枣习俗，枣文化与婚嫁、年节馈赠紧密相连。",
+        "heritage": [
+          "中国重要农业文化遗产（2017）"
+        ],
+        "tags": [
+          "板枣",
+          "粮枣间作",
+          "旱作",
+          "晋南"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.92,
+          42.29
+        ]
+      },
+      "properties": {
+        "id": "aohan-dryland",
+        "name": "敖汉旱作农业系统",
+        "category": "dryland",
+        "province": "内蒙古自治区",
+        "city": "赤峰市敖汉旗",
+        "summary": "赤峰敖汉旗的旱作农业系统，以粟、黍等耐旱作物种植为核心，配合轮作、休耕与畜禽养殖，是西辽河流域旱作农业的典型代表。",
+        "culture": "敖汉被誉为“世界小米之乡”，春祈秋报、尝新、祭火等习俗与粟黍种植相伴，反映北方旱作民族的生计智慧。",
+        "heritage": [
+          "全球重要农业文化遗产（2012）",
+          "中国重要农业文化遗产（2013）"
+        ],
+        "tags": [
+          "旱作",
+          "粟黍",
+          "小米",
+          "西辽河"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.07,
+          43.87
+        ]
+      },
+      "properties": {
+        "id": "ar-horqin-nomadic",
+        "name": "阿鲁科尔沁草原游牧系统",
+        "category": "dryland",
+        "province": "内蒙古自治区",
+        "city": "赤峰市阿鲁科尔沁旗",
+        "summary": "赤峰阿鲁科尔沁旗的草原游牧系统，牧民按季节转场，以天然草场放牧牛、羊、马，形成“草原—牲畜—人”协同的游牧生计。",
+        "culture": "转场路线、营地选择与祭敖包、那达慕等习俗相连，体现蒙古族对草场和水源的敬畏与轮牧智慧。",
+        "heritage": [
+          "全球重要农业文化遗产（2022）",
+          "中国重要农业文化遗产（2014）"
+        ],
+        "tags": [
+          "游牧",
+          "草原",
+          "转场",
+          "蒙古族"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.47,
+          44.34
+        ]
+      },
+      "properties": {
+        "id": "ningan-rice",
+        "name": "宁安响水稻作文化系统",
+        "category": "rice",
+        "province": "黑龙江省",
+        "city": "牡丹江市宁安市",
+        "summary": "牡丹江宁安市的响水稻作文化系统，依托镜泊湖火山熔岩台地下的泉水灌溉，稻田分布于玄武岩台地，形成独特的火山岩稻作景观。",
+        "culture": "响水大米素有“中国火山岩稻米”之称，插秧、开镰习俗与渤海国稻作历史、朝鲜族农耕文化交融。",
+        "heritage": [
+          "中国重要农业文化遗产（2015）"
+        ],
+        "tags": [
+          "响水大米",
+          "火山岩",
+          "稻作",
+          "镜泊湖"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.36,
+          41.27
+        ]
+      },
+      "properties": {
+        "id": "huanren-rice",
+        "name": "桓仁京租稻栽培系统",
+        "category": "rice",
+        "province": "辽宁省",
+        "city": "本溪市桓仁满族自治县",
+        "summary": "本溪桓仁的京租稻栽培系统，稻田分布于浑江沿岸的山间河谷，依托山泉和河水灌溉，形成辽东山区稻作景观。",
+        "culture": "京租稻曾为清代贡米，稻农有开犁、插秧、尝新习俗，稻田与满族、朝鲜族村落共同构成浑江流域农耕文化。",
+        "heritage": [
+          "中国重要农业文化遗产（2015）"
+        ],
+        "tags": [
+          "京租稻",
+          "贡米",
+          "浑江",
+          "桓仁"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.85,
+          32.94
+        ]
+      },
+      "properties": {
+        "id": "xinghua-duotian",
+        "name": "兴化垛田传统农业系统",
+        "category": "water",
+        "province": "江苏省",
+        "city": "泰州市兴化市",
+        "summary": "泰州兴化的垛田系统，先民在湖荡沼泽中挖河泥堆垛成田，形成“垛—河—沟”相间的水上农田，种植油菜、蔬菜和稻麦。",
+        "culture": "垛田耕作依赖罱泥、扒苲等水上农事技艺，清明前后垛上油菜花海与水上庙会、船娘文化构成里下河独特景观。",
+        "heritage": [
+          "全球重要农业文化遗产（2014）",
+          "中国重要农业文化遗产（2014）"
+        ],
+        "tags": [
+          "垛田",
+          "水上农田",
+          "油菜花",
+          "里下河"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.64,
+          31.16
+        ]
+      },
+      "properties": {
+        "id": "wujiang-sericulture",
+        "name": "吴江蚕桑文化系统",
+        "category": "mulberry",
+        "province": "江苏省",
+        "city": "苏州市吴江区",
+        "summary": "苏州吴江的蚕桑文化系统，沿太湖圩田种桑养蚕，桑园、稻田、鱼塘与缫丝作坊交织，形成江南水乡蚕桑生产景观。",
+        "culture": "吴江蚕桑习俗包括祭蚕神、轧蚕花、缫丝织绸等，盛泽绸市与蚕丝业兴衰相连，是“丝绸之府”的活态记忆。",
+        "heritage": [
+          "中国重要农业文化遗产（2021）"
+        ],
+        "tags": [
+          "蚕桑",
+          "丝绸",
+          "盛泽",
+          "圩田"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.42,
+          31.07
+        ]
+      },
+      "properties": {
+        "id": "biluochun-tea",
+        "name": "吴中碧螺春茶果复合系统",
+        "category": "tea",
+        "province": "江苏省",
+        "city": "苏州市吴中区东山镇",
+        "summary": "苏州吴中洞庭东、西山一带的茶果复合系统，茶树与枇杷、杨梅、柑橘等果树间作，花果香气浸润茶叶，形成“茶果间作”的湖岛农业景观。",
+        "culture": "碧螺春采制讲究“明前”采摘、手工杀青揉捻，茶农以采茶、炒茶习俗延续传统，茶果套种体现太湖岛屿的集约经营智慧。",
+        "heritage": [
+          "中国重要农业文化遗产（2019）",
+          "中国传统制茶技艺及其相关习俗（2022，人类非遗）"
+        ],
+        "tags": [
+          "碧螺春",
+          "茶果间作",
+          "洞庭山",
+          "太湖"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          },
+          {
+            "title": "中国传统制茶技艺及其相关习俗",
+            "url": "https://www.ihchina.cn/project_details/26422.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.29,
+          28.14
+        ]
+      },
+      "properties": {
+        "id": "qingtian-rice-fish",
+        "name": "青田稻鱼共生系统",
+        "category": "rice",
+        "province": "浙江省",
+        "city": "丽水市青田县",
+        "summary": "丽水青田的稻鱼共生系统，稻田中养鱼，鱼吃虫草、松土肥田，稻鱼互利，形成“以鱼护稻、以稻养鱼”的循环农业。",
+        "culture": "青田田鱼养殖与“稻鱼共生”农法世代相传，田鱼干、鱼灯舞和尝新习俗融入侨乡生活，是山地稻作文化的活标本。",
+        "heritage": [
+          "全球重要农业文化遗产（2005，首批）",
+          "中国重要农业文化遗产（2013）"
+        ],
+        "tags": [
+          "稻鱼共生",
+          "田鱼",
+          "循环农业",
+          "侨乡"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.37,
+          30.72
+        ]
+      },
+      "properties": {
+        "id": "huzhou-mulberry-fish",
+        "name": "湖州桑基鱼塘系统",
+        "category": "mulberry",
+        "province": "浙江省",
+        "city": "湖州市南浔区菱湖镇",
+        "summary": "湖州南浔菱湖一带的桑基鱼塘系统，塘基种桑、桑叶喂蚕、蚕沙喂鱼、塘泥肥桑，形成“桑—蚕—鱼—泥”闭环。",
+        "culture": "菱湖“鱼桑文化”包含祭蚕神、网鱼、缫丝等习俗，桑基鱼塘与江南圩田水利、丝绸贸易共同塑造水乡生计。",
+        "heritage": [
+          "全球重要农业文化遗产（2017）",
+          "中国重要农业文化遗产（2014）"
+        ],
+        "tags": [
+          "桑基鱼塘",
+          "循环农业",
+          "菱湖",
+          "蚕桑"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.36,
+          29.73
+        ]
+      },
+      "properties": {
+        "id": "shaoxing-torreya",
+        "name": "绍兴会稽山古香榧群",
+        "category": "specialty",
+        "province": "浙江省",
+        "city": "绍兴市诸暨市赵家镇",
+        "summary": "绍兴会稽山古香榧群，保存大量千年香榧古树，榧树与茶树、竹林、村落交错，形成独特的山地古树农业景观。",
+        "culture": "香榧采摘、堆沤、炒制技艺世代相传，榧农以护树规约和世代经验经营古榧群，古树与村落见证会稽山区的长期农耕传统。",
+        "heritage": [
+          "全球重要农业文化遗产（2013）",
+          "中国重要农业文化遗产（2013）"
+        ],
+        "tags": [
+          "香榧",
+          "古树",
+          "会稽山",
+          "山地农业"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.06,
+          27.62
+        ]
+      },
+      "properties": {
+        "id": "qingyuan-mushroom",
+        "name": "庆元林-菇共育系统",
+        "category": "specialty",
+        "province": "浙江省",
+        "city": "丽水市庆元县",
+        "summary": "丽水庆元的林-菇共育系统，菇农在阔叶林中以原木栽培香菇，利用林木遮阴和湿度形成“林—菇—人”共生，是香菇人工栽培的重要发源地之一。",
+        "culture": "庆元菇民有“菇神”信仰、菇山话和“砍花法”技艺，菇业与山林管护、村落互助制度紧密结合。",
+        "heritage": [
+          "全球重要农业文化遗产（2022）",
+          "中国重要农业文化遗产（2015）"
+        ],
+        "tags": [
+          "香菇",
+          "林菇共育",
+          "菇神",
+          "庆元"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.73,
+          28.85
+        ]
+      },
+      "properties": {
+        "id": "xianju-waxberry",
+        "name": "仙居古杨梅复合种养系统",
+        "category": "specialty",
+        "province": "浙江省",
+        "city": "台州市仙居县",
+        "summary": "台州仙居的古杨梅复合种养系统，杨梅古树与茶树、药材、家禽等复合经营，形成“杨梅—林下—养殖”的山地生态农业。",
+        "culture": "仙居杨梅栽培逾千年，梅农有采梅、杨梅节等习俗，古梅群与村落、古道共同构成山地文化景观。",
+        "heritage": [
+          "全球重要农业文化遗产（2023）",
+          "中国重要农业文化遗产（2015）"
+        ],
+        "tags": [
+          "杨梅",
+          "古树",
+          "林下经济",
+          "仙居"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.1,
+          30.22
+        ]
+      },
+      "properties": {
+        "id": "west-lake-longjing",
+        "name": "西湖龙井茶文化系统",
+        "category": "tea",
+        "province": "浙江省",
+        "city": "杭州市西湖区",
+        "summary": "杭州西湖群山间的龙井茶文化系统，茶园与竹林、溪涧、村落相嵌，狮峰、龙井、云栖、虎跑、梅家坞等产地各具风味。",
+        "culture": "龙井茶炒制讲究“抖、搭、捺、拓”等手法，茶农有开茶节、采茶、炒茶习俗，茶与西湖山水、文人生活深度融合。",
+        "heritage": [
+          "中国重要农业文化遗产（2014）",
+          "中国传统制茶技艺及其相关习俗（2022，人类非遗）"
+        ],
+        "tags": [
+          "龙井茶",
+          "西湖",
+          "炒青",
+          "茶文化"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          },
+          {
+            "title": "中国传统制茶技艺及其相关习俗",
+            "url": "https://www.ihchina.cn/project_details/26422.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.57,
+          28.12
+        ]
+      },
+      "properties": {
+        "id": "yunhe-terrace",
+        "name": "云和梯田农业系统",
+        "category": "water",
+        "province": "浙江省",
+        "city": "丽水市云和县崇头镇",
+        "summary": "丽水云和崇头一带的梯田农业系统，梯田依山就势、层叠而上，配合山泉、竹林和村落，形成“森林—梯田—村落—水系”垂直景观。",
+        "culture": "云和梯田耕作与畲族、汉族山民的开山造田、祭田公田婆习俗相连，开犁节、尝新节延续山地稻作记忆。",
+        "heritage": [
+          "中国重要农业文化遗产（2015）"
+        ],
+        "tags": [
+          "梯田",
+          "畲族",
+          "开犁节",
+          "云和"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.28,
+          30.87
+        ]
+      },
+      "properties": {
+        "id": "wuxing-lougang",
+        "name": "吴兴溇港圩田农业系统",
+        "category": "water",
+        "province": "浙江省",
+        "city": "湖州市吴兴区",
+        "summary": "湖州吴兴太湖溇港圩田系统，先民开溇港、筑圩堤、建闸窦，将太湖滩涂改造为“塘浦圩田”，实现排灌、航运与桑稻兼作。",
+        "culture": "溇港管理依赖圩董、闸夫和乡约，祭太湖神、开闸放水等习俗与太湖沿岸治水社会相伴，体现江南水乡水利智慧。",
+        "heritage": [
+          "中国重要农业文化遗产（2023）",
+          "世界灌溉工程遗产（太湖溇港，2016）"
+        ],
+        "tags": [
+          "溇港",
+          "圩田",
+          "太湖",
+          "灌溉"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          },
+          {
+            "title": "中国三个项目全部入选2016年世界灌溉工程遗产",
+            "url": "http://www.cncid.org/cncid/photonews/webinfo/2016/11/1489038241646501.htm"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.85,
+          30.95
+        ]
+      },
+      "properties": {
+        "id": "tongling-ginger",
+        "name": "铜陵白姜种植系统",
+        "category": "specialty",
+        "province": "安徽省",
+        "city": "铜陵市义安区",
+        "summary": "铜陵义安区的白姜种植系统，姜田与水稻轮作，姜农以深沟高畦、搭棚遮阴等技艺栽培白姜，形成“姜—稻”水旱轮作传统。",
+        "culture": "铜陵白姜有“姜阁催芽”“搭棚遮阴”等独特技艺，开姜阁、腌姜等习俗融入地方节庆，是江南姜作文化的代表。",
+        "heritage": [
+          "全球重要农业文化遗产（2023）",
+          "中国重要农业文化遗产（2017）"
+        ],
+        "tags": [
+          "白姜",
+          "水旱轮作",
+          "姜阁",
+          "铜陵"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.68,
+          32.47
+        ]
+      },
+      "properties": {
+        "id": "shouxian-shaopi",
+        "name": "寿县芍陂（安丰塘）及灌区农业系统",
+        "category": "water",
+        "province": "安徽省",
+        "city": "淮南市寿县安丰塘镇",
+        "summary": "淮南寿县芍陂（安丰塘）及灌区农业系统，依托春秋时期修建的陂塘水利工程，形成“陂塘—渠系—稻田”的灌溉农业景观。",
+        "culture": "芍陂由楚相孙叔敖主持修建，历代修治不辍；放水、祭水神、祈丰年等习俗与灌区村落相伴，是淮河流域水利农耕的活遗产。",
+        "heritage": [
+          "中国重要农业文化遗产（2015）",
+          "世界灌溉工程遗产（2015）"
+        ],
+        "tags": [
+          "芍陂",
+          "安丰塘",
+          "陂塘",
+          "灌溉"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          },
+          {
+            "title": "2600余年历史的蓄水工程——芍陂",
+            "url": "http://intce.mwr.cn/gjsldt_25708/202209/t20220903_1318150.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.17,
+          30.3
+        ]
+      },
+      "properties": {
+        "id": "taiping-houkui",
+        "name": "黄山太平猴魁茶文化系统",
+        "category": "tea",
+        "province": "安徽省",
+        "city": "黄山市黄山区新明乡",
+        "summary": "黄山黄山区新明乡一带的太平猴魁茶文化系统，茶园分布于高山云雾间的柿大茶群体，茶农以“猴魁”传统工艺制作扁平挺直的绿茶。",
+        "culture": "猴魁采制讲究“四拣八不要”，茶园管理与采茶习俗相连，猴坑、猴岗等地名承载着茶山开垦与茶农互助的记忆。",
+        "heritage": [
+          "中国重要农业文化遗产（2017）"
+        ],
+        "tags": [
+          "太平猴魁",
+          "黄山",
+          "绿茶",
+          "高山茶园"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.3,
+          26.08
+        ]
+      },
+      "properties": {
+        "id": "fuzhou-jasmine",
+        "name": "福州茉莉花与茶文化系统",
+        "category": "tea",
+        "province": "福建省",
+        "city": "福州市仓山区",
+        "summary": "福州茉莉花与茶文化系统，闽江下游的茉莉花田与茶园、窨制作坊交织，形成“花—茶—城”相融的农业文化景观。",
+        "culture": "福州茉莉花茶窨制技艺繁复，花农有采花、伺花、窨花习俗，茉莉花茶与福州港口贸易、市井茶俗紧密相连。",
+        "heritage": [
+          "全球重要农业文化遗产（2014）",
+          "中国重要农业文化遗产（2013）",
+          "中国传统制茶技艺及其相关习俗（2022，人类非遗）"
+        ],
+        "tags": [
+          "茉莉花茶",
+          "窨制",
+          "闽江",
+          "茶俗"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.19,
+          25.06
+        ]
+      },
+      "properties": {
+        "id": "anxi-tieguanyin",
+        "name": "安溪铁观音茶文化系统",
+        "category": "tea",
+        "province": "福建省",
+        "city": "泉州市安溪县",
+        "summary": "泉州安溪的铁观音茶文化系统，茶园分布于戴云山南麓的丘陵山地，茶农以乌龙茶半发酵工艺制作铁观音，形成“茶—林—村”复合景观。",
+        "culture": "安溪茶农有祭茶神、茶王赛、斗茶等习俗，铁观音制作讲究晒青、摇青、炒青、揉捻、烘焙，茶业与侨乡社会紧密相连。",
+        "heritage": [
+          "全球重要农业文化遗产（2022）",
+          "中国重要农业文化遗产（2014）",
+          "中国传统制茶技艺及其相关习俗（2022，人类非遗）"
+        ],
+        "tags": [
+          "铁观音",
+          "乌龙茶",
+          "安溪",
+          "茶王赛"
+        ],
+        "sources": [
+          {
+            "title": "“安溪铁观音茶文化系统”列入全球重要农业文化遗产",
+            "url": "https://www.ctma.com.cn/index.php/hangyeyaowen/73235.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.22,
+          27.33
+        ]
+      },
+      "properties": {
+        "id": "fuding-white-tea",
+        "name": "福鼎白茶文化系统",
+        "category": "tea",
+        "province": "福建省",
+        "city": "宁德市福鼎市",
+        "summary": "宁德福鼎的白茶文化系统，以太姥山周边茶园为核心，茶农以萎凋、干燥等简约工艺制作白茶，形成山海相依的茶业景观。",
+        "culture": "福鼎白茶有“一年茶、三年药、七年宝”之说，采茶、晒茶、祭茶神习俗与太姥娘娘传说交融，白茶贸易连接闽东海路。",
+        "heritage": [
+          "全球重要农业文化遗产（2025）",
+          "中国重要农业文化遗产（2017）"
+        ],
+        "tags": [
+          "白茶",
+          "太姥山",
+          "萎凋",
+          "福鼎"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.19,
+          26.17
+        ]
+      },
+      "properties": {
+        "id": "youxi-terrace",
+        "name": "尤溪联合梯田",
+        "category": "water",
+        "province": "福建省",
+        "city": "三明市尤溪县联合镇",
+        "summary": "三明尤溪联合镇的梯田，分布于戴云山北麓的群山之间，梯田、竹林、村落和水系层叠，是闽中山地稻作梯田的典型。",
+        "culture": "联合梯田耕作与开山、祭田、尝新等习俗相伴，梯田修造体现家族协作和“以水定田”的山地智慧。",
+        "heritage": [
+          "全球重要农业文化遗产“中国南方稻作梯田系统”（2018）",
+          "中国重要农业文化遗产（2013）"
+        ],
+        "tags": [
+          "梯田",
+          "闽中",
+          "稻作",
+          "山地"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.99,
+          25.42
+        ]
+      },
+      "properties": {
+        "id": "mulan-wei",
+        "name": "莆田木兰陂",
+        "category": "water",
+        "province": "福建省",
+        "city": "莆田市城厢区",
+        "summary": "莆田木兰溪上的木兰陂，始建于北宋，是一座集挡潮、蓄水、灌溉、排洪于一体的陂坝水利工程，至今仍灌溉南北洋平原。",
+        "culture": "木兰陂由钱四娘、李宏等主持修建，历代有修陂、祭陂习俗；陂坝与沟渠网络塑造了莆田“水乡”的稻田和荔枝林景观。",
+        "heritage": [
+          "世界灌溉工程遗产（2014）",
+          "全国重点文物保护单位"
+        ],
+        "tags": [
+          "木兰陂",
+          "陂坝",
+          "灌溉",
+          "莆田"
+        ],
+        "sources": [
+          {
+            "title": "莆田木兰陂列入首批世界灌溉工程遗产名录",
+            "url": "https://www.chinanews.com.cn/cul/2014/09-19/6611264.shtml"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.06,
+          28.69
+        ]
+      },
+      "properties": {
+        "id": "wannian-rice",
+        "name": "万年稻作文化系统",
+        "category": "rice",
+        "province": "江西省",
+        "city": "上饶市万年县",
+        "summary": "上饶万年的稻作文化系统，以仙人洞、吊桶环遗址的早期稻作遗存为源头，延续至今的贡米种植和稻作习俗构成万年稻作文化。",
+        "culture": "万年贡米种植、收割和“尝新”习俗世代相传，稻作起源遗址与村落、稻田共同讲述长江中下游稻作文明的故事。",
+        "heritage": [
+          "全球重要农业文化遗产（2010）",
+          "中国重要农业文化遗产（2013）"
+        ],
+        "tags": [
+          "稻作起源",
+          "万年贡米",
+          "仙人洞",
+          "长江中下游"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.31,
+          25.69
+        ]
+      },
+      "properties": {
+        "id": "chongyi-terrace",
+        "name": "崇义客家梯田系统",
+        "category": "water",
+        "province": "江西省",
+        "city": "赣州市崇义县",
+        "summary": "赣州崇义上堡一带的客家梯田，梯田依山而建、引泉自流，稻田、竹林、村落和客家围屋交织，形成赣南山区稻作景观。",
+        "culture": "客家先民开山造田、修陂引水，形成“梯田—水圳—村落”系统；开犁、尝新、祭社等习俗延续客家农耕传统。",
+        "heritage": [
+          "全球重要农业文化遗产“中国南方稻作梯田系统”（2018）",
+          "中国重要农业文化遗产（2014）"
+        ],
+        "tags": [
+          "客家梯田",
+          "上堡",
+          "稻作",
+          "水圳"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.91,
+          26.79
+        ]
+      },
+      "properties": {
+        "id": "chatan-wei",
+        "name": "泰和槎滩陂",
+        "category": "water",
+        "province": "江西省",
+        "city": "吉安市泰和县禾市镇",
+        "summary": "吉安泰和禾市镇的槎滩陂，始建于五代，是赣江支流牛吼江上的引水灌溉工程，陂坝、渠道与稻田构成千年灌区。",
+        "culture": "槎滩陂由周矩父子主持修建，历代有修陂、分水、祭陂制度；灌区村落的“水册”和轮灌规约体现乡村水利自治传统。",
+        "heritage": [
+          "世界灌溉工程遗产（2016）",
+          "全国重点文物保护单位"
+        ],
+        "tags": [
+          "槎滩陂",
+          "引水灌溉",
+          "泰和",
+          "水利自治"
+        ],
+        "sources": [
+          {
+            "title": "中国三个项目全部入选2016年世界灌溉工程遗产",
+            "url": "http://www.cncid.org/cncid/photonews/webinfo/2016/11/1489038241646501.htm"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.0,
+          36.95
+        ]
+      },
+      "properties": {
+        "id": "xiajin-mulberry",
+        "name": "夏津黄河故道古桑树群",
+        "category": "specialty",
+        "province": "山东省",
+        "city": "德州市夏津县",
+        "summary": "德州夏津黄河故道古桑树群，保存大量古桑树，桑树与沙地、农田、村落交错，形成黄河故道防风固沙与桑蚕兼用的农业景观。",
+        "culture": "夏津桑农有采桑、养蚕、熬桑葚膏等习俗，古桑群与黄河改道、沙地治理历史相连，桑产品融入地方饮食与年节。",
+        "heritage": [
+          "全球重要农业文化遗产（2018）",
+          "中国重要农业文化遗产（2014）"
+        ],
+        "tags": [
+          "古桑树",
+          "黄河故道",
+          "防风固沙",
+          "桑葚"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.15,
+          34.4
+        ]
+      },
+      "properties": {
+        "id": "dengfeng-solar-terms",
+        "name": "二十四节气·登封观星台",
+        "category": "custom",
+        "province": "河南省",
+        "city": "郑州市登封市告成镇",
+        "summary": "二十四节气是中国人在黄河流域观测太阳周年运动、安排农事的时间知识体系；登封告成观星台是元代郭守敬测影制历的重要遗址。",
+        "culture": "节气指导播种、管理、收获和储藏，衍生出立春鞭春牛、清明踏青、霜降尝新等农事习俗，2016年列入人类非遗。",
+        "heritage": [
+          "联合国教科文组织人类非物质文化遗产代表作名录（2016）",
+          "国家级非物质文化遗产（2006）"
+        ],
+        "tags": [
+          "二十四节气",
+          "观星台",
+          "农事历法",
+          "登封"
+        ],
+        "sources": [
+          {
+            "title": "二十四节气入选人类非物质文化遗产代表作名录",
+            "url": "https://www.unesco.org/zh/articles/ershisijieqiruxuanrenleifeiwuzhiwenhuayichandaibiaominglu"
+          },
+          {
+            "title": "中国非物质文化遗产网：二十四节气",
+            "url": "https://www.ihchina.cn/project_details/9760/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.49,
+          30.27
+        ]
+      },
+      "properties": {
+        "id": "enshi-yulu",
+        "name": "恩施玉露茶文化系统",
+        "category": "tea",
+        "province": "湖北省",
+        "city": "恩施市",
+        "summary": "恩施玉露茶文化系统，茶园分布于武陵山区的富硒土壤，茶农以蒸青工艺制作针形绿茶，形成山地茶业与土家族村寨相融的景观。",
+        "culture": "恩施玉露保留唐代蒸青遗法，采制讲究“摊青、蒸青、扇干、揉捻、整形、提香”，茶俗与土家族待客、节庆礼仪相连。",
+        "heritage": [
+          "中国重要农业文化遗产（2015）",
+          "中国传统制茶技艺及其相关习俗（2022，人类非遗）"
+        ],
+        "tags": [
+          "恩施玉露",
+          "蒸青",
+          "富硒",
+          "土家族"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          },
+          {
+            "title": "恩施玉露蒸青茶文化",
+            "url": "http://nyj.enshi.gov.cn/nydt/202504/t20250423_1691324.shtml"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.03,
+          27.75
+        ]
+      },
+      "properties": {
+        "id": "zijuejie-terrace",
+        "name": "新化紫鹊界梯田",
+        "category": "water",
+        "province": "湖南省",
+        "city": "娄底市新化县水车镇",
+        "summary": "娄底新化紫鹊界梯田，分布于雪峰山北麓，梯田依山就势、引泉自流，形成“森林—梯田—村寨”垂直景观，被誉为“梯田王国”。",
+        "culture": "紫鹊界梯田由苗、瑶、汉等民族世代开垦，开犁、尝新、祭田等习俗与山泉灌溉、村落协作相伴，是南方山地稻作文化的代表。",
+        "heritage": [
+          "全球重要农业文化遗产“中国南方稻作梯田系统”（2018）",
+          "中国重要农业文化遗产（2013）",
+          "世界灌溉工程遗产（2014）"
+        ],
+        "tags": [
+          "紫鹊界",
+          "梯田",
+          "山泉灌溉",
+          "梅山文化"
+        ],
+        "sources": [
+          {
+            "title": "紫鹊界梯田对话世界农耕文化交流互鉴大会",
+            "url": "http://hunan.gov.cn/hnszf/hdjl/xwfbhhd/wqhg/202409/t20240905_33448399.html"
+          },
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.62,
+          23.66
+        ]
+      },
+      "properties": {
+        "id": "fenghuang-dancong",
+        "name": "潮安凤凰单丛茶文化系统",
+        "category": "tea",
+        "province": "广东省",
+        "city": "潮州市潮安区凤凰镇",
+        "summary": "潮州潮安凤凰镇的凤凰单丛茶文化系统，古茶树散生于凤凰山村落周边，茶农单株采制、按香型分类，形成“一树一香”的茶业传统。",
+        "culture": "凤凰单丛制作讲究晒青、晾青、做青、杀青、揉捻、烘焙，茶农有祭茶神、采茶、斗茶习俗，工夫茶俗融入潮汕日常生活。",
+        "heritage": [
+          "中国重要农业文化遗产（2014）",
+          "中国传统制茶技艺及其相关习俗（2022，人类非遗）"
+        ],
+        "tags": [
+          "凤凰单丛",
+          "乌龙茶",
+          "潮州",
+          "工夫茶"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          },
+          {
+            "title": "中国传统制茶技艺及其相关习俗",
+            "url": "https://www.ihchina.cn/project_details/26422.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.0,
+          22.94
+        ]
+      },
+      "properties": {
+        "id": "foshan-dike-pond",
+        "name": "佛山基塘农业系统",
+        "category": "mulberry",
+        "province": "广东省",
+        "city": "佛山市南海区西樵镇",
+        "summary": "佛山南海西樵一带的基塘农业系统，塘基种桑、甘蔗或果树，塘中养鱼，形成“基—塘”相间的水乡农业景观。",
+        "culture": "基塘农业与珠三角圩田水利、蚕桑丝织和塘鱼养殖相伴，桑基鱼塘、蔗基鱼塘轮作体现岭南水乡的集约经营智慧。",
+        "heritage": [
+          "中国重要农业文化遗产（2019）"
+        ],
+        "tags": [
+          "基塘",
+          "桑基鱼塘",
+          "珠三角",
+          "西樵"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.53,
+          23.23
+        ]
+      },
+      "properties": {
+        "id": "yunan-helou-dance",
+        "name": "郁南禾楼舞",
+        "category": "custom",
+        "province": "广东省",
+        "city": "云浮市郁南县连滩镇",
+        "summary": "云浮郁南连滩一带的禾楼舞，是流传于南江流域的稻作祭祀舞蹈，舞者戴面具、执禾穗，在禾楼前歌舞祈丰。",
+        "culture": "禾楼舞源于古百越稻作祭祀，包含请神、祭禾、跳楼、送神等仪式，是岭南稻作文化中罕见的活态舞蹈遗存。",
+        "heritage": [
+          "国家级非物质文化遗产（2008）"
+        ],
+        "tags": [
+          "禾楼舞",
+          "稻作祭祀",
+          "郁南",
+          "南江"
+        ],
+        "sources": [
+          {
+            "title": "中国非物质文化遗产网：禾楼舞",
+            "url": "https://www.ihchina.cn/project_details/13033.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.01,
+          25.8
+        ]
+      },
+      "properties": {
+        "id": "longsheng-terrace",
+        "name": "龙胜龙脊梯田",
+        "category": "water",
+        "province": "广西壮族自治区",
+        "city": "桂林市龙胜各族自治县龙脊镇",
+        "summary": "桂林龙胜龙脊镇的梯田，分布于越城岭余脉的崇山峻岭，壮族、瑶族村寨与梯田、竹林、山泉相嵌，形成壮观的梯田文化景观。",
+        "culture": "龙脊梯田由壮、瑶先民世代开垦，开耕节、梳秧节、尝新节等习俗与梯田耕作、水源管理相伴，是南方山地稻作文化的代表。",
+        "heritage": [
+          "全球重要农业文化遗产“中国南方稻作梯田系统”（2018）",
+          "中国重要农业文化遗产（2014）"
+        ],
+        "tags": [
+          "龙脊梯田",
+          "壮族",
+          "瑶族",
+          "开耕节"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.67,
+          25.61
+        ]
+      },
+      "properties": {
+        "id": "lingqu-canal",
+        "name": "灵渠",
+        "category": "water",
+        "province": "广西壮族自治区",
+        "city": "桂林市兴安县",
+        "summary": "桂林兴安的灵渠，始建于秦代，连接湘江与漓江，是沟通长江与珠江水系的古老运河，兼有航运、灌溉和防洪功能。",
+        "culture": "灵渠的陡门、铧嘴、大小天平体现古代水工智慧；沿岸村落的放水、龙舟等习俗与渠水灌溉相伴，滋养兴安稻田与市镇。",
+        "heritage": [
+          "世界灌溉工程遗产（2018）",
+          "全国重点文物保护单位"
+        ],
+        "tags": [
+          "灵渠",
+          "秦代水利",
+          "湘漓连通",
+          "陡门"
+        ],
+        "sources": [
+          {
+            "title": "广西灵渠申遗成功",
+            "url": "http://www.gxzf.gov.cn/html/sydt/t1015217.shtml"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.69,
+          23.17
+        ]
+      },
+      "properties": {
+        "id": "longan-na-culture",
+        "name": "隆安壮族“那”文化稻作系统",
+        "category": "rice",
+        "province": "广西壮族自治区",
+        "city": "南宁市隆安县",
+        "summary": "南宁隆安的壮族“那”文化稻作系统，以“那”（壮语稻田）为核心，稻作与陂塘、水渠、村落和歌圩交织，形成壮族稻作文化景观。",
+        "culture": "“那”文化包含开耕、祭田、尝新、歌圩等习俗，稻米在壮族饮食、礼仪和地名中占据核心地位，是珠江流域稻作文明的地方表达。",
+        "heritage": [
+          "中国重要农业文化遗产（2015）"
+        ],
+        "tags": [
+          "那文化",
+          "壮族",
+          "稻作",
+          "歌圩"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.37,
+          24.51
+        ]
+      },
+      "properties": {
+        "id": "donglan-frog-festival",
+        "name": "东兰壮族蚂拐节",
+        "category": "custom",
+        "province": "广西壮族自治区",
+        "city": "河池市东兰县",
+        "summary": "河池东兰壮族蚂拐节，是红水河流域壮族以蛙神崇拜为核心的祈雨、祈丰仪式，节日期间找蚂拐、祭蚂拐、跳蚂拐舞。",
+        "culture": "蚂拐节源于壮族稻作社会的蛙神信仰，包含找蛙、葬蛙、唱蚂拐歌等环节，体现人与自然、雨水与稻田的密切关系。",
+        "heritage": [
+          "国家级非物质文化遗产（2006）"
+        ],
+        "tags": [
+          "蚂拐节",
+          "蛙神",
+          "壮族",
+          "红水河"
+        ],
+        "sources": [
+          {
+            "title": "中国非物质文化遗产网：壮族蚂拐节",
+            "url": "https://www.ihchina.cn/project_details/14956/"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.84,
+          19.03
+        ]
+      },
+      "properties": {
+        "id": "qiongzhong-shanlan",
+        "name": "琼中山兰稻作文化系统",
+        "category": "rice",
+        "province": "海南省",
+        "city": "琼中黎族苗族自治县",
+        "summary": "琼中黎族山兰稻作文化系统，黎族在山坡上以刀耕火种方式种植山兰稻，稻田与热带雨林、黎村交错，形成山地旱稻文化。",
+        "culture": "山兰稻种植伴随砍山、烧山、点种、守山、收割等习俗，山兰酒、山兰米饭和黎族歌谣构成独特的山地农耕文化。",
+        "heritage": [
+          "中国重要农业文化遗产（2017）"
+        ],
+        "tags": [
+          "山兰稻",
+          "黎族",
+          "旱稻",
+          "琼中"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.11,
+          29.99
+        ]
+      },
+      "properties": {
+        "id": "shizhu-coptis",
+        "name": "石柱黄连生产系统",
+        "category": "specialty",
+        "province": "重庆市",
+        "city": "石柱土家族自治县",
+        "summary": "重庆石柱的黄连生产系统，药农在黄水、冷水等高海拔山区林下种植黄连，形成“林—药”复合的生态种植传统。",
+        "culture": "石柱黄连栽培有“搭棚遮阴、林下栽连”等技艺，连农以采连、加工习俗延续传统，黄连贸易塑造了土家族山区的生计与聚落。",
+        "heritage": [
+          "中国重要农业文化遗产（2017）"
+        ],
+        "tags": [
+          "黄连",
+          "林下种植",
+          "土家族",
+          "石柱"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.62,
+          31.0
+        ]
+      },
+      "properties": {
+        "id": "dujiangyan",
+        "name": "都江堰",
+        "category": "water",
+        "province": "四川省",
+        "city": "成都市都江堰市",
+        "summary": "成都都江堰水利工程，由秦代李冰主持修建，以鱼嘴、飞沙堰、宝瓶口三大主体工程实现引水、分洪、排沙，灌溉成都平原。",
+        "culture": "都江堰“深淘滩、低作堰”的治水经验世代相传；清明放水节以砍杩槎、放水仪式祈愿丰年，是国家级非遗。",
+        "heritage": [
+          "世界文化遗产（2000）",
+          "世界灌溉工程遗产（2018）",
+          "都江堰放水节（国家级非遗，2006）"
+        ],
+        "tags": [
+          "都江堰",
+          "无坝引水",
+          "放水节",
+          "成都平原"
+        ],
+        "sources": [
+          {
+            "title": "2026都江堰放水节盛大启幕",
+            "url": "http://slt.sc.gov.cn/scsslt/ssyw/2026/4/3/e7219f1ccbbe4b8bbd2c93be13097a8b.shtml"
+          },
+          {
+            "title": "都江堰等四个项目入选世界灌溉工程遗产名录",
+            "url": "http://china.cnr.cn/news/20180815/t20180815_524331837.shtml"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.05,
+          30.06
+        ]
+      },
+      "properties": {
+        "id": "mengding-tea",
+        "name": "蒙顶山茶文化系统",
+        "category": "tea",
+        "province": "四川省",
+        "city": "雅安市名山区",
+        "summary": "雅安名山蒙顶山茶文化系统，茶园分布于蒙顶山及周边丘陵，茶农以“蒙顶甘露”“蒙顶黄芽”等传统工艺制茶，形成川西茶山景观。",
+        "culture": "蒙顶山有“茶祖”吴理真传说和祭茶神、采茶、斗茶习俗，茶马古道与藏茶贸易连接川西茶区与高原。",
+        "heritage": [
+          "中国重要农业文化遗产（2017）",
+          "中国传统制茶技艺及其相关习俗（2022，人类非遗）"
+        ],
+        "tags": [
+          "蒙顶山茶",
+          "茶祖",
+          "茶马古道",
+          "雅安"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          },
+          {
+            "title": "中国传统制茶技艺及其相关习俗",
+            "url": "https://www.ihchina.cn/project_details/26422.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.91,
+          25.75
+        ]
+      },
+      "properties": {
+        "id": "congjiang-rice-fish-duck",
+        "name": "从江侗乡稻鱼鸭系统",
+        "category": "rice",
+        "province": "贵州省",
+        "city": "黔东南苗族侗族自治州从江县",
+        "summary": "黔东南从江侗乡的稻鱼鸭系统，稻田中同时养鱼、放鸭，鱼鸭吃虫除草、粪肥稻田，形成“稻—鱼—鸭”共生循环。",
+        "culture": "侗族“饭稻羹鱼”传统与稻鱼鸭系统相伴，开秧门、放鱼、收禾、腌鱼等习俗融入侗寨生活，是山地稻作文化的活态样本。",
+        "heritage": [
+          "全球重要农业文化遗产（2011）",
+          "中国重要农业文化遗产（2013）"
+        ],
+        "tags": [
+          "稻鱼鸭",
+          "侗族",
+          "循环农业",
+          "从江"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.55,
+          25.66
+        ]
+      },
+      "properties": {
+        "id": "jiabang-terrace",
+        "name": "加榜梯田",
+        "category": "water",
+        "province": "贵州省",
+        "city": "黔东南苗族侗族自治州从江县加榜乡",
+        "summary": "黔东南从江加榜乡的梯田，分布于月亮山腹地，梯田依山层叠、云雾缭绕，苗族、侗族村寨与稻田、山林相融。",
+        "culture": "加榜梯田耕作与苗族开山造田、水源分配的传统相伴，梯田修造和村寨协作体现山地民族的生存智慧；现为重要梯田文化景观。",
+        "heritage": [
+          "梯田文化景观（月亮山腹地）"
+        ],
+        "tags": [
+          "加榜梯田",
+          "苗族",
+          "月亮山",
+          "山地稻作"
+        ],
+        "sources": [
+          {
+            "title": "人民网：加榜梯田开秧门",
+            "url": "http://gz.people.com.cn/BIG5/n2/2025/0417/c371756-41199616.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.83,
+          23.22
+        ]
+      },
+      "properties": {
+        "id": "hani-terrace",
+        "name": "红河哈尼稻作梯田系统",
+        "category": "water",
+        "province": "云南省",
+        "city": "红河哈尼族彝族自治州元阳县",
+        "summary": "红河元阳的哈尼稻作梯田系统，以“森林—村寨—梯田—水系”四素同构著称，哈尼族在哀牢山间开垦梯田、引泉灌溉。",
+        "culture": "哈尼梯田伴随“昂玛突”“开秧门”“尝新节”等习俗，村寨的水源林保护、分水木刻和梯田管护制度体现人与自然共生的智慧。",
+        "heritage": [
+          "全球重要农业文化遗产（2010）",
+          "中国重要农业文化遗产（2013）",
+          "世界文化遗产（2013）"
+        ],
+        "tags": [
+          "哈尼梯田",
+          "四素同构",
+          "哀牢山",
+          "水资源管理"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.0,
+          22.18
+        ]
+      },
+      "properties": {
+        "id": "puer-tea",
+        "name": "普洱古茶园与茶文化系统",
+        "category": "tea",
+        "province": "云南省",
+        "city": "普洱市澜沧拉祜族自治县惠民镇景迈山",
+        "summary": "普洱澜沧景迈山古茶园与茶文化系统，古茶树与森林混生，布朗族、傣族村寨守护茶园，形成“林—茶—村”复合景观。",
+        "culture": "景迈山茶农有祭茶祖、采春茶、竹筒茶等习俗，古茶园的林下种植和村规民约延续千年，是普洱茶文化的重要源头。",
+        "heritage": [
+          "全球重要农业文化遗产（2012）",
+          "中国重要农业文化遗产（2013）",
+          "中国传统制茶技艺及其相关习俗（2022，人类非遗）"
+        ],
+        "tags": [
+          "景迈山",
+          "古茶园",
+          "普洱茶",
+          "布朗族"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.13,
+          25.85
+        ]
+      },
+      "properties": {
+        "id": "dali-zaiyanghui",
+        "name": "大理白族栽秧会",
+        "category": "custom",
+        "province": "云南省",
+        "city": "大理白族自治州大理市喜洲镇",
+        "summary": "大理喜洲一带白族的栽秧会，是插秧季节的农事仪式和集体劳动组织，村民以歌舞、唢呐伴随栽秧，祈求风调雨顺。",
+        "culture": "栽秧会由“秧官”组织，包含祭秧神、开秧门、栽秧、对歌等环节，体现白族稻作社会的互助传统和农耕节庆文化。",
+        "heritage": [
+          "白族传统稻作农事习俗"
+        ],
+        "tags": [
+          "栽秧会",
+          "白族",
+          "开秧门",
+          "大理"
+        ],
+        "sources": [
+          {
+            "title": "大理日报：大美欢歌栽秧会",
+            "url": "https://dalidaily.dlzrm.cn/pad/202607/01/content_82154.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.77,
+          29.24
+        ]
+      },
+      "properties": {
+        "id": "nedong-barley",
+        "name": "乃东青稞种植系统",
+        "category": "dryland",
+        "province": "西藏自治区",
+        "city": "山南市乃东区",
+        "summary": "山南乃东的青稞种植系统，雅鲁藏布江谷地的青稞田与雪山、河谷、藏寨相映，形成高原河谷农业景观。",
+        "culture": "青稞是藏族糌粑、青稞酒的主要原料，春耕、望果、秋收习俗与青稞种植紧密相连，乃东是西藏重要的青稞产地。",
+        "heritage": [
+          "中国重要农业文化遗产（2021）"
+        ],
+        "tags": [
+          "青稞",
+          "雅鲁藏布江",
+          "藏族",
+          "河谷农业"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.88,
+          29.27
+        ]
+      },
+      "properties": {
+        "id": "tibetan-wangguo",
+        "name": "藏族望果节",
+        "category": "custom",
+        "province": "西藏自治区",
+        "city": "日喀则市桑珠孜区",
+        "summary": "藏族望果节是秋收前绕田游行、祈求丰收的传统节日，流行于拉萨、山南、日喀则等农区，村民盛装绕行田地、歌舞庆丰。",
+        "culture": "望果节源于古代苯教祭田仪式，后融入佛教内容；转田、赛马、藏戏、歌舞等活动表达对土地和丰收的感恩。",
+        "heritage": [
+          "国家级非物质文化遗产（2014）"
+        ],
+        "tags": [
+          "望果节",
+          "藏族",
+          "丰收",
+          "转田"
+        ],
+        "sources": [
+          {
+            "title": "西藏望果节等入选第四批国家非遗名录",
+            "url": "http://media.tibet.cn/holiday/xxzx/201412/t20141209_2146528.htm"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.49,
+          38.02
+        ]
+      },
+      "properties": {
+        "id": "jiaxian-jujube",
+        "name": "佳县古枣园",
+        "category": "specialty",
+        "province": "陕西省",
+        "city": "榆林市佳县",
+        "summary": "榆林佳县古枣园，黄河沿岸的枣树与土石山区、窑洞村落交织，保存大量古枣树，形成黄土高原红枣农业景观。",
+        "culture": "佳县枣农有打枣、晒枣等习俗，红枣融入陕北饮食、婚俗和年节，古枣园见证黄河沿岸的长期农耕经营。",
+        "heritage": [
+          "全球重要农业文化遗产（2014）",
+          "中国重要农业文化遗产（2013）"
+        ],
+        "tags": [
+          "古枣园",
+          "黄河",
+          "黄土高原",
+          "红枣"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.51,
+          32.89
+        ]
+      },
+      "properties": {
+        "id": "fengyan-terrace",
+        "name": "汉阴凤堰稻作梯田系统",
+        "category": "water",
+        "province": "陕西省",
+        "city": "安康市汉阴县漩涡镇",
+        "summary": "安康汉阴凤堰一带的稻作梯田，分布于汉江上游的凤凰山南麓，梯田、堰塘、水渠和移民村落构成山地稻作景观。",
+        "culture": "凤堰梯田由清代湖广移民开垦，梯田修造与堰渠管理体现移民社会的协作传统，开秧、尝新等习俗延续至今。",
+        "heritage": [
+          "中国重要农业文化遗产（2021）"
+        ],
+        "tags": [
+          "凤堰梯田",
+          "移民",
+          "汉江",
+          "稻作"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.03,
+          33.07
+        ]
+      },
+      "properties": {
+        "id": "hanzhong-sanyan",
+        "name": "汉中三堰",
+        "category": "water",
+        "province": "陕西省",
+        "city": "汉中市汉台区、城固县",
+        "summary": "汉中盆地汉江支流上的山河堰、五门堰、杨填堰，合称“汉中三堰”，是古代引水灌溉工程，至今仍滋养汉中稻田。",
+        "culture": "三堰由汉代以来历代修治，形成渠系、分水、岁修制度；灌区村落的祭堰、放水习俗体现陕南水利农耕传统。",
+        "heritage": [
+          "世界灌溉工程遗产（2017）"
+        ],
+        "tags": [
+          "汉中三堰",
+          "引水灌溉",
+          "汉江",
+          "陕南"
+        ],
+        "sources": [
+          {
+            "title": "“汉中三堰”成功入选世界灌溉工程遗产名录",
+            "url": "https://www.shaanxi.gov.cn/xw/tpxw/201710/t20171012_1503347_wap.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.2,
+          34.23
+        ]
+      },
+      "properties": {
+        "id": "zhagana",
+        "name": "迭部扎尕那农林牧复合系统",
+        "category": "dryland",
+        "province": "甘肃省",
+        "city": "甘南藏族自治州迭部县益哇镇",
+        "summary": "甘南迭部扎尕那农林牧复合系统，藏族村寨分布于石山、森林、草场和农田之间，形成“农林牧”垂直复合的高原生计。",
+        "culture": "扎尕那藏族有祭山、插箭、转山等习俗，农田、草场和林地的轮换使用体现高原社区对脆弱生态的适应智慧。",
+        "heritage": [
+          "全球重要农业文化遗产（2017）",
+          "中国重要农业文化遗产（2017）"
+        ],
+        "tags": [
+          "扎尕那",
+          "农林牧复合",
+          "藏族",
+          "甘南"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.99,
+          36.16
+        ]
+      },
+      "properties": {
+        "id": "shichuan-pear",
+        "name": "皋兰什川古梨园",
+        "category": "specialty",
+        "province": "甘肃省",
+        "city": "兰州市皋兰县什川镇",
+        "summary": "兰州皋兰什川镇的古梨园，黄河河谷中的梨树连片成园，保存大量百年古梨树，形成“梨园—黄河—村落”景观。",
+        "culture": "什川梨农有赏花、采梨、储梨习俗，古梨树修剪、授粉和病虫害防治依靠世代经验，梨花节成为地方文化名片。",
+        "heritage": [
+          "全球重要农业文化遗产（2025）",
+          "中国重要农业文化遗产（2013）"
+        ],
+        "tags": [
+          "古梨园",
+          "黄河",
+          "兰州",
+          "梨花"
+        ],
+        "sources": [
+          {
+            "title": "全球重要农业文化遗产名录（2025年更新）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.8,
+          34.13
+        ]
+      },
+      "properties": {
+        "id": "sanjiangyuan-nomadic",
+        "name": "三江源曲麻莱高寒游牧系统",
+        "category": "dryland",
+        "province": "青海省",
+        "city": "玉树藏族自治州曲麻莱县",
+        "summary": "玉树曲麻莱的高寒游牧系统，牧民在长江、黄河、澜沧江源头的草原上轮牧牦牛、藏羊，形成高寒草甸游牧生计。",
+        "culture": "游牧与祭山、赛马、转场习俗相伴，牧民依水草而居、按季轮牧，体现三江源生态保护与传统畜牧知识的结合。",
+        "heritage": [
+          "中国重要农业文化遗产（2023）"
+        ],
+        "tags": [
+          "高寒游牧",
+          "牦牛",
+          "三江源",
+          "轮牧"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.8,
+          36.32
+        ]
+      },
+      "properties": {
+        "id": "nadun-festival",
+        "name": "土族纳顿节",
+        "category": "custom",
+        "province": "青海省",
+        "city": "海东市民和回族土族自治县",
+        "summary": "海东民和土族的纳顿节，是土族庆祝丰收、祭祀神灵的盛大节日，节日期间表演“纳顿”傩舞、跳会手舞。",
+        "culture": "纳顿节从农历七月持续到九月，各村轮流举办，包含祭神、跳会手、唱花儿等内容，是土族农耕社会最重要的节庆之一。",
+        "heritage": [
+          "国家级非物质文化遗产（2006）"
+        ],
+        "tags": [
+          "纳顿节",
+          "土族",
+          "丰收",
+          "傩舞"
+        ],
+        "sources": [
+          {
+            "title": "青海省土族安召纳顿艺术节",
+            "url": "http://qh.news.cn/20230827/de69a5f6a9e544cd8cffb4ec5178024c/c.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.07,
+          38.02
+        ]
+      },
+      "properties": {
+        "id": "ningxia-yellow-river",
+        "name": "宁夏平原引黄灌溉农业系统",
+        "category": "water",
+        "province": "宁夏回族自治区",
+        "city": "吴忠市青铜峡市",
+        "summary": "宁夏平原引黄灌溉农业系统，依托秦渠、汉渠、唐徕渠等古渠系引黄河水灌溉，形成“塞上江南”的稻麦绿洲。",
+        "culture": "宁夏引黄灌区有放水、祭河神、岁修等习俗，渠系管理与“渠长”“水老”制度体现干旱区的水利协作传统。",
+        "heritage": [
+          "中国重要农业文化遗产（2023）",
+          "世界灌溉工程遗产（宁夏引黄古灌区，2017）"
+        ],
+        "tags": [
+          "引黄灌溉",
+          "古渠",
+          "塞上江南",
+          "宁夏"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          },
+          {
+            "title": "宁夏立法保护引黄古灌区",
+            "url": "http://www.nxrd.gov.cn/rdxw/rdyw/202010/t20201009_229401.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.67,
+          37.49
+        ]
+      },
+      "properties": {
+        "id": "zhongning-goji",
+        "name": "中宁枸杞种植系统",
+        "category": "specialty",
+        "province": "宁夏回族自治区",
+        "city": "中卫市中宁县",
+        "summary": "中卫中宁的枸杞种植系统，枸杞园分布于卫宁平原的黄河灌区，形成“枸杞—粮食—畜牧”结合的干旱区农业景观。",
+        "culture": "中宁枸杞栽培逾六百年，茨农有育苗、剪枝、采摘、晾晒等技艺，枸杞融入地方饮食、药用和节庆习俗。",
+        "heritage": [
+          "中国重要农业文化遗产（2015）"
+        ],
+        "tags": [
+          "枸杞",
+          "黄河灌区",
+          "中宁",
+          "药食同源"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.19,
+          42.95
+        ]
+      },
+      "properties": {
+        "id": "turpan-karez",
+        "name": "吐鲁番坎儿井农业系统",
+        "category": "water",
+        "province": "新疆维吾尔自治区",
+        "city": "吐鲁番市高昌区",
+        "summary": "吐鲁番坎儿井农业系统，利用天山雪水潜流，通过竖井、暗渠、明渠和蓄水池引水灌溉，形成极端干旱区的绿洲农业。",
+        "culture": "坎儿井由“坎儿井匠”以世代经验开凿维护，井渠网络支撑葡萄、瓜果种植；坎儿井开凿技艺和节水习俗是绿洲文明的核心。",
+        "heritage": [
+          "中国重要农业文化遗产（2013）",
+          "世界灌溉工程遗产（2024）"
+        ],
+        "tags": [
+          "坎儿井",
+          "绿洲农业",
+          "吐鲁番",
+          "地下水利"
+        ],
+        "sources": [
+          {
+            "title": "坎儿井申遗成功，彰显千年治水智慧",
+            "url": "https://www.tlfw.net/sy/xwzx/202409/t20240906_23620043.html"
+          },
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.51,
+          42.83
+        ]
+      },
+      "properties": {
+        "id": "hami-melon",
+        "name": "哈密瓜栽培与贡瓜文化系统",
+        "category": "specialty",
+        "province": "新疆维吾尔自治区",
+        "city": "哈密市伊州区",
+        "summary": "哈密瓜栽培与贡瓜文化系统，哈密盆地绿洲的瓜田依托天山雪水灌溉，瓜农以传统选种、压蔓、整枝技艺栽培哈密瓜。",
+        "culture": "哈密瓜自清代成为贡瓜，瓜农有开园、尝瓜习俗，哈密瓜与丝路贸易、维吾尔族瓜俗文化紧密相连。",
+        "heritage": [
+          "中国重要农业文化遗产（2014）"
+        ],
+        "tags": [
+          "哈密瓜",
+          "贡瓜",
+          "绿洲",
+          "维吾尔族"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.87,
+          29.0
+        ]
+      },
+      "properties": {
+        "id": "jiuhua-lichun",
+        "name": "九华立春祭",
+        "category": "custom",
+        "province": "浙江省",
+        "city": "衢州市柯城区九华乡",
+        "summary": "衢州柯城九华乡的立春祭，是当地在立春时节祭祀春神、鞭春牛、迎春的农事民俗，传承于九华山村。",
+        "culture": "立春祭包含祭春神、鞭春牛、接春、尝春等仪式，表达对春耕和丰收的祈愿，是江南立春节俗的活态遗存。",
+        "heritage": [
+          "国家级非物质文化遗产（2011）"
+        ],
+        "tags": [
+          "立春祭",
+          "鞭春牛",
+          "春神",
+          "衢州"
+        ],
+        "sources": [
+          {
+            "title": "打响“衢州好时节”节气文化品牌",
+            "url": "https://www.rmzxw.com.cn/c/2024-09-19/3607122.shtml"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.32,
+          30.65
+        ]
+      },
+      "properties": {
+        "id": "hanshan-silkworm",
+        "name": "含山蚕花节",
+        "category": "custom",
+        "province": "浙江省",
+        "city": "湖州市南浔区善琏镇",
+        "summary": "湖州南浔善琏含山的蚕花节，是杭嘉湖蚕乡在清明前后举行的蚕事民俗活动，蚕农登含山、轧蚕花、祈蚕丰。",
+        "culture": "含山蚕花节包含祭蚕神、轧蚕花、踏青、蚕花娘娘巡游等，反映江南蚕乡对蚕桑丰收的祈愿和蚕事禁忌。",
+        "heritage": [
+          "国家级非物质文化遗产（2008）"
+        ],
+        "tags": [
+          "蚕花节",
+          "蚕神",
+          "杭嘉湖",
+          "清明"
+        ],
+        "sources": [
+          {
+            "title": "中国农业博物馆：含山轧蚕花",
+            "url": "http://www.zgnybwg.com.cn/detail/zh/36283.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.14,
+          23.08
+        ]
+      },
+      "properties": {
+        "id": "shuangjiang-festival",
+        "name": "壮族霜降节",
+        "category": "custom",
+        "province": "广西壮族自治区",
+        "city": "崇左市天等县",
+        "summary": "崇左天等的壮族霜降节，是晚稻收割后酬谢自然、庆祝丰收的稻作民俗，节日期间举行祭祀、山歌、舞龙等活动。",
+        "culture": "霜降节包含祭神、敬牛、霜降歌圩、打榔舞等，体现壮族稻作社会的春祈秋报传统，2014年作为二十四节气扩展项目列入国家级非遗。",
+        "heritage": [
+          "国家级非物质文化遗产（2014，农历二十四节气扩展项目）",
+          "联合国教科文组织人类非物质文化遗产代表作名录（2016，二十四节气）"
+        ],
+        "tags": [
+          "霜降节",
+          "壮族",
+          "稻作",
+          "歌圩"
+        ],
+        "sources": [
+          {
+            "title": "中国非物质文化遗产网：壮族霜降节",
+            "url": "https://www.ihchina.cn/art/detail/id/9437.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.43,
+          42.77
+        ]
+      },
+      "properties": {
+        "id": "yanbian-apple-pear",
+        "name": "延边苹果梨栽培系统",
+        "category": "specialty",
+        "province": "吉林省",
+        "city": "延边朝鲜族自治州龙井市",
+        "summary": "延边龙井的苹果梨栽培系统，苹果梨园分布于长白山东麓的丘陵盆地，形成寒地果树与朝鲜族村落相融的农业景观。",
+        "culture": "延边苹果梨有“梨中之王”之称，果农有赏花、疏果、采摘习俗，苹果梨与朝鲜族节庆、待客和庭院经济相连。",
+        "heritage": [
+          "中国重要农业文化遗产（2015）"
+        ],
+        "tags": [
+          "苹果梨",
+          "延边",
+          "朝鲜族",
+          "寒地果树"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.2,
+          30.83
+        ]
+      },
+      "properties": {
+        "id": "jinshan-peach",
+        "name": "金山蟠桃栽培系统",
+        "category": "specialty",
+        "province": "上海市",
+        "city": "金山区吕巷镇",
+        "summary": "上海金山吕巷一带的蟠桃栽培系统，桃园分布于杭州湾北岸的冲积平原，形成都市近郊的特色果业景观。",
+        "culture": "金山蟠桃有“皇母蟠桃”传说，桃农有赏花、采桃习俗，蟠桃节与都市农业旅游相结合。",
+        "heritage": [
+          "中国重要农业文化遗产（2023）"
+        ],
+        "tags": [
+          "蟠桃",
+          "都市农业",
+          "金山",
+          "果业"
+        ],
+        "sources": [
+          {
+            "title": "中国重要农业文化遗产名录（188项）",
+            "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
+          }
+        ]
+      }
+    }
+  ]
+}
