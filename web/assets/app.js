@@ -518,6 +518,10 @@
         "aria-current",
         site.id === state.selectedId ? "true" : "false",
       );
+      button.setAttribute(
+        "aria-label",
+        `${site.name}，${category.label}，${site.province}${site.city}`,
+      );
       button.title = site.summary;
       button.innerHTML = `<span class="site-card__dot" style="--dot:${category.color}"></span><span class="site-card__body"><span class="site-card__name">${esc(site.name)}</span><span class="site-card__meta">${esc(site.province)} · ${esc(site.city)}</span></span><span class="site-card__arrow" aria-hidden="true">›</span>`;
       item.appendChild(button);
