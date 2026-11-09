@@ -2,7 +2,7 @@
 
 农业水利 / 传统与AI / 资源与发展
 
-本仓库收录中国历代农业与水利古籍的全文，并整理为知识图谱与可交互的农耕文化地图，供检索、阅读、可视化与文本分析使用。
+本仓库收录中国历代农业与水利古籍的全文，并整理为知识图谱与可交互的农耕文化地图，供检索、阅读、可视化与文本分析使用。另每日跟踪 [农业 AI 模型与技能](ai/INDEX.md)（Hugging Face 农业大模型、GitHub 农业模型项目、Agent Skill）。
 
 ## 农耕文化地图
 
@@ -82,6 +82,15 @@ python3 scripts/fetch_books.py --only KR3d0001 KR2k0058
 ```
 
 新增书目时，在 `catalog.yaml` 中按现有字段添加条目，再运行脚本即可。若书目要进入知识图谱，还需要在 `kg/data/topics.yaml` 登记主题/朝代，并在 `kg/data/entities.yaml`、`kg/data/about.yaml`、`kg/data/relations.yaml` 中补充相应实体、主题与关系，最后运行 `python3 kg/build.py` 校验。
+
+农业 AI 目录（[`ai/`](ai/)）的实时快照由另一脚本采集：
+
+```bash
+python3 scripts/fetch_ai_catalog.py            # 联网采集 Hugging Face / GitHub 指标
+python3 scripts/fetch_ai_catalog.py --check    # 离线校验（CI 用）
+```
+
+条目增删与定时刷新见 [ai/README.md](ai/README.md)。
 
 ## 许可
 

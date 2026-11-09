@@ -1,0 +1,80 @@
+name: AI catalog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ai/**"
+      - "scripts/fetch_ai_catalog.py"
+      - ".github/workflows/ai-catalog.yml"
+  pull_request:
+    paths:
+      - "ai/**"
+      - "scripts/fetch_ai_catalog.py"
+      - ".github/workflows/ai-catalog.yml"
+  schedule:
+    # 每日 10:30（Asia/Shanghai）刷新一次实时快照
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: ai-catalog-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check:
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip PyYAML
+      - name: Check catalog and snapshot consistency
+        run: python scripts/fetch_ai_catalog.py --check
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+
+  refresh:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip PyYAML
+      - name: Fetch live stats
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/fetch_ai_catalog.py
+      - name: Open PR if snapshot changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- ai/stats.json ai/INDEX.md; then
+            echo "snapshot unchanged"
+            exit 0
+          fi
+          BRANCH="ai-catalog-refresh"
+          DATE=$(date -u +%F)
+          git fetch origin "$BRANCH" 2>/dev/null || true
+          git checkout -B "$BRANCH"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ai/stats.json ai/INDEX.md
+          git commit -m "chore(ai): refresh daily snapshot ($DATE)"
+          git push --force-with-lease origin "$BRANCH"
+          if gh pr view "$BRANCH" --json state --jq .state 2>/dev/null | grep -q OPEN; then
+            echo "open PR already exists for $BRANCH"
+          else
+            gh pr create --head "$BRANCH" --title "chore(ai): 每日快照更新 $DATE" --body "This is by an automated agent, not a human. 由 ai-catalog 定时任务生成的实时数据快照更新（ai/stats.json 与 ai/INDEX.md 快照节）。"
+          fi

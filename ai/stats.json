@@ -1,0 +1,302 @@
+{
+  "generated_at": "2026-11-09 17:26",
+  "entries": {
+    "hf-model:sinong": {
+      "downloads": 43,
+      "likes": 2,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "model-scope/Sinong1.0-32B",
+      "hf_kind": "models",
+      "modelscope_downloads": 844,
+      "modelscope_id": "NAULLM/Sinong1.0-32B"
+    },
+    "hf-model:agrima": {
+      "stars": 187,
+      "pushed_at": "2026-03-19",
+      "github_repo": "zhiweihu1103/AgriMa"
+    },
+    "hf-model:agriagent": {
+      "stars": 129,
+      "pushed_at": "2026-03-19",
+      "github_repo": "zhiweihu1103/AgriAgent"
+    },
+    "hf-model:agrigpt-7b": {
+      "downloads": 0,
+      "likes": 0,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "AgriGPT/AgriGPT-7B",
+      "hf_kind": "models",
+      "stars": 30,
+      "pushed_at": "2023-10-04",
+      "github_repo": "AgriGPTs/AgriGPTs"
+    },
+    "hf-model:kwoola": {
+      "stars": 29,
+      "pushed_at": "2025-11-03",
+      "github_repo": "HIT-Kwoo/KwooLa"
+    },
+    "hf-model:natural-farmer": {
+      "models": 14,
+      "downloads": 313,
+      "likes": 24,
+      "hf_author": "CopyleftCultivars",
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "CopyleftCultivars",
+      "hf_kind": "org"
+    },
+    "hf-model:agromanage-rl": {
+      "models": 99,
+      "downloads": 163,
+      "likes": 0,
+      "hf_author": "AgriManager-Framework",
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "AgriManager-Framework",
+      "hf_kind": "org",
+      "stars": 0,
+      "pushed_at": "2026-11-06",
+      "github_repo": "AgriManager-Framework/AgriManager"
+    },
+    "hf-model:deepseek-r1-agriculture": {
+      "downloads": 9,
+      "likes": 0,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "isAsong/DeepSeek-R1-agriculture",
+      "hf_kind": "models"
+    },
+    "hf-model:agronomyi": {
+      "downloads": 16,
+      "likes": 2,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "gbstox/agronomYi-hermes-34B",
+      "hf_kind": "models"
+    },
+    "hf-model:buair-qwen-agri": {
+      "downloads": 20,
+      "likes": 0,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "BUAIR/Qwen3.3B-Agricultural-Reasoning",
+      "hf_kind": "models"
+    },
+    "hf-model:dhenu-vision": {
+      "downloads": 15,
+      "likes": 0,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "chheplo/dhenu-vision-qwen2.5-7b-grpo-crop-disease",
+      "hf_kind": "models"
+    },
+    "hf-model:agri-bert": {
+      "downloads": 558,
+      "likes": 26,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "recobo/agriculture-bert-uncased",
+      "hf_kind": "models"
+    },
+    "hf-model:local-lang-agri": {
+      "downloads": 266,
+      "likes": 0,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "tacab/somali-agriculture",
+      "hf_kind": "models"
+    },
+    "gh-repo:foundation-models-list": {
+      "stars": 67,
+      "pushed_at": "2025-08-02",
+      "github_repo": "JiajiaLi04/Agriculture-Foundation-Models"
+    },
+    "gh-repo:mm-llms-agri-list": {
+      "stars": 17,
+      "pushed_at": "2025-02-19",
+      "github_repo": "JiajiaLi04/Multi-Modal-LLMs-in-Agriculture"
+    },
+    "gh-repo:seedbench": {
+      "stars": 25,
+      "pushed_at": "2025-12-19",
+      "github_repo": "InternScience/SeedBench"
+    },
+    "gh-repo:agribench": {
+      "stars": 28,
+      "pushed_at": "2025-01-01",
+      "github_repo": "Yutong-Zhou-cv/AgriBench"
+    },
+    "gh-repo:plantxpert": {
+      "stars": 0,
+      "pushed_at": "2026-11-08",
+      "github_repo": "trust-nlp/PlantXpert"
+    },
+    "gh-repo:cdip-chatglm3": {
+      "stars": 20,
+      "pushed_at": "2025-02-23",
+      "github_repo": "SmartAG-Team/CDIP-ChatGLM3"
+    },
+    "gh-repo:agri-rag": {
+      "stars": 7,
+      "pushed_at": "2026-04-29",
+      "github_repo": "Shuvam-Banerji-Seal/AgriIR"
+    },
+    "gh-repo:agronaut": {
+      "stars": 5,
+      "pushed_at": "2026-11-01",
+      "github_repo": "Rekin226/Agronaut"
+    },
+    "gh-repo:krishi-sahayak": {
+      "stars": 5,
+      "pushed_at": "2026-10-09",
+      "github_repo": "giri164/krishi-sahayak"
+    },
+    "gh-repo:agri-orchestration": {
+      "stars": 3,
+      "pushed_at": "2026-10-27",
+      "github_repo": "zlatko-lakisic/agentic-orchestration"
+    },
+    "gh-repo:smart-farm-agentic": {
+      "stars": 4,
+      "pushed_at": "2026-10-08",
+      "github_repo": "juni2003/Smart-Farming-Agentic-AI"
+    },
+    "gh-repo:agri-rag-chatbot": {
+      "stars": 5,
+      "pushed_at": "2026-11-05",
+      "github_repo": "DreamRealized/agriculture-chatbot"
+    },
+    "gh-repo:agrima-repo": {
+      "stars": 187,
+      "pushed_at": "2026-03-19",
+      "github_repo": "zhiweihu1103/AgriMa"
+    },
+    "gh-repo:sinong-repo": {
+      "stars": 191,
+      "pushed_at": "2026-05-17",
+      "github_repo": "njauzzx/Sinong"
+    },
+    "skill:skills-for-agriculture": {
+      "stars": 13,
+      "pushed_at": "2026-06-12",
+      "github_repo": "human-avatar/skills-for-agriculture"
+    },
+    "skill:pangenome-food-nutrition": {
+      "stars": 42,
+      "pushed_at": "2026-08-31",
+      "github_repo": "PangenomeAI/academic-skills-food-nutrition"
+    },
+    "skill:faostat-skills": {
+      "stars": 10,
+      "pushed_at": "2026-04-21",
+      "github_repo": "berba-q/faostat-skills"
+    },
+    "skill:zd-claude-plugin": {
+      "stars": 10,
+      "pushed_at": "2026-11-01",
+      "github_repo": "Adilmunawar/ZD-claude-plugin"
+    },
+    "skill:us-crop-monitor": {
+      "stars": 6,
+      "pushed_at": "2025-10-18",
+      "github_repo": "FrancyJGLisboa/us-crop-monitor-skill"
+    },
+    "skill:agent-skills-farming": {
+      "stars": 3,
+      "pushed_at": "2026-02-21",
+      "github_repo": "farmfriend-labs/agent-skills-farming"
+    },
+    "skill:dungnotnull-suite": {
+      "stars": 4,
+      "pushed_at": "2026-07-02",
+      "github_repo": "dungnotnull/smart-agriculture-planting-plan-agent-skill"
+    },
+    "skill:cgihar-climate-skills": {
+      "stars": 0,
+      "pushed_at": "2026-11-04",
+      "github_repo": "CGIAR-Climate-Data-Hub/skills"
+    },
+    "skill:farm-economics": {
+      "stars": 2,
+      "pushed_at": "2026-07-19",
+      "github_repo": "mikeblythe/farm-economics"
+    },
+    "skill:my-farm-advisor": {
+      "stars": 7,
+      "pushed_at": "2026-11-06",
+      "github_repo": "borealBytes/my-farm-advisor"
+    },
+    "mcp:faostat-mcp": {
+      "stars": 20,
+      "pushed_at": "2026-10-02",
+      "github_repo": "berba-q/faostat-mcp"
+    },
+    "mcp:agrobr-mcp": {
+      "stars": 30,
+      "pushed_at": "2026-10-10",
+      "github_repo": "bruno-portfolio/agrobr-mcp"
+    },
+    "mcp:brapi-mcp": {
+      "stars": 4,
+      "pushed_at": "2026-10-19",
+      "github_repo": "cyanheads/brapi-mcp-server"
+    },
+    "mcp:agro-weather-mcp": {
+      "stars": 2,
+      "pushed_at": "2026-10-28",
+      "github_repo": "rajshivang07/agro-weather-mcp"
+    },
+    "mcp:nsip": {
+      "stars": 3,
+      "pushed_at": "2026-11-02",
+      "github_repo": "epicpast/nsip"
+    },
+    "mcp:measurespace": {
+      "stars": 3,
+      "pushed_at": "2026-02-28",
+      "github_repo": "MeasureSpace/measure-space-mcp-server"
+    },
+    "dataset:kisanvaani-agri-qa": {
+      "downloads": 390,
+      "likes": 26,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "KisanVaani/agriculture-qa-english-only",
+      "hf_kind": "datasets"
+    },
+    "dataset:agriculture-agent-rl": {
+      "downloads": 1292,
+      "likes": 1,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "CopyleftCultivars/Agriculture-Agent-RL-Training-Data",
+      "hf_kind": "datasets"
+    },
+    "dataset:baai-industry-agri": {
+      "downloads": 668,
+      "likes": 2,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "BAAI/IndustryCorpus2_agriculture_forestry_animal_husbandry_fishery",
+      "hf_kind": "datasets"
+    },
+    "dataset:chinese-qa-agri": {
+      "downloads": 159,
+      "likes": 14,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "Mxode/Chinese-QA-Agriculture_Forestry_Animal_Husbandry_Fishery",
+      "hf_kind": "datasets"
+    },
+    "dataset:agriculture-vision": {
+      "downloads": 272,
+      "likes": 6,
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "shi-labs/Agriculture-Vision",
+      "hf_kind": "datasets"
+    },
+    "dataset:geofm-benchmark": {
+      "error": "huggingface api unreachable"
+    },
+    "dataset:nor-agri-bench": {
+      "error": "huggingface api unreachable"
+    },
+    "dataset:africa-agri-synth": {
+      "models": 4,
+      "downloads": 40,
+      "likes": 0,
+      "hf_author": "electricsheepafrica",
+      "hf_base": "https://hf-mirror.com/api",
+      "hf_id": "electricsheepafrica",
+      "hf_kind": "org"
+    }
+  }
+}
