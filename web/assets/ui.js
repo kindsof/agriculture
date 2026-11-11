@@ -91,9 +91,13 @@ export function writeState(o, push) {
 }
 
 export function fail(node, err) {
-  node.innerHTML = `<div class="empty">加载失败：${esc(err && err.message || err)}
-    <div class="meta" style="margin-top:8px">检索服务可能未启动，在服务器上执行
-    <code>./corpus/run_api.sh status</code></div></div>`;
+  // 必须把真实错因带出来：只有「服务未启动」这一句时，前端 bug 会被当成宕机
+  const detail = err ? `${err.name || 'Error'}: ${err.message || err}` : '未知错误';
+  const where = err && err.stack ? String(err.stack).split('\n')[1] : '';
+  node.innerHTML = `<div class="empty">加载失败：${esc(detail)}
+    <div class="meta" style="margin-top:8px">若提示 Failed to fetch，才是检索服务未启动，
+    在服务器上执行 <code>./corpus/run_api.sh status</code></div>
+    ${where ? `<div class="meta" style="margin-top:6px;font-family:var(--mono);font-size:11px;opacity:.75">${esc(where.trim())}</div>` : ''}</div>`;
 }
 
 // 古籍正文：剥掉 YAML frontmatter，按空行与卷首标记分段

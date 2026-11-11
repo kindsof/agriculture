@@ -43,9 +43,11 @@ async function textOf(v) {
   return d;
 }
 
-// 命中定位：渲染后在文本节点里找，避免动 renderText 的转义逻辑
+// 命中定位：渲染后在文本节点里找，避免动 renderText 的转义逻辑。
+// 必须返回元素数组：之前返回的是数量，调用处却写 marks.push(...highlight(...))，
+// 展开一个数字直接 TypeError，于是「从检索点进阅读页」必挂而「从书目进」正常
 function highlight(root, needle) {
-  if (!needle) return 0;
+  if (!needle) return [];
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
   const re = new RegExp(needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
   const nodes = []; let n;
@@ -62,7 +64,7 @@ function highlight(root, needle) {
     frag.append(node.nodeValue.slice(last));
     node.replaceWith(frag);
   }
-  return root.querySelectorAll('mark').length;
+  return Array.from(root.querySelectorAll('mark'));
 }
 
 let marks = [], cur = 0;
@@ -102,7 +104,12 @@ async function draw() {
     $('#dl').href = '/api/text/' + encodeURIComponent(P.id) + '?variant=' + encodeURIComponent(docs[0].variant);
     $('#dl').download = docs[0].title + '.md';
     marks = [];
-    if (P.q) { for (const col of document.querySelectorAll('.col .body')) marks.push(...highlight(col, P.q)); }
+    if (P.q) {
+      // 不用 push(...arr)：上千命中会爆调用栈
+      for (const col of document.querySelectorAll('.col .body')) {
+        for (const m of highlight(col, P.q)) marks.push(m);
+      }
+    }
     buildToc();
     if (marks.length) { $('#findbox').hidden = false; goto(0); }
     else if (P.q) { $('#findpos').textContent = '本文未出现该词'; $('#findbox').hidden = false; }
