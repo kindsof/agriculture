@@ -44,6 +44,25 @@ def slug(title):
     return re.sub(r'[/\s\\:*?"<>|]+', '', title) or 'untitled'
 
 
+def resolve_credit(b, p):
+    """books_meta 记「待考」时，回落到语料自身的 frontmatter / {{header}} 著录。"""
+    author, dynasty, origin = b['author'], b['dynasty'], 'books_meta'
+    if author in ('待考', '', None):
+        raw = p.get('author_front') or p.get('header_author')
+        if raw:
+            m = re.match(r'^[\[【]?\s*([^】\]【\[\s]{1,8})[\]】]\s*(.+)$', raw.strip())
+            if m:
+                author = m.group(2).strip()
+                if dynasty in ('待考', '', None):
+                    dynasty = m.group(1).strip()
+            else:
+                author = t2s(raw.strip())
+            if dynasty in ('待考', '', None) and p.get('header_dynasty'):
+                dynasty = t2s(p['header_dynasty'].strip())
+            origin = 'corpus_self'
+    return author, dynasty, origin
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true', help='只校验，不写文件')
@@ -93,11 +112,12 @@ def main():
     all_local_entries = []
     for fn, nid in sorted(nx.items(), key=lambda kv: kv[1]):
         p, b = by_file[fn], legacy_books[fn]
+        author, dynasty, credit_origin = resolve_credit(b, p)
         all_local_entries.append({
             'id': nid,
             'title': b['title'],
-            'author': b['author'],
-            'dynasty': b['dynasty'],
+            'author': author,
+            'dynasty': dynasty,
             'category': '水利' if b['category'] in WATER else '农业',
             'topic': b['category'],                      # 本地细分类原样保留
             'edition': PROJECT_LABEL[p['source_project']],
@@ -108,12 +128,34 @@ def main():
             'source_project': p['source_project'],
             'source_status': p['source_status'],
             'needs_review': p['needs_review'],
+            'credit_source': credit_origin,
         })
 
     # catalog.json 的语义是「唯一作品」：重叠书以 KR 条目为主条目，本地简体本
     # 只作 local_variant 指针（文件仍完整保留在 books/local/，一字不删）
     local_only_nx = {nx[r['file']] for r in prov if r['upstream_id'] is None}
     local_entries = [e for e in all_local_entries if e['id'] in local_only_nx]
+
+    # 同一作品的两个版本（如老圃良言、天工开物）不得当两部书算：
+    # 主条目取 verified 来源，其余降为 dup_variants 指针，文件全部保留
+    groups = {}
+    for e in local_entries:
+        groups.setdefault(t2s(e['title']), []).append(e)
+    duplicates = []
+    primary = []
+    for key in sorted(groups):
+        es = groups[key]
+        if len(es) == 1:
+            primary.append(es[0])
+            continue
+        es.sort(key=lambda e: (e['source_status'] != 'verified', e['id']))
+        head, rest = es[0], es[1:]
+        head['dup_variants'] = [e['id'] for e in rest]
+        primary.append(head)
+        for e in rest:
+            duplicates.append({'nx': e['id'], 'of': head['id'], 'title': e['title'],
+                               'edition': e['edition']})
+    local_entries = primary
     for e in kr_entries:
         e.pop('local_variant', None)
     variants = []
@@ -130,7 +172,8 @@ def main():
             json.dump(merged, f, ensure_ascii=False, indent=2)
             f.write('\n')
         with open(os.path.join(BOOKS, 'variants.json'), 'w', encoding='utf-8') as f:
-            json.dump(variants, f, ensure_ascii=False, indent=2)
+            json.dump({'kanripo_local': variants, 'local_duplicates': duplicates}, f,
+                      ensure_ascii=False, indent=2)
             f.write('\n')
         with open(NX_FILE, 'w', encoding='utf-8') as f:
             json.dump(dict(sorted(nx.items(), key=lambda kv: kv[1])), f,
@@ -139,12 +182,17 @@ def main():
 
     n_kr_local = len(variants)
     print(f'上游 KR 条目 {len(kr_entries)}（标题与原字段未改动，仅挂 local_variant）')
-    print(f'本地 NX 条目 {len(local_entries)}  →  catalog.json 合计 {len(merged)} 部作品')
+    print(f'本地 NX 主条目 {len(local_entries)}  →  catalog.json 合计 {len(merged)} 部作品')
     print(f'books/local/ 文本 {copied} 份（全部 61 部本地文本一字不删，'
           f'其中 {n_kr_local} 份为重叠书的简体参校文本）')
     print(f'重叠映射 {n_kr_local} 对（kanripo 佐证 '
           f"{sum(1 for v in variants if v['match'] == 'kanripo')}，"
           f"仅书名 {sum(1 for v in variants if v['match'] == 'title')}）")
+    print(f'同名异本 {len(duplicates)} 对降为 dup_variants：'
+          + '、'.join(f"{d['of']}←{d['nx']}({d['title']})" for d in duplicates))
+    filled = [e['id'] + ' ' + e['title'] + f"[{e['dynasty']}·{e['author']}]"
+              for e in all_local_entries if e['credit_source'] == 'corpus_self']
+    print(f'待考著录由语料自身补齐 {len(filled)} 部：' + '、'.join(filled))
     dup = len(merged) - len({e['id'] for e in merged})
     assert dup == 0, f'catalog.json 存在重复 id {dup} 条'
 

@@ -1,170 +1,186 @@
-[
-  {
-    "kanripo_id": "KR3d0001",
-    "nx": "NX0038",
-    "title": "齊民要術",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR3d0002",
-    "nx": "NX0036",
-    "title": "農書（陳旉）",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR3d0003",
-    "nx": "NX0005",
-    "title": "農桑輯要",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR3d0004",
-    "nx": "NX0004",
-    "title": "農桑衣食撮要",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR3d0005",
-    "nx": "NX0018",
-    "title": "王氏農書",
-    "match": "title"
-  },
-  {
-    "kanripo_id": "KR3d0006",
-    "nx": "NX0011",
-    "title": "救荒本草",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR3d0007",
-    "nx": "NX0003",
-    "title": "農政全書",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR3d0008",
-    "nx": "NX0015",
-    "title": "泰西水法",
-    "match": "title"
-  },
-  {
-    "kanripo_id": "KR3d0009",
-    "nx": "NX0034",
-    "title": "野菜博錄",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR3d0010",
-    "nx": "NX0035",
-    "title": "欽定授時通考",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0058",
-    "nx": "NX0048",
-    "title": "水經注",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0059",
-    "nx": "NX0051",
-    "title": "水經注集釋訂訛",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0060",
-    "nx": "NX0050",
-    "title": "水經注釋",
-    "match": "title"
-  },
-  {
-    "kanripo_id": "KR2k0061",
-    "nx": "NX0044",
-    "title": "吳中水利書",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0062",
-    "nx": "NX0046",
-    "title": "四明它山水利備覽",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0063",
-    "nx": "NX0054",
-    "title": "河防通議",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0064",
-    "nx": "NX0055",
-    "title": "治河圖略",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0065",
-    "nx": "NX0057",
-    "title": "浙西水利書",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0066",
-    "nx": "NX0053",
-    "title": "河防一覽",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0067",
-    "nx": "NX0039",
-    "title": "三吳水利錄",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0068",
-    "nx": "NX0043",
-    "title": "北河紀",
-    "match": "title"
-  },
-  {
-    "kanripo_id": "KR2k0070",
-    "nx": "NX0040",
-    "title": "三吳水考",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0071",
-    "nx": "NX0045",
-    "title": "吳中水利全書",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0074",
-    "nx": "NX0041",
-    "title": "兩河清彙",
-    "match": "title"
-  },
-  {
-    "kanripo_id": "KR2k0076",
-    "nx": "NX0056",
-    "title": "治河奏績書",
-    "match": "title"
-  },
-  {
-    "kanripo_id": "KR2k0077",
-    "nx": "NX0060",
-    "title": "直隸河渠志",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0078",
-    "nx": "NX0030",
-    "title": "行水金鑑",
-    "match": "kanripo"
-  },
-  {
-    "kanripo_id": "KR2k0079",
-    "nx": "NX0052",
-    "title": "水道提綱",
-    "match": "kanripo"
-  }
-]
+{
+  "kanripo_local": [
+    {
+      "kanripo_id": "KR3d0001",
+      "nx": "NX0038",
+      "title": "齊民要術",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR3d0002",
+      "nx": "NX0036",
+      "title": "農書（陳旉）",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR3d0003",
+      "nx": "NX0005",
+      "title": "農桑輯要",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR3d0004",
+      "nx": "NX0004",
+      "title": "農桑衣食撮要",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR3d0005",
+      "nx": "NX0018",
+      "title": "王氏農書",
+      "match": "title"
+    },
+    {
+      "kanripo_id": "KR3d0006",
+      "nx": "NX0011",
+      "title": "救荒本草",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR3d0007",
+      "nx": "NX0003",
+      "title": "農政全書",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR3d0008",
+      "nx": "NX0015",
+      "title": "泰西水法",
+      "match": "title"
+    },
+    {
+      "kanripo_id": "KR3d0009",
+      "nx": "NX0034",
+      "title": "野菜博錄",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR3d0010",
+      "nx": "NX0035",
+      "title": "欽定授時通考",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0058",
+      "nx": "NX0048",
+      "title": "水經注",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0059",
+      "nx": "NX0051",
+      "title": "水經注集釋訂訛",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0060",
+      "nx": "NX0050",
+      "title": "水經注釋",
+      "match": "title"
+    },
+    {
+      "kanripo_id": "KR2k0061",
+      "nx": "NX0044",
+      "title": "吳中水利書",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0062",
+      "nx": "NX0046",
+      "title": "四明它山水利備覽",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0063",
+      "nx": "NX0054",
+      "title": "河防通議",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0064",
+      "nx": "NX0055",
+      "title": "治河圖略",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0065",
+      "nx": "NX0057",
+      "title": "浙西水利書",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0066",
+      "nx": "NX0053",
+      "title": "河防一覽",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0067",
+      "nx": "NX0039",
+      "title": "三吳水利錄",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0068",
+      "nx": "NX0043",
+      "title": "北河紀",
+      "match": "title"
+    },
+    {
+      "kanripo_id": "KR2k0070",
+      "nx": "NX0040",
+      "title": "三吳水考",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0071",
+      "nx": "NX0045",
+      "title": "吳中水利全書",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0074",
+      "nx": "NX0041",
+      "title": "兩河清彙",
+      "match": "title"
+    },
+    {
+      "kanripo_id": "KR2k0076",
+      "nx": "NX0056",
+      "title": "治河奏績書",
+      "match": "title"
+    },
+    {
+      "kanripo_id": "KR2k0077",
+      "nx": "NX0060",
+      "title": "直隸河渠志",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0078",
+      "nx": "NX0030",
+      "title": "行水金鑑",
+      "match": "kanripo"
+    },
+    {
+      "kanripo_id": "KR2k0079",
+      "nx": "NX0052",
+      "title": "水道提綱",
+      "match": "kanripo"
+    }
+  ],
+  "local_duplicates": [
+    {
+      "nx": "NX0009",
+      "of": "NX0010",
+      "title": "天工开物",
+      "edition": "Project Gutenberg（按正文声明推断）"
+    },
+    {
+      "nx": "NX0025",
+      "of": "NX0026",
+      "title": "老圃良言",
+      "edition": "维基文库（按正文 {{header}} 推断）"
+    }
+  ]
+}
