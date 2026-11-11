@@ -36,7 +36,9 @@ export async function api(path, params) {
 }
 
 // 站内导航由脚本统一注入，避免四个页面各写一份而走样
-export function shell(active) {
+// 地图页 body 是 overflow:hidden 的满屏应用，只能关成页脚（备案写到它的边栏里）
+export function shell(active, opts) {
+  const withFooter = !(opts && opts.footer === false);
   const nav = document.createElement('nav');
   nav.className = 'nav';
   nav.innerHTML = `<div class="nav-inner">
@@ -50,6 +52,22 @@ export function shell(active) {
   document.body.prepend(nav);
   const quick = nav.querySelector('#quick');
   if (quick) quick.onclick = () => location.href = '/search.html';
+  // 页脚统一注入：备案号必须站内每页可见（参照 nongxin.info 页脚）
+  if (withFooter && !document.querySelector('footer.foot')) {
+    const f = document.createElement('footer');
+    f.className = 'foot';
+    f.innerHTML = `<div class="foot-inner">
+      <div class="foot-main">
+        <span class="quote">文臣不爱钱，武臣不惜死，天下太平矣。</span>
+        <span class="sep">·</span>
+        <span>数据纠错 <a href="https://github.com/kindsof/agriculture" target="_blank" rel="noopener">kindsof/agriculture</a>・内容 CC-BY-SA-4.0</span>
+      </div>
+      <div class="foot-legal">
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">京ICP备2021026212号-3</a>
+        <span class="sep">·</span><span>wm.nongxin.info</span>
+      </div></div>`;
+    document.body.append(f);
+  }
   return nav;
 }
 

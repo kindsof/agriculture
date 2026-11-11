@@ -1,29 +1,65 @@
 /* ============================================================
    中华农耕文化地图 — 视觉与布局
-   宣纸底色、墨色文字、赭石与青绿作点缀。
+   冷色极简：中性灰白底 + 单一强调蓝，令牌与 ui.css 同步。
    ============================================================ */
 
 :root {
-  --paper: #f6efe1;
-  --paper-2: #fbf7ee;
-  --paper-3: #fffaf0;
-  --ink: #2f2a24;
-  --ink-soft: #6b5f51;
-  --ink-faint: #786b5c;
-  --line: #d8c9ae;
-  --line-soft: rgba(216, 201, 174, 0.55);
-  --terracotta: #b4552d;
-  --gold: #c59a3f;
-  --green: #5f7a4a;
-  --shadow-sm: 0 2px 8px rgba(63, 45, 25, 0.08);
-  --shadow-md: 0 8px 28px rgba(63, 45, 25, 0.12);
-  --shadow-lg: 0 18px 50px rgba(63, 45, 25, 0.18);
-  --serif: "Noto Serif CJK SC", "Noto Serif SC", "Songti SC", "STSong",
-    "SimSun", serif;
-  --sans: "Noto Sans CJK SC", "Noto Sans SC", "PingFang SC",
-    "Microsoft YaHei", "Heiti SC", sans-serif;
-  --mono: "SFMono-Regular", "Cascadia Mono", "Roboto Mono", Menlo, Consolas,
-    monospace;
+  /* 与 assets/ui.css 共用同一套冷色令牌，两处取值必须一致 */
+  --paper: #f7f8fa;
+  --paper-2: #ffffff;
+  --paper-3: #ffffff;
+  --ink: #1b2430;
+  --ink-soft: #55636f;
+  --ink-faint: #8a97a3;
+  --line: #e3e8ee;
+  --line-soft: rgba(227, 232, 238, 0.55);
+  --terracotta: #1f6feb;
+  --gold: #b8863b;
+  --green: #1f7a4d;
+  --shadow-sm: 0 1px 2px rgba(20, 30, 45, 0.06);
+  --shadow-md: 0 6px 20px rgba(20, 30, 45, 0.1);
+  --shadow-lg: 0 18px 50px rgba(20, 30, 45, 0.18);
+  /* 全站以无衬线为主，标题不再用宋体 */
+  --serif: "Inter", "Noto Sans SC", "Noto Sans CJK SC", "PingFang SC",
+    "Microsoft YaHei", system-ui, sans-serif;
+  --sans: "Inter", "Noto Sans SC", "Noto Sans CJK SC", "PingFang SC",
+    "Microsoft YaHei", system-ui, sans-serif;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --nav-h: 56px;
+  /* 地图配色交给 JS 读变量，深色模式才会跟着换 */
+  --map-fill: #eef2f7;
+  --map-fill-hover: #dbe4ee;
+  --map-line: #cdd6e0;
+  --map-line-hover: #8a97a3;
+  --map-nine-dash: #98a6b3;
+  --map-region-line: #7d8b9a;
+}
+
+/* 暗色模式：顶栏来自 ui.css，地图页令牌必须一起翻，否则半个页面亮半个页面暗。
+   地图 JS 在初始化时读这些变量，所以切换系统主题后需刷新页面才生效。 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f141a;
+    --paper-2: #161d25;
+    --paper-3: #1d252e;
+    --ink: #e8edf2;
+    --ink-soft: #a7b3bf;
+    --ink-faint: #74828f;
+    --line: #232d38;
+    --line-soft: rgba(35, 45, 56, 0.6);
+    --terracotta: #6cb0ff;
+    --gold: #d9a441;
+    --green: #57c78a;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.55);
+    --map-fill: #1d252e;
+    --map-fill-hover: #26313c;
+    --map-line: #33404e;
+    --map-line-hover: #74828f;
+    --map-nine-dash: #4a5866;
+    --map-region-line: #5d6c7c;
+  }
 }
 
 *,
@@ -100,8 +136,8 @@ a {
 
 .app {
   display: flex;
-  height: 100vh;
-  height: 100dvh;
+  height: calc(100vh - var(--nav-h));
+  height: calc(100dvh - var(--nav-h));
   width: 100%;
 }
 
@@ -114,7 +150,7 @@ a {
   min-width: 0;
   height: 100%;
   background:
-    linear-gradient(180deg, rgba(255, 250, 240, 0.5), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent 30%),
     var(--paper-2);
   border-right: 1px solid var(--line);
   box-shadow: 1px 0 0 rgba(255, 255, 255, 0.5);
@@ -141,8 +177,8 @@ a {
   border: 1.5px solid currentColor;
   border-radius: 7px;
   background:
-    linear-gradient(135deg, rgba(180, 85, 45, 0.08), rgba(180, 85, 45, 0.015));
-  box-shadow: inset 0 0 0 2px rgba(251, 247, 238, 0.8);
+    linear-gradient(135deg, rgba(31, 111, 235, 0.08), rgba(31, 111, 235, 0.015));
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.8);
 }
 
 .brand-text {
@@ -233,7 +269,7 @@ a {
 
 .search:focus-within {
   border-color: var(--terracotta);
-  box-shadow: 0 0 0 3px rgba(180, 85, 45, 0.12);
+  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.12);
 }
 
 .search svg {
@@ -382,7 +418,7 @@ a {
 .select-wrap select:focus {
   outline: 0;
   border-color: var(--terracotta);
-  box-shadow: 0 0 0 3px rgba(180, 85, 45, 0.1);
+  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.1);
 }
 
 .select-wrap svg {
@@ -416,7 +452,7 @@ a {
   overflow-y: auto;
   list-style: none;
   scrollbar-width: thin;
-  scrollbar-color: rgba(107, 95, 81, 0.25) transparent;
+  scrollbar-color: rgba(85, 99, 111, 0.25) transparent;
 }
 
 .site-list::-webkit-scrollbar,
@@ -428,7 +464,7 @@ a {
 .site-list::-webkit-scrollbar-thumb,
 .detail-scroll::-webkit-scrollbar-thumb,
 .modal-card::-webkit-scrollbar-thumb {
-  background: rgba(107, 95, 81, 0.22);
+  background: rgba(85, 99, 111, 0.22);
   border: 2px solid transparent;
   border-radius: 999px;
   background-clip: content-box;
@@ -453,12 +489,12 @@ a {
 }
 
 .site-card:hover {
-  background: rgba(180, 85, 45, 0.055);
+  background: rgba(31, 111, 235, 0.055);
 }
 
 .site-card[aria-current="true"] {
   border-left-color: var(--terracotta);
-  background: #efe2cd;
+  background: #eef2f7;
 }
 
 .site-card__dot {
@@ -467,7 +503,7 @@ a {
   margin-top: 5px;
   border-radius: 50%;
   background: var(--dot);
-  box-shadow: 0 0 0 3px rgba(255, 250, 240, 0.7);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7);
 }
 
 .site-card__body {
@@ -550,7 +586,7 @@ a {
 
 .sidebar-footer a {
   color: var(--ink-soft);
-  text-decoration-color: rgba(107, 95, 81, 0.4);
+  text-decoration-color: rgba(85, 99, 111, 0.4);
   text-underline-offset: 2px;
 }
 
@@ -574,7 +610,7 @@ a {
   min-width: 0;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 58% 42%, #e7eee9 0%, #dde6e0 62%, #d3dfd8 100%);
+    radial-gradient(ellipse at 58% 42%, #eef2f7 0%, #e7edf4 62%, #dfe7f0 100%);
 }
 
 #map {
@@ -596,14 +632,14 @@ a {
 
 .leaflet-control-zoom a {
   color: var(--ink) !important;
-  background: rgba(251, 247, 238, 0.94) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
   border-color: var(--line) !important;
   font-family: var(--sans);
   font-weight: 500;
 }
 
 .leaflet-control-zoom a:hover {
-  background: #fffaf0 !important;
+  background: #ffffff !important;
 }
 
 .leaflet-bar {
@@ -617,7 +653,7 @@ a {
   padding: 2px 6px !important;
   color: var(--ink-faint) !important;
   font-size: 8.5px !important;
-  background: rgba(251, 247, 238, 0.78) !important;
+  background: rgba(255, 255, 255, 0.78) !important;
   border-radius: 4px 0 0 0;
 }
 
@@ -631,7 +667,7 @@ a {
   line-height: 1.2;
   border-color: var(--ink-faint);
   border-top: 0;
-  background: rgba(251, 247, 238, 0.55);
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .map-topbar {
@@ -655,9 +691,9 @@ a {
   flex-direction: column;
   gap: 1px;
   padding: 8px 12px;
-  border: 1px solid rgba(216, 201, 174, 0.85);
+  border: 1px solid rgba(227, 232, 238, 0.85);
   border-radius: 10px;
-  background: rgba(251, 247, 238, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
 }
@@ -688,9 +724,9 @@ a {
   height: 36px;
   padding: 0;
   color: var(--ink);
-  border: 1px solid rgba(216, 201, 174, 0.9);
+  border: 1px solid rgba(227, 232, 238, 0.9);
   border-radius: 9px;
-  background: rgba(251, 247, 238, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
   cursor: pointer;
@@ -700,7 +736,7 @@ a {
 }
 
 .icon-button:hover {
-  background: #fffaf0;
+  background: #ffffff;
   color: var(--terracotta);
 }
 
@@ -729,9 +765,9 @@ a {
   gap: 5px;
   min-width: 128px;
   padding: 9px 11px;
-  border: 1px solid rgba(216, 201, 174, 0.85);
+  border: 1px solid rgba(227, 232, 238, 0.85);
   border-radius: 10px;
-  background: rgba(251, 247, 238, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
 }
@@ -759,7 +795,7 @@ a {
   height: 7px;
   border-radius: 50%;
   background: var(--dot);
-  box-shadow: 0 0 0 2px rgba(255, 250, 240, 0.8);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
 }
 
 .inset-wrap {
@@ -772,7 +808,7 @@ a {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #dbe5df;
+  background: #e3e8ee;
   box-shadow: var(--shadow-sm);
   transition:
     opacity 0.2s ease,
@@ -790,7 +826,7 @@ a {
   color: var(--ink-soft);
   font-size: 8.5px;
   letter-spacing: 0.08em;
-  background: rgba(251, 247, 238, 0.86);
+  background: rgba(255, 255, 255, 0.86);
   border-bottom: 1px solid var(--line-soft);
 }
 
@@ -810,11 +846,11 @@ a {
   left: 50%;
   z-index: 400;
   padding: 4px 10px;
-  color: rgba(47, 42, 36, 0.62);
+  color: rgba(27, 36, 48, 0.62);
   font-size: 9.5px;
   white-space: nowrap;
   border-radius: 999px;
-  background: rgba(251, 247, 238, 0.7);
+  background: rgba(255, 255, 255, 0.7);
   transform: translateX(-50%);
   pointer-events: none;
 }
@@ -833,12 +869,12 @@ a {
   display: block;
   width: 14px;
   height: 14px;
-  border: 2px solid #fffaf0;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   background: var(--c, var(--terracotta));
   box-shadow:
-    0 1px 4px rgba(47, 42, 36, 0.35),
-    0 0 0 1px rgba(47, 42, 36, 0.08);
+    0 1px 4px rgba(27, 36, 48, 0.35),
+    0 0 0 1px rgba(27, 36, 48, 0.08);
   transition: transform 0.15s ease;
 }
 
@@ -850,8 +886,8 @@ a {
 .site-marker.is-active .site-marker__dot {
   transform: scale(1.35);
   box-shadow:
-    0 0 0 4px rgba(180, 85, 45, 0.22),
-    0 1px 5px rgba(47, 42, 36, 0.35);
+    0 0 0 4px rgba(31, 111, 235, 0.22),
+    0 1px 5px rgba(27, 36, 48, 0.35);
 }
 
 .site-marker.is-active .site-marker__dot::after {
@@ -884,8 +920,8 @@ a {
   border-radius: 50%;
   background: var(--ink);
   box-shadow:
-    0 2px 8px rgba(47, 42, 36, 0.3),
-    0 0 0 1px rgba(47, 42, 36, 0.1);
+    0 2px 8px rgba(27, 36, 48, 0.3),
+    0 0 0 1px rgba(27, 36, 48, 0.1);
   transition:
     background 0.15s ease,
     transform 0.15s ease;
@@ -969,7 +1005,7 @@ a {
   color: var(--ink-soft);
   border: 1px solid var(--line);
   border-radius: 50%;
-  background: rgba(251, 247, 238, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   cursor: pointer;
   transition:
     color 0.15s ease,
@@ -978,7 +1014,7 @@ a {
 
 .detail-close:hover {
   color: var(--terracotta);
-  background: #fffaf0;
+  background: #ffffff;
 }
 
 .detail-close svg {
@@ -996,7 +1032,7 @@ a {
   padding: 26px 26px 30px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(107, 95, 81, 0.25) transparent;
+  scrollbar-color: rgba(85, 99, 111, 0.25) transparent;
 }
 
 .detail-badge {
@@ -1090,7 +1126,7 @@ a {
 
 .detail-section p {
   margin: 0;
-  color: #4a4035;
+  color: #1b2430;
   font-size: 12.5px;
   line-height: 1.85;
 }
@@ -1115,7 +1151,7 @@ a {
   line-height: 1.5;
   border-left: 2px solid var(--gold);
   border-radius: 0 6px 6px 0;
-  background: #f4ead8;
+  background: #eef2f7;
 }
 
 .heritage-item::before {
@@ -1138,7 +1174,7 @@ a {
   color: var(--ink-soft);
   font-size: 10px;
   border-radius: 999px;
-  background: rgba(216, 201, 174, 0.35);
+  background: rgba(227, 232, 238, 0.35);
 }
 
 .source-list {
@@ -1154,7 +1190,7 @@ a {
   font-size: 10.5px;
   line-height: 1.5;
   text-decoration: none;
-  border-bottom: 1px dashed rgba(180, 85, 45, 0.25);
+  border-bottom: 1px dashed rgba(31, 111, 235, 0.25);
 }
 
 .source-link:hover {
@@ -1202,7 +1238,7 @@ a {
 
 .copy-button:hover {
   color: var(--terracotta);
-  background: #fffaf0;
+  background: #ffffff;
 }
 
 /* ---------- 提示与弹窗 ---------- */
@@ -1235,7 +1271,7 @@ a {
 .modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(47, 42, 36, 0.42);
+  background: rgba(27, 36, 48, 0.42);
   backdrop-filter: blur(3px);
 }
 
@@ -1266,7 +1302,7 @@ a {
 
 .about-body p {
   margin: 0 0 11px;
-  color: #4a4035;
+  color: #1b2430;
   font-size: 12px;
   line-height: 1.85;
 }
@@ -1284,7 +1320,7 @@ a {
   font-family: var(--mono);
   font-size: 10.5px;
   border-radius: 3px;
-  background: #f1e6d2;
+  background: #eef2f7;
 }
 
 .about-license {
@@ -1363,7 +1399,7 @@ a {
 @media (max-width: 900px) {
   .sidebar {
     position: fixed;
-    top: 0;
+    top: var(--nav-h);
     bottom: 0;
     left: 0;
     z-index: 1000;
@@ -1379,10 +1415,10 @@ a {
 
   .sidebar-backdrop {
     position: fixed;
-    inset: 0;
+    inset: var(--nav-h) 0 0 0;
     z-index: 950;
     display: block;
-    background: rgba(47, 42, 36, 0.34);
+    background: rgba(27, 36, 48, 0.34);
     backdrop-filter: blur(2px);
   }
 
@@ -1526,4 +1562,105 @@ a {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ---------- 九大农区（区界按省份归并，属示意）---------- */
+.region-row {
+  padding: 12px 24px 4px;
+  margin-top: 4px;
+  border-top: 1px solid var(--line);
+}
+
+.region-row__label {
+  margin: 0 0 8px;
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+}
+
+.region-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.region-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.region-chip:hover {
+  border-color: var(--terracotta);
+  color: var(--ink);
+}
+
+.region-chip[aria-pressed="true"] {
+  background: var(--paper);
+  border-color: var(--terracotta);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.region-chip .legend-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.region-chip .chip__count {
+  font-size: 11px;
+  color: var(--ink-faint);
+}
+
+.region-pop .leaflet-popup-content-wrapper {
+  background: var(--paper-3);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: var(--shadow-lg);
+}
+
+.region-pop .leaflet-popup-content {
+  margin: 14px 16px;
+  font-family: var(--sans);
+}
+
+.region-pop__body h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.region-pop__meta {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.region-pop__body p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.region-book {
+  display: inline-block;
+  margin: 0 2px;
+  padding: 1px 7px;
+  font-size: 12.5px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.region-book.is-plain {
+  color: var(--ink-faint);
+  border-style: dashed;
 }

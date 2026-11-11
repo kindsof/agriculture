@@ -7,7 +7,7 @@
       name="description"
       content="中华农耕文化地图：在中国地图上浏览各地传统农耕文化、农事习俗与农业文化遗产，点击地标查看详细介绍。"
     />
-    <meta name="theme-color" content="#f6efe1" />
+    <meta name="theme-color" content="#f7f8fa" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <title>中华农耕文化地图 · 地域农耕文化 GIS</title>
     <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="vendor/leaflet-markercluster/MarkerCluster.Default.css"
     />
+    <link rel="stylesheet" href="assets/ui.css" />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
@@ -93,6 +94,11 @@
           </div>
         </div>
 
+        <div class="region-row" id="region-row" hidden>
+          <p class="region-row__label">农耕区（点选叠加，区界按省份归并示意）</p>
+          <div class="region-chips" id="region-chips" role="group" aria-label="按农区筛选"></div>
+        </div>
+
         <ol class="site-list" id="site-list" tabindex="-1"></ol>
 
         <footer class="sidebar-footer">
@@ -108,6 +114,14 @@
           <button class="text-button" id="about-button" type="button">
             数据与方法说明
           </button>
+          <span class="beian"
+            ><a
+              href="https://beian.miit.gov.cn/"
+              target="_blank"
+              rel="nofollow noopener"
+              >京ICP备2021026212号-3</a
+            ></span
+          >
         </footer>
       </aside>
 
@@ -242,6 +256,10 @@
     <script src="vendor/leaflet/leaflet.js"></script>
     <script src="vendor/leaflet-markercluster/leaflet.markercluster.js"></script>
     <script src="assets/app.js"></script>
-  <a href="/home.html" style="position:fixed;top:12px;right:14px;z-index:1200;display:inline-block;padding:7px 13px;font:13px/1 system-ui,-apple-system,"Noto Sans SC",sans-serif;color:#1b2430;background:rgba(255,255,255,.92);border:1px solid #d7dee7;border-radius:999px;text-decoration:none;box-shadow:0 1px 3px rgba(20,30,45,.12)">&larr; 返回首页</a>
+  <script type="module">
+  // 与站内其他页共用同一顶栏；地图页不注入页脚，备案在边栏页脚里
+  import { shell } from "./assets/ui.js";
+  shell("map", { footer: false });
+</script>
 </body>
 </html>

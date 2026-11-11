@@ -6,14 +6,15 @@
 (() => {
   "use strict";
 
+  // 色相拉开但不艳，跟冷色极简的主界面同调
   const CATEGORIES = [
-    { key: "rice", label: "稻作文化", color: "#c59a3f" },
-    { key: "water", label: "梯田水利", color: "#3f7fa3" },
-    { key: "tea", label: "茶文化", color: "#5c7a4a" },
-    { key: "mulberry", label: "蚕桑渔农", color: "#8a5a44" },
-    { key: "dryland", label: "旱作游牧", color: "#a9743a" },
-    { key: "custom", label: "农事民俗", color: "#a63d40" },
-    { key: "specialty", label: "特色物产", color: "#7a5c9e" },
+    { key: "rice", label: "稻作文化", color: "#c08a2e" },
+    { key: "water", label: "梯田水利", color: "#1f6feb" },
+    { key: "tea", label: "茶文化", color: "#1f7a4d" },
+    { key: "mulberry", label: "蚕桑渔农", color: "#0f8f9c" },
+    { key: "dryland", label: "旱作游牧", color: "#8a7f6a" },
+    { key: "custom", label: "农事民俗", color: "#c1483f" },
+    { key: "specialty", label: "特色物产", color: "#6573c2" },
   ];
   const CATEGORY_BY_KEY = new Map(CATEGORIES.map((c) => [c.key, c]));
   const MAINLAND_BOUNDS = [
@@ -24,6 +25,13 @@
   const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
 
   const $ = (selector) => document.querySelector(selector);
+  // 地图颜色从 CSS 变量读，深色模式与 ui.css 令牌才能一处控制
+  const cssVar = (name, fallback) => {
+    const v = getComputedStyle(document.documentElement)
+      .getPropertyValue(name)
+      .trim();
+    return v || fallback;
+  };
   const escapeMap = {
     "&": "&amp;",
     "<": "&lt;",
@@ -40,7 +48,7 @@
     CATEGORY_BY_KEY.get(key) || {
       key,
       label: "农耕文化",
-      color: "#b4552d",
+      color: "#1f6feb",
     };
 
   const state = {
@@ -50,12 +58,18 @@
     selectedId: null,
     category: "all",
     province: "all",
+    region: "all",
     query: "",
     stats: null,
     provinceCounts: new Map(),
     map: null,
     insetMap: null,
     cluster: null,
+    regionLayer: null,
+    regionLines: null,
+    provinceLayer: null,
+    regions: [],
+    regionById: new Map(),
     markerById: new Map(),
     hasDetail: false,
     lastFocus: null,
@@ -78,6 +92,8 @@
     mapWrap: $("#map-wrap"),
     mapCaptionMeta: $("#map-caption-meta"),
     legend: $("#legend"),
+    regionRow: $("#region-row"),
+    regionChips: $("#region-chips"),
     resetView: $("#reset-view"),
     aboutButton: $("#about-button"),
     aboutButtonMap: $("#about-button-map"),
@@ -107,10 +123,12 @@
       throw new Error("Leaflet 未能载入，请确认 vendor/leaflet 文件完整。");
     }
 
-    const [sitesGeo, stats, provinces] = await Promise.all([
+    const [sitesGeo, stats, provinces, regions] = await Promise.all([
       loadJson("data/sites.geojson"),
       loadJson("data/stats.json"),
       loadJson("data/provinces.geojson"),
+      // 农区图层是锦上添花：缺文件也不能拖垮整张地图
+      loadJson("data/regions.geojson").catch(() => null),
     ]);
 
     state.sites = sitesGeo.features.map((feature) => ({
@@ -119,6 +137,10 @@
       lat: feature.geometry.coordinates[1],
     }));
     state.stats = stats;
+    state.regions = regions?.features || [];
+    state.regionById = new Map(
+      state.regions.map((f) => [f.properties.id, f]),
+    );
     state.provinceCounts = new Map(
       Object.entries(stats.provinceCounts || {}),
     );
@@ -128,6 +150,8 @@
     renderProvinceOptions();
     renderLegend();
     initMap(provinces);
+    initRegionLayer();
+    renderRegionChips();
     initMarkers();
     bindEvents();
     syncSidebarInert();
@@ -209,6 +233,161 @@
     els.legend.replaceChildren(fragment);
   }
 
+  /* ---------- 九大农区 ---------- */
+  /* 区域多边形由各成员省的省级边界拼成（旧数据只给了省份分组），
+     所以它是「示意区」而不是农学边界，面图层上不装真界线 */
+
+  function featureBounds(feature) {
+    let minLat = 90, maxLat = -90, minLng = 180, maxLng = -180;
+    const walk = (a) => {
+      if (typeof a[0] === "number") {
+        minLng = Math.min(minLng, a[0]);
+        maxLng = Math.max(maxLng, a[0]);
+        minLat = Math.min(minLat, a[1]);
+        maxLat = Math.max(maxLat, a[1]);
+      } else {
+        a.forEach(walk);
+      }
+    };
+    walk(feature.geometry.coordinates);
+    return [
+      [minLat, minLng],
+      [maxLat, maxLng],
+    ];
+  }
+
+  function initRegionLayer() {
+    if (!state.regions.length) return;
+    // 常驻的区界只画线、不接交互，否则会把“点省下钻”给抢掉
+    state.regionLines = L.geoJSON(
+      { type: "FeatureCollection", features: state.regions },
+      {
+        interactive: false,
+        style: {
+          color: cssVar("--map-region-line", "#7d8b9a"),
+          weight: 1,
+          opacity: 0.5,
+          dashArray: "5 4",
+          fill: false,
+        },
+      },
+    ).addTo(state.map);
+  }
+
+  function renderRegionFill() {
+    if (state.regionLayer) {
+      state.map.removeLayer(state.regionLayer);
+      state.regionLayer = null;
+    }
+    const feature = state.regionById.get(state.region);
+    if (!feature) return;
+    const color = feature.properties.color || "#1f6feb";
+    state.regionLayer = L.geoJSON(feature, {
+      style: {
+        color: color,
+        weight: 2,
+        opacity: 0.95,
+        fillColor: color,
+        fillOpacity: 0.18,
+      },
+      onEachFeature(f, layer) {
+        layer.bindPopup(regionPopup(f.properties), {
+          maxWidth: 360,
+          className: "region-pop",
+        });
+        layer.on("click", () => setRegion(f.properties.id));
+      },
+    }).addTo(state.map);
+    state.regionLayer.bringToFront();
+  }
+
+  function regionPopup(p) {
+    const books = (p.books || [])
+      .map((b) => {
+        if (!b.work_ids || !b.work_ids.length) {
+          return `<span class="region-book is-plain">${esc(b.title)}</span>`;
+        }
+        return b.work_ids
+          .map(
+            (id) =>
+              `<a class="region-book" href="/read.html?id=${encodeURIComponent(id)}">${esc(b.title)}</a>`,
+          )
+          .join("、");
+      })
+      .join("、");
+    const count = state.sites.filter((s) =>
+      p.provinces.includes(s.province),
+    ).length;
+    return `<div class="region-pop__body">
+      <h3 style="color:${esc(p.color)}">${esc(p.name)}</h3>
+      <p class="region-pop__meta">${esc(p.provinces.join(" · "))}・区内 ${count} 处地标</p>
+      ${(p.summary || []).map((s) => `<p>${esc(s)}</p>`).join("")}
+      <p><b>作物</b> ${esc(p.crops)}</p>
+      <p><b>农俗</b> ${esc(p.folkways)}</p>
+      <p><b>遗产</b> ${esc(p.heritage_note)}</p>
+      <p><b>相关农书</b> ${books}</p>
+    </div>`;
+  }
+
+  function renderRegionChips() {
+    if (!state.regions.length || !els.regionChips) return;
+    const fragment = document.createDocumentFragment();
+    const all = document.createElement("button");
+    all.type = "button";
+    all.className = "region-chip";
+    all.dataset.region = "all";
+    all.textContent = "全部";
+    fragment.appendChild(all);
+    for (const feature of state.regions) {
+      const p = feature.properties;
+      const n = state.sites.filter((s) => p.provinces.includes(s.province)).length;
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "region-chip";
+      b.dataset.region = p.id;
+      b.innerHTML = `<span class="legend-dot" style="--dot:${esc(p.color)}"></span>${esc(p.name)}<span class="chip__count">${n}</span>`;
+      fragment.appendChild(b);
+    }
+    els.regionChips.replaceChildren(fragment);
+    els.regionRow.hidden = false;
+    syncRegionChips();
+  }
+
+  function syncRegionChips() {
+    if (!els.regionChips) return;
+    els.regionChips.querySelectorAll(".region-chip").forEach((b) => {
+      b.setAttribute("aria-pressed", String(b.dataset.region === state.region));
+    });
+  }
+
+  function setRegion(id) {
+    state.region = state.region === id ? "all" : id;
+    syncRegionChips();
+    renderRegionFill();
+    if (state.provinceLayer) {
+      state.provinceLayer.setStyle(
+        state.region === "all"
+          ? {
+              fillColor: cssVar("--map-fill", "#eef2f7"),
+              fillOpacity: 1,
+            }
+          : {
+              fillColor: cssVar("--map-fill", "#eef2f7"),
+              fillOpacity: 0.35,
+            },
+      );
+    }
+    const feature = state.regionById.get(state.region);
+    if (feature) {
+      state.map.flyToBounds(featureBounds(feature), {
+        padding: [36, 36],
+        maxZoom: 6,
+        duration: 0.6,
+      });
+    }
+    applyFilters();
+  }
+
   /* ---------- 地图 ---------- */
 
   function initMap(provinces) {
@@ -245,7 +424,7 @@
         {
           interactive: false,
           style: {
-            color: "#7f9187",
+            color: cssVar("--map-nine-dash", "#98a6b3"),
             weight: 1.2,
             opacity: 0.85,
             fill: false,
@@ -259,10 +438,10 @@
       { type: "FeatureCollection", features: provinceFeatures },
       {
         style: {
-          color: "#ad9879",
+          color: cssVar("--map-line", "#cdd6e0"),
           weight: 1.2,
           opacity: 0.95,
-          fillColor: "#f2e8d5",
+          fillColor: cssVar("--map-fill", "#eef2f7"),
           fillOpacity: 1,
         },
         onEachFeature(feature, layer) {
@@ -277,14 +456,18 @@
             mouseover(event) {
               const target = event.target;
               target.setStyle({
-                color: "#8d795c",
+                color: cssVar("--map-line-hover", "#8a97a3"),
                 weight: 1.6,
-                fillColor: "#e9dcc4",
+                fillColor: cssVar("--map-fill-hover", "#dbe4ee"),
               });
               target.bringToFront();
             },
             mouseout(event) {
               provinceLayer.resetStyle(event.target);
+              // 选中农区时省面是半透明的，resetStyle 会把它们刷回不透明
+              if (state.region !== "all") {
+                event.target.setStyle({ fillOpacity: 0.35 });
+              }
             },
             click() {
               filterByProvince(name);
@@ -293,6 +476,7 @@
         },
       },
     ).addTo(map);
+    state.provinceLayer = provinceLayer;
 
     map.fitBounds(MAINLAND_BOUNDS, {
       padding: [14, 14],
@@ -334,10 +518,10 @@
       {
         interactive: false,
         style: {
-          color: "#ad9879",
+          color: cssVar("--map-line", "#cdd6e0"),
           weight: 0.9,
           opacity: 0.9,
-          fillColor: "#f2e8d5",
+          fillColor: cssVar("--map-fill", "#eef2f7"),
           fillOpacity: 1,
         },
       },
@@ -349,7 +533,7 @@
         {
           interactive: false,
           style: {
-            color: "#7f9187",
+            color: cssVar("--map-nine-dash", "#98a6b3"),
             weight: 1,
             opacity: 0.85,
             fill: false,
@@ -434,6 +618,11 @@
       }
       if (state.province !== "all" && site.province !== state.province) {
         return false;
+      }
+      if (state.region !== "all") {
+        const region = state.regionById.get(state.region);
+        const inRegion = region?.properties.provinces?.includes(site.province);
+        if (!inRegion) return false;
       }
       if (!query) return true;
       const haystack = [
@@ -596,9 +785,18 @@
     state.category = "all";
     state.province = "all";
     state.query = "";
+    state.region = "all";
     els.search.value = "";
     els.provinceSelect.value = "all";
     syncChips();
+    syncRegionChips();
+    renderRegionFill();
+    if (state.provinceLayer) {
+      state.provinceLayer.setStyle({
+        fillColor: cssVar("--map-fill", "#eef2f7"),
+        fillOpacity: 1,
+      });
+    }
     applyFilters();
   }
 
@@ -746,6 +944,7 @@
     if (state.selectedId) params.set("site", state.selectedId);
     if (state.category !== "all") params.set("cat", state.category);
     if (state.province !== "all") params.set("prov", state.province);
+    if (state.region !== "all") params.set("reg", state.region);
     if (state.query) params.set("q", state.query);
     const hash = params.toString();
     try {
@@ -765,6 +964,9 @@
     const province = params.get("prov");
     state.category = CATEGORY_BY_KEY.has(category) ? category : "all";
     state.province = state.provinceCounts.has(province) ? province : "all";
+    state.region = state.regionById.has(params.get("reg"))
+      ? params.get("reg")
+      : "all";
     state.query = params.get("q") || "";
     els.search.value = state.query;
     els.provinceSelect.value = state.province;
@@ -913,6 +1115,12 @@
       const chip = event.target.closest("[data-category]");
       if (chip) setCategory(chip.dataset.category);
     });
+    if (els.regionChips) {
+      els.regionChips.addEventListener("click", (event) => {
+        const chip = event.target.closest("[data-region]");
+        if (chip) setRegion(chip.dataset.region);
+      });
+    }
     els.provinceSelect.addEventListener("change", () => {
       setProvince(els.provinceSelect.value);
     });
