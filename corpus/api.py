@@ -31,7 +31,21 @@ from build import tokenize                       # noqa: E402  与建库端同�
 
 DB = os.path.join(HERE, 'corpus.db')
 BOOKS = os.path.join(ROOT, 'books')
+WEB = os.path.join(ROOT, 'web')
+SITES = os.path.join(WEB, 'data', 'sites.geojson')
+STATS = os.path.join(WEB, 'data', 'stats.json')
 T2S = json.load(open(os.path.join(HERE, 't2s.json'), encoding='utf-8'))
+
+# 静态站与检索 API 共进程共端口：nginx 只需指一处，加端点不用改反代。
+MIME = {
+    '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
+    '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8',
+    '.geojson': 'application/geo+json; charset=utf-8', '.svg': 'image/svg+xml',
+    '.png': 'image/png', '.jpg': 'image/jpeg', '.woff2': 'font/woff2',
+    '.yaml': 'text/yaml; charset=utf-8', '.md': 'text/markdown; charset=utf-8',
+}
+# 路由别名：不搬上游文件就能把旧地图页挂进新导航
+ALIASES = {'/': 'home.html', '/map.html': 'index.html'}
 
 
 def to_simplified(q):
@@ -82,17 +96,19 @@ class Handler(http.server.BaseHTTPRequestHandler):
         qs = parse_qs(u.query)
         path = u.path.rstrip('/') or '/'
         try:
-            if path == '/':
-                return self.send_json({'service': 'agriculture-search',
+            if path == '/api':
+                return self.send_json({'service': 'agriculture',
                                        'endpoints': ['/api/health', '/api/works', '/api/work/<id>',
                                                      '/api/search', '/api/text/<id>',
-                                                     '/api/solar-terms', '/api/nongshi']})
+                                                     '/api/solar-terms', '/api/nongshi',
+                                                     '/api/sites', '/api/sites/<id>', '/api/stats']})
             if path == '/api/health':
                 c = db()
                 n = {t: c.execute('SELECT COUNT(*) FROM ' + t).fetchone()[0]
                      for t in ('works', 'chunks', 'solar_terms', 'nongshi')}
                 n['chars_indexed'] = c.execute('SELECT SUM(n_chars) FROM chunks').fetchone()[0]
                 n['ok'] = n['chunks'] > 0
+                n['sites'] = len(json.load(open(SITES, encoding='utf-8'))['features'])
                 return self.send_json(n)
             if path == '/api/works':
                 return self.works(qs)
@@ -107,9 +123,71 @@ class Handler(http.server.BaseHTTPRequestHandler):
                     'SELECT * FROM solar_terms ORDER BY ord')])
             if path == '/api/nongshi':
                 return self.nongshi(qs)
-            return self.send_json({'error': 'not found', 'path': path}, 404)
+            if path == '/api/sites':
+                return self.sites(qs)
+            if path.startswith('/api/sites/'):
+                return self.site(path.rsplit('/', 1)[-1])
+            if path == '/api/stats':
+                return self.stats()
+            if path.startswith('/api/'):
+                return self.send_json({'error': 'not found', 'path': path}, 404)
+            return self.static(path)
         except Exception as e:                                   # noqa: BLE001
             return self.send_json({'error': type(e).__name__, 'detail': str(e)}, 400)
+
+    # ---- 静态站（web/）----
+    def static(self, path):
+        rel = ALIASES.get(path, path.lstrip('/'))
+        full = os.path.normpath(os.path.join(WEB, rel))
+        if not full.startswith(WEB) or not os.path.isfile(full):
+            return self.send_json({'error': 'not found', 'path': path}, 404)
+        body = open(full, 'rb').read()
+        self.send_response(200)
+        self.send_header('Content-Type', MIME.get(os.path.splitext(full)[1],
+                                                  'application/octet-stream'))
+        self.send_header('Content-Length', str(len(body)))
+        # 地图库与字体不变，缓存长一点；页面与自有资源不缓存，免得改了看不到
+        cache = ('public, max-age=86400' if '/vendor/' in full
+                 else 'no-cache')
+        self.send_header('Cache-Control', cache)
+        self.send_header('X-Content-Type-Options', 'nosniff')
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.end_headers()
+        self.wfile.write(body)
+
+    # ---- GIS 端点：与上游 web/server.py 同语义，app.js 一行不用改 ----
+    def sites(self, qs):
+        geo = json.load(open(SITES, encoding='utf-8'))
+        cat = qs.get('category', [''])[0]
+        prov = qs.get('province', [''])[0]
+        needle = qs.get('q', [''])[0].strip().lower()
+        out = []
+        for f in geo['features']:
+            p = f.get('properties', {})
+            if cat and p.get('category') != cat:
+                continue
+            if prov and p.get('province') != prov:
+                continue
+            if needle:
+                hay = ' '.join([str(p.get('name', '')), str(p.get('province', '')),
+                                str(p.get('city', '')), str(p.get('summary', '')),
+                                str(p.get('culture', '')),
+                                ' '.join(p.get('tags') or []),
+                                ' '.join(p.get('heritage') or [])]).lower()
+                if needle not in hay:
+                    continue
+            out.append(f)
+        body = {'type': 'FeatureCollection', 'features': out}
+        return self.send_json(body)
+
+    def site(self, sid):
+        for f in json.load(open(SITES, encoding='utf-8'))['features']:
+            if f.get('properties', {}).get('id') == sid:
+                return self.send_json(f)
+        return self.send_json({'error': 'no such site', 'id': sid}, 404)
+
+    def stats(self):
+        return self.send_json(json.load(open(STATS, encoding='utf-8')))
 
     # ---- 作品 ----
     def works(self, qs):
