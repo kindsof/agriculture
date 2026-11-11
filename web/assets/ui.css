@@ -6,12 +6,15 @@
   --surface-2: #f1f4f8;
   --ink: #1b2430;
   --ink-2: #55636f;
-  --ink-3: #8a97a3;
+  --ink-3: #626e7b;
   --line: #e3e8ee;
   --line-strong: #cdd6e0;
   --accent: #1f6feb;
   --accent-ink: #0b4bb8;
   --accent-soft: #eaf2ff;
+  /* 实心按钮单独用深底：浅色主色当底配白字只有 4.6:1，暗色下 2.3:1 */
+  --accent-solid: #1857c4;
+  --accent-on: #ffffff;
   --ok: #1f7a4d;
   --warn: #9a6400;
   --danger: #b3261e;
@@ -29,9 +32,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0f141a; --surface: #161d25; --surface-2: #1d252e;
-    --ink: #e8edf2; --ink-2: #a7b3bf; --ink-3: #74828f;
+    --ink: #e8edf2; --ink-2: #a7b3bf; --ink-3: #8f9dab;
     --line: #232d38; --line-strong: #33404e;
     --accent: #6cb0ff; --accent-ink: #9ecbff; --accent-soft: #14283f;
+    --accent-solid: #2a6fe0;
     --ok: #57c78a; --warn: #d9a441; --danger: #ff8f88;
     --shadow-1: 0 1px 2px rgba(0, 0, 0, .4); --shadow-2: 0 8px 24px rgba(0, 0, 0, .5);
   }
@@ -123,8 +127,9 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 24px 20px 72px; }
   border: 1px solid var(--line-strong); border-radius: var(--radius);
 }
 .btn:hover { background: var(--surface-2); }
-.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-.btn.primary:hover { filter: brightness(1.06); background: var(--accent); }
+.btn.primary { background: var(--accent-solid); border-color: var(--accent-solid);
+  color: var(--accent-on); }
+.btn.primary:hover { filter: brightness(1.08); background: var(--accent-solid); }
 .btn.sm { padding: 6px 11px; font-size: 13px; }
 .seg { display: inline-flex; padding: 3px; gap: 2px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px; }
 .seg button {
@@ -138,7 +143,8 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 24px 20px 72px; }
   border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2);
 }
 .chip:hover { border-color: var(--accent); color: var(--accent-ink); }
-.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip[aria-pressed="true"] { background: var(--accent-solid);
+  border-color: var(--accent-solid); color: var(--accent-on); }
 .meta { color: var(--ink-3); font-size: 13px; }
 .hit { padding: 14px 16px; border-bottom: 1px solid var(--line); cursor: pointer; }
 .hit:last-child { border-bottom: 0; }

@@ -10,10 +10,10 @@
   --paper-3: #ffffff;
   --ink: #1b2430;
   --ink-soft: #55636f;
-  --ink-faint: #8a97a3;
+  --ink-faint: #626e7b;
   --line: #e3e8ee;
   --line-soft: rgba(227, 232, 238, 0.55);
-  --terracotta: #1f6feb;
+  --terracotta: #1857c4;
   --gold: #b8863b;
   --green: #1f7a4d;
   --shadow-sm: 0 1px 2px rgba(20, 30, 45, 0.06);
@@ -33,6 +33,16 @@
   --map-line-hover: #8a97a3;
   --map-nine-dash: #98a6b3;
   --map-region-line: #7d8b9a;
+  /* 浮层白玻璃与次级底色：暗色模式必须跟着翻，否则白面板配浅色字＝看不见 */
+  --surface-2: #eef2f7;
+  --glass: rgba(255, 255, 255, 0.9);
+  --glass-strong: rgba(255, 255, 255, 0.94);
+  --rim: rgba(255, 255, 255, 0.8);
+  --hint-bg: rgba(255, 255, 255, 0.72);
+  --hint-fg: rgba(27, 36, 48, 0.66);
+  --map-bg-1: #eef2f7;
+  --map-bg-2: #e7edf4;
+  --map-bg-3: #dfe7f0;
 }
 
 /* 暗色模式：顶栏来自 ui.css，地图页令牌必须一起翻，否则半个页面亮半个页面暗。
@@ -44,7 +54,7 @@
     --paper-3: #1d252e;
     --ink: #e8edf2;
     --ink-soft: #a7b3bf;
-    --ink-faint: #74828f;
+    --ink-faint: #8f9dab;
     --line: #232d38;
     --line-soft: rgba(35, 45, 56, 0.6);
     --terracotta: #6cb0ff;
@@ -59,6 +69,15 @@
     --map-line-hover: #74828f;
     --map-nine-dash: #4a5866;
     --map-region-line: #5d6c7c;
+    --surface-2: #26313c;
+    --glass: rgba(22, 29, 37, 0.9);
+    --glass-strong: rgba(22, 29, 37, 0.95);
+    --rim: rgba(255, 255, 255, 0.08);
+    --hint-bg: rgba(22, 29, 37, 0.8);
+    --hint-fg: rgba(232, 237, 242, 0.72);
+    --map-bg-1: #131b24;
+    --map-bg-2: #101822;
+    --map-bg-3: #0d141c;
   }
 }
 
@@ -150,10 +169,10 @@ a {
   min-width: 0;
   height: 100%;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent 30%),
+    linear-gradient(180deg, var(--surface-2), transparent 30%),
     var(--paper-2);
   border-right: 1px solid var(--line);
-  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 1px 0 0 var(--line);
 }
 
 .brand {
@@ -178,7 +197,7 @@ a {
   border-radius: 7px;
   background:
     linear-gradient(135deg, rgba(31, 111, 235, 0.08), rgba(31, 111, 235, 0.015));
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 0 0 2px var(--rim);
 }
 
 .brand-text {
@@ -494,7 +513,7 @@ a {
 
 .site-card[aria-current="true"] {
   border-left-color: var(--terracotta);
-  background: #eef2f7;
+  background: var(--surface-2);
 }
 
 .site-card__dot {
@@ -503,7 +522,7 @@ a {
   margin-top: 5px;
   border-radius: 50%;
   background: var(--dot);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0 3px var(--paper-2);
 }
 
 .site-card__body {
@@ -610,7 +629,8 @@ a {
   min-width: 0;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 58% 42%, #eef2f7 0%, #e7edf4 62%, #dfe7f0 100%);
+    radial-gradient(ellipse at 58% 42%, var(--map-bg-1) 0%, var(--map-bg-2) 62%,
+      var(--map-bg-3) 100%);
 }
 
 #map {
@@ -631,15 +651,16 @@ a {
 }
 
 .leaflet-control-zoom a {
+  color: var(--ink-soft);
   color: var(--ink) !important;
-  background: rgba(255, 255, 255, 0.94) !important;
+  background: var(--glass-strong) !important;
   border-color: var(--line) !important;
   font-family: var(--sans);
   font-weight: 500;
 }
 
 .leaflet-control-zoom a:hover {
-  background: #ffffff !important;
+  background: var(--paper-2) !important;
 }
 
 .leaflet-bar {
@@ -650,10 +671,11 @@ a {
 }
 
 .leaflet-control-attribution {
+  color: var(--ink-faint);
   padding: 2px 6px !important;
   color: var(--ink-faint) !important;
   font-size: 8.5px !important;
-  background: rgba(255, 255, 255, 0.78) !important;
+  background: var(--glass) !important;
   border-radius: 4px 0 0 0;
 }
 
@@ -667,7 +689,7 @@ a {
   line-height: 1.2;
   border-color: var(--ink-faint);
   border-top: 0;
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--glass);
 }
 
 .map-topbar {
@@ -693,7 +715,7 @@ a {
   padding: 8px 12px;
   border: 1px solid rgba(227, 232, 238, 0.85);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--glass);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
 }
@@ -726,7 +748,7 @@ a {
   color: var(--ink);
   border: 1px solid rgba(227, 232, 238, 0.9);
   border-radius: 9px;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--glass);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
   cursor: pointer;
@@ -736,7 +758,7 @@ a {
 }
 
 .icon-button:hover {
-  background: #ffffff;
+  background: var(--paper-2);
   color: var(--terracotta);
 }
 
@@ -767,7 +789,7 @@ a {
   padding: 9px 11px;
   border: 1px solid rgba(227, 232, 238, 0.85);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--glass) !important;
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
 }
@@ -795,7 +817,7 @@ a {
   height: 7px;
   border-radius: 50%;
   background: var(--dot);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0 2px var(--paper-2);
 }
 
 .inset-wrap {
@@ -826,7 +848,7 @@ a {
   color: var(--ink-soft);
   font-size: 8.5px;
   letter-spacing: 0.08em;
-  background: rgba(255, 255, 255, 0.86);
+  background: var(--glass);
   border-bottom: 1px solid var(--line-soft);
 }
 
@@ -846,11 +868,11 @@ a {
   left: 50%;
   z-index: 400;
   padding: 4px 10px;
-  color: rgba(27, 36, 48, 0.62);
+  color: var(--hint-fg);
   font-size: 9.5px;
   white-space: nowrap;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--hint-bg);
   transform: translateX(-50%);
   pointer-events: none;
 }
@@ -1005,7 +1027,7 @@ a {
   color: var(--ink-soft);
   border: 1px solid var(--line);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--glass) !important;
   cursor: pointer;
   transition:
     color 0.15s ease,
@@ -1014,7 +1036,7 @@ a {
 
 .detail-close:hover {
   color: var(--terracotta);
-  background: #ffffff;
+  background: var(--paper-2);
 }
 
 .detail-close svg {
@@ -1126,7 +1148,7 @@ a {
 
 .detail-section p {
   margin: 0;
-  color: #1b2430;
+  color: var(--ink);
   font-size: 12.5px;
   line-height: 1.85;
 }
@@ -1151,7 +1173,7 @@ a {
   line-height: 1.5;
   border-left: 2px solid var(--gold);
   border-radius: 0 6px 6px 0;
-  background: #eef2f7;
+  background: var(--surface-2);
 }
 
 .heritage-item::before {
@@ -1238,7 +1260,7 @@ a {
 
 .copy-button:hover {
   color: var(--terracotta);
-  background: #ffffff;
+  background: var(--paper-2);
 }
 
 /* ---------- 提示与弹窗 ---------- */
@@ -1302,7 +1324,7 @@ a {
 
 .about-body p {
   margin: 0 0 11px;
-  color: #1b2430;
+  color: var(--ink);
   font-size: 12px;
   line-height: 1.85;
 }
@@ -1320,7 +1342,7 @@ a {
   font-family: var(--mono);
   font-size: 10.5px;
   border-radius: 3px;
-  background: #eef2f7;
+  background: var(--surface-2);
 }
 
 .about-license {
