@@ -13,7 +13,7 @@ def norm(t):
     t = t2s((t or '').strip()).replace('（陈旉）', '').strip()
     return ALIAS.get(t, t)
 
-up = json.load(open('books/catalog.json', encoding='utf-8'))
+up = [b for b in json.load(open('books/catalog.json', encoding='utf-8')) if b['id'].startswith('KR')]
 loc = [json.loads(l) for l in open(LOCAL, encoding='utf-8')]
 by_up = defaultdict(list)
 for b in up: by_up[norm(b['title'])].append(b)

@@ -66,7 +66,10 @@ def detect_no_frontmatter(head):
             'header_dynasty': None, 'header_notes': None}
 
 
-up = {norm(b['title']): b for b in json.load(open('books/catalog.json', encoding='utf-8'))}
+# 注：books/catalog.json 已含本地 NX 条目，取上游时必须过滤 KR 前缀，
+# 否则本地书会跟自己的 NX 条目“相匹配”，上游独占/本地独占全部错乱
+up = {norm(b['title']): b for b in json.load(open('books/catalog.json', encoding='utf-8'))
+      if b['id'].startswith('KR')}
 out, stats = [], collections.Counter()
 
 for row in open(BOOKS, encoding='utf-8'):
@@ -79,7 +82,13 @@ for row in open(BOOKS, encoding='utf-8'):
 
     def g(k):
         m = re.search(r'^%s:\s*(.+)$' % k, fm, re.M)
-        return m.group(1).strip() if m else None
+        if not m:
+            return None
+        v = m.group(1).strip()
+        # frontmatter 里作者常写成 author: '[汉]卜式'，剥掉包裹引号
+        if len(v) > 1 and v[0] in "'\"" and v[-1] == v[0]:
+            v = v[1:-1].strip()
+        return v or None
 
     hant = re.search(r'zh-hant:\s*(.+)', fm)
     kr = re.findall(r'-\s*(KR\w+)/(\w+)', fm)

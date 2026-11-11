@@ -48,7 +48,7 @@ def resolve_credit(b, p):
     """books_meta 记「待考」时，回落到语料自身的 frontmatter / {{header}} 著录。"""
     author, dynasty, origin = b['author'], b['dynasty'], 'books_meta'
     if author in ('待考', '', None):
-        raw = p.get('author_front') or p.get('header_author')
+        raw = (p.get('author_front') or p.get('header_author') or '').strip().strip("'\"")
         if raw:
             m = re.match(r'^[\[【]?\s*([^】\]【\[\s]{1,8})[\]】]\s*(.+)$', raw.strip())
             if m:

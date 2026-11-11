@@ -593,8 +593,8 @@
   {
     "id": "NX0001",
     "title": "养羊法",
-    "author": "'[汉]卜式'",
-    "dynasty": "待考",
+    "author": "卜式",
+    "dynasty": "汉",
     "category": "农业",
     "topic": "畜牧渔业",
     "edition": "殆知阁 daizhigev20（data 分支）",
@@ -627,8 +627,8 @@
   {
     "id": "NX0006",
     "title": "农歌集钞",
-    "author": "'[宋]戴昺'",
-    "dynasty": "待考",
+    "author": "戴昺",
+    "dynasty": "宋",
     "category": "农业",
     "topic": "农谚歌谣",
     "edition": "殆知阁 daizhigev20（data 分支）",
@@ -834,8 +834,8 @@
   {
     "id": "NX0017",
     "title": "牛羊日历",
-    "author": "'[唐]刘轲'",
-    "dynasty": "待考",
+    "author": "刘轲",
+    "dynasty": "唐",
     "category": "农业",
     "topic": "畜牧渔业",
     "edition": "殆知阁 daizhigev20（data 分支）",
@@ -868,8 +868,8 @@
   {
     "id": "NX0020",
     "title": "田家历",
-    "author": "'[元]俞宗本'",
-    "dynasty": "待考",
+    "author": "俞宗本",
+    "dynasty": "元",
     "category": "农业",
     "topic": "农时月令",
     "edition": "殆知阁 daizhigev20（data 分支）",
@@ -953,8 +953,8 @@
   {
     "id": "NX0026",
     "title": "老圃良言",
-    "author": "'[清]巢鸣盛'",
-    "dynasty": "待考",
+    "author": "巢鸣盛",
+    "dynasty": "清",
     "category": "农业",
     "topic": "园艺种植",
     "edition": "殆知阁 daizhigev20（data 分支）",
@@ -1058,7 +1058,7 @@
   {
     "id": "NX0061",
     "title": "西湖水利考",
-    "author": "'[清]吴农祥'",
+    "author": "吴农祥",
     "dynasty": "清",
     "category": "水利",
     "topic": "区域水利",
