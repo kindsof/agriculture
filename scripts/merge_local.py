@@ -63,6 +63,80 @@ def resolve_credit(b, p):
     return author, dynasty, origin
 
 
+def fmt_wan(n):
+    return f'{n / 10000:.1f} 万' if n and n >= 10000 else str(n or 0)
+
+
+MARK_A = '<!-- BEGIN LOCAL (scripts/merge_local.py) -->'
+MARK_B = '<!-- END LOCAL -->'
+
+
+def write_local_index(index_path, kr_entries, local_entries, variants, duplicates,
+                      all_local, check):
+    """向 books/INDEX.md 追加本地节，可重复执行（先剔旧块再写新块）。"""
+    if not os.path.exists(index_path):
+        print('!! books/INDEX.md 不存在，跳过')
+        return
+    text = open(index_path, encoding='utf-8').read()
+    text = re.sub(r'\n*' + re.escape(MARK_A) + r'.*?' + re.escape(MARK_B) + r'\n*',
+                  '\n', text, flags=re.S).rstrip('\n')
+    kr_by_id = {e['id']: e for e in kr_entries}
+    nx_by_id = {e['id']: e for e in all_local}
+
+    out = ['', MARK_A, '', '## 本地语料（NX 系列）', '',
+           '> 本节由 `scripts/merge_local.py` 追加。`fetch_books.py` 全量重跑会重写本文件，',
+           '> 跑完必须再执行一次 `python3 scripts/merge_local.py` 把本节补回。', '',
+           f'本地文本共 **{len(all_local)}** 份，**全部保留不删**：独占作品 '
+           f'**{len(local_entries)}** 部，四庫已有书的简体参校本 **{len(variants)}** 份，'
+           f'同作品另一版本 **{len(duplicates)}** 份。', '']
+
+    def table(title, items):
+        rows = [f'### {title}（{len(items)} 部）', '',
+                '| 书名 | 朝代 | 作者 | 主题 | 来源 | 切块 | 字数 | 文本 | 备注 |',
+                '|---|---|---|---|---|---:|---:|---|---|']
+        for e in sorted(items, key=lambda e: e['id']):
+            note = []
+            if e['needs_review']:
+                note.append('来源待核')
+            if e.get('dup_variants'):
+                note.append('另有本：' + '、'.join(e['dup_variants']))
+            if e['credit_source'] == 'corpus_self':
+                note.append('著录自标')
+            rows.append(f"| {e['title']} | {e['dynasty']} | {e['author']} | {e['topic']} | "
+                        f"{e['edition']} | {e['sections']} | {fmt_wan(e['chars'])} | "
+                        f"[阅读]({e['file']}) | {'；'.join(note)} |")
+        rows.append('')
+        return rows
+
+    out += table('农业', [e for e in local_entries if e['category'] == '农业'])
+    out += table('水利', [e for e in local_entries if e['category'] == '水利'])
+
+    dup_of = {d['nx']: d['of'] for d in duplicates}
+    if duplicates:
+        out += [f'### 同作品另一版本（{len(duplicates)} 份，不单独计作书）', '',
+                '| 书名 | 归入 | 本版来源 | 文本 |', '|---|---|---|---|']
+        for d in sorted(duplicates, key=lambda d: d['nx']):
+            e = nx_by_id[d['nx']]
+            out.append(f"| {d['title']} | {d['of']} | {d['edition']} | [阅读]({e['file']}) |")
+        out.append('')
+
+    out += [f'### 四庫本的简体参校本（{len(variants)} 份）', '',
+            '| 四庫本 | 主题 | 字数 | 本地参校本 | 匹配依据 |', '|---|---|---:|---|---|']
+    for v in sorted(variants, key=lambda v: v['kanripo_id']):
+        k, e = kr_by_id[v['kanripo_id']], nx_by_id[v['nx']]
+        out.append(f"| {k['title']} | {k['topic']} | {fmt_wan(k['chars'])} | "
+                   f"{e['title']}（[阅读]({e['file']})） | "
+                   f"{'Kanripo 编号一致' if v['match'] == 'kanripo' else '仅书名'} |")
+    out += ['', MARK_B, '']
+
+    if check:
+        print('INDEX 本地节已生成（--check 不写盘）：', len(out), '行')
+        return
+    with open(index_path, 'w', encoding='utf-8') as f:
+        f.write(text + '\n' + '\n'.join(out) + '\n')
+    print(f'books/INDEX.md 已追加本地节（本地作品 {len(local_entries)}，参校 {len(variants)}）')
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true', help='只校验，不写文件')
@@ -179,6 +253,9 @@ def main():
             json.dump(dict(sorted(nx.items(), key=lambda kv: kv[1])), f,
                       ensure_ascii=False, indent=2)
             f.write('\n')
+
+    write_local_index(os.path.join(BOOKS, 'INDEX.md'), kr_entries, local_entries,
+                      variants, duplicates, all_local_entries, args.check)
 
     n_kr_local = len(variants)
     print(f'上游 KR 条目 {len(kr_entries)}（标题与原字段未改动，仅挂 local_variant）')
