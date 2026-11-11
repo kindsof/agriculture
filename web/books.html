@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>书目总览 · 农业水利</title>
+<link rel="stylesheet" href="/assets/ui.css">
+</head>
+<body>
+<main>
+  <div class="card" style="padding:16px">
+    <div class="searchbar">
+      <input type="search" id="q" placeholder="按书名、作者、提要筛选，如 农书 / 徐光启" autocomplete="off">
+    </div>
+    <div class="filters" id="filters"><span class="meta">筛选条件载入中…</span></div>
+  </div>
+  <div class="meta" id="status" style="margin:14px 2px" aria-live="polite"></div>
+  <div class="card" id="list"><div class="loading"><div class="spinner"></div>载入中…</div></div>
+  <div class="pager" id="pager"></div>
+</main>
+<script type="module">
+import { api, shell, esc, fmtNum, readState, writeState, fail, debounce } from '/assets/ui.js';
+shell('books');
+const $ = s => document.querySelector(s);
+const S = Object.assign({ cat: '', dyn: '', q: '', p: '1', per: '50' }, readState());
+let facets = { cat: [], dyn: [] };
+
+const SOURCE = { verified: '已核', inferred: '推断', review: '待考' };
+
+async function loadFacets() {
+  const d = await api('/api/works', { per_page: 100 });
+  facets.cat = [...new Set(d.items.map(w => w.category).filter(Boolean))];
+  facets.dyn = [...new Set(d.items.map(w => w.dynasty).filter(Boolean))];
+  const chip = (k, v) => `<button class="chip" data-k="${k}" data-v="${esc(v)}"
+      aria-pressed="${String((k === 'cat' ? S.cat : S.dyn) === v)}">${esc(v)}</button>`;
+  $('#filters').innerHTML = '<span class="meta">类别</span>' + facets.cat.map(c => chip('cat', c)).join('')
+    + '<span class="meta" style="margin-left:10px">朝代</span>' + facets.dyn.map(c => chip('dyn', c)).join('');
+  load();
+}
+
+async function load() {
+  $('#q').value = S.q;
+  $('#list').innerHTML = '<div class="loading"><div class="spinner"></div>载入中…</div>';
+  try {
+    const d = await api('/api/works', { category: S.cat, dynasty: S.dyn, q: S.q, per_page: S.per, page: S.p });
+    $('#status').innerHTML = `${d.total} 种著作${S.cat ? ` · 类别 ${esc(S.cat)}` : ''}${
+      S.dyn ? ` · 朝代 ${esc(S.dyn)}` : ''}${S.q ? ` · 关键词「${esc(S.q)}」` : ''}`;
+    if (!d.items.length) { $('#list').innerHTML = '<div class="empty">没有符合的著作</div>'; }
+    else $('#list').innerHTML = `<table><thead><tr>
+      <th>書名</th><th style="width:110px">作者</th><th style="width:64px">朝代</th>
+      <th style="width:72px">類別</th><th style="width:96px">版本</th>
+      <th style="width:92px" class="num">字</th><th style="width:64px" class="num">塊</th></tr></thead><tbody>${
+      d.items.map(w => `<tr class="click" data-id="${esc(w.id)}">
+        <td><b>${esc(w.title)}</b>${w.needs_review ? ' <span class="pill warn">待考</span>' : ''}
+            <div class="meta" style="font-size:12px">${esc(w.id)}</div></td>
+        <td>${esc(w.author || '—')}</td><td>${esc(w.dynasty || '—')}</td>
+        <td>${esc(w.category || '—')}</td>
+        <td>${esc(SOURCE[w.source_status] || w.source_status || '—')}</td>
+        <td class="num">${w.n_chars ? fmtNum(w.n_chars) : '—'}</td>
+        <td class="num">${w.n_chunks || '—'}</td></tr>`).join('')}</tbody></table>`;
+      $('#list').onclick = e => {
+        const tr = e.target.closest('tr[data-id]');
+        if (tr) location.href = '/read.html?id=' + encodeURIComponent(tr.dataset.id);
+      };
+      const pages = Math.max(1, Math.ceil(d.total / d.per_page));
+      $('#pager').innerHTML = pages <= 1 ? '' :
+        `<button class="btn sm" id="prev" ${d.page <= 1 ? 'disabled' : ''}>← 上一页</button>
+         <span class="meta">${d.page} / ${pages}</span>
+         <button class="btn sm" id="next" ${d.page >= pages ? 'disabled' : ''}>下一页 →</button>`;
+      if ($('#prev')) $('#prev').onclick = () => { S.p = String(Math.max(1, Number(S.p) - 1)); load(); };
+      if ($('#next')) $('#next').onclick = () => { S.p = String(Number(S.p) + 1); load(); };
+    writeState(S);
+  } catch (e) { fail($('#list'), e); }
+}
+
+$('#q').addEventListener('input', debounce(() => { S.q = $('#q').value.trim(); S.p = '1'; load(); }, 250));
+$('#filters').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  const k = b.dataset.k;
+  S[k] = S[k] === b.dataset.v ? '' : b.dataset.v; S.p = '1';
+  document.querySelectorAll('#filters .chip').forEach(c => c.setAttribute('aria-pressed',
+    String((c.dataset.k === 'cat' ? S.cat : S.dyn) === c.dataset.v)));
+  load();
+});
+addEventListener('popstate', () => { Object.assign(S, readState()); load(); });
+loadFacets();
+</script>
+</body>
+</html>

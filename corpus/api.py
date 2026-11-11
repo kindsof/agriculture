@@ -236,7 +236,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
         match = ' AND '.join('"%s"' % t for t in toks)
         per, page, off = pages(qs)
         where, args = ['chunks_fts MATCH ?'], [match]
-        for k, col in (('category', 'w.category'), ('work', 'w.id')):
+        for k, col in (('category', 'w.category'), ('dynasty', 'w.dynasty'),
+                       ('work', 'w.id')):
             v = qs.get(k, [''])[0].strip()
             if v:
                 where.append(f'{col} = ?'); args.append(v)
@@ -258,20 +259,33 @@ class Handler(http.server.BaseHTTPRequestHandler):
     def text(self, wid, qs):
         variant = qs.get('variant', [''])[0].strip()
         c = db()
-        row = c.execute('SELECT * FROM works WHERE id = ?', (wid,)).fetchone()
-        if not row:
+        if not c.execute('SELECT 1 FROM works WHERE id = ?', (wid,)).fetchone():
             return self.send_json({'error': 'no such work', 'id': wid}, 404)
-        rel = row['file_kanripo'] if (variant in ('', 'kanripo') and row['file_kanripo']) \
-            else row['file_local']
-        if not rel:
-            return self.send_json({'error': 'no such variant', 'id': wid, 'variant': variant}, 404)
+        title = c.execute('SELECT title FROM works WHERE id = ?', (wid,)).fetchone()['title']
+        # 按 texts 表逐异本取文件。旧写法只分“kanripo / 其他”，
+        # 于是 variant=dup-NX0009 会静默返回主异本的文件，前端对出两个一样的版本
+        if variant:
+            t = c.execute('SELECT * FROM texts WHERE work_id = ? AND variant = ?',
+                          (wid, variant)).fetchone()
+        else:
+            t = c.execute("SELECT * FROM texts WHERE work_id = ? "
+                          "ORDER BY CASE variant WHEN 'kanripo' THEN 0 WHEN 'local' THEN 1 ELSE 2 END "
+                          "LIMIT 1", (wid,)).fetchone()
+        if not t:
+            return self.send_json({'error': 'no such variant', 'id': wid,
+                                   'variant': variant,
+                                   'available': [r['variant'] for r in c.execute(
+                                       'SELECT variant FROM texts WHERE work_id = ?', (wid,))]}, 404)
+        rel = t['file']
         path = os.path.normpath(os.path.join(BOOKS, rel))
         if not path.startswith(BOOKS) or not os.path.exists(path):
             return self.send_json({'error': 'file missing', 'file': rel}, 500)
         body = open(path, encoding='utf-8').read()
-        return self.send_json({'id': wid, 'title': row['title'], 'variant':
-                              'kanripo' if rel == row['file_kanripo'] else 'local',
-                              'file': rel, 'chars': len(body), 'text': body})
+        return self.send_json({'id': wid, 'title': title, 'variant': t['variant'],
+                              'lang': t['lang'], 'file': rel, 'chars': len(body),
+                              'available': [r['variant'] for r in c.execute(
+                                  'SELECT variant FROM texts WHERE work_id = ? ORDER BY variant', (wid,))],
+                              'text': body})
 
     def nongshi(self, qs):
         per, page, off = pages(qs, default=50)

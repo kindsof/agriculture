@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>农业水利 · 古籍与农耕文化</title>
+<meta name="description" content="中国历代农业与水利古籍全文检索、繁简对照阅读、二十四节气农事与农耕文化站点地图">
+<link rel="stylesheet" href="/assets/ui.css">
+</head>
+<body>
+<main>
+  <section class="hero">
+    <h1>中国农书，一处搜尽</h1>
+    <p>四库全书农业类与水利类写本，加上 61 种地方农书与近人农学译著，共 134 万字；
+       可全文检索、繁体简体对照阅读，并按二十四节气与月份查农事。</p>
+    <div class="searchbar" style="margin-top:20px;max-width:640px">
+      <input type="search" id="q" placeholder="搜书名或正文，如 区田、水碾、占城稻" autocomplete="off">
+      <button class="btn primary" id="go" type="button">检索</button>
+    </div>
+    <p class="meta" id="hint" style="margin-top:10px"></p>
+  </section>
+
+  <section class="section">
+    <h2>馆藏规模</h2>
+    <div class="stats grid" id="stats"><div class="card stat"><b>—</b><span>载入中</span></div></div>
+  </section>
+
+  <section class="section">
+    <h2>进入</h2>
+    <div class="grid cols-4">
+      <a class="card entry" href="/search.html"><b>古籍检索</b>
+        <span>单字与二合字双索引，简体查繁体书；按朝代、类别、主题叠加筛选</span>
+        <span class="tag">1,791 块全文 →</span></a>
+      <a class="card entry" href="/calendar.html"><b>节气农事</b>
+        <span>二十四节气与 560 条月令农事，标注事项类型与出处</span>
+        <span class="tag">24 节气 · 560 条 →</span></a>
+      <a class="card entry" href="/map.html"><b>农耕文化地图</b>
+        <span>全国农耕文化站点分布，按类别与省份筛选，地图列表联动</span>
+        <span class="tag">69 站点 · 31 省 →</span></a>
+      <a class="card entry" href="/books.html"><b>书目总览</b>
+        <span>73 种著作的题名、作者、朝代、版本与馆藏归属</span>
+        <span class="tag">四库 42 · 合刻 28 →</span></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>按类别浏览</h2>
+    <div class="filters" id="cats"><span class="meta">载入中…</span></div>
+  </section>
+
+  <section class="section">
+    <h2>数据与许可</h2>
+    <div class="card" style="padding:18px">
+      <p style="margin:0 0 8px;color:var(--ink-2)">
+        繁体原文来自 <a href="https://github.com/owenthereal/kanripo" target="_blank" rel="noopener">Kanripo 漢字リソース</a>
+        （四庫全書农业／水利类写本，逐字对应原始行与叶码）；简体正文来自合刻整理本，二者并存不删，
+        检索只对简体建索引。月令农事的月份经逐条复核，修正 89 条，原值保留在
+        <code>month_legacy</code>。</p>
+      <p style="margin:0" class="meta">许可 CC-BY-SA-4.0 · 代码与数据同库 <code>kindsof/agriculture</code></p>
+    </div>
+  </section>
+</main>
+<footer class="foot">数据构建于 corpus/corpus.db（SQLite FTS5）· 服务 corpus/api.py · 本站不使用任何第三方前端框架</footer>
+<script type="module">
+import { api, shell, esc, fmtNum, writeState } from '/assets/ui.js';
+shell('home');
+
+const $ = s => document.querySelector(s);
+$('#go').onclick = () => go();
+$('#q').addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
+function go() {
+  const q = $('#q').value.trim();
+  location.href = '/search.html' + (q ? '?q=' + encodeURIComponent(q) : '');
+}
+
+api('/api/health').then(h => {
+  $('#stats').innerHTML = [
+    ['著作', fmtNum(h.works), '种'], ['全文块', fmtNum(h.chunks), '块'],
+    ['正文字数', fmtNum(h.chars_indexed), '字'], ['农事条目', fmtNum(h.nongshi), '条'],
+    ['文化站点', fmtNum(h.sites), '处'],
+  ].map(([k, v, u]) => `<div class="card stat"><b>${v}</b><span>${k}（${u}）</span></div>`).join('');
+  $('#hint').textContent = `当前收录 ${h.works} 种著作、${fmtNum(h.chars_indexed)} 字正文`;
+}).catch(e => { $('#stats').innerHTML = `<div class="empty">服务不可用：${esc(e.message)}</div>`; });
+
+api('/api/works', { per_page: 100 }).then(d => {
+  const cats = {};
+  for (const w of d.items) {
+    const c = w.category || '未分类';
+    cats[c] = (cats[c] || 0) + 1;
+  }
+  $('#cats').innerHTML = Object.entries(cats).sort((a, b) => b[1] - a[1])
+    .map(([c, n]) => `<a class="chip" href="/books.html?cat=${encodeURIComponent(c)}">${esc(c)} ${n}</a>`).join('');
+});
+</script>
+</body>
+</html>

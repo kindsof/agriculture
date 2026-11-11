@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>古籍检索 · 农业水利</title>
+<link rel="stylesheet" href="/assets/ui.css">
+</head>
+<body>
+<main>
+  <div class="card" style="padding:16px">
+    <div class="searchbar">
+      <input type="search" id="q" placeholder="全文检索，如 区田 / 翻車 / 占城稻（简体查繁体书，输入即搜）" autocomplete="off" autofocus>
+      <div class="seg" role="group" aria-label="每页数量">
+        <button type="button" data-per="20">20</button>
+        <button type="button" data-per="50">50</button>
+        <button type="button" data-per="100">100</button>
+      </div>
+    </div>
+    <div class="filters" id="filters"><span class="meta">筛选条件载入中…</span></div>
+    <div class="filters" id="active"></div>
+  </div>
+
+  <div class="meta" id="status" style="margin:14px 2px" aria-live="polite"></div>
+  <div class="card" id="results"><div class="loading">输入关键词开始检索</div></div>
+  <div class="pager" id="pager"></div>
+  <p class="meta" style="text-align:center;margin-top:14px">
+    <kbd>/</kbd> 聚焦 · <kbd>↑</kbd><kbd>↓</kbd> 选择 · <kbd>Enter</kbd> 打开 · <kbd>←</kbd><kbd>→</kbd> 翻页
+  </p>
+</main>
+<script type="module">
+import { api, shell, esc, fmtNum, debounce, readState, writeState, fail } from '/assets/ui.js';
+shell('search');
+const $ = s => document.querySelector(s);
+const S = Object.assign({ q: '', cat: '', dyn: '', per: '20', p: '1' }, readState());
+let hits = [], sel = -1;
+
+function sync(push) { writeState(S, push); }
+
+function mark(text, needle) {
+  if (!needle) return esc(text);
+  const parts = String(text).split(new RegExp('(' + needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'));
+  return parts.map((p, i) => i % 2 ? '<mark>' + esc(p) + '</mark>' : esc(p)).join('');
+}
+
+async function load() {
+  $('#q').value = S.q;
+  if (!S.q) { $('#results').innerHTML = '<div class="loading">输入关键词开始检索</div>'; $('#status').textContent=''; $('#pager').innerHTML=''; sync(); return; }
+  $('#results').innerHTML = '<div class="loading"><div class="spinner"></div>检索中…</div>';
+  $('#status').textContent = '';
+  try {
+    const d = await api('/api/search', { q: S.q, category: S.cat, dynasty: S.dyn, per_page: S.per, page: S.p });
+    hits = d.hits;
+    $('#status').innerHTML = `${fmtNum(d.total)} 处命中${d.simplified !== d.query ? `（已按简体索引匹配：<b>${esc(d.simplified)}</b>）` : ''}
+      · 第 ${d.page} 页${d.total > d.per_page ? ` / 共 ${Math.ceil(d.total / d.per_page)} 页` : ''}
+      ${S.cat ? ` · 类别 ${esc(S.cat)}` : ''}${S.dyn ? ` · 朝代 ${esc(S.dyn)}` : ''}`;
+    if (!hits.length) {
+      $('#results').innerHTML = '<div class="empty">没有命中。试试更短的词，或清除类别／朝代筛选。</div>';
+    } else {
+      $('#results').innerHTML = hits.map((h, i) => `<div class="hit" data-i="${i}"
+          data-href="/read.html?id=${encodeURIComponent(h.work_id)}&chunk=${h.chunk_id}&q=${encodeURIComponent(d.simplified)}">
+        <h3>${mark(h.title, d.simplified)}<small>${esc(h.dynasty || '')} · ${esc(h.category || '')}${h.section ? ' · ' + mark(h.section, d.simplified) : ''}</small></h3>
+        <p>${mark(h.snippet, d.simplified)}</p></div>`).join('');
+    }
+    sel = hits.length ? 0 : -1; paint();
+    const pages = Math.max(1, Math.ceil(d.total / d.per_page));
+    $('#pager').innerHTML = pages <= 1 ? '' :
+      `<button class="btn sm" id="prev" ${d.page <= 1 ? 'disabled' : ''}>← 上一页</button>
+       <span class="meta">${d.page} / ${pages}</span>
+       <button class="btn sm" id="next" ${d.page >= pages ? 'disabled' : ''}>下一页 →</button>`;
+    if ($('#prev')) $('#prev').onclick = () => page(-1);
+    if ($('#next')) $('#next').onclick = () => page(1);
+    sync();
+  } catch (e) { fail($('#results'), e); }
+}
+
+function page(delta) {
+  const p = Math.max(1, Number(S.p) + delta);
+  S.p = String(p); load();
+}
+function paint() {
+  document.querySelectorAll('.hit').forEach((n, i) => n.classList.toggle('sel', i === sel));
+  const cur = document.querySelector('.hit.sel');
+  if (cur) cur.scrollIntoView({ block: 'nearest' });
+}
+function open(i) {
+  const el = document.querySelectorAll('.hit')[i];
+  if (el) location.href = el.dataset.href;
+}
+
+$('#q').addEventListener('input', debounce(() => { S.q = $('#q').value.trim(); S.p = '1'; load(); }, 250));
+document.querySelectorAll('[data-per]').forEach(b => {
+  b.setAttribute('aria-pressed', String(b.dataset.per === S.per));
+  b.onclick = () => { S.per = b.dataset.per; S.p = '1';
+    document.querySelectorAll('[data-per]').forEach(x => x.setAttribute('aria-pressed', String(x === b))); load(); };
+});
+$('#results').addEventListener('click', e => {
+  const h = e.target.closest('.hit'); if (h) location.href = h.dataset.href;
+});
+addEventListener('keydown', e => {
+  if (e.key === '/' && document.activeElement !== $('#q')) { e.preventDefault(); $('#q').focus(); return; }
+  if (document.activeElement === $('#q') && !['ArrowDown', 'ArrowUp'].includes(e.key)) return;
+  if (e.key === 'ArrowDown') { e.preventDefault(); sel = Math.min(hits.length - 1, sel + 1); paint(); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); sel = Math.max(0, sel - 1); paint(); }
+  else if (e.key === 'Enter' && sel >= 0) open(sel);
+  else if (e.key === 'ArrowRight') page(1);
+  else if (e.key === 'ArrowLeft') page(-1);
+});
+addEventListener('popstate', () => { Object.assign(S, readState()); load(); });
+
+// 筛选项从书目现取：73 种一次拿全，避免另建字典端点
+api('/api/works', { per_page: 100 }).then(d => {
+  const uniq = k => [...new Set(d.items.map(w => w[k]).filter(Boolean))];
+  const cats = uniq('category'), dyns = uniq('dynasty');
+  const chip = (kind, v) => `<button class="chip" data-kind="${kind}" data-v="${esc(v)}"
+      aria-pressed="${(kind === 'cat' ? S.cat : S.dyn) === v}">${esc(v)}</button>`;
+  $('#filters').innerHTML =
+    '<span class="meta">类别</span>' + cats.map(c => chip('cat', c)).join('') +
+    '<span class="meta" style="margin-left:10px">朝代</span>' + dyns.map(c => chip('dyn', c)).join('');
+  $('#filters').onclick = e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    const k = b.dataset.kind === 'cat' ? 'cat' : 'dyn';
+    S[k] = S[k] === b.dataset.v ? '' : b.dataset.v; S.p = '1'; load();
+  };
+}).catch(() => { $('#filters').innerHTML = '<span class="meta">筛选项不可用</span>'; });
+
+if (S.q) load(); else sync();
+</script>
+</body>
+</html>

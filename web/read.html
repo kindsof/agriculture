@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>阅读 · 农业水利</title>
+<link rel="stylesheet" href="/assets/ui.css">
+</head>
+<body>
+<main>
+  <div class="reader-head">
+    <h1 id="title">载入中…</h1>
+    <span id="pills"></span>
+    <div class="nav-spacer"></div>
+    <div class="seg" id="modes" role="group" aria-label="显示方式"></div>
+    <span id="findbox" class="meta" hidden>
+      <button class="btn sm" id="prev-hit" type="button">↑</button>
+      <button class="btn sm" id="next-hit" type="button">↓</button>
+      <span id="findpos"></span>
+    </span>
+    <a class="btn sm" id="dl" hidden download>下载本文</a>
+  </div>
+  <p class="meta" id="note"></p>
+
+  <div class="reader-layout">
+    <aside class="card toc" id="toc" aria-label="目录"><span class="meta">目录载入中…</span></aside>
+    <div class="card"><div class="cols" id="cols"><div class="loading"><div class="spinner"></div>正文载入中…</div></div></div>
+  </div>
+</main>
+<script type="module">
+import { api, shell, esc, fmtNum, readState, writeState, fail, renderText } from '/assets/ui.js';
+shell('search');
+const $ = s => document.querySelector(s);
+const P = Object.assign({ id: '', q: '', mode: '' }, readState());
+let meta = null, variants = [], mode = P.mode;
+
+const LABEL = { kanripo: '四庫繁體', local: '简体整理本' };
+const nameOf = v => LABEL[v] || (v.startsWith('local-') ? '简体 ' + v.slice(6)
+                 : v.startsWith('dup-') ? '异本 ' + v.slice(4) : v);
+
+async function textOf(v) {
+  const d = await api('/api/text/' + encodeURIComponent(P.id), { variant: v });
+  return d;
+}
+
+// 命中定位：渲染后在文本节点里找，避免动 renderText 的转义逻辑
+function highlight(root, needle) {
+  if (!needle) return 0;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const re = new RegExp(needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+  const nodes = []; let n;
+  while ((n = walker.nextNode())) if (re.test(n.nodeValue)) { re.lastIndex = 0; nodes.push(n); }
+  for (const node of nodes) {
+    const frag = document.createDocumentFragment(); let last = 0; let m;
+    re.lastIndex = 0;
+    while ((m = re.exec(node.nodeValue))) {
+      frag.append(node.nodeValue.slice(last, m.index));
+      const mark = document.createElement('mark'); mark.textContent = m[0]; frag.append(mark);
+      last = m.index + m[0].length;
+      if (m.index === re.lastIndex) re.lastIndex++;
+    }
+    frag.append(node.nodeValue.slice(last));
+    node.replaceWith(frag);
+  }
+  return root.querySelectorAll('mark').length;
+}
+
+let marks = [], cur = 0;
+function goto(i) {
+  if (!marks.length) return;
+  cur = (i + marks.length) % marks.length;
+  marks.forEach(m => m.style.outline = '');
+  const m = marks[cur];
+  m.style.outline = '2px solid var(--accent)';
+  m.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  $('#findpos').textContent = `${cur + 1} / ${marks.length}`;
+}
+
+function buildToc() {
+  const hs = [...document.querySelectorAll('.col .body h5')];
+  if (!hs.length) { $('#toc').innerHTML = '<span class="meta">本书无卷次标题</span>'; return; }
+  hs.forEach((h, i) => h.id = 'sec-' + i);
+  $('#toc').innerHTML = hs.map((h, i) =>
+    `<button type="button" data-t="sec-${i}">${esc(h.textContent.trim() || '（无题）')}</button>`).join('');
+  $('#toc').onclick = e => {
+    const b = e.target.closest('button[data-t]'); if (!b) return;
+    const n = document.getElementById(b.dataset.t);
+    if (n) n.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  };
+}
+
+async function draw() {
+  const two = mode === 'two';
+  $('#cols').className = 'cols' + (two ? ' two' : '');
+  $('#cols').innerHTML = '<div class="loading"><div class="spinner"></div>正文载入中…</div>';
+  const picks = two ? variants.slice(0, 2) : [variants.find(v => v === mode) || variants[0]];
+  try {
+    const docs = await Promise.all(picks.map(v => textOf(v)));
+    $('#cols').innerHTML = docs.map(d => `<div class="col"><h4>${esc(nameOf(d.variant))} · ${fmtNum(d.chars)} 字</h4>
+      <div class="body">${renderText(d.text)}</div></div>`).join('');
+    $('#dl').hidden = false;
+    $('#dl').href = '/api/text/' + encodeURIComponent(P.id) + '?variant=' + encodeURIComponent(docs[0].variant);
+    $('#dl').download = docs[0].title + '.md';
+    marks = [];
+    if (P.q) { for (const col of document.querySelectorAll('.col .body')) marks.push(...highlight(col, P.q)); }
+    buildToc();
+    if (marks.length) { $('#findbox').hidden = false; goto(0); }
+    else if (P.q) { $('#findpos').textContent = '本文未出现该词'; $('#findbox').hidden = false; }
+  } catch (e) { $('#cols').innerHTML = ''; fail($('#cols'), e); }
+}
+
+function setMode(m) {
+  mode = m;
+  document.querySelectorAll('#modes button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.m === m)));
+  writeState({ ...P, mode: m });
+  draw();
+}
+
+async function boot() {
+  if (!P.id) { $('#title').textContent = '缺少书名'; $('#cols').innerHTML = '<div class="empty">从检索结果或书目进入。</div>'; return; }
+  try { meta = await api('/api/work/' + encodeURIComponent(P.id)); }
+  catch (e) { $('#title').textContent = '未找到该著作'; $('#cols').innerHTML = ''; fail($('#cols'), e); return; }
+  document.title = meta.title + ' · 阅读';
+  $('#title').textContent = meta.title;
+  $('#pills').innerHTML = [
+    meta.author && `<span class="pill">${esc(meta.author)}</span>`,
+    meta.dynasty && `<span class="pill">${esc(meta.dynasty)}</span>`,
+    meta.category && `<span class="pill">${esc(meta.category)}</span>`,
+    meta.edition && `<span class="pill">${esc(meta.edition)}</span>`,
+    meta.needs_review ? '<span class="pill warn">出处待考</span>' : '',
+  ].filter(Boolean).join('');
+  variants = meta.texts.map(t => t.variant);
+  if (!variants.length) { $('#cols').innerHTML = '<div class="empty">本书暂无文本文件</div>'; return; }
+  const canTwo = variants.length > 1;
+  if (!mode || (mode === 'two' && !canTwo)) mode = canTwo ? 'two' : variants[0];
+  $('#modes').innerHTML = (canTwo ? '<button type="button" data-m="two">繁简对照</button>' : '') +
+    variants.map(v => `<button type="button" data-m="${esc(v)}">${esc(nameOf(v))}</button>`).join('');
+  $('#modes').onclick = e => { const b = e.target.closest('button[data-m]'); if (b) setMode(b.dataset.m); };
+  $('#note').innerHTML = `共 ${meta.n_chunks || 0} 块 ${fmtNum(meta.n_chars || 0)} 字`
+    + (canTwo ? ' · 繁體来自四庫写本，简体来自整理本，二者逐字未对齐，对照仅供互勘' : '')
+    + ` · <a href="/search.html?q=${encodeURIComponent(P.q || '')}">回检索</a>`;
+  draw();
+}
+$('#prev-hit').onclick = () => goto(cur - 1);
+$('#next-hit').onclick = () => goto(cur + 1);
+addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') return;
+  if (e.key === 'n') goto(cur + 1);
+  if (e.key === 'N' || e.key === 'p') goto(cur - 1);
+});
+boot();
+</script>
+</body>
+</html>

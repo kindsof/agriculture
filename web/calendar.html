@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>节气农事 · 农业水利</title>
+<link rel="stylesheet" href="/assets/ui.css">
+</head>
+<body>
+<main>
+  <section class="hero" style="padding-top:8px">
+    <h1 style="font-size:24px">二十四节气与月令农事</h1>
+    <p>24 节气给出时令框架，560 条月令农事摘自农书本文并标注出处；
+       月份经逐条复核，修正 89 条误标，原值留在 <code>month_legacy</code> 可查。</p>
+  </section>
+
+  <section class="section">
+    <h2>节气</h2>
+    <div class="terms" id="terms"><span class="meta">载入中…</span></div>
+  </section>
+
+  <section class="section">
+    <h2>农事条目</h2>
+    <div class="filters" id="months"></div>
+    <div class="meta" id="status" style="margin:10px 2px" aria-live="polite"></div>
+    <div class="card" id="list"><div class="loading"><div class="spinner"></div>载入中…</div></div>
+    <div class="pager" id="pager"></div>
+  </section>
+</main>
+<script type="module">
+import { api, shell, esc, fmtNum, readState, writeState, fail } from '/assets/ui.js';
+shell('calendar');
+const $ = s => document.querySelector(s);
+const S = Object.assign({ month: '', term: '', p: '1', per: '50' }, readState());
+
+const SEASON = { 春: 'var(--ok)', 夏: 'var(--accent)', 秋: 'var(--warn)', 冬: 'var(--ink-2)' };
+
+async function loadTerms() {
+  const t = await api('/api/solar-terms');
+  $('#terms').innerHTML = t.map(x => `<div class="card term" role="button" tabindex="0"
+      data-m="${x.lunar_month}" data-name="${esc(x.name)}"
+      aria-pressed="${String(S.term === x.name)}">
+      <b style="color:${SEASON[x.season] || 'inherit'}">${esc(x.name)}</b>
+      <span>${esc(x.solar_date)} · 农历${cn(x.lunar_month)}月</span>
+      <em>${esc(x.farming)}</em></div>`).join('');
+  const pick = el => { S.term = el.dataset.name; S.month = el.dataset.m; S.p = '1';
+    document.querySelectorAll('.term').forEach(n => n.setAttribute('aria-pressed', String(n === el)));
+    loadList(); markMonths(); };
+  $('#terms').onclick = e => { const el = e.target.closest('.term'); if (el) pick(el); };
+  $('#terms').onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault();
+    const el = e.target.closest('.term'); if (el) pick(el); } };
+  if (S.month) markMonths();
+  loadList();
+}
+const cn = n => ['正','二','三','四','五','六','七','八','九','十','十一','十二'][n - 1] || n;
+
+function markMonths() {
+  document.querySelectorAll('#months .chip').forEach(c =>
+    c.setAttribute('aria-pressed', String(c.dataset.m === S.month)));
+}
+
+async function loadList() {
+  $('#list').innerHTML = '<div class="loading"><div class="spinner"></div>载入中…</div>';
+  try {
+    const d = await api('/api/nongshi', { month: S.month, per_page: S.per, page: S.p });
+    $('#status').innerHTML = `${fmtNum(d.total)} 条${S.month ? ` · 农历${cn(Number(S.month))}月` : ''}${
+      S.term ? ` · 节气 <b>${esc(S.term)}</b>` : ''}`;
+    if (!d.items.length) { $('#list').innerHTML = '<div class="empty">该月暂无农事条目</div>'; }
+    else $('#list').innerHTML = `<table><thead><tr>
+        <th style="width:56px">月</th><th style="width:150px">出處</th><th>農事</th><th style="width:96px"></th></tr></thead><tbody>${
+        d.items.map(it => `<tr>
+          <td class="num">${it.month}</td>
+          <td>${it.work_id ? `<a href="/read.html?id=${encodeURIComponent(it.work_id)}&q=${encodeURIComponent((it.text||'').slice(2,8))}">${esc(it.title || it.work_id)}</a>` : '<span class="meta">归属待考</span>'}</td>
+          <td class="ns"><span class="cut">${esc(cut(it.text, 130))}</span>
+              <span class="full" hidden>${esc(it.text)}</span></td>
+          <td><button class="btn sm" type="button" data-x>展开全文</button></td></tr>`).join('')}</tbody></table>`;
+      $('#list').onclick = e => {
+        const b = e.target.closest('button[data-x]'); if (!b) return;
+        const td = b.closest('tr').querySelector('.ns');
+        const open = td.querySelector('.full').hidden;
+        td.querySelector('.full').hidden = !open; td.querySelector('.cut').hidden = open;
+        b.textContent = open ? '收起' : '展开全文';
+      };
+      const pages = Math.max(1, Math.ceil(d.total / d.per_page));
+      $('#pager').innerHTML = pages <= 1 ? '' :
+        `<button class="btn sm" id="prev" ${d.page <= 1 ? 'disabled' : ''}>← 上一页</button>
+         <span class="meta">${d.page} / ${pages}</span>
+         <button class="btn sm" id="next" ${d.page >= pages ? 'disabled' : ''}>下一页 →</button>`;
+      if ($('#prev')) $('#prev').onclick = () => { S.p = String(Math.max(1, Number(S.p) - 1)); loadList(); };
+      if ($('#next')) $('#next').onclick = () => { S.p = String(Number(S.p) + 1); loadList(); };
+    writeState(S);
+  } catch (e) { fail($('#list'), e); }
+}
+// 农事原文常带「[正月]」这类抬头与夹注，截断时跳过抬头
+const cut = (t, n) => t && t.length > n ? t.slice(0, n) + '…' : t;
+
+$('#months').innerHTML = [1,2,3,4,5,6,7,8,9,10,11,12].map(m =>
+  `<button class="chip" data-m="${m}" aria-pressed="false">农历${cn(m)}月</button>`).join('')
+  + '<button class="chip" data-m="" aria-pressed="true">全部</button>';
+$('#months').onclick = e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  S.month = b.dataset.m; S.term = ''; S.p = '1';
+  document.querySelectorAll('.term').forEach(n => n.setAttribute('aria-pressed', 'false'));
+  loadList(); markMonths();
+};
+
+loadTerms().catch(e => fail($('#terms'), e));
+</script>
+</body>
+</html>
