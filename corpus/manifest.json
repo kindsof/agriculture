@@ -1,6 +1,7 @@
 {
   "chunks": 1791,
-  "chunks_digest": "2328ae207708a9baae03646df50dc064044205743cf95adacca6bbecd491f41d",
+  "chunks_dangling": 0,
+  "chunks_digest": "64b976731113e3de003279d134e37c05ef1718968b5050870b59fd753422e97a",
   "chunks_fts": 1791,
   "chunks_without_work": 0,
   "n_chars_indexed": 6730563,

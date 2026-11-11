@@ -160,6 +160,10 @@ def build(conn):
         if e.get('local_variant'):
             kr_of_nx[e['local_variant']] = e['id']
     work_of_localfile = {fn: kr_of_nx.get(nid, nid) for fn, nid in work_of_localfile.items()}
+    # 同作品异本（NX0009 天工开物古腾堡版、NX0025 老圃良言维基版）已降级不占作品位，
+    # 但它们的旧切块还指着这些 id，不重定向到主条目就会被 JOIN 掉，55 个 chunk 检索不到
+    alias = {d['nx']: d['of'] for d in variants.get('local_duplicates', [])}
+    work_of_localfile = {fn: alias.get(w, w) for fn, w in work_of_localfile.items()}
 
     # works：一部作品一行
     for e in catalog:
@@ -244,7 +248,10 @@ def manifest(conn):
         '|'.join(f'{a}:{b}:{c}' for a, b, c in rows).encode()).hexdigest()
     nulls = conn.execute('SELECT COUNT(*) FROM chunks WHERE work_id IS NULL').fetchone()[0]
     m['chunks_without_work'] = nulls
-    orphan = conn.execute('SELECT COUNT(*) FROM nongshi WHERE work_id IS NULL').fetchone()[0]
+    # work_id 悬空（指向已降级/不存在的作品）会在 API 的 JOIN 里静默消失
+    m['chunks_dangling'] = conn.execute(
+        'SELECT COUNT(*) FROM chunks WHERE work_id NOT IN (SELECT id FROM works)').fetchone()[0]
+    orphan = conn.execute('SELECT COUNT(*) FROM nongshi WHERE work_id NOT IN (SELECT id FROM works)').fetchone()[0]
     m['nongshi_without_work'] = orphan
     m['nongshi_month_fixed'] = conn.execute(
         'SELECT COUNT(*) FROM nongshi WHERE month != month_legacy').fetchone()[0]
@@ -308,8 +315,8 @@ def main():
             print(f'!! 字数 {m["n_chars_indexed"]} != 预期 {EXPECTED_CHARS}'); ok = False
         if m['works'] != 73 or m['texts'] != 103:
             print(f'!! works/texts 数量异常：{m["works"]}/{m["texts"]}（预期 73/103 = KR42 + NX31 + 异本2 + 参校28）'); ok = False
-        if m['chunks_without_work'] or m['nongshi_without_work']:
-            print('!! 存留未归属 work 的行'); ok = False
+        if m['chunks_without_work'] or m['nongshi_without_work'] or m['chunks_dangling']:
+            print(f'!! 有行未能归属作品（悬空 chunk {m["chunks_dangling"]}）'); ok = False
 
         if args.check:
             old = json.load(open(MANIFEST, encoding='utf-8')) if os.path.exists(MANIFEST) else None
