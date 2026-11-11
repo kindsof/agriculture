@@ -88,7 +88,8 @@
     "summary": "现存最早、最完整的综合性农书，系统总结黄河中下游的耕作、种植、畜牧与农产品加工技术。",
     "file": "agriculture/KR3d0001_齊民要術.md",
     "sections": 11,
-    "chars": 112024
+    "chars": 112024,
+    "local_variant": "NX0038"
   },
   {
     "id": "KR3d0002",
@@ -101,7 +102,8 @@
     "summary": "宋代农书，分上中下三卷，提出「粪田之宜」等土地利用与水稻栽培理论。",
     "file": "agriculture/KR3d0002_農書（陳旉）.md",
     "sections": 6,
-    "chars": 12580
+    "chars": 12580,
+    "local_variant": "NX0036"
   },
   {
     "id": "KR3d0003",
@@ -114,7 +116,8 @@
     "summary": "元代官修农书，总结北方农桑技术，并推动棉花种植的推广。",
     "file": "agriculture/KR3d0003_農桑輯要.md",
     "sections": 8,
-    "chars": 65458
+    "chars": 65458,
+    "local_variant": "NX0005"
   },
   {
     "id": "KR3d0004",
@@ -127,7 +130,8 @@
     "summary": "按月记述农桑衣食事宜的通俗农书，便于农家按节令安排生产。",
     "file": "agriculture/KR3d0004_農桑衣食撮要.md",
     "sections": 3,
-    "chars": 10027
+    "chars": 10027,
+    "local_variant": "NX0004"
   },
   {
     "id": "KR3d0005",
@@ -140,7 +144,8 @@
     "summary": "元代综合性农书，附《农器图谱》，系统记载农业生产工具与耕作技术。",
     "file": "agriculture/KR3d0005_王氏農書.md",
     "sections": 23,
-    "chars": 122007
+    "chars": 122007,
+    "local_variant": "NX0018"
   },
   {
     "id": "KR3d0006",
@@ -153,7 +158,8 @@
     "summary": "明代救荒植物著作，记载可供食用的野生植物四百余种，附形态描述与食用方法。",
     "file": "agriculture/KR3d0006_救荒本草.md",
     "sections": 9,
-    "chars": 44734
+    "chars": 44734,
+    "local_variant": "NX0011"
   },
   {
     "id": "KR3d0007",
@@ -166,7 +172,8 @@
     "summary": "明代农业百科全书，集古代农学之大成，兼论水利、荒政与救荒作物。",
     "file": "agriculture/KR3d0007_農政全書.md",
     "sections": 61,
-    "chars": 410671
+    "chars": 410671,
+    "local_variant": "NX0003"
   },
   {
     "id": "KR3d0008",
@@ -179,7 +186,8 @@
     "summary": "明末引入西方取水、蓄水技术的水利著作，由徐光启笔述，附器械图说。",
     "file": "agriculture/KR3d0008_泰西水法.md",
     "sections": 7,
-    "chars": 22784
+    "chars": 22784,
+    "local_variant": "NX0015"
   },
   {
     "id": "KR3d0009",
@@ -192,7 +200,8 @@
     "summary": "明代野菜专书，收录可食野菜四百余种，记述形态、性味与食用方法。",
     "file": "agriculture/KR3d0009_野菜博錄.md",
     "sections": 5,
-    "chars": 16490
+    "chars": 16490,
+    "local_variant": "NX0034"
   },
   {
     "id": "KR3d0010",
@@ -205,7 +214,8 @@
     "summary": "清代官修农书，汇辑农事、耕织、荒政等文献，附耕织图。",
     "file": "agriculture/KR3d0010_欽定授時通考.md",
     "sections": 80,
-    "chars": 484863
+    "chars": 484863,
+    "local_variant": "NX0035"
   },
   {
     "id": "KR1b0008",
@@ -257,7 +267,8 @@
     "summary": "古代最重要的水系地理名著，注释《水经》并记述河流源流、沿革与流域人文。",
     "file": "water/KR2k0058_水經注.md",
     "sections": 41,
-    "chars": 404179
+    "chars": 404179,
+    "local_variant": "NX0048"
   },
   {
     "id": "KR2k0059",
@@ -270,7 +281,8 @@
     "summary": "清代整理《水经注》的集释订讹之作，汇集诸家注释并校正讹误。",
     "file": "water/KR2k0059_水經注集釋訂訛.md",
     "sections": 41,
-    "chars": 500697
+    "chars": 500697,
+    "local_variant": "NX0051"
   },
   {
     "id": "KR2k0060",
@@ -283,7 +295,8 @@
     "summary": "清代《水经注》重要注释本，对郦注进行系统校释。",
     "file": "water/KR2k0060_水經注釋.md",
     "sections": 55,
-    "chars": 672279
+    "chars": 672279,
+    "local_variant": "NX0050"
   },
   {
     "id": "KR2k0061",
@@ -296,7 +309,8 @@
     "summary": "宋代太湖流域水利专著，论述苏、常、湖、秀诸州的水利治理。",
     "file": "water/KR2k0061_吳中水利書.md",
     "sections": 2,
-    "chars": 8062
+    "chars": 8062,
+    "local_variant": "NX0044"
   },
   {
     "id": "KR2k0062",
@@ -309,7 +323,8 @@
     "summary": "记述宁波它山堰水利工程的源流、规制与修治始末。",
     "file": "water/KR2k0062_四明它山水利備覽.md",
     "sections": 3,
-    "chars": 15685
+    "chars": 15685,
+    "local_variant": "NX0046"
   },
   {
     "id": "KR2k0063",
@@ -322,7 +337,8 @@
     "summary": "元代河防制度与修堤堵口技术的综合著作，条列河工诸法。",
     "file": "water/KR2k0063_河防通議.md",
     "sections": 4,
-    "chars": 16449
+    "chars": 16449,
+    "local_variant": "NX0054"
   },
   {
     "id": "KR2k0064",
@@ -335,7 +351,8 @@
     "summary": "以图说形式记述黄河治理方略与河工技术。",
     "file": "water/KR2k0064_治河圖略.md",
     "sections": 1,
-    "chars": 4142
+    "chars": 4142,
+    "local_variant": "NX0055"
   },
   {
     "id": "KR2k0065",
@@ -348,7 +365,8 @@
     "summary": "明代浙西地区水利治理文献汇编，兼及田围修治。",
     "file": "water/KR2k0065_浙西水利書.md",
     "sections": 4,
-    "chars": 32793
+    "chars": 32793,
+    "local_variant": "NX0057"
   },
   {
     "id": "KR2k0066",
@@ -361,7 +379,8 @@
     "summary": "明代治河名著，总结「束水攻沙」等黄河治理经验，附河防险要与修守事宜。",
     "file": "water/KR2k0066_河防一覽.md",
     "sections": 15,
-    "chars": 220288
+    "chars": 220288,
+    "local_variant": "NX0053"
   },
   {
     "id": "KR2k0067",
@@ -374,7 +393,8 @@
     "summary": "明代三吴地区水利论述与文献汇编。",
     "file": "water/KR2k0067_三吳水利錄.md",
     "sections": 6,
-    "chars": 29081
+    "chars": 29081,
+    "local_variant": "NX0039"
   },
   {
     "id": "KR2k0068",
@@ -387,7 +407,8 @@
     "summary": "记述明代北运河及黄河河工制度、漕运与修防事宜。",
     "file": "water/KR2k0068_北河紀.md",
     "sections": 13,
-    "chars": 128602
+    "chars": 128602,
+    "local_variant": "NX0043"
   },
   {
     "id": "KR2k0069",
@@ -413,7 +434,8 @@
     "summary": "明代三吴水利调查与治理文献，详记诸府水利形势。",
     "file": "water/KR2k0070_三吳水考.md",
     "sections": 17,
-    "chars": 295977
+    "chars": 295977,
+    "local_variant": "NX0040"
   },
   {
     "id": "KR2k0071",
@@ -426,7 +448,8 @@
     "summary": "明代吴中水利文献总集，收录历代治水奏议、图说与工程记录。",
     "file": "water/KR2k0071_吳中水利全書.md",
     "sections": 29,
-    "chars": 493486
+    "chars": 493486,
+    "local_variant": "NX0045"
   },
   {
     "id": "KR2k0072",
@@ -465,7 +488,8 @@
     "summary": "清代治理黄河、运河的水利文献汇编，兼及运道修守。",
     "file": "water/KR2k0074_兩河清彙.md",
     "sections": 9,
-    "chars": 66117
+    "chars": 66117,
+    "local_variant": "NX0041"
   },
   {
     "id": "KR2k0075",
@@ -491,7 +515,8 @@
     "summary": "清代靳辅治河奏疏与工程记录，详载堤河修防制度。",
     "file": "water/KR2k0076_治河奏績書.md",
     "sections": 5,
-    "chars": 89178
+    "chars": 89178,
+    "local_variant": "NX0056"
   },
   {
     "id": "KR2k0077",
@@ -504,7 +529,8 @@
     "summary": "清代直隶地区河渠水系志，记述河道源流与治理。",
     "file": "water/KR2k0077_直隸河渠志.md",
     "sections": 1,
-    "chars": 13700
+    "chars": 13700,
+    "local_variant": "NX0060"
   },
   {
     "id": "KR2k0078",
@@ -517,7 +543,8 @@
     "summary": "清代大型水利文献汇编，按年代辑录历代河渠史料与治河议论。",
     "file": "water/KR2k0078_行水金鑑.md",
     "sections": 176,
-    "chars": 1333024
+    "chars": 1333024,
+    "local_variant": "NX0030"
   },
   {
     "id": "KR2k0079",
@@ -530,7 +557,8 @@
     "summary": "清代全国水道总志，记述各大河流源流、支派与沿海水系。",
     "file": "water/KR2k0079_水道提綱.md",
     "sections": 29,
-    "chars": 283805
+    "chars": 283805,
+    "local_variant": "NX0052"
   },
   {
     "id": "KR2k0080",
@@ -544,5 +572,533 @@
     "file": "water/KR2k0080_海塘錄.md",
     "sections": 27,
     "chars": 253965
+  },
+  {
+    "id": "NX0001",
+    "title": "养羊法",
+    "author": "待考",
+    "dynasty": "待考",
+    "category": "农业",
+    "topic": "畜牧渔业",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "疑为古农书养羊篇辑本",
+    "file": "local/NX0001_养羊法.md",
+    "sections": 1,
+    "chars": 472,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0002",
+    "title": "养鱼经",
+    "author": "托名陶朱公（范蠡）",
+    "dynasty": "汉",
+    "category": "农业",
+    "topic": "畜牧渔业",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "传世最早的养鱼专书",
+    "file": "local/NX0002_养鱼经.md",
+    "sections": 1,
+    "chars": 497,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0006",
+    "title": "农歌集钞",
+    "author": "待考",
+    "dynasty": "待考",
+    "category": "农业",
+    "topic": "农谚歌谣",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "农谚歌谣辑本",
+    "file": "local/NX0006_农歌集钞.md",
+    "sections": 3,
+    "chars": 4490,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0007",
+    "title": "农说",
+    "author": "马一龙",
+    "dynasty": "明",
+    "category": "农业",
+    "topic": "农学综论",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "以阴阳之理论农，明代农学理论代表作",
+    "file": "local/NX0007_农说.md",
+    "sections": 5,
+    "chars": 6009,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0008",
+    "title": "四时纂要",
+    "author": "韩鄂",
+    "dynasty": "唐",
+    "category": "农业",
+    "topic": "农时月令",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "唐末月令体农书，月月农事安排",
+    "file": "local/NX0008_四时纂要.md",
+    "sections": 8,
+    "chars": 44335,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0009",
+    "title": "天工开物",
+    "author": "宋应星",
+    "dynasty": "明",
+    "category": "农业",
+    "topic": "农学综论",
+    "edition": "Project Gutenberg（按正文声明推断）",
+    "summary": "古腾堡计划版本，与天工开物.md互为版本对照",
+    "file": "local/NX0009_天工开物.md",
+    "sections": 54,
+    "chars": 78171,
+    "source_project": "gutenberg",
+    "source_status": "inferred",
+    "needs_review": true
+  },
+  {
+    "id": "NX0010",
+    "title": "天工开物",
+    "author": "宋应星",
+    "dynasty": "明",
+    "category": "农业",
+    "topic": "农学综论",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "1637年成书，农业与手工业技术百科",
+    "file": "local/NX0010_天工开物.md",
+    "sections": 18,
+    "chars": 58682,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0012",
+    "title": "木棉谱",
+    "author": "褚华",
+    "dynasty": "清",
+    "category": "农业",
+    "topic": "经济作物",
+    "edition": "维基文库（按正文 {{header}} 推断）",
+    "summary": "记上海地区植棉纺织",
+    "file": "local/NX0012_木棉谱.md",
+    "sections": 6,
+    "chars": 7592,
+    "source_project": "wikisource",
+    "source_status": "inferred",
+    "needs_review": true
+  },
+  {
+    "id": "NX0013",
+    "title": "江南催耕课稻编",
+    "author": "李彦章",
+    "dynasty": "清",
+    "category": "农业",
+    "topic": "农学综论",
+    "edition": "维基文库（按正文 {{header}} 推断）",
+    "summary": "1834年成书，论双季稻推广",
+    "file": "local/NX0013_江南催耕课稻编.md",
+    "sections": 21,
+    "chars": 29066,
+    "source_project": "wikisource",
+    "source_status": "inferred",
+    "needs_review": true
+  },
+  {
+    "id": "NX0014",
+    "title": "氾胜之书",
+    "author": "氾胜之",
+    "dynasty": "汉",
+    "category": "农业",
+    "topic": "农学综论",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "西汉农书，原书佚，此为辑佚本；区田法、溲种法出自此书",
+    "file": "local/NX0014_氾胜之书.md",
+    "sections": 3,
+    "chars": 4927,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0016",
+    "title": "灌园草木识",
+    "author": "陈诗教",
+    "dynasty": "明",
+    "category": "农业",
+    "topic": "园艺种植",
+    "edition": "维基文库（按正文 {{header}} 推断）",
+    "summary": "",
+    "file": "local/NX0016_灌园草木识.md",
+    "sections": 10,
+    "chars": 15609,
+    "source_project": "wikisource",
+    "source_status": "inferred",
+    "needs_review": true
+  },
+  {
+    "id": "NX0017",
+    "title": "牛羊日历",
+    "author": "待考",
+    "dynasty": "待考",
+    "category": "农业",
+    "topic": "畜牧渔业",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "内容性质待核实：历史上另有唐代政治同名书",
+    "file": "local/NX0017_牛羊日历.md",
+    "sections": 2,
+    "chars": 2180,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0019",
+    "title": "田家五行",
+    "author": "娄元礼",
+    "dynasty": "元",
+    "category": "农业",
+    "topic": "气象占验",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "民间气象谚语与占验集",
+    "file": "local/NX0019_田家五行.md",
+    "sections": 5,
+    "chars": 7586,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0020",
+    "title": "田家历",
+    "author": "待考",
+    "dynasty": "待考",
+    "category": "农业",
+    "topic": "农时月令",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "",
+    "file": "local/NX0020_田家历.md",
+    "sections": 1,
+    "chars": 720,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0021",
+    "title": "神农书",
+    "author": "托名神农（辑佚）",
+    "dynasty": "先秦",
+    "category": "农业",
+    "topic": "农学综论",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "神农神话与先秦农事佚文辑本",
+    "file": "local/NX0021_神农书.md",
+    "sections": 2,
+    "chars": 5250,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0022",
+    "title": "种树书",
+    "author": "托名〔唐〕郭橐驼（旧题俞宗本）",
+    "dynasty": "明",
+    "category": "农业",
+    "topic": "园艺种植",
+    "edition": "维基文库（按正文 {{header}} 推断）",
+    "summary": "伪托唐人，实为明人辑录种树之法",
+    "file": "local/NX0022_种树书.md",
+    "sections": 8,
+    "chars": 12454,
+    "source_project": "wikisource",
+    "source_status": "inferred",
+    "needs_review": true
+  },
+  {
+    "id": "NX0023",
+    "title": "种芋法",
+    "author": "黄省曾",
+    "dynasty": "明",
+    "category": "农业",
+    "topic": "园艺种植",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "",
+    "file": "local/NX0023_种芋法.md",
+    "sections": 2,
+    "chars": 2127,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0024",
+    "title": "糖霜谱",
+    "author": "王灼",
+    "dynasty": "宋",
+    "category": "农业",
+    "topic": "经济作物",
+    "edition": "维基文库（按正文 {{header}} 推断）",
+    "summary": "1154年成书，中国最早的制糖专著，记遂宁糖霜",
+    "file": "local/NX0024_糖霜谱.md",
+    "sections": 3,
+    "chars": 3777,
+    "source_project": "wikisource",
+    "source_status": "inferred",
+    "needs_review": true
+  },
+  {
+    "id": "NX0025",
+    "title": "老圃良言",
+    "author": "待考",
+    "dynasty": "待考",
+    "category": "农业",
+    "topic": "园艺种植",
+    "edition": "维基文库（按正文 {{header}} 推断）",
+    "summary": "维基文库版本",
+    "file": "local/NX0025_老圃良言.md",
+    "sections": 1,
+    "chars": 1381,
+    "source_project": "wikisource",
+    "source_status": "inferred",
+    "needs_review": true
+  },
+  {
+    "id": "NX0026",
+    "title": "老圃良言",
+    "author": "待考",
+    "dynasty": "待考",
+    "category": "农业",
+    "topic": "园艺种植",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "殆知阁版本",
+    "file": "local/NX0026_老圃良言.md",
+    "sections": 1,
+    "chars": 1077,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0027",
+    "title": "耒耜经",
+    "author": "陆龟蒙",
+    "dynasty": "唐",
+    "category": "农业",
+    "topic": "农具",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "中国最早专论农具的文献，记江东犁",
+    "file": "local/NX0027_耒耜经.md",
+    "sections": 1,
+    "chars": 696,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0028",
+    "title": "蚕书",
+    "author": "秦观",
+    "dynasty": "宋",
+    "category": "农业",
+    "topic": "蚕桑",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "北宋蚕桑技术专书",
+    "file": "local/NX0028_蚕书.md",
+    "sections": 1,
+    "chars": 1015,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0029",
+    "title": "蚕经",
+    "author": "黄省曾",
+    "dynasty": "明",
+    "category": "农业",
+    "topic": "蚕桑",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "",
+    "file": "local/NX0029_蚕经.md",
+    "sections": 2,
+    "chars": 2643,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0031",
+    "title": "补农书",
+    "author": "张履祥",
+    "dynasty": "清",
+    "category": "农业",
+    "topic": "农学综论",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "含沈氏农书，明末清初江南精耕细作实录",
+    "file": "local/NX0031_补农书.md",
+    "sections": 5,
+    "chars": 7412,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0032",
+    "title": "补农书引",
+    "author": "张履祥",
+    "dynasty": "清",
+    "category": "农业",
+    "topic": "农学综论",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "《补农书》序引",
+    "file": "local/NX0032_补农书引.md",
+    "sections": 3,
+    "chars": 4908,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0033",
+    "title": "野老书",
+    "author": "野老（马国翰辑佚）",
+    "dynasty": "战国",
+    "category": "农业",
+    "topic": "农学综论",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "《汉书·艺文志》著录农家《野老》十七篇之辑本",
+    "file": "local/NX0033_野老书.md",
+    "sections": 2,
+    "chars": 3369,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0037",
+    "title": "马首农言",
+    "author": "祁寯藻",
+    "dynasty": "清",
+    "category": "农业",
+    "topic": "农学综论",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "1836年成书，黄土高原旱作农业实录",
+    "file": "local/NX0037_马首农言.md",
+    "sections": 3,
+    "chars": 3116,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0042",
+    "title": "今水经",
+    "author": "黄宗羲",
+    "dynasty": "清",
+    "category": "水利",
+    "topic": "水文地理",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "",
+    "file": "local/NX0042_今水经.md",
+    "sections": 2,
+    "chars": 18665,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0047",
+    "title": "水经",
+    "author": "旧题桑钦",
+    "dynasty": "汉魏",
+    "category": "水利",
+    "topic": "水文地理",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "",
+    "file": "local/NX0047_水经.md",
+    "sections": 11,
+    "chars": 16961,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0049",
+    "title": "水经注疏",
+    "author": "杨守敬、熊会贞",
+    "dynasty": "清",
+    "category": "水利",
+    "topic": "水文地理",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "水经注研究的集大成之作",
+    "file": "local/NX0049_水经注疏.md",
+    "sections": 1,
+    "chars": 27438,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0058",
+    "title": "漕船志",
+    "author": "席书编次、朱家相增修",
+    "dynasty": "明",
+    "category": "水利",
+    "topic": "漕运",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "记清江浦船厂与漕船制度",
+    "file": "local/NX0058_漕船志.md",
+    "sections": 50,
+    "chars": 80386,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0059",
+    "title": "漕运通志",
+    "author": "谢纯",
+    "dynasty": "明",
+    "category": "水利",
+    "topic": "漕运",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "",
+    "file": "local/NX0059_漕运通志.md",
+    "sections": 77,
+    "chars": 200087,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
+  },
+  {
+    "id": "NX0061",
+    "title": "西湖水利考",
+    "author": "待考",
+    "dynasty": "清",
+    "category": "水利",
+    "topic": "区域水利",
+    "edition": "殆知阁 daizhigev20（data 分支）",
+    "summary": "",
+    "file": "local/NX0061_西湖水利考.md",
+    "sections": 1,
+    "chars": 5146,
+    "source_project": "daizhigev20",
+    "source_status": "verified",
+    "needs_review": false
   }
 ]
