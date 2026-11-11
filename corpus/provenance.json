@@ -3,6 +3,9 @@
   "file": "三吴水利录.md",
   "title": "三吴水利录",
   "title_hant": "三吳水利錄",
+  "author_meta": "归有光",
+  "dynasty_meta": "明",
+  "category_meta": "区域水利",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E4%B8%89%E5%90%B4%E6%B0%B4%E5%88%A9%E5%BD%95.html",
@@ -19,12 +22,19 @@
    "ctp:wb682418"
   ],
   "upstream_id": "KR2k0067",
-  "chars": 29384
+  "chars": 29384,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "三吴水考.md",
   "title": "三吴水考",
   "title_hant": "三吳水考",
+  "author_meta": "张内蕴、周大韶",
+  "dynasty_meta": "明",
+  "category_meta": "区域水利",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E4%B8%89%E5%90%B4%E6%B0%B4%E8%80%83.html",
@@ -40,12 +50,19 @@
    "ctp:wb643358"
   ],
   "upstream_id": "KR2k0070",
-  "chars": 307048
+  "chars": 307048,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "两河清汇.md",
   "title": "两河清汇",
   "title_hant": null,
+  "author_meta": "薛凤祚",
+  "dynasty_meta": "清",
+  "category_meta": "河工治黄",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E4%B8%A4%E6%B2%B3%E6%B8%85%E6%B1%87.html",
@@ -54,12 +71,19 @@
   "kanripo": [],
   "ctext": [],
   "upstream_id": "KR2k0074",
-  "chars": 72229
+  "chars": 72229,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "今水经.md",
   "title": "今水经",
   "title_hant": "今水經",
+  "author_meta": "黄宗羲",
+  "dynasty_meta": "清",
+  "category_meta": "水文地理",
   "author_front": "'[清]黄宗羲'",
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E4%BB%8A%E6%B0%B4%E7%BB%8F.html",
@@ -73,12 +97,19 @@
    "ctp:wb1267908"
   ],
   "upstream_id": null,
-  "chars": 18665
+  "chars": 18665,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "养羊法.md",
   "title": "养羊法",
   "title_hant": "養羊法",
+  "author_meta": "待考",
+  "dynasty_meta": "待考",
+  "category_meta": "畜牧渔业",
   "author_front": "'[汉]卜式'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E5%85%BB%E7%BE%8A%E6%B3%95.html",
@@ -89,12 +120,19 @@
    "ctp:wb475560"
   ],
   "upstream_id": null,
-  "chars": 472
+  "chars": 472,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "养鱼经.md",
   "title": "养鱼经",
   "title_hant": "養魚經",
+  "author_meta": "托名陶朱公（范蠡）",
+  "dynasty_meta": "汉",
+  "category_meta": "畜牧渔业",
   "author_front": "'[春秋]范蠡'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E5%85%BB%E9%B1%BC%E7%BB%8F.html",
@@ -105,12 +143,19 @@
    "ctp:wb936747"
   ],
   "upstream_id": null,
-  "chars": 497
+  "chars": 497,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "农书.md",
   "title": "陈旉农书",
   "title_hant": "農書",
+  "author_meta": "陈旉",
+  "dynasty_meta": "宋",
+  "category_meta": "农学综论",
   "author_front": "'[宋]陈敷'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E5%86%9C%E4%B9%A6.html",
@@ -134,12 +179,19 @@
    "ctp:wb427778"
   ],
   "upstream_id": "KR3d0002",
-  "chars": 17620
+  "chars": 17620,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "农政全书.md",
   "title": "农政全书",
   "title_hant": "農政全書",
+  "author_meta": "徐光启",
+  "dynasty_meta": "明",
+  "category_meta": "农学综论",
   "author_front": null,
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E5%86%9C%E6%94%BF%E5%85%A8%E4%B9%A6.html",
@@ -159,12 +211,19 @@
    "ctp:wb857063"
   ],
   "upstream_id": "KR3d0007",
-  "chars": 415843
+  "chars": 415843,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "农桑衣食撮要.md",
   "title": "农桑衣食撮要",
   "title_hant": "農桑衣食撮要",
+  "author_meta": "鲁明善",
+  "dynasty_meta": "元",
+  "category_meta": "农时月令",
   "author_front": "'[元]鲁明善'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E5%86%9C%E6%A1%91%E8%A1%A3%E9%A3%9F%E6%92%AE%E8%A6%81.html",
@@ -181,12 +240,19 @@
    "ctp:wb4714278"
   ],
   "upstream_id": "KR3d0004",
-  "chars": 10608
+  "chars": 10608,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "农桑辑要.md",
   "title": "农桑辑要",
   "title_hant": "農桑輯要",
+  "author_meta": "大司农司编",
+  "dynasty_meta": "元",
+  "category_meta": "农学综论",
   "author_front": null,
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E5%86%9C%E6%A1%91%E8%BE%91%E8%A6%81.html",
@@ -205,12 +271,19 @@
    "ctp:wb1006038"
   ],
   "upstream_id": "KR3d0003",
-  "chars": 65310
+  "chars": 65310,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "农歌集钞.md",
   "title": "农歌集钞",
   "title_hant": "農歌集鈔",
+  "author_meta": "待考",
+  "dynasty_meta": "待考",
+  "category_meta": "农谚歌谣",
   "author_front": "'[宋]戴昺'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E5%86%9C%E6%AD%8C%E9%9B%86%E9%92%9E.html",
@@ -221,12 +294,19 @@
    "ctp:wb409026"
   ],
   "upstream_id": null,
-  "chars": 4490
+  "chars": 4490,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "农说.md",
   "title": "农说",
   "title_hant": "農說",
+  "author_meta": "马一龙",
+  "dynasty_meta": "明",
+  "category_meta": "农学综论",
   "author_front": "'[明]马一龙'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E5%86%9C%E8%AF%B4.html",
@@ -237,12 +317,19 @@
    "ctp:wb823299"
   ],
   "upstream_id": null,
-  "chars": 6009
+  "chars": 6009,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "北河纪.md",
   "title": "北河纪",
   "title_hant": "北河紀",
+  "author_meta": "谢肇淛",
+  "dynasty_meta": "明",
+  "category_meta": "漕运",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E5%8C%97%E6%B2%B3%E7%BA%AA.html",
@@ -253,12 +340,19 @@
    "ctp:wb318751"
   ],
   "upstream_id": "KR2k0068",
-  "chars": 130948
+  "chars": 130948,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "吴中水利书.md",
   "title": "吴中水利书",
   "title_hant": "吳中水利書",
+  "author_meta": "单锷",
+  "dynasty_meta": "宋",
+  "category_meta": "区域水利",
   "author_front": "'[宋]单锷'",
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E5%90%B4%E4%B8%AD%E6%B0%B4%E5%88%A9%E4%B9%A6.html",
@@ -277,12 +371,19 @@
    "ctp:wb376939"
   ],
   "upstream_id": "KR2k0061",
-  "chars": 9508
+  "chars": 9508,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "吴中水利全书.md",
   "title": "吴中水利全书",
   "title_hant": "吳中水利全書",
+  "author_meta": "张国维",
+  "dynasty_meta": "明",
+  "category_meta": "区域水利",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E5%90%B4%E4%B8%AD%E6%B0%B4%E5%88%A9%E5%85%A8%E4%B9%A6.html",
@@ -298,12 +399,19 @@
    "ctp:wb332674"
   ],
   "upstream_id": "KR2k0071",
-  "chars": 540406
+  "chars": 540406,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "四时纂要.md",
   "title": "四时纂要",
   "title_hant": "四時纂要",
+  "author_meta": "韩鄂",
+  "dynasty_meta": "唐",
+  "category_meta": "农时月令",
   "author_front": "'[唐]韩鄂'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E5%9B%9B%E6%97%B6%E7%BA%82%E8%A6%81.html",
@@ -314,12 +422,19 @@
    "ctp:wb785269"
   ],
   "upstream_id": null,
-  "chars": 44335
+  "chars": 44335,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "四明它山水利备览.md",
   "title": "四明它山水利备览",
   "title_hant": "四明它山水利備覽",
+  "author_meta": "魏岘",
+  "dynasty_meta": "宋",
+  "category_meta": "区域水利",
   "author_front": "'[宋]魏岘'",
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E5%9B%9B%E6%98%8E%E5%AE%83%E5%B1%B1%E6%B0%B4%E5%88%A9%E5%A4%87%E8%A7%88.html",
@@ -336,12 +451,19 @@
    "ctp:wb57284"
   ],
   "upstream_id": "KR2k0062",
-  "chars": 15484
+  "chars": 15484,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "天工开物-古腾堡版.txt",
   "title": "天工开物",
   "title_hant": null,
+  "author_meta": "宋应星",
+  "dynasty_meta": "明",
+  "category_meta": "农学综论",
   "author_front": null,
   "ctext_category": null,
   "daizhige_url": null,
@@ -350,12 +472,25 @@
   "kanripo": [],
   "ctext": [],
   "upstream_id": null,
-  "chars": 78171
+  "chars": 78171,
+  "source_project": "gutenberg",
+  "source_status": "inferred",
+  "evidence": "正文首行即 Project Gutenberg eBook 声明",
+  "source_url": null,
+  "header_title_hant": "天工開物",
+  "header_author": "Yingxing Song",
+  "header_dynasty": null,
+  "header_notes": null,
+  "needs_review": true,
+  "header_author_latin": true
  },
  {
   "file": "天工开物.md",
   "title": "天工开物",
   "title_hant": "天工開物",
+  "author_meta": "宋应星",
+  "dynasty_meta": "明",
+  "category_meta": "农学综论",
   "author_front": "'[明]宋应星'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E5%A4%A9%E5%B7%A5%E5%BC%80%E7%89%A9.html",
@@ -368,12 +503,19 @@
    "ctp:wb710286"
   ],
   "upstream_id": null,
-  "chars": 58682
+  "chars": 58682,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "救荒本草.md",
   "title": "救荒本草",
   "title_hant": "救荒本草",
+  "author_meta": "朱橚",
+  "dynasty_meta": "明",
+  "category_meta": "荒政野菜",
   "author_front": null,
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E6%95%91%E8%8D%92%E6%9C%AC%E8%8D%89.html",
@@ -389,12 +531,19 @@
    "ctp:wb161339"
   ],
   "upstream_id": "KR3d0006",
-  "chars": 47382
+  "chars": 47382,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "木棉谱.md",
   "title": "木棉谱",
   "title_hant": null,
+  "author_meta": "褚华",
+  "dynasty_meta": "清",
+  "category_meta": "经济作物",
   "author_front": null,
   "ctext_category": null,
   "daizhige_url": null,
@@ -403,12 +552,24 @@
   "kanripo": [],
   "ctext": [],
   "upstream_id": null,
-  "chars": 7592
+  "chars": 7592,
+  "source_project": "wikisource",
+  "source_status": "inferred",
+  "evidence": "正文含 MediaWiki {{header}} 模板与 [[Category:]] 标记",
+  "source_url": "https://zh.wikisource.org/wiki/%E6%9C%A8%E6%A3%89%E8%AD%9C",
+  "header_title_hant": "木棉譜",
+  "header_author": "褚華",
+  "header_dynasty": "清",
+  "header_notes": "華，字秋岳，號文洲，江蘇上海人。諸生。",
+  "needs_review": true
  },
  {
   "file": "水经.md",
   "title": "水经",
   "title_hant": "水經",
+  "author_meta": "旧题桑钦",
+  "dynasty_meta": "汉魏",
+  "category_meta": "水文地理",
   "author_front": "'[汉]桑钦'",
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%B0%B4%E7%BB%8F.html",
@@ -420,12 +581,19 @@
    "ctp:wb827605"
   ],
   "upstream_id": null,
-  "chars": 16961
+  "chars": 16961,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "水经注.md",
   "title": "水经注",
   "title_hant": "水經注",
+  "author_meta": "郦道元",
+  "dynasty_meta": "北魏",
+  "category_meta": "水文地理",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%B0%B4%E7%BB%8F%E6%B3%A8.html",
@@ -457,12 +625,19 @@
    "ctp:wb6822735"
   ],
   "upstream_id": "KR2k0058",
-  "chars": 382306
+  "chars": 382306,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "水经注疏.md",
   "title": "水经注疏",
   "title_hant": "水經註疏",
+  "author_meta": "杨守敬、熊会贞",
+  "dynasty_meta": "清",
+  "category_meta": "水文地理",
   "author_front": "后魏郦道元",
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%B0%B4%E7%BB%8F%E6%B3%A8%E7%96%8F.html",
@@ -474,12 +649,19 @@
    "ctp:wb162969"
   ],
   "upstream_id": null,
-  "chars": 27438
+  "chars": 27438,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "水经注释.md",
   "title": "水经注释",
   "title_hant": "水經注釋",
+  "author_meta": "赵一清",
+  "dynasty_meta": "清",
+  "category_meta": "水文地理",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%B0%B4%E7%BB%8F%E6%B3%A8%E9%87%8A.html",
@@ -492,12 +674,19 @@
    "ctp:wb327862"
   ],
   "upstream_id": "KR2k0060",
-  "chars": 701397
+  "chars": 701397,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "水经注集释订讹.md",
   "title": "水经注集释订讹",
   "title_hant": "水經注集釋訂訛",
+  "author_meta": "沈炳巽",
+  "dynasty_meta": "清",
+  "category_meta": "水文地理",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%B0%B4%E7%BB%8F%E6%B3%A8%E9%9B%86%E9%87%8A%E8%AE%A2%E8%AE%B9.html",
@@ -513,12 +702,19 @@
    "ctp:wb628238"
   ],
   "upstream_id": "KR2k0059",
-  "chars": 495232
+  "chars": 495232,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "水道提纲.md",
   "title": "水道提纲",
   "title_hant": "水道提綱",
+  "author_meta": "齐召南",
+  "dynasty_meta": "清",
+  "category_meta": "水文地理",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%B0%B4%E9%81%93%E6%8F%90%E7%BA%B2.html",
@@ -535,12 +731,19 @@
    "ctp:wb475145"
   ],
   "upstream_id": "KR2k0079",
-  "chars": 273179
+  "chars": 273179,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "氾胜之书.md",
   "title": "氾胜之书",
   "title_hant": "氾勝之書",
+  "author_meta": "氾胜之",
+  "dynasty_meta": "汉",
+  "category_meta": "农学综论",
   "author_front": "'[汉]氾胜之'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E6%B0%BE%E8%83%9C%E4%B9%8B%E4%B9%A6.html",
@@ -551,12 +754,19 @@
    "ctp:wb91719"
   ],
   "upstream_id": null,
-  "chars": 4927
+  "chars": 4927,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "江南催耕课稻编.md",
   "title": "江南催耕课稻编",
   "title_hant": null,
+  "author_meta": "李彦章",
+  "dynasty_meta": "清",
+  "category_meta": "农学综论",
   "author_front": null,
   "ctext_category": null,
   "daizhige_url": null,
@@ -565,12 +775,24 @@
   "kanripo": [],
   "ctext": [],
   "upstream_id": null,
-  "chars": 29066
+  "chars": 29066,
+  "source_project": "wikisource",
+  "source_status": "inferred",
+  "evidence": "正文含 MediaWiki {{header}} 模板与 [[Category:]] 标记",
+  "source_url": "https://zh.wikisource.org/wiki/%E6%B1%9F%E5%8D%97%E5%82%AC%E8%80%95%E8%AA%B2%E7%A8%BB%E7%B7%A8",
+  "header_title_hant": "江南催耕課稻編",
+  "header_author": "李彥章",
+  "header_dynasty": "清",
+  "header_notes": "原文有「換行抬頭」以示尊敬的寫法，以下皆以「空一格」的方式代替。",
+  "needs_review": true
  },
  {
   "file": "河防一览.md",
   "title": "河防一览",
   "title_hant": "河防一覽",
+  "author_meta": "潘季驯",
+  "dynasty_meta": "明",
+  "category_meta": "河工治黄",
   "author_front": "'[明]潘季驯'",
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%B2%B3%E9%98%B2%E4%B8%80%E8%A7%88.html",
@@ -586,12 +808,19 @@
    "ctp:wb280780"
   ],
   "upstream_id": "KR2k0066",
-  "chars": 221004
+  "chars": 221004,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "河防通议.md",
   "title": "河防通议",
   "title_hant": "河防通議",
+  "author_meta": "赡思（沙克什）重订",
+  "dynasty_meta": "元",
+  "category_meta": "河工治黄",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%B2%B3%E9%98%B2%E9%80%9A%E8%AE%AE.html",
@@ -608,12 +837,19 @@
    "ctp:wb545675"
   ],
   "upstream_id": "KR2k0063",
-  "chars": 16878
+  "chars": 16878,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "治河图略.md",
   "title": "治河图略",
   "title_hant": "治河圖略",
+  "author_meta": "王喜",
+  "dynasty_meta": "元",
+  "category_meta": "河工治黄",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%B2%BB%E6%B2%B3%E5%9B%BE%E7%95%A5.html",
@@ -630,12 +866,19 @@
    "ctp:wb4810146"
   ],
   "upstream_id": "KR2k0064",
-  "chars": 4235
+  "chars": 4235,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "治河奏绩书.md",
   "title": "治河奏绩书",
   "title_hant": null,
+  "author_meta": "靳辅",
+  "dynasty_meta": "清",
+  "category_meta": "河工治黄",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%B2%BB%E6%B2%B3%E5%A5%8F%E7%BB%A9%E4%B9%A6.html",
@@ -644,12 +887,19 @@
   "kanripo": [],
   "ctext": [],
   "upstream_id": "KR2k0076",
-  "chars": 95257
+  "chars": 95257,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "泰西水法.md",
   "title": "泰西水法",
   "title_hant": "泰西水法",
+  "author_meta": "熊三拔译述、徐光启笔记",
+  "dynasty_meta": "明",
+  "category_meta": "水利总论",
   "author_front": "'[明]熊三拔'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E6%B3%B0%E8%A5%BF%E6%B0%B4%E6%B3%95.html",
@@ -660,12 +910,19 @@
    "ctp:wb696526"
   ],
   "upstream_id": "KR3d0008",
-  "chars": 23039
+  "chars": 23039,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "浙西水利书.md",
   "title": "浙西水利书",
   "title_hant": "浙西水利書",
+  "author_meta": "姚文灏",
+  "dynasty_meta": "明",
+  "category_meta": "区域水利",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%B5%99%E8%A5%BF%E6%B0%B4%E5%88%A9%E4%B9%A6.html",
@@ -681,12 +938,19 @@
    "ctp:wb2393526"
   ],
   "upstream_id": "KR2k0065",
-  "chars": 33283
+  "chars": 33283,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "漕船志.md",
   "title": "漕船志",
   "title_hant": "漕船志",
+  "author_meta": "席书编次、朱家相增修",
+  "dynasty_meta": "明",
+  "category_meta": "漕运",
   "author_front": "'[明]席书'",
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%BC%95%E8%88%B9%E5%BF%97.html",
@@ -697,12 +961,19 @@
    "ctp:wb121875"
   ],
   "upstream_id": null,
-  "chars": 80386
+  "chars": 80386,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "漕运通志.md",
   "title": "漕运通志",
   "title_hant": "漕運通志",
+  "author_meta": "谢纯",
+  "dynasty_meta": "明",
+  "category_meta": "漕运",
   "author_front": "'[明]杨宏'",
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E6%BC%95%E8%BF%90%E9%80%9A%E5%BF%97.html",
@@ -716,12 +987,19 @@
    "ctp:wb441034"
   ],
   "upstream_id": null,
-  "chars": 200087
+  "chars": 200087,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "灌园草木识.md",
   "title": "灌园草木识",
   "title_hant": null,
+  "author_meta": "陈诗教",
+  "dynasty_meta": "明",
+  "category_meta": "园艺种植",
   "author_front": null,
   "ctext_category": null,
   "daizhige_url": null,
@@ -730,12 +1008,29 @@
   "kanripo": [],
   "ctext": [],
   "upstream_id": null,
-  "chars": 15609
+  "chars": 15609,
+  "source_project": "wikisource",
+  "source_status": "inferred",
+  "evidence": "正文含 MediaWiki {{header}} 模板与 [[Category:]] 标记",
+  "source_url": "https://zh.wikisource.org/wiki/%E7%81%8C%E5%9C%92%E8%8D%89%E6%9C%A8%E8%AD%98",
+  "header_title_hant": "灌園草木識",
+  "header_author": "陳正學",
+  "header_dynasty": "明",
+  "header_notes": null,
+  "needs_review": true,
+  "meta_conflict": {
+   "meta_author": "陈诗教",
+   "header_author": "陳正學",
+   "note": "两源著录不一致，待人工判定"
+  }
  },
  {
   "file": "牛羊日历.md",
   "title": "牛羊日历",
   "title_hant": null,
+  "author_meta": "待考",
+  "dynasty_meta": "待考",
+  "category_meta": "畜牧渔业",
   "author_front": "'[唐]刘轲'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E7%89%9B%E7%BE%8A%E6%97%A5%E5%8E%86.html",
@@ -744,12 +1039,19 @@
   "kanripo": [],
   "ctext": [],
   "upstream_id": null,
-  "chars": 2180
+  "chars": 2180,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "王氏农书.md",
   "title": "王祯农书",
   "title_hant": null,
+  "author_meta": "王祯",
+  "dynasty_meta": "元",
+  "category_meta": "农学综论",
   "author_front": null,
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E7%8E%8B%E6%B0%8F%E5%86%9C%E4%B9%A6.html",
@@ -758,12 +1060,19 @@
   "kanripo": [],
   "ctext": [],
   "upstream_id": "KR3d0005",
-  "chars": 121823
+  "chars": 121823,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "田家五行.md",
   "title": "田家五行",
   "title_hant": "田家五行",
+  "author_meta": "娄元礼",
+  "dynasty_meta": "元",
+  "category_meta": "气象占验",
   "author_front": "'[元]娄元礼'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E7%94%B0%E5%AE%B6%E4%BA%94%E8%A1%8C.html",
@@ -775,12 +1084,19 @@
    "ctp:wb592286"
   ],
   "upstream_id": null,
-  "chars": 7586
+  "chars": 7586,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "田家历.md",
   "title": "田家历",
   "title_hant": "田家歷",
+  "author_meta": "待考",
+  "dynasty_meta": "待考",
+  "category_meta": "农时月令",
   "author_front": "'[元]俞宗本'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E7%94%B0%E5%AE%B6%E5%8E%86.html",
@@ -791,12 +1107,19 @@
    "ctp:wb161021"
   ],
   "upstream_id": null,
-  "chars": 720
+  "chars": 720,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "直隶河渠志.md",
   "title": "直隶河渠志",
   "title_hant": "直隸河渠志",
+  "author_meta": "陈仪",
+  "dynasty_meta": "清",
+  "category_meta": "区域水利",
   "author_front": "'[清]陈仪'",
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E7%9B%B4%E9%9A%B6%E6%B2%B3%E6%B8%A0%E5%BF%97.html",
@@ -814,12 +1137,19 @@
    "ctp:wb1257474"
   ],
   "upstream_id": "KR2k0077",
-  "chars": 13867
+  "chars": 13867,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "神农书.md",
   "title": "神农书",
   "title_hant": "神農書",
+  "author_meta": "托名神农（辑佚）",
+  "dynasty_meta": "先秦",
+  "category_meta": "农学综论",
   "author_front": "'[战国魏]李悝'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E7%A5%9E%E5%86%9C%E4%B9%A6.html",
@@ -830,12 +1160,19 @@
    "ctp:wb123295"
   ],
   "upstream_id": null,
-  "chars": 5250
+  "chars": 5250,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "种树书-郭橐驼.md",
   "title": "种树书",
   "title_hant": null,
+  "author_meta": "托名〔唐〕郭橐驼（旧题俞宗本）",
+  "dynasty_meta": "明",
+  "category_meta": "园艺种植",
   "author_front": null,
   "ctext_category": null,
   "daizhige_url": null,
@@ -844,12 +1181,24 @@
   "kanripo": [],
   "ctext": [],
   "upstream_id": null,
-  "chars": 12454
+  "chars": 12454,
+  "source_project": "wikisource",
+  "source_status": "inferred",
+  "evidence": "正文含 MediaWiki {{header}} 模板与 [[Category:]] 标记",
+  "source_url": "https://zh.wikisource.org/wiki/%E7%A8%AE%E6%A8%B9%E6%9B%B8",
+  "header_title_hant": "種樹書",
+  "header_author": "郭橐駝",
+  "header_dynasty": "唐",
+  "header_notes": "一云元俞宗本作",
+  "needs_review": true
  },
  {
   "file": "种芋法.md",
   "title": "种芋法",
   "title_hant": "種芋法",
+  "author_meta": "黄省曾",
+  "dynasty_meta": "明",
+  "category_meta": "园艺种植",
   "author_front": "'[明]黄省曾'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E7%A7%8D%E8%8A%8B%E6%B3%95.html",
@@ -860,12 +1209,19 @@
    "ctp:wb472134"
   ],
   "upstream_id": null,
-  "chars": 2127
+  "chars": 2127,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "糖霜谱-王灼.md",
   "title": "糖霜谱",
   "title_hant": null,
+  "author_meta": "王灼",
+  "dynasty_meta": "宋",
+  "category_meta": "经济作物",
   "author_front": null,
   "ctext_category": null,
   "daizhige_url": null,
@@ -874,12 +1230,24 @@
   "kanripo": [],
   "ctext": [],
   "upstream_id": null,
-  "chars": 3777
+  "chars": 3777,
+  "source_project": "wikisource",
+  "source_status": "inferred",
+  "evidence": "正文含 MediaWiki {{header}} 模板与 [[Category:]] 标记",
+  "source_url": "https://zh.wikisource.org/wiki/%E7%B3%96%E9%9C%9C%E8%AD%9C",
+  "header_title_hant": "糖霜譜",
+  "header_author": "王灼",
+  "header_dynasty": "南宋",
+  "header_notes": "{{*",
+  "needs_review": true
  },
  {
   "file": "老圃良言-维基版.md",
   "title": "老圃良言",
   "title_hant": null,
+  "author_meta": "待考",
+  "dynasty_meta": "待考",
+  "category_meta": "园艺种植",
   "author_front": null,
   "ctext_category": null,
   "daizhige_url": null,
@@ -888,12 +1256,29 @@
   "kanripo": [],
   "ctext": [],
   "upstream_id": null,
-  "chars": 1381
+  "chars": 1381,
+  "source_project": "wikisource",
+  "source_status": "inferred",
+  "evidence": "正文含 MediaWiki {{header}} 模板与 [[Category:]] 标记",
+  "source_url": "https://zh.wikisource.org/wiki/%E8%80%81%E5%9C%83%E8%89%AF%E8%A8%80",
+  "header_title_hant": "老圃良言",
+  "header_author": "巢鳴盛",
+  "header_dynasty": "明",
+  "header_notes": null,
+  "needs_review": true,
+  "meta_fill": {
+   "from": "巢鸣盛",
+   "dynasty": "明",
+   "note": "books_meta 原为待考，可由本来源补"
+  }
  },
  {
   "file": "老圃良言.md",
   "title": "老圃良言",
   "title_hant": "老圃良言",
+  "author_meta": "待考",
+  "dynasty_meta": "待考",
+  "category_meta": "园艺种植",
   "author_front": "'[清]巢鸣盛'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E8%80%81%E5%9C%83%E8%89%AF%E8%A8%80.html",
@@ -905,12 +1290,19 @@
    "ctp:wb322392"
   ],
   "upstream_id": null,
-  "chars": 1077
+  "chars": 1077,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "耒耜经.md",
   "title": "耒耜经",
   "title_hant": "耒耜經",
+  "author_meta": "陆龟蒙",
+  "dynasty_meta": "唐",
+  "category_meta": "农具",
   "author_front": "'[唐]陆龟蒙'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E8%80%92%E8%80%9C%E7%BB%8F.html",
@@ -921,12 +1313,19 @@
    "ctp:wb765822"
   ],
   "upstream_id": null,
-  "chars": 696
+  "chars": 696,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "蚕书.md",
   "title": "蚕书",
   "title_hant": "蠶書",
+  "author_meta": "秦观",
+  "dynasty_meta": "宋",
+  "category_meta": "蚕桑",
   "author_front": "'[宋]秦观'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E8%9A%95%E4%B9%A6.html",
@@ -937,12 +1336,19 @@
    "ctp:wb781516"
   ],
   "upstream_id": null,
-  "chars": 1015
+  "chars": 1015,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "蚕经.md",
   "title": "蚕经",
   "title_hant": "蠶經",
+  "author_meta": "黄省曾",
+  "dynasty_meta": "明",
+  "category_meta": "蚕桑",
   "author_front": "'[明]黄省曾'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E8%9A%95%E7%BB%8F.html",
@@ -953,12 +1359,19 @@
    "ctp:wb440817"
   ],
   "upstream_id": null,
-  "chars": 2643
+  "chars": 2643,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "行水金鉴.md",
   "title": "行水金鉴",
   "title_hant": "行水金鑑",
+  "author_meta": "傅泽洪（郑元庆辑）",
+  "dynasty_meta": "清",
+  "category_meta": "水利总论",
   "author_front": null,
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E8%A1%8C%E6%B0%B4%E9%87%91%E9%89%B4.html",
@@ -975,12 +1388,19 @@
    "ctp:wb943852"
   ],
   "upstream_id": "KR2k0078",
-  "chars": 1348845
+  "chars": 1348845,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "补农书.md",
   "title": "补农书",
   "title_hant": "補農書",
+  "author_meta": "张履祥",
+  "dynasty_meta": "清",
+  "category_meta": "农学综论",
   "author_front": "'[明]张履祥'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E8%A1%A5%E5%86%9C%E4%B9%A6.html",
@@ -991,12 +1411,19 @@
    "ctp:wb977916"
   ],
   "upstream_id": null,
-  "chars": 7412
+  "chars": 7412,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "补农书引.md",
   "title": "补农书引",
   "title_hant": "補農書引",
+  "author_meta": "张履祥",
+  "dynasty_meta": "清",
+  "category_meta": "农学综论",
   "author_front": "'[清]陈克鉴'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E8%A1%A5%E5%86%9C%E4%B9%A6%E5%BC%95.html",
@@ -1007,12 +1434,19 @@
    "ctp:wb169415"
   ],
   "upstream_id": null,
-  "chars": 4908
+  "chars": 4908,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "西湖水利考.md",
   "title": "西湖水利考",
   "title_hant": "西湖水利考",
+  "author_meta": "待考",
+  "dynasty_meta": "清",
+  "category_meta": "区域水利",
   "author_front": "'[清]吴农祥'",
   "ctext_category": "/史藏/地理",
   "daizhige_url": "https://daizhige.org/%E5%8F%B2%E8%97%8F/%E5%9C%B0%E7%90%86/%E8%A5%BF%E6%B9%96%E6%B0%B4%E5%88%A9%E8%80%83.html",
@@ -1023,12 +1457,19 @@
    "ctp:wb296841"
   ],
   "upstream_id": null,
-  "chars": 5146
+  "chars": 5146,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "野老书.md",
   "title": "野老书",
   "title_hant": "野老書",
+  "author_meta": "野老（马国翰辑佚）",
+  "dynasty_meta": "战国",
+  "category_meta": "农学综论",
   "author_front": null,
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E9%87%8E%E8%80%81%E4%B9%A6.html",
@@ -1039,12 +1480,19 @@
    "ctp:wb731079"
   ],
   "upstream_id": null,
-  "chars": 3369
+  "chars": 3369,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "野菜博录.md",
   "title": "野菜博录",
   "title_hant": "野菜博錄",
+  "author_meta": "鲍山",
+  "dynasty_meta": "明",
+  "category_meta": "荒政野菜",
   "author_front": "'[明]鲍山'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E9%87%8E%E8%8F%9C%E5%8D%9A%E5%BD%95.html",
@@ -1065,12 +1513,19 @@
    "ctp:wb241338"
   ],
   "upstream_id": "KR3d0009",
-  "chars": 17905
+  "chars": 17905,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "钦定授时通考.md",
   "title": "钦定授时通考",
   "title_hant": "欽定授時通考",
+  "author_meta": "乾隆敕撰（鄂尔泰等）",
+  "dynasty_meta": "清",
+  "category_meta": "农学综论",
   "author_front": null,
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E9%92%A6%E5%AE%9A%E6%8E%88%E6%97%B6%E9%80%9A%E8%80%83.html",
@@ -1087,12 +1542,19 @@
    "ctp:wb263727"
   ],
   "upstream_id": "KR3d0010",
-  "chars": 513852
+  "chars": 513852,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "马首农言.md",
   "title": "马首农言",
   "title_hant": "馬首農言",
+  "author_meta": "祁寯藻",
+  "dynasty_meta": "清",
+  "category_meta": "农学综论",
   "author_front": "'[清]祁隽藻'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E9%A9%AC%E9%A6%96%E5%86%9C%E8%A8%80.html",
@@ -1103,12 +1565,19 @@
    "ctp:wb856776"
   ],
   "upstream_id": null,
-  "chars": 3116
+  "chars": 3116,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  },
  {
   "file": "齐民要术.md",
   "title": "齐民要术",
   "title_hant": "齊民要術",
+  "author_meta": "贾思勰",
+  "dynasty_meta": "北魏",
+  "category_meta": "农学综论",
   "author_front": "'[南北朝]贾思勰'",
   "ctext_category": "/子藏/农家",
   "daizhige_url": "https://daizhige.org/%E5%AD%90%E8%97%8F/%E5%86%9C%E5%AE%B6/%E9%BD%90%E6%B0%91%E8%A6%81%E6%9C%AF.html",
@@ -1131,6 +1600,10 @@
    "ctp:wb1622370"
   ],
   "upstream_id": "KR3d0001",
-  "chars": 148447
+  "chars": 148447,
+  "source_project": "daizhigev20",
+  "source_status": "verified",
+  "evidence": "frontmatter 自带 github_repo_url / daizhige_url",
+  "needs_review": false
  }
 ]
