@@ -1,3 +1,7 @@
 .cache/
 __pycache__/
 *.pyc
+
+# 检索层生成物：134MB 超过 GitHub 单文件 100MB 硬限，必须由 corpus/build.py 生成
+corpus/corpus.db
+corpus/corpus-check-*/
