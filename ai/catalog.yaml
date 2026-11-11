@@ -1,0 +1,572 @@
+# 农业 AI 模型与技能目录
+#
+# 用途：每日从 Hugging Face 与 GitHub 采集农业相关大模型、模型项目、
+#       Agent Skill、数据集与 MCP 服务，汇总为本仓库文档。
+#       本文件是机器可读的目录源，条目为人工筛选与整理的结果；
+#       下载量 / Star 数等实时指标不写入本文件，由采集脚本写入
+#       ai/stats.json，并渲染进 ai/INDEX.md 的「实时数据快照」一节。
+#
+# 采集与更新方法见 ai/README.md；阅读版文档见 ai/INDEX.md。
+#
+# 字段说明：
+#   id           稳定标识，格式 <kind>:<名称 slug>，发布后不改
+#   name         展示名（模型 ID / 仓库名 / 项目名）
+#   kind         hf-model     Hugging Face 模型
+#                gh-repo      GitHub 模型 / 框架 / 基准项目
+#                skill        Agent Skill（Claude Code / AgentSkills 等）
+#                dataset      Hugging Face 数据集
+#                mcp          MCP 服务器
+#                paper-list   论文 / 资源列表
+#   url          主链接（模型页 / 仓库 / 数据集页）
+#   alt_url      可选，镜像、ModelScope 或论文链接
+#   langs        主要语言：zh / en / ja / multilingual / ...
+#   domain       农业子领域：综合 / 作物 / 植保 / 畜牧兽医 / 农业资源 /
+#                农业经济 / 智慧农业 / 农史农文 / 食品营养 / 遥感地理
+#   base         基座模型（如适用）
+#   org          研发机构 / 作者
+#   since        项目首次公开年份（约）
+#   note         一句话说明（中文，客观描述，不含营销语）
+
+meta:
+  title: 农业 AI 模型与技能目录
+  snapshot_date: "2026-11-09"
+  refresh: 每日一次，由 scripts/fetch_ai_catalog.py 采集
+  hf_endpoints:
+    - https://huggingface.co/api
+    - https://hf-mirror.com/api   # huggingface.co 不可达时的镜像
+
+entries:
+  # ── Hugging Face 农业大模型 ──────────────────────────────────
+  - id: hf-model:sinong
+    name: "司农 Sinong1.0（8B / 32B）"
+    kind: hf-model
+    url: https://modelscope.cn/models/NAULLM/Sinong1.0-32B
+    alt_url: https://huggingface.co/model-scope/Sinong1.0-32B
+    langs: [zh]
+    domain: 综合
+    base: Qwen3-32B（HF 镜像页标注；8B 版对应 Qwen3-8B）
+    org: 南京农业大学（NAULLM）
+    since: 2026
+    note: 国内首个通用农业领域开源垂直大语言模型；训练数据覆盖动物科学、农业经济与管理、农业资源与环境、园艺、植物保护、作物育种、智慧农业等学科，书籍 8800+ 册、论文 24 万+ 篇，合计 40 亿 token 以上。
+
+  - id: hf-model:agrima
+    name: "后稷 AgriMa"
+    kind: hf-model
+    url: https://github.com/zhiweihu1103/AgriMa
+    langs: [zh]
+    domain: 作物
+    base: Baichuan
+    org: 山西省后稷实验室、山西农业大学、山西大学、武汉大学
+    since: 2024
+    note: 自称首个中文开源农业大模型；当前发布作物学问答微调版，指令集需邮件申请，仅限科研使用。
+
+  - id: hf-model:agriagent
+    name: "稷丰 AgriAgent（多模态）"
+    kind: hf-model
+    url: https://github.com/zhiweihu1103/AgriAgent
+    langs: [zh]
+    domain: 综合
+    base: MiniCPM-Llama3-V-2.5
+    org: 同上（后稷实验室系）
+    since: 2024
+    note: 中文开源农业多模态大模型，面向图文混合的农业问答。
+
+  - id: hf-model:agrigpt-7b
+    name: "AgriGPT-7B / 13B"
+    kind: hf-model
+    url: https://huggingface.co/AgriGPT/AgriGPT-7B
+    alt_url: https://github.com/AgriGPTs/AgriGPTs
+    langs: [zh, en]
+    domain: 综合
+    base: LLaMA-2 / ChatGLM2
+    org: CSTR4019 等（中国农业大模型研究组）
+    since: 2023
+    note: 早期农业领域指令微调工作，发布有 6B/7B/13B 与 ChatGLM2 版本，含 arXiv 论文。
+
+  - id: hf-model:kwoola
+    name: "天工开悟 KwooLa / KwooVa / KwooGr"
+    kind: hf-model
+    url: https://github.com/HIT-Kwoo/KwooLa
+    alt_url: https://github.com/HIT-Kwoo/KwooVa
+    langs: [zh]
+    domain: 综合
+    base: 未公开（开源基座微调）
+    org: 哈尔滨工业大学等
+    since: 2024
+    note: 农业问答（KwooLa）、农业多模态（KwooVa）、农业生长（KwooGr）三个模型；2.0 版新增深度思考、表格理解与 SQL 对话，提供 iOS 应用与 OpenAI 兼容 API。
+
+  - id: hf-model:natural-farmer
+    name: "Natural Farmer 系列（llama-3.1 / Gemma2B / Mistral7B / qwen3.5-2b 等）"
+    kind: hf-model
+    url: https://huggingface.co/CopyleftCultivars
+    langs: [en]
+    domain: 智慧农业
+    base: LLaMA-3.1-8B / Gemma-2B / Mistral-7B / Qwen3.5-2B
+    org: CopyleftCultivars（OpenAgTech，开源农机社区）
+    since: 2025
+    note: 面向自然农耕（JADAM 等）的社区微调模型族，配套 GGUF 量化与蒸馏小模型，可由农场主自行微调。
+
+  - id: hf-model:agromanage-rl
+    name: "AgriManager（LLM-RL 农场管理微调族）"
+    kind: hf-model
+    url: https://github.com/AgriManager-Framework/AgriManager
+    alt_url: https://huggingface.co/AgriManager-Framework
+    langs: [en]
+    domain: 智慧农业
+    base: Qwen 系列
+    org: AgriManager Framework 研究组（NeurIPS 2026 E&D）
+    since: 2026
+    note: 面向农场管理决策的 LLM 强化学习微调与泛化基准，对接 DSSAT / WOFOST 等作物模型。
+
+  - id: hf-model:deepseek-r1-agriculture
+    name: "DeepSeek-R1-agriculture"
+    kind: hf-model
+    url: https://huggingface.co/isAsong/DeepSeek-R1-agriculture
+    langs: [zh]
+    domain: 综合
+    base: DeepSeek-R1
+    org: isAsong
+    since: 2025
+    note: 基于 DeepSeek-R1 的中文农业微调实验模型。
+
+  - id: hf-model:agronomyi
+    name: "agronomYi-hermes-34B"
+    kind: hf-model
+    url: https://huggingface.co/gbstox/agronomYi-hermes-34B
+    langs: [en]
+    domain: 农艺
+    base: Yi-34B（Hermes 指令版）
+    org: gbstox
+    since: 2025
+    note: 农艺方向微调模型，提供 GGUF 量化版。
+
+  - id: hf-model:buair-qwen-agri
+    name: "Qwen3-3.3B-Agricultural-Reasoning"
+    kind: hf-model
+    url: https://huggingface.co/BUAIR/Qwen3.3B-Agricultural-Reasoning
+    langs: [en]
+    domain: 综合
+    base: Qwen3-3.5B
+    org: BUAIR
+    since: 2026
+    note: 面向乌干达农业场景的 Qwen3 LoRA 微调；另有 Bateesa 等同级 Qwen2.5/Qwen3 系列微调。
+
+  - id: hf-model:dhenu-vision
+    name: "dhenu-vision-qwen2.5-7b-grpo-crop-disease"
+    kind: hf-model
+    url: https://huggingface.co/chheplo/dhenu-vision-qwen2.5-7b-grpo-crop-disease
+    langs: [en]
+    domain: 植保
+    base: Qwen2.5-VL-7B
+    org: chheplo
+    since: 2026
+    note: GRPO 强化学习微调的作物病虫害视觉问答模型（Qwen2.5-VL-7B 基座）。
+
+  - id: hf-model:agri-bert
+    name: "agriculture-bert-uncased"
+    kind: hf-model
+    url: https://huggingface.co/recobo/agriculture-bert-uncased
+    langs: [en]
+    domain: 综合
+    base: BERT
+    org: recobo
+    since: 2023
+    note: 农业语料继续预训练的 BERT，用于农业文本分类 / 掩码预测，是 HF 上下载量最高的农业专用 BERT。
+
+  - id: hf-model:local-lang-agri
+    name: 多语种小农模型族（索马里 / 阿姆哈拉 / 尼泊尔 / 马拉维语等）
+    kind: hf-model
+    url: https://huggingface.co/tacab/somali-agriculture
+    alt_url: https://huggingface.co/BekiTila/Amharic-llama-for-agriculture-chat-bot
+    langs: [so, am, ne, ny, multilingual]
+    domain: 综合
+    base: LLaMA / MiniCPM / Qwen2.5 等
+    org: tacab、BekiTila、aarajbhattarai、PatrickChikuse 等
+    since: 2024
+    note: 面向小语种地区小农的农业问答微调模型，多来自地区性 AI 公益项目。
+
+  # ── GitHub 农业模型 / 框架 / 基准项目 ────────────────────────
+  - id: gh-repo:foundation-models-list
+    name: JiajiaLi04/Agriculture-Foundation-Models
+    kind: paper-list
+    url: https://github.com/JiajiaLi04/Agriculture-Foundation-Models
+    langs: [en]
+    domain: 综合
+    org: JiajiaLi04 等
+    since: 2023
+    note: 农业基础模型与 LLM 论文列表，长期维护，是入门该领域的首选索引。
+
+  - id: gh-repo:mm-llms-agri-list
+    name: JiajiaLi04/Multi-Modal-LLMs-in-Agriculture
+    kind: paper-list
+    url: https://github.com/JiajiaLi04/Multi-Modal-LLMs-in-Agriculture
+    langs: [en]
+    domain: 综合
+    org: JiajiaLi04 等
+    since: 2024
+    note: 农业多模态大模型论文列表。
+
+  - id: gh-repo:seedbench
+    name: InternScience/SeedBench
+    kind: gh-repo
+    url: https://github.com/InternScience/SeedBench
+    langs: [en]
+    domain: 作物
+    org: 上海人工智能实验室 InternScience（ACL 2025）
+    since: 2025
+    note: 种子科学多任务基准，评测 LLM 在种子领域知识。
+
+  - id: gh-repo:agribench
+    name: Yutong-Zhou-cv/AgriBench
+    kind: gh-repo
+    url: https://github.com/Yutong-Zhou-cv/AgriBench
+    langs: [en]
+    domain: 综合
+    org: Yutong-Zhou-cv 等（ECCV 2024 Workshop）
+    since: 2024
+    note: 首个评测多模态大模型的农业基准，含 8 类农业视觉问答任务。
+
+  - id: gh-repo:plantxpert
+    name: trust-nlp/PlantXpert
+    kind: gh-repo
+    url: https://github.com/trust-nlp/PlantXpert
+    langs: [en]
+    domain: 作物
+    org: TrustNLP
+    since: 2026
+    note: 面向科研级作物图像的农学推理多模态基准（论文配套）。
+
+  - id: gh-repo:cdip-chatglm3
+    name: SmartAG-Team/CDIP-ChatGLM3
+    kind: gh-repo
+    url: https://github.com/SmartAG-Team/CDIP-ChatGLM3
+    langs: [zh, en]
+    domain: 植保
+    org: SmartAG-Team
+    since: 2024
+    note: CNN 识别作物病害 + ChatGLM3 生成处方建议的组合系统。
+
+  - id: gh-repo:agri-rag
+    name: Shuvam-Banerji-Seal/AgriIR
+    kind: gh-repo
+    url: https://github.com/Shuvam-Banerji-Seal/AgriIR
+    langs: [en]
+    domain: 综合
+    org: Shuvam-Banerji-Seal
+    since: 2026
+    note: 可配置的农业领域 RAG 检索框架，六阶段管线。
+
+  - id: gh-repo:agronaut
+    name: Rekin226/Agronaut
+    kind: gh-repo
+    url: https://github.com/Rekin226/Agronaut
+    langs: [en]
+    domain: 农艺
+    org: Rekin226
+    since: 2026
+    note: 本地运行的开源农艺智能体，可经 Telegram / CLI 交互。
+
+  - id: gh-repo:krishi-sahayak
+    name: giri164/krishi-sahayak
+    kind: gh-repo
+    url: https://github.com/giri164/krishi-sahayak
+    langs: [en, te, hi]
+    domain: 综合
+    org: giri164
+    since: 2026
+    note: 印度面向农民的语音 + RAG 多语种农业助手。
+
+  - id: gh-repo:agri-orchestration
+    name: zlatko-lakisic/agentic-orchestration（GARDen AgriAssist）
+    kind: gh-repo
+    url: https://github.com/zlatko-lakisic/agentic-orchestration
+    langs: [en]
+    domain: 智慧农业
+    org: 欧盟 GARDen 项目
+    since: 2025
+    note: 农业场景的多智能体编排框架，配置中接入 Hugging Face 托管的 AgriAssist LLM。
+
+  - id: gh-repo:smart-farm-agentic
+    name: juni2003/Smart-Farming-Agentic-AI
+    kind: gh-repo
+    url: https://github.com/juni2003/Smart-Farming-Agentic-AI
+    langs: [en]
+    domain: 智慧农业
+    org: juni2003
+    since: 2026
+    note: 全栈 agentic AI 精准农业系统（作物推荐 + 病害检测 + 农事建议）。
+
+  - id: gh-repo:agri-rag-chatbot
+    name: DreamRealized/agriculture-chatbot
+    kind: gh-repo
+    url: https://github.com/DreamRealized/agriculture-chatbot
+    langs: [en]
+    domain: 综合
+    org: DreamRealized
+    since: 2026
+    note: React 前端 + RAG 后端的 LLM 农业顾问系统，近期活跃。
+
+  - id: gh-repo:agrima-repo
+    name: zhiweihu1103/AgriMa（仓库）
+    kind: gh-repo
+    url: https://github.com/zhiweihu1103/AgriMa
+    langs: [zh]
+    domain: 作物
+    org: 后稷实验室系
+    since: 2024
+    note: 后稷农业大模型的训练代码与说明，配套 AgriAgent 多模态仓库。
+
+  - id: gh-repo:sinong-repo
+    name: njauzzx/Sinong（仓库）
+    kind: gh-repo
+    url: https://github.com/njauzzx/Sinong
+    langs: [zh]
+    domain: 综合
+    org: 南京农业大学
+    since: 2026
+    note: 司农大模型官方仓库，含数据构建、多智能体检索增强框架说明与 ModelScope 权重链接。
+
+  # ── Agent Skill（Claude Code / AgentSkills 格式）─────────────
+  - id: skill:skills-for-agriculture
+    name: human-avatar/skills-for-agriculture
+    kind: skill
+    url: https://github.com/human-avatar/skills-for-agriculture
+    alt_url: https://www.npmjs.com/package/@human-avatar/skills-for-agriculture
+    langs: [en]
+    domain: 综合
+    org: human-avatar
+    since: 2025
+    note: 面向农民 / 种植者 / 土地管理者的决策技能包，40+ 个 s4ag-* 技能（土壤、植保、堆肥、农林业、养蜂、菌类、碳汇、市场直销等），Claude Code 插件格式，可经 npm 安装。
+
+  - id: skill:pangenome-food-nutrition
+    name: PangenomeAI/academic-skills-food-nutrition
+    kind: skill
+    url: https://github.com/PangenomeAI/academic-skills-food-nutrition
+    langs: [en]
+    domain: 食品营养
+    org: 墨尔本大学食品科学组（Food Science Group）
+    since: 2026
+    note: 食品 / 营养 / 农业科研技能包（MIT 协议）：多智能体文献综述、期刊导向写作、同行评审、项目建议书、图表与 PPT 生成，含 150+ 期刊作者指南；适配 Claude Code、Codex、MiniMax Agent 等。
+
+  - id: skill:faostat-skills
+    name: berba-q/faostat-skills
+    kind: skill
+    url: https://github.com/berba-q/faostat-skills
+    langs: [en]
+    domain: 农业经济
+    org: berba-q
+    since: 2026
+    note: 分析联合国 FAOSTAT 数据的 AI 技能：国别农业概况、贸易分析、气候评估等。
+
+  - id: skill:zd-claude-plugin
+    name: Adilmunawar/ZD-claude-plugin
+    kind: skill
+    url: https://github.com/Adilmunawar/ZD-claude-plugin
+    langs: [en]
+    domain: 遥感地理
+    org: Adilmunawar
+    since: 2026
+    note: 农业遥感工程方向的 Claude Code 插件：卫星机器学习、地块分析的智能体、技能与护栏。
+
+  - id: skill:us-crop-monitor
+    name: FrancyJGLisboa/us-crop-monitor-skill
+    kind: skill
+    url: https://github.com/FrancyJGLisboa/us-crop-monitor-skill
+    langs: [en]
+    domain: 农业经济
+    org: FrancyJGLisboa
+    since: 2025
+    note: 把 Claude Code 变成 USDA NASS 与美国大宗作物市场分析专家的技能。
+
+  - id: skill:agent-skills-farming
+    name: farmfriend-labs/agent-skills-farming
+    kind: skill
+    url: https://github.com/farmfriend-labs/agent-skills-farming
+    langs: [en]
+    domain: 智慧农业
+    org: farmfriend-labs
+    since: 2025
+    note: AgentSkills.io 开放格式的农场技能合集：农场修复、JADAM 自然农法、蚯蚓养殖、发酵、天气监测、农业技术开发。
+
+  - id: skill:dungnotnull-suite
+    name: "dungnotnull/*-agent-skill（种植计划 / 循环农业 / 城市微型农业 / 产量病害诊断 / 农经预测等）"
+    kind: skill
+    url: https://github.com/dungnotnull/smart-agriculture-planting-plan-agent-skill
+    alt_url: https://github.com/dungnotnull/crop-yield-disease-diagnosis-agent-skill
+    langs: [en]
+    domain: 综合
+    org: dungnotnull
+    since: 2026
+    note: 一组确定性与多智能体混合的农业规划技能：种植计划评分、循环有机农业、城市微型农场设计、产量预测与病害诊断、农经发展战略、农废造纸、螺旋藻养殖、集装箱垂直农场等。
+
+  - id: skill:cgihar-climate-skills
+    name: CGIAR-Climate-Data-Hub/skills
+    kind: skill
+    url: https://github.com/CGIAR-Climate-Data-Hub/skills
+    langs: [en]
+    domain: 遥感地理
+    org: CGIAR 气候数据枢纽
+    since: 2026
+    note: CGIAR 气候数据枢纽配套的 LLM 技能集合，用于气候数据检索与农业适配分析。
+
+  - id: skill:farm-economics
+    name: mikeblythe/farm-economics
+    kind: skill
+    url: https://github.com/mikeblythe/farm-economics
+    langs: [en]
+    domain: 农业经济
+    org: mikeblythe
+    since: 2026
+    note: 基于 USDA NASS 真实数据的农场收支平衡与盈利计算技能，杜绝模型编造数字。
+
+  - id: skill:my-farm-advisor
+    name: borealBytes/my-farm-advisor
+    kind: skill
+    url: https://github.com/borealBytes/my-farm-advisor
+    langs: [en]
+    domain: 智慧农业
+    org: MY Farm, LLC
+    since: 2026
+    note: 农场管理 + 农业数据科学技能包，运行于 Cloudflare 开放框架。
+
+  # ── MCP 服务器 ──────────────────────────────────────────────
+  - id: mcp:faostat-mcp
+    name: berba-q/faostat-mcp
+    kind: mcp
+    url: https://github.com/berba-q/faostat-mcp
+    langs: [en]
+    domain: 农业经济
+    org: berba-q
+    since: 2025
+    note: 把 FAOSTAT 完整 API 暴露为 AI 助手可用工具的 MCP 服务器；另有 cyanheads/faostat-mcp-server（本地 SQLite 镜像版）。
+
+  - id: mcp:agrobr-mcp
+    name: bruno-portfolio/agrobr-mcp
+    kind: mcp
+    url: https://github.com/bruno-portfolio/agrobr-mcp
+    langs: [pt, en]
+    domain: 农业经济
+    org: bruno-portfolio
+    since: 2025
+    note: 巴西农业数据 MCP：价格、作物、贸易、气候、毁林与火灾。
+
+  - id: mcp:brapi-mcp
+    name: cyanheads/brapi-mcp-server
+    kind: mcp
+    url: https://github.com/cyanheads/brapi-mcp-server
+    langs: [en]
+    domain: 作物
+    org: cyanheads
+    since: 2026
+    note: BrAPI v2.1 育种数据工作区 MCP：检索试验、种质与基因型，支持多智能体研究。
+
+  - id: mcp:agro-weather-mcp
+    name: rajshivang07/agro-weather-mcp
+    kind: mcp
+    url: https://github.com/rajshivang07/agro-weather-mcp
+    langs: [en]
+    domain: 智慧农业
+    org: rajshivang07
+    since: 2026
+    note: 面向农民与农艺师的 Open-Meteo 农业气象 MCP 工具集。
+
+  - id: mcp:nsip
+    name: epicpast/nsip
+    kind: mcp
+    url: https://github.com/epicpast/nsip
+    langs: [en]
+    domain: 畜牧兽医
+    org: epicpast
+    since: 2026
+    note: 绵羊遗传评估 CLI 与 MCP 服务器：检索个体、比较育种值、规划配种、羊群排名。
+
+  - id: mcp:measurespace
+    name: MeasureSpace/measure-space-mcp-server
+    kind: mcp
+    url: https://github.com/MeasureSpace/measure-space-mcp-server
+    langs: [en]
+    domain: 智慧农业
+    org: MeasureSpace
+    since: 2025
+    note: 天气、气候、农业、花粉、空气质量与地理编码的 MCP 服务器。
+
+  # ── 数据集（Hugging Face）───────────────────────────────────
+  - id: dataset:kisanvaani-agri-qa
+    name: KisanVaani/agriculture-qa-english-only
+    kind: dataset
+    url: https://huggingface.co/datasets/KisanVaani/agriculture-qa-english-only
+    langs: [en]
+    domain: 综合
+    org: KisanVaani（印度）
+    since: 2024
+    note: 印度农民热线问答数据集的英文子集，是多个农业 LLM 微调的常用语料（同名项目另有印地语等多语种版本）。
+
+  - id: dataset:agriculture-agent-rl
+    name: CopyleftCultivars/Agriculture-Agent-RL-Training-Data
+    kind: dataset
+    url: https://huggingface.co/datasets/CopyleftCultivars/Agriculture-Agent-RL-Training-Data
+    langs: [en]
+    domain: 智慧农业
+    org: CopyleftCultivars
+    since: 2026
+    note: 农业智能体强化学习训练数据，配套 Natural Farmer 模型族。
+
+  - id: dataset:baai-industry-agri
+    name: BAAI/IndustryCorpus2_agriculture_forestry_animal_husbandry_fishery
+    kind: dataset
+    url: https://huggingface.co/datasets/BAAI/IndustryCorpus2_agriculture_forestry_animal_husbandry_fishery
+    langs: [zh]
+    domain: 综合
+    org: 北京智源研究院（BAAI）
+    since: 2025
+    note: 行业语料库 2 期的农林牧渔分卷，中文农业继续预训练的现成语料。
+
+  - id: dataset:chinese-qa-agri
+    name: Mxode/Chinese-QA-Agriculture_Forestry_Animal_Husbandry_Fishery
+    kind: dataset
+    url: https://huggingface.co/datasets/Mxode/Chinese-QA-Agriculture_Forestry_Animal_Husbandry_Fishery
+    langs: [zh]
+    domain: 综合
+    org: Mxode
+    since: 2024
+    note: 中文农林牧渔问答对数据集。
+
+  - id: dataset:agriculture-vision
+    name: shi-labs/Agriculture-Vision
+    kind: dataset
+    url: https://huggingface.co/datasets/shi-labs/Agriculture-Vision
+    langs: [en]
+    domain: 遥感地理
+    org: Shi Lab（Cornell）
+    since: 2024
+    note: Agriculture-Vision 遥感基准的 HF 版，农田地物分割。
+
+  - id: dataset:geofm-benchmark
+    name: sanmay4119/geofm-agriculture-benchmark
+    kind: dataset
+    url: https://huggingface.co/datasets/sanmay4119/geofm-agriculture-benchmark
+    langs: [en]
+    domain: 遥感地理
+    org: sanmay4119
+    since: 2026
+    note: 地理基础模型农业下游任务基准。
+
+  - id: dataset:nor-agri-bench
+    name: norjordAI/nor_agriculture_bench
+    kind: dataset
+    url: https://huggingface.co/datasets/norjordAI/nor_agriculture_bench
+    langs: [no, en]
+    domain: 综合
+    org: norjordAI
+    since: 2026
+    note: 挪威语农业问答基准，评测 LLM 在北欧农业场景的知识。
+
+  - id: dataset:africa-agri-synth
+    name: electricsheepafrica/africa-synth-agriculture-* 系列
+    kind: dataset
+    url: https://huggingface.co/electricsheepafrica
+    langs: [en]
+    domain: 综合
+    org: electricsheepafrica
+    since: 2026
+    note: 撒哈拉以南非洲农业合成语料系列：气候适应、粮食安全、产后价值链、畜牧健康、小农产量等。
