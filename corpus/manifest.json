@@ -5,6 +5,8 @@
   "chunks_without_work": 0,
   "n_chars_indexed": 6730563,
   "nongshi": 560,
+  "nongshi_month_conflict": 2,
+  "nongshi_month_fixed": 89,
   "nongshi_without_work": 0,
   "solar_terms": 24,
   "texts": 103,

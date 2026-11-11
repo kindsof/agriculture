@@ -29,6 +29,47 @@ EXPECTED_CHARS = 6730563          # 与 _legacy/build_report.md 逐位吻合
 
 CJK_RUN = re.compile(r'[㐀-䶿一-鿿豈-﫿]+')
 
+CN_MONTH = {'正': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6,
+            '七': 7, '八': 8, '九': 9, '十': 10, '十一': 11, '十二': 12}
+# 文中自带的月份声明，兼容 \[X月\] 、 [X月] 与 ○X月[X月] 三种写法
+MONTH_DECL = re.compile(
+    r'^(?:○|◎|●)?\s*(?:\\?\[([正一二三四五六七八九十]{1,2})月\\?\]'
+    r'|([正一二三四五六七八九十]{1,2})月\\?\[)')
+
+
+def derive_months(rows):
+    """按文档顺序解析文中月份声明，向下继承（限同一 chunk 内）。
+
+    为何要修：旧构建脚本已失传，从数据倒推它是拿 **chunk 号尾数当月份**：
+    chunk 333 整块被标 3 月（开头明写 `○二月\\[二月\\]仲春建卯`）、
+    chunk 334 整块被标 4 月（里面「五月」块跟着错）。所以真错全部是
+    **相差 1 个月** 的错标。
+
+    只修 ±1：跳多个月的不改，标为 `conflict` 保留原值。实例是「四杀没时」
+    两条通用占辞（id 384/399，原标 11/12 月），它们的 chunk_id 挂在 334 会
+    被继承成 6 月 —— 跳 5、6 个月，说明是条目自身 chunk 归属错，不是月份错。
+
+    不拿节气名推断：曾试过把「○冬至杂占」按节气表归到十一月，但那是拿
+    我们的推断覆盖原文自带的章节结构，不贴原文。
+
+    返回 {id: (生效月份, 原值, 依据)}；依据 ∈ declared|inherited|legacy|conflict。
+    """
+    out, cur, cur_chunk = {}, None, None
+    for r in sorted(rows, key=lambda r: (r['book_id'], r['chunk_id'], r['id'])):
+        m = MONTH_DECL.match((r['text'] or '').strip())
+        declared = CN_MONTH.get(m.group(1) or m.group(2)) if m else None
+        if declared is not None:
+            cur, cur_chunk = declared, r['chunk_id']
+            out[r['id']] = (cur, r['month'], 'declared')
+        elif cur is not None and r['chunk_id'] == cur_chunk:
+            if abs(cur - r['month']) <= 1:
+                out[r['id']] = (cur, r['month'], 'inherited')
+            else:
+                out[r['id']] = (r['month'], r['month'], 'conflict')
+        else:
+            out[r['id']] = (r['month'], r['month'], 'legacy')
+    return out
+
 
 def tokenize(text):
     """中文串同时产单字与二元 token；非中文（空白/标点/数字/字母）丢弃。
@@ -92,8 +133,8 @@ def schema(conn):
       id INTEGER PRIMARY KEY, name TEXT, season TEXT, lunar_month INTEGER,
       solar_date TEXT, farming TEXT, ord INTEGER);
     CREATE TABLE nongshi(
-      id INTEGER PRIMARY KEY, work_id TEXT, month INTEGER, label TEXT,
-      text TEXT, chunk_id INTEGER);
+      id INTEGER PRIMARY KEY, work_id TEXT, month INTEGER, month_legacy INTEGER,
+      month_source TEXT, label TEXT, text TEXT, chunk_id INTEGER);
     ''')
 
 
@@ -176,19 +217,22 @@ def build(conn):
             r['id'], r['name'], r['season'], r['lunar_month'], r['solar_date'],
             clean_text(r['farming']), r['ord']))
 
-    n_missing = 0
+    n_fixed = 0
+    months = derive_months(jl(os.path.join(LEGACY, 'export', 'nongshi.jsonl')))
     for r in jl(os.path.join(LEGACY, 'export', 'nongshi.jsonl')):
         fb = legacy_books.get(r['book_id'])
         wid = work_of_localfile[fb['filename']] if fb else None
-        if wid is None:
-            n_missing += 1
-        conn.execute('INSERT INTO nongshi VALUES(?,?,?,?,?,?)', (
-            r['id'], wid, r['month'], r['label'], clean_text(r['text']), r['chunk_id']))
+        eff, legacy_month, source = months[r['id']]
+        if eff != legacy_month:
+            n_fixed += 1
+        conn.execute('INSERT INTO nongshi VALUES(?,?,?,?,?,?,?,?)', (
+            r['id'], wid, eff, legacy_month, source, r['label'], clean_text(r['text']), r['chunk_id']))
+    print(f'农事月份按文中声明修正 {n_fixed} 行')
 
     conn.execute('UPDATE works SET n_chunks = '
                  '(SELECT COUNT(*) FROM chunks WHERE chunks.work_id = works.id)')
     conn.commit()          # 不 commit 的话 close 会回滚，落盘变空库
-    return n, n_missing
+    return n, n_fixed
 
 
 def manifest(conn):
@@ -202,6 +246,10 @@ def manifest(conn):
     m['chunks_without_work'] = nulls
     orphan = conn.execute('SELECT COUNT(*) FROM nongshi WHERE work_id IS NULL').fetchone()[0]
     m['nongshi_without_work'] = orphan
+    m['nongshi_month_fixed'] = conn.execute(
+        'SELECT COUNT(*) FROM nongshi WHERE month != month_legacy').fetchone()[0]
+    m['nongshi_month_conflict'] = conn.execute(
+        "SELECT COUNT(*) FROM nongshi WHERE month_source = 'conflict'").fetchone()[0]
     return m
 
 
@@ -243,7 +291,7 @@ def main():
     try:
         conn = sqlite3.connect(tmp)
         schema(conn)
-        n, n_missing = build(conn)
+        n, n_fixed = build(conn)
         m = manifest(conn)
         conn.close()
 
@@ -251,6 +299,8 @@ def main():
         print(f'chunks {n} 条（索引 {m["chunks_fts"]} 行，字数 {m["n_chars_indexed"]:,}）')
         print(f'works {m["works"]} / texts {m["texts"]} / solar_terms {m["solar_terms"]} / nongshi {m["nongshi"]}')
         print(f'chunks_digest {m["chunks_digest"][:16]}  work_id 缺失 {m["chunks_without_work"]} / {m["nongshi_without_work"]}')
+        print(f'农事月份修正 {m["nongshi_month_fixed"]} 行（原值在 month_legacy），'
+              f'存疑保留 {m["nongshi_month_conflict"]} 行')
 
         if n != 1791:
             print('!! 切块数不是 1791'); ok = False
