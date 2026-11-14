@@ -162,44 +162,44 @@
 以下内容由 [`scripts/fetch_ai_catalog.py`](../scripts/fetch_ai_catalog.py) 从 `ai/catalog.yaml` + `ai/stats.json` 自动生成，请勿手工编辑本小节。
 
 <!-- BEGIN GENERATED SNAPSHOT -->
-采集时间：**2026-11-09 17:26**（Asia/Shanghai）；下表数值由脚本从 Hugging Face / GitHub API 自动抓取，未经人工筛选，口径以各平台为准。
+采集时间：**2026-11-14 17:12**（Asia/Shanghai）；下表数值由脚本从 Hugging Face / GitHub API 自动抓取，未经人工筛选，口径以各平台为准。
 
 ### Hugging Face 模型
 
 | 条目 | 模型数 | 下载量 | 点赞 | ModelScope 下载 | 采集状态 |
 |---|---|---|---|---|---|
-| [agriculture-bert-uncased](https://huggingface.co/recobo/agriculture-bert-uncased) | — | 558 | 26 | — | ✅ |
+| [agriculture-bert-uncased](https://huggingface.co/recobo/agriculture-bert-uncased) | — | 551 | 26 | — | ✅ |
 | [稷丰 AgriAgent（多模态）](https://github.com/zhiweihu1103/AgriAgent) | — | — | — | — | GitHub ★129（指标见下方 GitHub 节） |
 | [AgriGPT-7B / 13B](https://huggingface.co/AgriGPT/AgriGPT-7B) | — | 0 | 0 | — | ✅ |
 | [后稷 AgriMa](https://github.com/zhiweihu1103/AgriMa) | — | — | — | — | GitHub ★187（指标见下方 GitHub 节） |
 | [AgriManager（LLM-RL 农场管理微调族）](https://github.com/AgriManager-Framework/AgriManager) | 99 | 163 | 0 | — | ✅ |
-| [agronomYi-hermes-34B](https://huggingface.co/gbstox/agronomYi-hermes-34B) | — | 16 | 2 | — | ✅ |
+| [agronomYi-hermes-34B](https://huggingface.co/gbstox/agronomYi-hermes-34B) | — | 14 | 2 | — | ✅ |
 | [Qwen3-3.3B-Agricultural-Reasoning](https://huggingface.co/BUAIR/Qwen3.3B-Agricultural-Reasoning) | — | 20 | 0 | — | ✅ |
-| [DeepSeek-R1-agriculture](https://huggingface.co/isAsong/DeepSeek-R1-agriculture) | — | 9 | 0 | — | ✅ |
-| [dhenu-vision-qwen2.5-7b-grpo-crop-disease](https://huggingface.co/chheplo/dhenu-vision-qwen2.5-7b-grpo-crop-disease) | — | 15 | 0 | — | ✅ |
+| [DeepSeek-R1-agriculture](https://huggingface.co/isAsong/DeepSeek-R1-agriculture) | — | 7 | 0 | — | ✅ |
+| [dhenu-vision-qwen2.5-7b-grpo-crop-disease](https://huggingface.co/chheplo/dhenu-vision-qwen2.5-7b-grpo-crop-disease) | — | 14 | 0 | — | ✅ |
 | [天工开悟 KwooLa / KwooVa / KwooGr](https://github.com/HIT-Kwoo/KwooLa) | — | — | — | — | GitHub ★29（指标见下方 GitHub 节） |
-| [多语种小农模型族（索马里 / 阿姆哈拉 / 尼泊尔 / 马拉维语等）](https://huggingface.co/tacab/somali-agriculture) | — | 266 | 0 | — | ✅ |
-| [Natural Farmer 系列（llama-3.1 / Gemma2B / Mistral7B / qwen3.5-2b 等）](https://huggingface.co/CopyleftCultivars) | 14 | 313 | 24 | — | ✅ |
-| [司农 Sinong1.0（8B / 32B）](https://modelscope.cn/models/NAULLM/Sinong1.0-32B) | — | 43 | 2 | 844 | ✅ |
+| [多语种小农模型族（索马里 / 阿姆哈拉 / 尼泊尔 / 马拉维语等）](https://huggingface.co/tacab/somali-agriculture) | — | 230 | 0 | — | ✅ |
+| [Natural Farmer 系列（llama-3.1 / Gemma2B / Mistral7B / qwen3.5-2b 等）](https://huggingface.co/CopyleftCultivars) | 15 | 381 | 24 | — | ✅ |
+| [司农 Sinong1.0（8B / 32B）](https://modelscope.cn/models/NAULLM/Sinong1.0-32B) | — | 45 | 2 | 849 | ✅ |
 
 ### Hugging Face 数据集
 
 | 条目 | 下载量 | 点赞 | 采集状态 |
 |---|---|---|---|
-| [electricsheepafrica/africa-synth-agriculture-* 系列](https://huggingface.co/electricsheepafrica) | 40 | 0 | ✅ |
-| [CopyleftCultivars/Agriculture-Agent-RL-Training-Data](https://huggingface.co/datasets/CopyleftCultivars/Agriculture-Agent-RL-Training-Data) | 1,292 | 1 | ✅ |
-| [shi-labs/Agriculture-Vision](https://huggingface.co/datasets/shi-labs/Agriculture-Vision) | 272 | 6 | ✅ |
-| [BAAI/IndustryCorpus2_agriculture_forestry_animal_husbandry_fishery](https://huggingface.co/datasets/BAAI/IndustryCorpus2_agriculture_forestry_animal_husbandry_fishery) | 668 | 2 | ✅ |
-| [Mxode/Chinese-QA-Agriculture_Forestry_Animal_Husbandry_Fishery](https://huggingface.co/datasets/Mxode/Chinese-QA-Agriculture_Forestry_Animal_Husbandry_Fishery) | 159 | 14 | ✅ |
-| [sanmay4119/geofm-agriculture-benchmark](https://huggingface.co/datasets/sanmay4119/geofm-agriculture-benchmark) | — | — | ⚠️ huggingface api unreachable |
-| [KisanVaani/agriculture-qa-english-only](https://huggingface.co/datasets/KisanVaani/agriculture-qa-english-only) | 390 | 26 | ✅ |
-| [norjordAI/nor_agriculture_bench](https://huggingface.co/datasets/norjordAI/nor_agriculture_bench) | — | — | ⚠️ huggingface api unreachable |
+| [electricsheepafrica/africa-synth-agriculture-* 系列](https://huggingface.co/electricsheepafrica) | 118 | 0 | ✅ |
+| [CopyleftCultivars/Agriculture-Agent-RL-Training-Data](https://huggingface.co/datasets/CopyleftCultivars/Agriculture-Agent-RL-Training-Data) | 1,407 | 1 | ✅ |
+| [shi-labs/Agriculture-Vision](https://huggingface.co/datasets/shi-labs/Agriculture-Vision) | 138 | 6 | ✅ |
+| [BAAI/IndustryCorpus2_agriculture_forestry_animal_husbandry_fishery](https://huggingface.co/datasets/BAAI/IndustryCorpus2_agriculture_forestry_animal_husbandry_fishery) | 695 | 2 | ✅ |
+| [Mxode/Chinese-QA-Agriculture_Forestry_Animal_Husbandry_Fishery](https://huggingface.co/datasets/Mxode/Chinese-QA-Agriculture_Forestry_Animal_Husbandry_Fishery) | 163 | 14 | ✅ |
+| [sanmay4119/geofm-agriculture-benchmark](https://huggingface.co/datasets/sanmay4119/geofm-agriculture-benchmark) | 314 | 1 | ✅ |
+| [KisanVaani/agriculture-qa-english-only](https://huggingface.co/datasets/KisanVaani/agriculture-qa-english-only) | 381 | 26 | ✅ |
+| [norjordAI/nor_agriculture_bench](https://huggingface.co/datasets/norjordAI/nor_agriculture_bench) | 180 | 0 | ✅ |
 
 ### GitHub 项目
 
 | 条目 | Stars | 最近推送 | 采集状态 |
 |---|---|---|---|
-| [zlatko-lakisic/agentic-orchestration（GARDen AgriAssist）](https://github.com/zlatko-lakisic/agentic-orchestration) | 3 | 2026-10-27 | ✅ |
+| [zlatko-lakisic/agentic-orchestration（GARDen AgriAssist）](https://github.com/zlatko-lakisic/agentic-orchestration) | 3 | 2026-11-11 | ✅ |
 | [Shuvam-Banerji-Seal/AgriIR](https://github.com/Shuvam-Banerji-Seal/AgriIR) | 7 | 2026-04-29 | ✅ |
 | [DreamRealized/agriculture-chatbot](https://github.com/DreamRealized/agriculture-chatbot) | 5 | 2026-11-05 | ✅ |
 | [Yutong-Zhou-cv/AgriBench](https://github.com/Yutong-Zhou-cv/AgriBench) | 28 | 2025-01-01 | ✅ |
@@ -208,7 +208,7 @@
 | [SmartAG-Team/CDIP-ChatGLM3](https://github.com/SmartAG-Team/CDIP-ChatGLM3) | 20 | 2025-02-23 | ✅ |
 | [giri164/krishi-sahayak](https://github.com/giri164/krishi-sahayak) | 5 | 2026-10-09 | ✅ |
 | [trust-nlp/PlantXpert](https://github.com/trust-nlp/PlantXpert) | 0 | 2026-11-08 | ✅ |
-| [InternScience/SeedBench](https://github.com/InternScience/SeedBench) | 25 | 2025-12-19 | ✅ |
+| [InternScience/SeedBench](https://github.com/InternScience/SeedBench) | 26 | 2025-12-19 | ✅ |
 | [njauzzx/Sinong（仓库）](https://github.com/njauzzx/Sinong) | 191 | 2026-05-17 | ✅ |
 | [juni2003/Smart-Farming-Agentic-AI](https://github.com/juni2003/Smart-Farming-Agentic-AI) | 4 | 2026-10-08 | ✅ |
 
@@ -224,12 +224,12 @@
 | 条目 | Stars | 最近推送 | 采集状态 |
 |---|---|---|---|
 | [farmfriend-labs/agent-skills-farming](https://github.com/farmfriend-labs/agent-skills-farming) | 3 | 2026-02-21 | ✅ |
-| [CGIAR-Climate-Data-Hub/skills](https://github.com/CGIAR-Climate-Data-Hub/skills) | 0 | 2026-11-04 | ✅ |
+| [CGIAR-Climate-Data-Hub/skills](https://github.com/CGIAR-Climate-Data-Hub/skills) | 0 | 2026-11-12 | ✅ |
 | [dungnotnull/*-agent-skill（种植计划 / 循环农业 / 城市微型农业 / 产量病害诊断 / 农经预测等）](https://github.com/dungnotnull/smart-agriculture-planting-plan-agent-skill) | 4 | 2026-07-02 | ✅ |
 | [berba-q/faostat-skills](https://github.com/berba-q/faostat-skills) | 10 | 2026-04-21 | ✅ |
 | [mikeblythe/farm-economics](https://github.com/mikeblythe/farm-economics) | 2 | 2026-07-19 | ✅ |
-| [borealBytes/my-farm-advisor](https://github.com/borealBytes/my-farm-advisor) | 7 | 2026-11-06 | ✅ |
-| [PangenomeAI/academic-skills-food-nutrition](https://github.com/PangenomeAI/academic-skills-food-nutrition) | 42 | 2026-08-31 | ✅ |
+| [borealBytes/my-farm-advisor](https://github.com/borealBytes/my-farm-advisor) | 7 | 2026-11-11 | ✅ |
+| [PangenomeAI/academic-skills-food-nutrition](https://github.com/PangenomeAI/academic-skills-food-nutrition) | 43 | 2026-08-31 | ✅ |
 | [human-avatar/skills-for-agriculture](https://github.com/human-avatar/skills-for-agriculture) | 13 | 2026-06-12 | ✅ |
 | [FrancyJGLisboa/us-crop-monitor-skill](https://github.com/FrancyJGLisboa/us-crop-monitor-skill) | 6 | 2025-10-18 | ✅ |
 | [Adilmunawar/ZD-claude-plugin](https://github.com/Adilmunawar/ZD-claude-plugin) | 10 | 2026-11-01 | ✅ |
@@ -238,12 +238,12 @@
 
 | 条目 | Stars | 最近推送 | 采集状态 |
 |---|---|---|---|
-| [rajshivang07/agro-weather-mcp](https://github.com/rajshivang07/agro-weather-mcp) | 2 | 2026-10-28 | ✅ |
+| [rajshivang07/agro-weather-mcp](https://github.com/rajshivang07/agro-weather-mcp) | 2 | 2026-11-10 | ✅ |
 | [bruno-portfolio/agrobr-mcp](https://github.com/bruno-portfolio/agrobr-mcp) | 30 | 2026-10-10 | ✅ |
-| [cyanheads/brapi-mcp-server](https://github.com/cyanheads/brapi-mcp-server) | 4 | 2026-10-19 | ✅ |
+| [cyanheads/brapi-mcp-server](https://github.com/cyanheads/brapi-mcp-server) | 4 | 2026-11-13 | ✅ |
 | [berba-q/faostat-mcp](https://github.com/berba-q/faostat-mcp) | 20 | 2026-10-02 | ✅ |
 | [MeasureSpace/measure-space-mcp-server](https://github.com/MeasureSpace/measure-space-mcp-server) | 3 | 2026-02-28 | ✅ |
-| [epicpast/nsip](https://github.com/epicpast/nsip) | 3 | 2026-11-02 | ✅ |
+| [epicpast/nsip](https://github.com/epicpast/nsip) | 3 | 2026-11-09 | ✅ |
 
 <!-- END GENERATED SNAPSHOT -->
 
