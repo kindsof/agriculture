@@ -8,3 +8,4 @@ corpus/corpus-check-*/
 
 corpus/api.log
 corpus/api.pid
+.cite/

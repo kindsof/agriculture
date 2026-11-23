@@ -36,7 +36,7 @@
         <span class="tag">24 节气 · 560 条 →</span></a>
       <a class="card entry" href="/map.html"><b>农耕文化地图</b>
         <span>全国农耕文化站点分布，按类别与省份筛选，地图列表联动</span>
-        <span class="tag">69 站点 · 31 省 →</span></a>
+        <span class="tag" id="map-tag">69 站点 · 31 省 →</span></a>
       <a class="card entry" href="/books.html"><b>书目总览</b>
         <span>73 种著作的题名、作者、朝代、版本与馆藏归属</span>
         <span class="tag">四库 42 · 合刻 28 →</span></a>
@@ -80,6 +80,12 @@ api('/api/health').then(h => {
   ].map(([k, v, u]) => `<div class="card stat"><b>${v}</b><span>${k}（${u}）</span></div>`).join('');
   $('#hint').textContent = `当前收录 ${h.works} 种著作、${fmtNum(h.chars_indexed)} 字正文`;
 }).catch(e => { $('#stats').innerHTML = `<div class="empty">服务不可用：${esc(e.message)}</div>`; });
+
+api('/api/stats').then(s => {
+  const top = Object.values(s.categories).sort((a, b) => b.count - a.count);
+  $('#map-tag').textContent =
+    `${fmtNum(s.total)} 站点 · ${s.provinces} 省 · ${top.length} 类 →`;
+}).catch(() => {});
 
 api('/api/works', { per_page: 100 }).then(d => {
   const cats = {};

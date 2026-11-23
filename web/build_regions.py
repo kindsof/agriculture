@@ -48,6 +48,45 @@ def index_titles(t2s):
     return idx
 
 
+def check_dossier(src, titles):
+    """Validate the 农俗/农业文明 dossier attached to every region.
+
+    Every entry needs a kind, readable text and at least one source; a source
+    that points into this site (``/read.html?id=…``) must name a work that
+    actually exists, so we never link a reader to a 404.
+    """
+    problems = []
+    known = {ids for group in titles.values() for ids in group}
+    for r in src['regions']:
+        for block in ('folk_detail', 'civilization'):
+            items = r.get(block)
+            if not isinstance(items, list) or not items:
+                problems.append(f"{r['id']}: {block} 缺失或为空")
+                continue
+            for item in items:
+                label = f"{r['id']}/{block}/{item.get('kind', '?')}"
+                if not isinstance(item.get('kind'), str) or len(item['kind'].strip()) < 2:
+                    problems.append(f"{label}: kind 缺失")
+                text = item.get('text') or ''
+                if len(text.strip()) < 30:
+                    problems.append(f"{label}: text 短于 30 字")
+                sources = item.get('sources')
+                if not isinstance(sources, list) or not sources:
+                    problems.append(f"{label}: 没有来源")
+                    continue
+                for s in sources:
+                    url = (s.get('url') or '')
+                    if not s.get('title'):
+                        problems.append(f"{label}: 来源缺 title")
+                    if url.startswith('/read.html?id='):
+                        work = url.split('=', 1)[1]
+                        if work not in known:
+                            problems.append(f"{label}: 站内书目 {work} 不存在")
+                    elif not url.startswith(('http://', 'https://')):
+                        problems.append(f"{label}: 来源 URL 非法 {url!r}")
+    return problems
+
+
 def build():
     src = load(SRC)
     prov = load(PROV)
@@ -85,6 +124,8 @@ def build():
                 'id': r['id'], 'name': r['name'], 'color': r['color'],
                 'summary': r['summary'], 'crops': r['crops'],
                 'folkways': r['folkways'], 'heritage_note': r['heritage_note'],
+                'folk_detail': r.get('folk_detail', []),
+                'civilization': r.get('civilization', []),
                 'provinces': r['provinces'], 'province_adcodes': adcodes,
                 'books': books,
             },
@@ -105,6 +146,10 @@ def main():
     args = ap.parse_args()
     out, report = build()
     ok = True
+    problems = check_dossier(load(SRC), index_titles(load(T2S)))
+    for line in problems:
+        print('  !! ' + line)
+    ok = ok and not problems
     for name, npoly, nmiss, missing, nl, na, nu in report:
         flag = '' if npoly and not nmiss else '  !! 有省未取到边界: ' + ','.join(missing)
         print(f'  {name:<14} 省多边形={npoly:<3} 书目 命中{nl} 歧义{na} 未命中{nu}{flag}')

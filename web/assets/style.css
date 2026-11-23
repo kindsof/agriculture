@@ -1686,3 +1686,57 @@ a {
   color: var(--ink-faint);
   border-style: dashed;
 }
+
+/* 农区档案：农俗文化与农业文明的分条目内容（右侧详情抽屉） */
+.dossier-item {
+  margin-bottom: 12px;
+  padding: 10px 12px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.dossier-item:last-child {
+  margin-bottom: 0;
+}
+
+.dossier-item h4 {
+  margin: 0 0 6px;
+  color: var(--accent-solid);
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.dossier-item p {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.dossier-item .source-list {
+  gap: 6px;
+}
+
+.region-dossier-button {
+  margin-top: 4px;
+  padding: 6px 11px;
+  font: inherit;
+  font-size: 12px;
+  color: var(--ink);
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.region-dossier-button:hover {
+  color: var(--accent-solid);
+  border-color: var(--accent-solid);
+}
+
+.region-dossier-button:focus-visible {
+  outline: 2px solid var(--accent-solid);
+  outline-offset: 2px;
+}

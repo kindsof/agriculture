@@ -22,6 +22,21 @@ sys.path.insert(0, str(WEB_DIR))
 import build_data  # noqa: E402
 import server  # noqa: E402
 
+SITES = build_data.load_yaml()["sites"]
+TOTAL_SITES = len(SITES)
+# Site data only grows; a lower total than this means records were lost, not
+# that the fixture drifted.  Raise it when you add sites, never lower it.
+MIN_SITES = 110
+
+
+def site_count(*, category: str = "", province: str = "") -> int:
+    return sum(
+        1
+        for site in SITES
+        if (not category or site["category"] == category)
+        and (not province or site["province"] == province)
+    )
+
 
 class DataTests(unittest.TestCase):
     @classmethod
@@ -39,13 +54,38 @@ class DataTests(unittest.TestCase):
         build_data.validate_sites(self.sites, self.provinces)
 
     def test_counts_and_coverage(self) -> None:
-        self.assertEqual(len(self.sites), 69)
-        self.assertEqual(self.stats["total"], 69)
-        self.assertEqual(self.stats["provinces"], 31)
-        self.assertEqual(len(self.geojson["features"]), 69)
+        self.assertGreaterEqual(len(self.sites), MIN_SITES)
+        self.assertEqual(self.stats["total"], TOTAL_SITES)
+        self.assertGreaterEqual(self.stats["provinces"], 31)
+        self.assertEqual(len(self.geojson["features"]), TOTAL_SITES)
         self.assertEqual(
             sum(item["count"] for item in self.stats["categories"].values()),
-            69,
+            TOTAL_SITES,
+        )
+
+    def test_categories_are_labelled_and_synced_with_the_front_end(self) -> None:
+        """build_data.py, app.js and sites.yaml must agree on category keys.
+
+        The map page keeps its own copy of the category list (labels and dot
+        colours), so a category added only to the data would be silently
+        dropped from the filter chips and the legend.
+        """
+        used = {site["category"] for site in self.sites}
+        self.assertTrue(
+            used <= set(build_data.CATEGORIES),
+            f"uncategorised: {sorted(used - set(build_data.CATEGORIES))}",
+        )
+        script = (WEB_DIR / "assets" / "app.js").read_text(encoding="utf-8")
+        for key, label in build_data.CATEGORIES.items():
+            self.assertIn(
+                f'key: "{key}", label: "{label}"',
+                script,
+                f"app.js CATEGORIES is out of sync for {key}",
+            )
+        self.assertEqual(
+            script.count('{ key: "'),
+            len(build_data.CATEGORIES),
+            "app.js lists a category that build_data.py does not know",
         )
 
     def test_ids_are_unique_and_slugged(self) -> None:
@@ -123,19 +163,19 @@ class ServerTests(unittest.TestCase):
     def test_health(self) -> None:
         payload = self.get_json("/api/health")
         self.assertEqual(payload["status"], "ok")
-        self.assertEqual(payload["sites"], 69)
+        self.assertEqual(payload["sites"], TOTAL_SITES)
         self.assertEqual(payload["provinces"], 31)
 
     def test_sites_endpoint(self) -> None:
         payload = self.get_json("/api/sites")
         self.assertEqual(payload["type"], "FeatureCollection")
-        self.assertEqual(payload["meta"]["total"], 69)
-        self.assertEqual(payload["meta"]["returned"], 69)
-        self.assertEqual(len(payload["features"]), 69)
+        self.assertEqual(payload["meta"]["total"], TOTAL_SITES)
+        self.assertEqual(payload["meta"]["returned"], TOTAL_SITES)
+        self.assertEqual(len(payload["features"]), TOTAL_SITES)
 
     def test_sites_filters(self) -> None:
         tea = self.get_json("/api/sites?category=tea")
-        self.assertEqual(tea["meta"]["returned"], 10)
+        self.assertEqual(tea["meta"]["returned"], site_count(category="tea"))
         self.assertTrue(
             all(
                 feature["properties"]["category"] == "tea"
@@ -146,10 +186,16 @@ class ServerTests(unittest.TestCase):
         zhejiang = self.get_json(
             "/api/sites?province=%E6%B5%99%E6%B1%9F%E7%9C%81"
         )
-        self.assertEqual(zhejiang["meta"]["returned"], 10)
+        self.assertEqual(
+            zhejiang["meta"]["returned"], site_count(province="浙江省")
+        )
 
         search = self.get_json("/api/sites?q=%E9%BE%99%E4%BA%95")
-        self.assertEqual(search["meta"]["returned"], 2)
+        self.assertGreaterEqual(search["meta"]["returned"], 2)
+        self.assertIn(
+            "west-lake-longjing",
+            [feature["properties"]["id"] for feature in search["features"]],
+        )
 
     def test_single_site(self) -> None:
         feature = self.get_json("/api/sites/west-lake-longjing")

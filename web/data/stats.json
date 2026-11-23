@@ -23,12 +23,16 @@
       "count": 6
     },
     "custom": {
-      "label": "农事民俗",
+      "label": "农俗文化",
       "count": 9
     },
     "specialty": {
       "label": "特色物产",
       "count": 14
+    },
+    "civilization": {
+      "label": "农业文明",
+      "count": 0
     }
   },
   "provinceCounts": {

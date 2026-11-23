@@ -13,8 +13,9 @@
     { key: "tea", label: "茶文化", color: "#1f7a4d" },
     { key: "mulberry", label: "蚕桑渔农", color: "#0f8f9c" },
     { key: "dryland", label: "旱作游牧", color: "#8a7f6a" },
-    { key: "custom", label: "农事民俗", color: "#c1483f" },
+    { key: "custom", label: "农俗文化", color: "#c1483f" },
     { key: "specialty", label: "特色物产", color: "#6573c2" },
+    { key: "civilization", label: "农业文明", color: "#7a4fd1" },
   ];
   const CATEGORY_BY_KEY = new Map(CATEGORIES.map((c) => [c.key, c]));
   const MAINLAND_BOUNDS = [
@@ -296,9 +297,104 @@
           className: "region-pop",
         });
         layer.on("click", () => setRegion(f.properties.id));
+        layer.on("popupopen", (event) => {
+          const button = event.popup
+            .getElement()
+            ?.querySelector("[data-region-dossier]");
+          if (button) {
+            button.addEventListener("click", () =>
+              openRegionDossier(button.dataset.regionDossier),
+            );
+          }
+        });
       },
     }).addTo(state.map);
     state.regionLayer.bringToFront();
+  }
+
+  function sourceLinks(sources) {
+    return (sources || [])
+      .map((source) => {
+        const external = /^https?:/i.test(source.url);
+        const target = external ? ' target="_blank" rel="noopener noreferrer"' : "";
+        return `<li><a class="source-link" href="${esc(source.url)}"${target}>${
+          external
+            ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg>'
+            : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h9a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7Z"></path><path d="M8 3v4h4M8 12h7M8 16h7"></path></svg>'
+        }<span>${esc(source.title)}</span></a></li>`;
+      })
+      .join("");
+  }
+
+  function dossierSection(title, items) {
+    if (!items || !items.length) return "";
+    const body = items
+      .map(
+        (item) => `<div class="dossier-item">
+          <h4>${esc(item.kind)}</h4>
+          <p>${esc(item.text)}</p>
+          <ul class="source-list">${sourceLinks(item.sources)}</ul>
+        </div>`,
+      )
+      .join("");
+    return `<section class="detail-section"><h3 class="detail-label">${esc(title)}</h3>${body}</section>`;
+  }
+
+  function renderRegionDossier(p) {
+    const books = (p.books || [])
+      .map((b) => {
+        if (!b.work_ids || !b.work_ids.length) {
+          return `<span class="region-book is-plain">${esc(b.title)}</span>`;
+        }
+        return b.work_ids
+          .map(
+            (id) =>
+              `<a class="region-book" href="/read.html?id=${encodeURIComponent(id)}">${esc(b.title)}</a>`,
+          )
+          .join("、");
+      })
+      .join("、");
+    const count = state.sites.filter((s) =>
+      p.provinces.includes(s.province),
+    ).length;
+    const [lead, ...rest] = p.summary || [];
+    els.detail.style.setProperty("--accent", p.color || "#1f6feb");
+    els.detailScroll.innerHTML = `
+      <div class="detail-badge"><span class="detail-badge__dot"></span>农区档案</div>
+      <h2>${esc(p.name)}</h2>
+      <p class="detail-location">${esc(p.provinces.join(" · "))}・区内 ${count} 处地标</p>
+      <p class="detail-lead">${esc(lead || "")}</p>
+      ${rest.length ? `<section class="detail-section"><h3 class="detail-label">区域农业特征</h3>${rest
+        .map((text) => `<p>${esc(text)}</p>`)
+        .join("")}</section>` : ""}
+      <section class="detail-section"><h3 class="detail-label">主要作物</h3><p>${esc(p.crops)}</p></section>
+      ${dossierSection("农俗文化", p.folk_detail)}
+      ${dossierSection("农业文明", p.civilization)}
+      <section class="detail-section">
+        <h3 class="detail-label">遗产身份</h3>
+        <p>${esc(p.heritage_note)}</p>
+      </section>
+      <section class="detail-section">
+        <h3 class="detail-label">相关农书</h3>
+        <p>${books}</p>
+      </section>`;
+    els.detailScroll.scrollTop = 0;
+  }
+
+  function openRegionDossier(id) {
+    const feature = state.regionById.get(id);
+    if (!feature) return;
+    if (state.region !== id) setRegion(id);
+    state.selectedId = null;
+    state.hasDetail = true;
+    els.mapWrap.classList.add("has-detail");
+    renderRegionDossier(feature.properties);
+    els.detail.hidden = false;
+    els.detail.setAttribute("aria-hidden", "false");
+    updateListSelection();
+    updateMarkerActive();
+    if (isMobile()) closeSidebar();
+    focusDetail();
   }
 
   function regionPopup(p) {
@@ -326,6 +422,11 @@
       <p><b>农俗</b> ${esc(p.folkways)}</p>
       <p><b>遗产</b> ${esc(p.heritage_note)}</p>
       <p><b>相关农书</b> ${books}</p>
+      ${
+        p.folk_detail || p.civilization
+          ? `<button class="region-dossier-button" type="button" data-region-dossier="${esc(p.id)}">查看农俗与文明档案 →</button>`
+          : ""
+      }
     </div>`;
   }
 

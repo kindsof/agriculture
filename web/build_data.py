@@ -39,8 +39,9 @@ CATEGORIES = {
     "tea": "茶文化",
     "mulberry": "蚕桑渔农",
     "dryland": "旱作游牧",
-    "custom": "农事民俗",
+    "custom": "农俗文化",
     "specialty": "特色物产",
+    "civilization": "农业文明",
 }
 
 REQUIRED_FIELDS = (
