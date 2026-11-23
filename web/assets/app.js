@@ -1083,6 +1083,14 @@
     }
   }
 
+    // Deep link for a region archive: #?reg=jiangnan&dossier=1.  It also makes
+    // the whole dossier render path reachable without a click, which matters
+    // because neither this VM nor the CI box has a browser that can click.
+    if (params.get("dossier") === "1" && state.region !== "all") {
+      openRegionDossier(state.region);
+    }
+  }
+
   /* ---------- 侧栏与弹窗 ---------- */
 
   function syncSidebarInert() {
