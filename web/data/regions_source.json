@@ -1,6 +1,5 @@
 {
   "_source": "自 _legacy/map_data.json 的 regions 抽出（9 大农区按省份分组，无自带多边形）；多边形由 build_regions.py 用 data/provinces.geojson 拼装，书名再解析成著作 id",
-  "_source_sha": "e5842f9e97d110bd",
   "regions": [
     {
       "id": "dongbei",
@@ -76,7 +75,7 @@
         },
         {
           "kind": "农谚俗信",
-          "text": "无霜期不足百日，农谚皆以节令为纲：『立春一年端，种地早盘算』『处暑高粱白露谷』；误种数日常致一年无收，故节令禁忌之严为各省最。",
+          "text": "生长期短，农谚皆以节令为纲：『立春一年端，种地早盘算』『处暑高粱白露谷』；误种数日常致一年无收，故播种时节的禁忌格外地严。",
           "sources": [
             {
               "title": "《欽定授時通考》（清）乾隆官修·本站馆藏全文",
@@ -92,12 +91,8 @@
       "civilization": [
         {
           "kind": "起源遗存",
-          "text": "本区稻作晚起而成就卓著：渤海国『卢城之稻』已见唐籍，清代宁安响水稻、桓仁京租稻皆为贡米；粟作则沿辽西与燕山北缘传入，与农牧交错带的敖汉八千年粟作同出一源。",
+          "text": "本区稻作晚起而成就卓著：宁安响水稻、桓仁京租稻今均列入中国重要农业文化遗产名录；粟作则沿辽西与燕山北缘逐步传入，与相邻农牧交错带的旱作传统连成一片。",
           "sources": [
-            {
-              "title": "中国重要农业文化遗产名录（188项）",
-              "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
-            },
             {
               "title": "中国重要农业文化遗产名录（188项）",
               "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
@@ -408,7 +403,7 @@
       "civilization": [
         {
           "kind": "起源遗存",
-          "text": "秦安大地湾的黍粟、西安半坡的窖粟、神木石峁的石城与神树祠、襄汾陶寺以十七道缝观日定节的观象台，串起黄土高原从旱作起源到农时历法的完整链条。",
+          "text": "秦安大地湾的黍粟、西安半坡的窖粟、神木石峁的石城，以及襄汾陶寺那座以观测日出定节令的观象台，串起黄土高原从旱作起源到农时历法的完整链条。",
           "sources": [
             {
               "title": "山西襄汾陶寺遗址",
@@ -561,7 +556,7 @@
       "civilization": [
         {
           "kind": "起源遗存",
-          "text": "上山文化（浦江，距今约一万一千至九千年）出土世界最早的栽培稻与定居聚落；河姆渡遗址群（余姚）稻谷堆积以十吨计；澧县城头山发现最早的水稻田与城址，鸡叫城成排柱洞即大型『谷仓』基址。",
+          "text": "上山文化（浦江，距今约一万一千至九千年）出土世界最早的栽培稻与定居聚落；河姆渡遗址群（余姚）的稻谷与稻秆堆积成厚层；澧县城头山发现最早的水稻田与城址，江西万年仙人洞与吊桶环则是稻作与陶器起源研究的关键地点，鸡叫城的大型仓储基址以成排柱洞撑起，稻谷已被集中存储。",
           "sources": [
             {
               "title": "上山国家考古遗址公园暨上山博物馆正式开放·中国新闻网",
@@ -574,6 +569,10 @@
             {
               "title": "湖南澧县鸡叫城遗址·国家文物局",
               "url": "http://www.ncha.gov.cn/art/2022/5/23/art_2618_174445.html"
+            },
+            {
+              "title": "全球重要农业文化遗产名录（2025年更新）",
+              "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
             }
           ]
         },
@@ -722,15 +721,11 @@
       "civilization": [
         {
           "kind": "起源遗存",
-          "text": "万年仙人洞与吊桶环出土一万年前后的陶片与稻作植硅体，是世界农业起源的关键坐标；隆安『那』文化稻作系统与琼中山兰稻，则记录稻作在岭南与海南的多支路径。",
+          "text": "岭南与海南的稻作走的是多支路径：隆安壮族『那』文化以那田、那节与那文化存续至今，琼中山兰稻是黎族旱稻的活态品种。江西万年仙人洞与吊桶环的早期稻作与陶片，见江南区档案。",
           "sources": [
             {
               "title": "全球重要农业文化遗产名录（2025年更新）",
               "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
-            },
-            {
-              "title": "中国重要农业文化遗产名录（188项）",
-              "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
             },
             {
               "title": "中国重要农业文化遗产名录（188项）",
@@ -740,7 +735,7 @@
         },
         {
           "kind": "农书典籍",
-          "text": "《养鱼经》是最早的淡水养殖经营文献；《糖霜谱》专记甘蔗与结糖之法；《农政全书》收岭南作物与荒政之议，三者合成本区最早的农学文本群。",
+          "text": "《养鱼经》是最早的淡水养殖经营文献；《糖霜谱》专记甘蔗与结糖之法；《农政全书》收岭南作物与荒政之议，三者分属水产、制糖与农政三个主题的早期专书。",
           "sources": [
             {
               "title": "《养鱼经》（汉）托名陶朱公（范蠡）·本站馆藏全文",
@@ -841,10 +836,6 @@
           "kind": "饮食物俗",
           "text": "哈尼长街宴以梯田鱼、糯食与红米待客，黔东南酸汤与糯米养出『酸食』一系，川渝的辣椒与花椒、普洱的紧压茶各有其山地保存逻辑。",
           "sources": [
-            {
-              "title": "全球重要农业文化遗产名录（2025年更新）",
-              "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
-            },
             {
               "title": "全球重要农业文化遗产名录（2025年更新）",
               "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html"
@@ -996,10 +987,6 @@
             {
               "title": "中国重要农业文化遗产名录（188项）",
               "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
-            },
-            {
-              "title": "中国重要农业文化遗产名录（188项）",
-              "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
             }
           ]
         },
@@ -1081,7 +1068,7 @@
         },
         {
           "kind": "科技成就",
-          "text": "坎儿井以地下暗渠避蒸发，与地面渠道相比省水过半；宁夏引黄古灌区无坝引水沿用两千余年、列入世界灌溉工程遗产；今日膜下滴灌使旱作水分利用率再上一阶。",
+          "text": "坎儿井以地下暗渠输水避开烈日蒸发；宁夏引黄古灌区至今仍在无坝引水灌溉，2017 年列入世界灌溉工程遗产名录；今日膜下滴灌使旱作水分利用率再上一阶。",
           "sources": [
             {
               "title": "中国重要农业文化遗产名录（188项）",
@@ -1315,10 +1302,6 @@
             {
               "title": "中国重要农业文化遗产名录（188项）",
               "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
-            },
-            {
-              "title": "中国重要农业文化遗产名录（188项）",
-              "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
             }
           ]
         },
@@ -1384,10 +1367,6 @@
           "kind": "科技成就",
           "text": "河谷灌区的木石水闸与常年岁修，耐寒早熟青稞育种，地膜与高原温室让叶菜在海拔四千米落地，草场承包加生态补奖使超载过牧可被量化纠偏。",
           "sources": [
-            {
-              "title": "中国重要农业文化遗产名录（188项）",
-              "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"
-            },
             {
               "title": "中国重要农业文化遗产名录（188项）",
               "url": "https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html"

@@ -44,7 +44,7 @@ UA = (
 )
 TIMEOUT = 20
 
-# Ordered best-first.  Anything not listed here is dropped unless --loose.
+# Ordered best-first.  Anything not listed here is dropped.
 GOOD = (
     "ihchina.cn",
     "gov.cn",
@@ -234,15 +234,14 @@ def verify(url: str, keyword: str) -> tuple[bool, str, str]:
     return True, "ok", page_title(body)
 
 
-def cmd_find(query: str, limit: int, loose: bool) -> int:
+def cmd_find(query: str, limit: int) -> int:
     print(f"query: {query}")
     links = search(query, max(limit * 3, 6))
     if not links:
         print("  no results")
         return 1
-    ranked = sorted({u for u in links if not unusable(u)}, key=rank)
-    if not loose:
-        ranked = [u for u in ranked if rank(u) != 99]
+    ranked = sorted({u for u in links
+                     if not unusable(u) and rank(u) != 99}, key=rank)
     checked = 0
     for url in ranked[: limit * 2]:
         probe = query.split()[0]
@@ -277,17 +276,20 @@ def all_data_sources() -> list[tuple[str, str]]:
 
 
 def cmd_relink() -> int:
+    """Fetch *every* source URL in the data files, not one URL per host.
+
+    A host-level spot check hides exactly the failure worth catching: one dead
+    article behind a front page that still answers 200.  This is slow (one
+    request per URL) and is meant to be run by hand, not in CI.
+    """
     pairs = all_data_sources()
-    hosts: dict[str, list[str]] = {}
-    for origin, url in pairs:
-        hosts.setdefault(urllib.parse.urlparse(url).netloc.lower(), []).append(url)
     dead = 0
-    for host, urls in sorted(hosts.items(), key=lambda kv: -len(kv[1])):
-        status, _ = fetch(urls[0])
-        note = "" if status == 200 else "  <-- CHECK EVERY URL ON THIS HOST"
-        dead += 0 if status == 200 else len(urls)
-        print(f"{status}  {host:<32} {len(urls):>3} url(s){note}")
-    print(f"\n{len(pairs)} source URLs, ~{dead} on unreachable hosts")
+    for origin, url in pairs:
+        status, _body = fetch(url)
+        if status != 200:
+            dead += 1
+            print(f"{status}  {origin:<30} {url}")
+    print(f"\n{len(pairs)} 条来源 URL 逐条实抓完毕，{dead} 条打不开")
     return 0 if dead == 0 else 1
 
 
@@ -295,8 +297,6 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("query", nargs="?", help="keywords to search for")
     parser.add_argument("--limit", type=int, default=3)
-    parser.add_argument("--loose", action="store_true",
-                        help="also accept domains outside the good list")
     parser.add_argument("--check", metavar="URL", help="verify one URL + keyword")
     parser.add_argument("--keyword", default="", help="keyword for --check")
     parser.add_argument("--relink", action="store_true",
@@ -312,7 +312,7 @@ def main() -> int:
     if not args.query:
         parser.print_help()
         return 2
-    return cmd_find(args.query, args.limit, args.loose)
+    return cmd_find(args.query, args.limit)
 
 
 if __name__ == "__main__":

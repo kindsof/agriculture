@@ -39,7 +39,7 @@ python3 -m http.server 8000 --directory web
 | [`data/provinces.geojson`](data/provinces.geojson) | 省级行政区边界（阿里云 DataV.GeoAtlas） |
 | [`data/stats.json`](data/stats.json) | 统计与更新时间，页面与接口共用 |
 
-当前收录 **69 处** 站点，覆盖 **31 个省级行政区**、**7 类**农耕文化：
+当前收录 **104 处** 站点，覆盖 **31 个省级行政区**、**8 类**农耕文化：
 
 | 类别 | 数量 | 示例 |
 | --- | ---: | --- |

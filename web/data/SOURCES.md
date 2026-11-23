@@ -56,7 +56,8 @@
 1. 用 Sogou／Bing 检索，站点级 `site:` 限定优先；
 2. 逐条实抓候选 URL，要求 **HTTP 200 且页面正文出现条目名**；
 3. 非遗网（ihchina.cn）结果按前 5 条逐一核验，且**页面自身标题必须包含条目名**——首条命中常是同县相邻项目（搜「查干湖冬捕」返回博舞、搜「太昊陵庙会」返回甘肃天水的太昊伏羲祭典）；
-4. `python3 scripts/cite.py --relink` 审计 `sites.yaml` 与农区档案里的全部 URL。
+4. `python3 scripts/cite.py --relink` **逐条**实抓 `sites.yaml` 与农区档案里的每一条 URL（不是每个域名抽一条：域名首页活着、文章早死了，正是最该抓出来的那种）。一次跑完要几分钟，属人工巡检，不进 CI。
+5. 反复补录用 `scripts/cite_batch.py`，启停走 `scripts/run_cite.sh start|status|stop`（带 pidfile：`pkill -f cite_batch` 会连带杀掉发起它的 ssh 会话）。这两个是**离线辅助工具**，不在地图、构建或 CI 的主路径上，删掉不影响站点行为——留着是因为还有若干条目的来源有待命中。
 
 批量补录用 `scripts/run_cite.sh start|status|stop`（带 pidfile；`pkill -f cite_batch` 会连带杀掉执行它的 ssh 会话）。
 
