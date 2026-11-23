@@ -684,7 +684,7 @@ sites:
     tags: [二十四节气, 观星台, 农事历法, 登封]
     sources:
       - title: 二十四节气入选人类非物质文化遗产代表作名录
-        url: https://www.unesco.org/zh/articles/ershisijieqiruxuanrenleifeiwuzhiwenhuayichandaibiaominglu
+        url: https://www.ihchina.cn/solar_terms.html
       - title: 中国非物质文化遗产网：二十四节气
         url: https://www.ihchina.cn/project_details/9760/
 
@@ -726,8 +726,6 @@ sites:
       - 世界灌溉工程遗产（2014）
     tags: [紫鹊界, 梯田, 山泉灌溉, 梅山文化]
     sources:
-      - title: 紫鹊界梯田对话世界农耕文化交流互鉴大会
-        url: http://hunan.gov.cn/hnszf/hdjl/xwfbhhd/wqhg/202409/t20240905_33448399.html
       - title: 全球重要农业文化遗产名录（2025年更新）
         url: https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/qqzynywhycml/art/2025/art_1847303836.html
 
@@ -1383,3 +1381,707 @@ sites:
     sources:
       - title: 中国重要农业文化遗产名录（188项）
         url: https://nync.huzhou.gov.cn/ztzl/hzsnywhyczy/zgzynywhycml/art/2025/art_1716485168.html
+
+  - id: civilization-shangshan
+    name: 上山遗址
+    category: civilization
+    province: 浙江省
+    city: 金华市浦江县黄宅镇
+    lng: 119.77
+    lat: 29.47
+    summary: >-
+      浦江上山遗址距今约一万一千至九千年，出土世界最早一批栽培稻遗存与环壕聚落，是长江下游稻作农业的起点，号称『万年上山·世界稻源』。
+    culture: >-
+      上山文化以稻作、夹炭陶与定居聚落为特征；2025 年上山国家考古遗址公园与上山博物馆开放，稻作起源成为当地的文化标识与农事纪念。
+    heritage:
+      - 全国重点文物保护单位
+      - 上山文化遗址群列入中国世界文化遗产预备名单
+    tags: [栽培稻起源, 上山文化, 新石器早期, 稻作]
+    sources:
+      - title: 加快上山文化遗址群申遗 奋力打造“万年中国”重要文化标识
+        url: http://wwj.zj.gov.cn/col/col1639077/art/2025/art_c6cad5be3023bdb754e5dff96aa32f6a.html
+      - title: 浙江：上山国家考古遗址公园暨上山博物馆正式开放-中新网
+        url: https://www.chinanews.com.cn/cul/2026/11-21/10735830.shtml
+
+  - id: civilization-hemudu
+    name: 河姆渡遗址
+    category: civilization
+    province: 浙江省
+    city: 宁波市余姚市河姆渡镇
+    lng: 121.32
+    lat: 29.89
+    summary: >-
+      余姚河姆渡遗址距今约七千年，稻谷壳与稻秆堆积厚达数十厘米，干栏式长屋、骨耜与漆碗同出，是长江流域稻作文明最早的大规模实证。
+    culture: >-
+      河姆渡先民以耜耕稻田、畜养猪犬、蚕桑与水产采集为生；稻作技术自此起源，之后随人群南传北渐，奠定江南水乡农业的底子。
+    heritage:
+      - 全国重点文物保护单位（第一批，1961）
+      - 河姆渡遗址博物馆
+    tags: [河姆渡文化, 稻谷堆积, 骨耜, 干栏式建筑]
+    sources:
+      - title: 浙江余姚河姆渡文化遗址群
+        url: http://www.ncha.gov.cn/art/2022/3/18/art_2587_65.html
+      - title: 穿越数千年 “聆听”河姆渡先民的海洋基因
+        url: http://wwj.zj.gov.cn/art/2024/5/27/art_1639077_59060810.html
+
+  - id: civilization-liangzhu
+    name: 良渚古城遗址
+    category: civilization
+    province: 浙江省
+    city: 杭州市余杭区瓶窑镇
+    lng: 119.96
+    lat: 30.42
+    summary: >-
+      良渚古城距今约五千三百年，城中良渚人以内城、宫殿区与外围十一道水坝构成中国最早的大型水利系统，2019 年列入世界遗产名录。
+    culture: >-
+      稻作剩余养出分工与礼制：玉琮玉璧标识等级，水坝兼防洪、运输与灌溉，米仓与成排柱洞说明已有国家式的粮食调度。
+    heritage:
+      - 世界文化遗产（2019）
+      - 全国重点文物保护单位
+      - 国家级考古遗址公园
+    tags: [良渚, 早期国家, 水利系统, 稻作]
+    sources:
+      - title: 探源中华文明丨浙江良渚遗址：实证中华五千年文明史的圣地-新华网
+        url: https://www.news.cn/local/2022-11/05/c_1129103748.htm
+      - title: 良渚遗址官网,良渚文化,良渚遗产-杭州市余杭区良渚遗址管委会
+        url: https://www.lzsite.cn/
+
+  - id: civilization-kuahuqiao
+    name: 跨湖桥遗址
+    category: civilization
+    province: 浙江省
+    city: 杭州市萧山区湘湖
+    lng: 120.20
+    lat: 30.15
+    summary: >-
+      萧山跨湖桥遗址距今约八千年，出土整木独木舟、弓与稻作遗存，把钱塘江下游的水上生活与稻作源头一并推早。
+    culture: >-
+      湘湖一带先民以舟楫、采集、捕捞与早期稻作为生，稻—渔—舟共生的生活格局正是后世江南水乡的雏形。
+    heritage:
+      - 全国重点文物保护单位（第六批）
+      - 跨湖桥遗址博物馆
+    tags: [跨湖桥文化, 独木舟, 稻作, 渔捞]
+    sources:
+      - title: 跨湖桥遗址
+        url: https://www.zj.gov.cn/dctslm/zdwwbhdw/art/2026/art_e3ead8b527e2419f8e98108e1dbb8f98.html
+      - title: 跨湖桥遗址 萧山 八千年
+        url: https://wgly.hangzhou.gov.cn/art/2024/3/6/art_1229733880_58953467.html
+
+  - id: civilization-chengtoushan
+    name: 城头山遗址
+    category: civilization
+    province: 湖南省
+    city: 常德市澧县城头山镇
+    lng: 111.63
+    lat: 29.68
+    summary: >-
+      澧县城头山遗址有距今约六千三百年的城垣与水稻田、水沟、道路等完整农田系统，被称为『中国最早的城市与稻田』。
+    culture: >-
+      筑城以护田、以沟洫灌排，稻作与聚落防御同时成熟；城头山的稻田形态与今日洞庭湖平原的稻田已无根本差别。
+    heritage:
+      - 全国重点文物保护单位
+      - 全国十大考古新发现
+    tags: [城头山, 最早水田, 城址, 澧阳平原]
+    sources:
+      - title: 湖南澧县城头山遗址
+        url: http://www.ncha.gov.cn/art/2022/3/19/art_2587_80.html
+      - title: 城头山遗址_全国重点文物保护单位_古迹寻踪_文化常德_走进常德_常德市人民政府门户网站
+        url: https://www.changde.gov.cn/lccd/whcd/gjxz/qgww/content_756507
+
+  - id: civilization-jijiaocheng
+    name: 鸡叫城遗址
+    category: civilization
+    province: 湖南省
+    city: 常德市澧县新城镇
+    lng: 111.72
+    lat: 29.60
+    summary: >-
+      澧县鸡叫城以成排大型柱洞构成『谷仓』基址，一次储藏的稻谷以百吨计，是史前稻作剩余量最惊人的证据之一。
+    culture: >-
+      城内宫殿区、环壕与仓储分区说明粮食已被集中征收与再分配，稻作剩余支撑起权力与礼仪，澧阳平原由此成为稻作文明的核心区。
+    heritage:
+      - 全国重点文物保护单位
+      - 全国十大考古新发现（2021）
+    tags: [鸡叫城, 谷仓, 稻作剩余, 环壕]
+    sources:
+      - title: 湖南澧县鸡叫城遗址
+        url: http://www.ncha.gov.cn/art/2022/5/23/art_2618_174445.html
+      - title: 鸡叫城遗址_全国重点文物保护单位_古迹寻踪_文化常德_走进常德_常德市人民政府门户网站
+        url: https://www.changde.gov.cn/lccd/whcd/gjxz/qgww/content_756543
+
+  - id: civilization-qujialing
+    name: 屈家岭遗址
+    category: civilization
+    province: 湖北省
+    city: 荆门市屈家岭管理区
+    lng: 112.90
+    lat: 31.10
+    summary: >-
+      屈家岭遗址是长江中游新石器时代屈家岭文化的命名地，稻田、陶窑与城址并存，蛋壳彩陶薄如蛋壳，反映成熟的分工。
+    culture: >-
+      江汉平原的稻作、家畜饲养与制陶业在此连成体系，农具与陶窑的规模化意味着农闲时的专门手工业已经出现。
+    heritage:
+      - 全国重点文物保护单位
+      - 国家考古遗址公园立项
+    tags: [屈家岭文化, 稻作, 蛋壳彩陶, 江汉平原]
+    sources:
+      - title: 湖北荆门屈家岭遗址
+        url: http://www.ncha.gov.cn/art/2024/3/27/art_2759_187899.html
+      - title: 湖北荆门屈家岭遗址
+        url: http://www.ncha.gov.cn/art/2022/3/19/art_2587_77.html
+
+  - id: civilization-jiahu
+    name: 贾湖遗址
+    category: civilization
+    province: 河南省
+    city: 漯河市舞阳县北舞渡镇
+    lng: 113.62
+    lat: 33.44
+    summary: >-
+      舞阳贾湖遗址距今约九千年，兼出栽培稻与粟、骨笛、契刻符号与酿酒残留，是黄河与长江农业交汇处的关键遗址。
+    culture: >-
+      稻粟兼作使一年两季的农事节律成为可能；契刻符号与酒礼器说明农事节庆与原始历法已经萌生。
+    heritage:
+      - 全国重点文物保护单位
+      - 中华文明探源工程重要遗址
+    tags: [贾湖, 稻粟兼作, 契刻符号, 骨笛]
+    sources:
+      - title: 河南舞阳贾湖遗址
+        url: http://www.ncha.gov.cn/art/2022/3/18/art_2587_72.html
+      - title: 追寻文明的足迹①︱贾湖遗址：中华文明的星火从这里点燃-河南省文物局
+        url: https://wwj.henan.gov.cn/2022/11-04/2634591.html
+
+  - id: civilization-peiligang
+    name: 裴李岗遗址
+    category: civilization
+    province: 河南省
+    city: 郑州市新郑市裴李岗村
+    lng: 113.71
+    lat: 34.51
+    summary: >-
+      新郑裴李岗遗址距今约八千年，石磨盘、石磨棒与石铲成套出土，粟作农业与家畜饲养在黄土台地上定居成型。
+    culture: >-
+      粟、黍与猪狗同出，农具分工明确，女性掌炊、男性耕作的分工在墓葬随葬品上已可分辨，是北方旱作农业最早的定型形态。
+    heritage:
+      - 全国重点文物保护单位
+      - 裴李岗文化命名地
+    tags: [裴李岗, 粟作起源, 石磨盘, 旱作农业]
+    sources:
+      - title: 裴李岗遗址 新郑 粟 石磨盘
+        url: https://wwj.henan.gov.cn/2026/06-05/3362914.html
+
+  - id: civilization-cishan
+    name: 磁山遗址
+    category: civilization
+    province: 河北省
+    city: 邯郸市武安市磁山镇
+    lng: 114.05
+    lat: 36.68
+    summary: >-
+      武安磁山遗址有数百座窖穴，其中大量储有炭化粟与陶器，是燕山以南黄河以北旱作农业最早的巨大粮仓。
+    culture: >-
+      窖藏粟黍说明已有多余口粮与储藏制度；陶盂、石磨棒与猪羊骨同出，构成北方粟作—畜牧混合经济的样板。
+    heritage:
+      - 全国重点文物保护单位
+      - 磁山文化命名地
+    tags: [磁山, 粟窖, 旱作农业, 窖藏]
+    sources:
+      - title: 河北武安磁山遗址
+        url: http://www.ncha.gov.cn/art/2022/3/17/art_2587_6.html
+      - title: 磁山遗址-古遗址-邯郸市人民政府
+        url: https://www.hd.gov.cn/zjhd/wwgj/qgzdww/gyz/202206/t20220601_1571161.html
+
+  - id: civilization-banpo
+    name: 半坡遗址
+    category: civilization
+    province: 陕西省
+    city: 西安市灞桥区半坡
+    lng: 109.07
+    lat: 34.27
+    summary: >-
+      西安半坡是仰韶文化母系氏族聚落的典型，窖穴中藏粟、罐中储菜籽，房屋、窑穴与儿童瓮棺葬组成完整的农家村落图景。
+    culture: >-
+      粟作与采集渔猎并重，陶器上刻划符号与鱼纹装饰表达农事信仰；半坡的聚落布局成为理解周代『邑里』制度的前身。
+    heritage:
+      - 全国重点文物保护单位（第一批）
+      - 半坡博物馆（中国首座史前遗址博物馆）
+    tags: [半坡, 仰韶文化, 粟作, 聚落]
+    sources:
+      - title: 陕西西安半坡遗址
+        url: http://www.ncha.gov.cn/art/2022/3/19/art_2587_85.html
+      - title: 西安半坡博物馆_陕西省文物局
+        url: https://wwj.shaanxi.gov.cn/ztzl/ndzt/2016n/zgcyksxtbggbxk/kbwgjshmfkf/201110/t20111010_2143561.html
+
+  - id: civilization-dawenkou
+    name: 大汶口遗址
+    category: civilization
+    province: 山东省
+    city: 泰安市岱岳区大汶口镇
+    lng: 117.15
+    lat: 36.02
+    summary: >-
+      大汶口遗址以大汶口文化命名，墓葬中酒器、猪下颌与锄钺并存，显示黄河下游的粟作剩余已能支撑礼仪与贫富分化。
+    culture: >-
+      酿酒与祭祀用器的普遍说明农业剩余被用于宴饮与礼仪；稻北渐、粟南传的交换在此带尤为活跃。
+    heritage:
+      - 全国重点文物保护单位（第一批）
+      - 大汶口文化命名地
+    tags: [大汶口, 粟作, 酒礼, 贫富分化]
+    sources:
+      - title: 山东泰安大汶口遗址
+        url: http://www.ncha.gov.cn/art/2022/3/18/art_2587_70.html
+      - title: 在大汶口遗址，触摸史前文明的脉动_山东宣传网
+        url: https://www.sdxc.gov.cn/whql/whqlsy/202606/t20260622_17859012.htm
+
+  - id: civilization-chengziya
+    name: 城子崖遗址
+    category: civilization
+    province: 山东省
+    city: 济南市章丘区龙山街道
+    lng: 117.52
+    lat: 36.72
+    summary: >-
+      章丘城子崖是龙山文化的命名地与首座由中国学者自主发掘的史前城址，磨光黑陶薄如纸，城垣与壕沟护佑着粟作农业腹地。
+    culture: >-
+      城墙、壕沟与粮窖的组合说明为保护农产而兴起的聚落防御已成常态；夯土技术后来直接为华北城邑与堤防所继承。
+    heritage:
+      - 全国重点文物保护单位（第一批）
+      - 中国首座由本国学者发掘的史前城址
+    tags: [城子崖, 龙山文化, 黑陶, 夯土]
+    sources:
+      - title: 山东章丘城子崖遗址
+        url: http://www.ncha.gov.cn/art/2022/3/18/art_2587_71.html
+
+  - id: civilization-taosi
+    name: 陶寺遗址
+    category: civilization
+    province: 山西省
+    city: 临汾市襄汾县陶寺乡
+    lng: 111.52
+    lat: 35.85
+    summary: >-
+      襄汾陶寺遗址出土距今约四千三百年的观象台基址，以十七道缝观测日出方位定节气，是中国最早的天文农时设施。
+    culture: >-
+      观象授时被用来定春耕秋收之节，圭表、铜器与朱书文字同出，被认为与『尧都』及早期农时历法直接相关。
+    heritage:
+      - 全国重点文物保护单位
+      - 全国百年百大考古发现
+    tags: [陶寺, 观象台, 农时历法, 尧都]
+    sources:
+      - title: 山西襄汾陶寺遗址
+        url: http://www.ncha.gov.cn/art/2022/3/17/art_2587_8.html
+
+  - id: civilization-yinxu
+    name: 殷墟遗址
+    category: civilization
+    province: 河南省
+    city: 安阳市殷都区
+    lng: 114.30
+    lat: 36.12
+    summary: >-
+      安阳殷墟出土甲骨文与青铜礼器，卜辞中大量『妇秫黍』『求年』『协田』记录，是中国最早直接写下的农业档案。
+    culture: >-
+      甲骨卜问雨泽、年成与籍田，黍稷稻麦皆入卜辞；籍田、畴田与仓廪的名称早在商代已成套出现。
+    heritage:
+      - 世界文化遗产（2006）
+      - 全国重点文物保护单位（第一批）
+    tags: [殷墟, 甲骨文, 黍稷, 籍田]
+    sources:
+      - title: 殷墟
+        url: http://www.ncha.gov.cn/art/2024/8/8/art_2791_190644.html
+      - title: 殷墟_文化遗产_河南省人民政府门户网站
+        url: https://www.henan.gov.cn/2026/08-06/3383126.html
+
+  - id: civilization-shimao
+    name: 石峁遗址
+    category: civilization
+    province: 陕西省
+    city: 榆林市神木市高家堡镇
+    lng: 110.42
+    lat: 39.00
+    summary: >-
+      神木石峁是以石砌城垣构成的史前巨石城，年代约四千三百年，城内出土大量玉器与黍、粟炭化样本，改写了对北方农业文明的估计。
+    culture: >-
+      旱作粟黍支撑起万人级的石城；城墙夹筋、门址设瓮城与祭台，农产集中与军事防御在农牧交错带上合为一体。
+    heritage:
+      - 全国重点文物保护单位
+      - 全国十大考古新发现（2012）
+    tags: [石峁, 石城, 粟黍, 农牧交错]
+    sources:
+      - title: 石峁遗址：韬玉而山晖 文明之肇启
+        url: http://www.ncha.gov.cn/art/2023/6/27/art_722_182611.html
+      - title: 神木市人民政府_ 神木石峁遗址华夏史前第一城
+        url: https://www.sxsm.gov.cn/zjsm/lsgj/202210/t20221014_1073716.html
+
+  - id: civilization-karyo
+    name: 卡若遗址
+    category: civilization
+    province: 西藏自治区
+    city: 昌都市卡若区
+    lng: 97.20
+    lat: 31.10
+    summary: >-
+      昌都卡若遗址距今约四千至五千五百年，出土炭化粟与石锄、石刀，是青藏高原东部农业起源最重要的地点。
+    culture: >-
+      粟作沿横断山谷北上高原，与青稞牧养相遇；卡若的石墙半地穴房屋与农具组合，说明高原农牧交错带早在五千年前已然成型。
+    heritage:
+      - 全国重点文物保护单位
+      - 西藏首个科学发掘的新石器遗址
+    tags: [卡若, 高原粟作, 青稞, 农牧交错]
+    sources:
+      - title: 西藏昌都卡若遗址
+        url: http://www.ncha.gov.cn/art/2022/3/19/art_2587_83.html
+      - title: 卡若遗址
+        url: https://karuo.changdu.gov.cn/krqrmzf/c105860/202511/9671eff4dcdd4648a2da73e77c234ed6.shtml
+
+  - id: civilization-xiannongtan
+    name: 先农坛与耤田
+    category: civilization
+    province: 北京市
+    city: 西城区先农坛路
+    lng: 116.39
+    lat: 39.88
+    summary: >-
+      北京先农坛是明清两代皇帝亲耕耤田、祭祀先农之地，一亩三分地的耤田与太岁殿、观耕台保存至今，是国家重农礼仪的实体。
+    culture: >-
+      每年孟春祈谷、仲春亲耕，皇帝推犁三返、百官推犁九返，所产谷物专供祭祀；耤田礼把农事上升为国家典礼，直贯清末。
+    heritage:
+      - 全国重点文物保护单位（第一批）
+      - 北京古代建筑博物馆所在地
+    tags: [先农坛, 耤田礼, 亲耕, 祈谷]
+    sources:
+      - title: 先农坛北京古代建筑博物馆
+        url: https://www.bjxntgjg.cn/
+
+  - id: civilization-jiaotai
+    name: 后稷教稼台
+    category: civilization
+    province: 陕西省
+    city: 咸阳市武功县武功镇
+    lng: 108.20
+    lat: 34.48
+    summary: >-
+      武功漆水之旁的教稼台相传为周人始祖后稷教民稼穑之处，历代重修立碑，是农神崇拜与农事教育的象征地标。
+    culture: >-
+      『后稷播时百谷』的传说在此地落地为节令与庙会，农闲演剧、劝农讲耕皆以教稼台为中心，把农艺知识附于神迹传承。
+    heritage:
+      - 历代祭祀后稷的纪念遗址
+      - 武功为后稷教稼传说地
+    tags: [后稷, 教稼台, 农神, 武功]
+    sources:
+      - title: 后稷--杨陵区人民政府
+        url: https://www.ylq.gov.cn/zjyl/mlyl/rwjg/gdmr/1906937792733704193.html
+
+  - id: custom-taihao
+    name: 太昊陵庙会
+    category: custom
+    province: 河南省
+    city: 周口市淮阳区
+    lng: 114.73
+    lat: 33.90
+    summary: >-
+      淮阳太昊陵的二月庙会自农历二月初一至三月初三，持续一月，是中原最大的人祖庙会，信众为一年农事求一年顺当。
+    culture: >-
+      『二月二，龙抬头』开庙，先祭人祖后下田；传经、担经挑与泥泥狗塑像皆为求子祈丰之物，庙会与春耕起始同节律。
+    heritage:
+      - 全国重点文物保护单位（太昊陵庙）
+      - 中原规模最大的春季庙会
+    tags: [太昊陵, 二月庙会, 求年, 淮阳]
+    sources:
+      - title: 太昊伏羲祭典
+        url: https://www.ihchina.cn/project_details/14992
+      - title: 太昊伏羲陵文化旅游区_人文景观_河南省人民政府门户网站
+        url: https://www.henan.gov.cn/2026/07-14/3375467.html
+
+  - id: custom-xunxian
+    name: 浚县正月古庙会
+    category: custom
+    province: 河南省
+    city: 鹤壁市浚县
+    lng: 114.55
+    lat: 35.62
+    summary: >-
+      浚县大伾山、浮丘山正月古庙会从正月初一延至二月初二，社火、背阁、高跷与进山门同场，被称为华北民间社火的活标本。
+    culture: >-
+      正月祭山、祈年、闹社火是黄河以北农闲期最重要的公共生活，村民以社为单位出艺，一年农事从这场赛会开始定序。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（民俗）
+      - 正月古庙会为浚县年度农闲盛典
+    tags: [浚县, 正月庙会, 社火, 大伾山]
+    sources:
+      - title: 庙会（浚县正月古庙会）
+        url: https://www.ihchina.cn/project_details/15140
+
+  - id: custom-huagudeng
+    name: 凤台花鼓灯
+    category: custom
+    province: 安徽省
+    city: 淮南市凤台县
+    lng: 116.70
+    lat: 32.70
+    summary: >-
+      凤台花鼓灯是淮河沿岸集灯舞、歌与锣鼓于一体的民间表演，农历正月与春社演灯，被称『东方民间舞蹈之根』。
+    culture: >-
+      农闲扎灯、正月演灯，灯队按村社排练竞技；舞段中的播种、收稻、推磨等身段直接摹写农事，是农闲与农忙交接的仪式。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（传统舞蹈，第一批）
+      - 凤台被誉为中国花鼓灯艺术之乡
+    tags: [花鼓灯, 凤台, 淮河, 春社演灯]
+    sources:
+      - title: 花鼓灯（凤台花鼓灯）
+        url: https://www.ihchina.cn/art/detail/id/12888.html
+      - title: 花鼓灯（凤台花鼓灯）
+        url: https://www.ihchina.cn/project_details/12888
+
+  - id: custom-mazu
+    name: 湄洲妈祖祭典
+    category: custom
+    province: 福建省
+    city: 莆田市秀屿区湄洲镇
+    lng: 119.10
+    lat: 25.12
+    summary: >-
+      莆田湄洲岛是妈祖信俗的发源地，每年三月初三、九月九的祭典既是渔海之礼，也是沿海农渔社区的年度盟约。
+    culture: >-
+      祭典由三牲、礼乐与三跪九叩构成，渔村以船户为单位参与；祈风求雨、谢洋报丰收与农事年历完全咬合。
+    heritage:
+      - 人类非物质文化遗产代表作名录（妈祖信俗，2009）
+      - 国家级非物质文化遗产代表性项目
+    tags: [妈祖, 湄洲, 祭典, 农渔共生]
+    sources:
+      - title: 妈祖祭典（香港天后诞）
+        url: https://www.ihchina.cn/project_details/23864
+
+  - id: custom-sanyuejie
+    name: 大理三月街
+    category: custom
+    province: 云南省
+    city: 大理白族自治州大理市
+    lng: 100.20
+    lat: 25.70
+    summary: >-
+      大理苍山脚下的三月街在农历三月十五起开会数日，本为观音市与农具交会，今日是滇西最大的农耕物资与赛马集会。
+    culture: >-
+      会期正当秧苗下田之后，白族以牲畜、农具、山货与药材互市，赛马、对歌与摔跤同场，兼具农事交易与祈年之礼。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（民俗）
+      - 白族传统农商集会千年未断
+    tags: [三月街, 白族, 农具交会, 赛马]
+    sources:
+      - title: 大理三月街
+        url: https://www.ihchina.cn/project_details/15246
+
+  - id: custom-buluotuo
+    name: 敢壮山布洛陀祭祀
+    category: custom
+    province: 广西壮族自治区
+    city: 百色市田阳区
+    lng: 106.90
+    lat: 23.72
+    summary: >-
+      田阳敢壮山是壮族祖神布洛陀的祭祀地，农历三月初三前后数万人上山，以麽经诵唱布洛陀开辟天地、教民稼穑。
+    culture: >-
+      麽公诵经中布洛陀教人牛耕、造田、定季节，祭祀同时是稻作知识的口传课堂；歌圩择偶与农事协作亦在会期完成。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（第一批）
+      - 壮族稻作祖神信仰核心地
+    tags: [布洛陀, 敢壮山, 麽经, 稻作祖神]
+    sources:
+      - title: 布洛陀
+        url: https://www.ihchina.cn/project_details/12180.html
+      - title: 布洛陀文化
+        url: http://www.gxty.gov.cn/zjty/bltwh/t19729315.shtml
+
+  - id: custom-nadamu
+    name: 蒙古族那达慕
+    category: custom
+    province: 内蒙古自治区
+    city: 锡林郭勒盟西乌珠穆沁旗
+    lng: 117.60
+    lat: 44.60
+    summary: >-
+      那达慕是蒙古草原夏秋之交的群众集会，搏克、赛马、射箭三艺之外，核心是草场丰歉之际的谢天与互市。
+    culture: >-
+      畜牧游牧的年度节律决定了那达慕的时间：水草丰美时聚会、祭敖包、交换畜产与农具，农牧交错带借此完成物资周转。
+    heritage:
+      - 国家级非物质文化遗产代表性项目
+      - 草原牧业年度盛会的活形态
+    tags: [那达慕, 搏克, 祭敖包, 牧业节律]
+    sources:
+      - title: 那达慕
+        url: https://www.ihchina.cn/project_details/15008
+
+  - id: custom-chagahu
+    name: 查干湖冬捕
+    category: custom
+    province: 吉林省
+    city: 松原市前郭尔罗斯蒙古族自治县
+    lng: 124.78
+    lat: 45.46
+    summary: >-
+      前郭尔罗斯查干湖的冬季冰下捕鱼源于辽金『春捺钵』传统，祭湖醒网、冰眼走马与大网拉鱼至今仍在腊月上演。
+    culture: >-
+      渔猎在农耕的农闲期完成，祭湖词中先谢湖神再论收成，鱼获按户分配、留头鱼祭天，农牧渔的年度秩序在这一仪式里被确认。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（查干湖冬捕习俗）
+      - 中国重要农业文化遗产相关项目
+    tags: [查干湖, 冬捕, 春捺钵, 祭湖醒网]
+    sources:
+      - title: 查干湖冬捕：冰湖腾鱼 年年有余
+        url: https://www.jl.gov.cn/yaowen/202603/t20260305_3593120.html
+      - title: 查干湖冬捕
+        url: https://zt.jlsy.gov.cn/cghzt/
+
+  - id: custom-qintonghuoichuan
+    name: 溱潼会船
+    category: custom
+    province: 江苏省
+    city: 泰州市姜堰区溱潼镇
+    lng: 120.10
+    lat: 32.60
+    summary: >-
+      姜堰溱潼的清明会船以篙船、划船、贡船在水上过会，相传起于南宋军民祭亡，今日是里下河水乡最盛大的水上农事集会。
+    culture: >-
+      会期正值春耕将起，船队由各村社出资组办，赛毕祭神、分胙，水网的协作能力在会船上被检阅，也在水田作业中被复用。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（清明节·溱潼会船）
+      - 里下河水乡清明会船习俗
+    tags: [溱潼会船, 清明, 里下河, 水乡协作]
+    sources:
+      - title: 清明节（溱潼会船）
+        url: https://www.ihchina.cn/project_details/14908
+
+  - id: custom-huangdimiao
+    name: 黄帝陵祭典
+    category: custom
+    province: 陕西省
+    city: 延安市黄陵县桥山
+    lng: 108.90
+    lat: 35.58
+    summary: >-
+      黄陵桥山的黄帝陵祭典在清明举行，历代相传的官方公祭与民间扫墓并行，是春耕起始时最庄严的祖先祭祀。
+    culture: >-
+      祭祀先圣与劝农同节令，汉代以来籍田祈谷常与谒陵并行；清明前后种瓜点豆的农谚与祭期互为提醒。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（第一批）
+      - 黄帝陵为全国重点文物保护单位（第一批）
+    tags: [黄帝陵, 清明公祭, 桥山, 劝农]
+    sources:
+      - title: 黄帝陵祭典
+        url: https://www.ihchina.cn/project_details/14975
+
+  - id: custom-miluo
+    name: 汨罗江畔端午习俗
+    category: custom
+    province: 湖南省
+    city: 岳阳市汨罗市
+    lng: 113.10
+    lat: 28.80
+    summary: >-
+      汨罗江是屈原沉江之地，此地的端午龙舟、粽子、兰汤与《招魂》诵唱构成中国最完整的端午习俗链。
+    culture: >-
+      五月端午正当早稻分蘖、瘟暑将至，龙舟竞渡既祭屈原亦祈丰，村社以『龙舟会』摊派谷米，节期与田事管理合一。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（端午节·汨罗江畔端午习俗）
+      - 端午入选人类非物质文化遗产代表作名录（2009）
+    tags: [汨罗, 端午龙舟, 粽子, 祈丰]
+    sources:
+      - title: 端午节（汨罗江畔端午习俗）
+        url: https://www.ihchina.cn/project_details/20210
+
+  - id: custom-huobajie
+    name: 彝族火把节
+    category: custom
+    province: 云南省
+    city: 楚雄彝族自治州楚雄市
+    lng: 101.55
+    lat: 25.05
+    summary: >-
+      楚雄彝族火把节在农历六月二十四前后，举火把照田、驱虫、祭祖，是西南稻作与旱作交错带的年度农事大祭。
+    culture: >-
+      火把沿田埂绕行以禳虫灾，斗牛、斗羊、摔跤与选美同场；会期恰在稻谷抽穗之时，祭仪实为一次田间除虫的集体行动。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（彝族火把节）
+      - 彝族禳灾祈丰的核心节期
+    tags: [火把节, 照田驱虫, 楚雄, 抽穗期]
+    sources:
+      - title: 火把节（彝族火把节）
+        url: https://www.ihchina.cn/art/detail/id/14947.html
+      - title: 火把节（彝族火把节）
+        url: https://www.ihchina.cn/project_details/14947
+
+  - id: custom-guzhang
+    name: 苗族鼓藏节
+    category: custom
+    province: 贵州省
+    city: 黔东南苗族侗族自治州雷山县
+    lng: 108.00
+    lat: 26.40
+    summary: >-
+      雷山一带苗族的鼓藏节以十余年一次的鼓藏祭祖为核心，杀猪宰牛、祭铜鼓、跳芦笙，重订人与祖、人与田的秩序。
+    culture: >-
+      鼓藏节周期与山地稻作的休养轮作相叠，祭祖耗粮的同时完成氏族换血与寨老确权，是黔东南稻作社会的最高典礼。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（第一批）
+      - 黔东南稻作苗疆最高祭祖礼
+    tags: [鼓藏节, 铜鼓, 雷山, 轮休养地]
+    sources:
+      - title: 苗族鼓藏节
+        url: https://www.ihchina.cn/project_details/14961
+
+  - id: custom-sanyuesan
+    name: 壮族三月三
+    category: custom
+    province: 广西壮族自治区
+    city: 南宁市武鸣区
+    lng: 108.30
+    lat: 23.20
+    summary: >-
+      武鸣一带的壮族三月三以歌圩、五色糯米饭与祭祖为核心，是稻作壮乡春耕季最盛大的社交与祈年节日。
+    culture: >-
+      五色饭以枫叶、黄饭花染就，祈五谷丰登；歌圩对歌选定协作与姻亲关系，农具耕牛在会期交易，节日同时是农事组织会。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（三月三·壮族三月三）
+      - 广西少数民族传统假日
+    tags: [三月三, 歌圩, 五色糯米饭, 春耕]
+    sources:
+      - title: 三月三（壮族三月三）
+        url: https://www.ihchina.cn/Article/Index/detail?id=14951
+
+  - id: custom-huaerhua
+    name: 莲花山花儿会
+    category: custom
+    province: 甘肃省
+    city: 临夏回族自治州康乐县
+    lng: 103.40
+    lat: 35.35
+    summary: >-
+      莲花山花儿会在六月松鸣岩一带对歌数日，回、东乡、保安、藏各族以『花儿』互赛，是黄土高原旱农区的年度歌会。
+    culture: >-
+      会期在麦收之前，山民借对歌议婚、约定水利与山场互助；干旱区的祈雨与『漫花儿』在同一山野同时进行。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（花儿·莲花山花儿会）
+      - 花儿入选人类非物质文化遗产代表作名录（2009）
+    tags: [花儿会, 莲花山, 松鸣岩, 祈雨互助]
+    sources:
+      - title: 花儿（莲花山花儿会）
+        url: https://www.ihchina.cn/project_details/20079
+
+  - id: custom-baidengshan
+    name: 蔚县拜灯山
+    category: custom
+    province: 河北省
+    city: 张家口市蔚县暖泉镇
+    lng: 114.60
+    lat: 39.85
+    summary: >-
+      蔚县暖泉的拜灯山在正月十五，农家以油灯在灯山殿前摆出星图与字阵，由灯官主持，礼成后分灯籽祈丰。
+    culture: >-
+      灯山分『文灯』『武灯』，摆灯字数与阵式按当年农事祈愿而定；塞北无霜期短，拜灯山之次日即开始整地送粪。
+    heritage:
+      - 国家级非物质文化遗产代表性项目（元宵节·蔚县拜灯山习俗）
+      - 暖泉古镇民俗核心
+    tags: [拜灯山, 暖泉, 灯官, 塞北春耕]
+    sources:
+      - title: 元宵节（蔚县拜灯山习俗）
+        url: https://www.ihchina.cn/project_details/15072
