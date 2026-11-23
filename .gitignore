@@ -8,4 +8,9 @@ corpus/corpus-check-*/
 
 corpus/api.log
 corpus/api.pid
-.cite/
+.cite/*
+# 生成器与人工核验过的来源池是数据的生产方式，必须入库；
+# 搜索引擎缓存（sources*.json / ihchina.json / 日志 / pid）会自己长回来，不入库。
+!.cite/*.py
+!.cite/manual.json
+!.cite/ncha_pool.json
