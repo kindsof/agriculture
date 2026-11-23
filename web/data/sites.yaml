@@ -2085,3 +2085,62 @@ sites:
     sources:
       - title: 元宵节（蔚县拜灯山习俗）
         url: https://www.ihchina.cn/project_details/15072
+
+  - id: civilization-yuchanyan
+    name: 玉蟾岩遗址
+    category: civilization
+    province: 湖南省
+    city: 永州市道县寿雁镇
+    lng: 111.40
+    lat: 25.42
+    summary: >-
+      道县玉蟾岩岩棚出土距今约一万两千年的谷壳植硅体与陶片，是世界范围内最早的栽培稻遗存之一，把稻作起源推向末次冰期之末。
+    culture: >-
+      从采集到驯化的第一步发生在此：先民在潇水上游的洞居生活中逐步照料野生稻，陶器的出现与稻作几乎同步。
+    heritage:
+      - 全国重点文物保护单位
+      - 全国十大考古新发现（1995）
+    tags: [玉蟾岩, 栽培稻起源, 洞穴遗址, 道县]
+    sources:
+      - title: 湖南道县玉蟾岩遗址（国家文物局·全国重点文物保护单位）
+        url: http://www.ncha.gov.cn/art/2022/3/19/art_2587_79.html
+
+  - id: civilization-dadiwan
+    name: 大地湾遗址
+    category: civilization
+    province: 甘肃省
+    city: 天水市秦安县五营镇
+    lng: 105.72
+    lat: 35.02
+    summary: >-
+      秦安大地湾遗址序列从八千年延续至五千年，出土黍、粟与油菜籽遗存，是黄土高原旱作农业与彩陶文化的重要源头。
+    culture: >-
+      旱地撒播、黍粟为主、猪为家畜的经济模式在此成型；地穴与半地穴房屋配合冬麦春粟的节令，形成西北旱农的基本作息。
+    heritage:
+      - 全国重点文物保护单位
+      - 全国十大考古新发现
+    tags: [大地湾, 黍粟, 彩陶, 黄土高原]
+    sources:
+      - title: 甘肃秦安大地湾遗址（国家文物局·全国重点文物保护单位）
+        url: http://www.ncha.gov.cn/art/2022/3/19/art_2587_87.html
+
+  - id: civilization-erlitou
+    name: 二里头遗址
+    category: civilization
+    province: 河南省
+    city: 洛阳市偃师区翟镇镇
+    lng: 112.68
+    lat: 34.69
+    summary: >-
+      偃师二里头被称为广域王权国家的都邑，宫城、井字形道路与官营作坊齐备，农产由四方汇聚供养都邑人口。
+    culture: >-
+      稻、粟、黍、豆多类作物同出，反映广域调配；都邑所需的粮食供给推动了漕运、仓储与田赋制度的萌芽。
+    heritage:
+      - 全国重点文物保护单位
+      - 全国『百年百大考古发现』
+    tags: [二里头, 都邑, 作物组合, 夏文化]
+    sources:
+      - title: 二里头遗址（洛阳市文物局·大遗址保护专题）
+        url: https://wwj.ly.gov.cn/2024/10-18/310767.html
+      - title: 河南文物之窗｜二里头遗址①（河南省文物局）
+        url: https://wwj.henan.gov.cn/2021/01-07/2074443.html
